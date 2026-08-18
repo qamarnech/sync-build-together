@@ -1,0 +1,26 @@
+import { useEffect } from "react";
+import { Outlet, createFileRoute, useNavigate } from "@tanstack/react-router";
+import { useAuth } from "@/hooks/useAuth";
+
+export const Route = createFileRoute("/_authenticated")({
+  component: AuthenticatedLayout,
+});
+
+function AuthenticatedLayout() {
+  const { user, loading } = useAuth();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!loading && !user) void navigate({ to: "/auth" });
+  }, [loading, user, navigate]);
+
+  if (loading || !user) {
+    return (
+      <div className="flex min-h-[60vh] items-center justify-center bg-sand">
+        <p className="font-serif italic text-ink-mute">Checking your membership…</p>
+      </div>
+    );
+  }
+
+  return <Outlet />;
+}
