@@ -58,7 +58,7 @@ function Index() {
               variant="outline"
               className="border-gold-pale/40 bg-transparent text-gold-pale hover:bg-white/10 hover:text-white"
             >
-              <Link to="/discover">Explore the Ecosystem</Link>
+              <Link to="/ecosystem">Explore the Ecosystem</Link>
             </Button>
           </div>
         </div>

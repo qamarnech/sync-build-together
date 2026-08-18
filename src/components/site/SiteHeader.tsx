@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 
 const publicLinks = [
   { to: "/", label: "Home" },
+  { to: "/ecosystem", label: "Ecosystem" },
   { to: "/discover", label: "Discover" },
   { to: "/about", label: "About" },
 ] as const;
