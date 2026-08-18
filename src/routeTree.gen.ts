@@ -14,6 +14,7 @@ import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as DiscoverRouteImport } from './routes/discover'
+import { Route as EcosystemRouteImport } from './routes/ecosystem'
 import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
 import { Route as AuthenticatedProfileRouteImport } from './routes/_authenticated/profile'
 import { Route as AuthenticatedMembersIndexRouteImport } from './routes/_authenticated/members.index'
@@ -44,6 +45,11 @@ const AuthRoute = AuthRouteImport.update({
 const DiscoverRoute = DiscoverRouteImport.update({
   id: '/discover',
   path: '/discover',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EcosystemRoute = EcosystemRouteImport.update({
+  id: '/ecosystem',
+  path: '/ecosystem',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthenticatedDashboardRoute = AuthenticatedDashboardRouteImport.update({
@@ -92,6 +98,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/auth': typeof AuthRoute
   '/discover': typeof DiscoverRoute
+  '/ecosystem': typeof EcosystemRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/profile': typeof AuthenticatedProfileRoute
   '/members/$profileId': typeof AuthenticatedMembersProfileIdRoute
@@ -105,6 +112,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/auth': typeof AuthRoute
   '/discover': typeof DiscoverRoute
+  '/ecosystem': typeof EcosystemRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/profile': typeof AuthenticatedProfileRoute
   '/members/$profileId': typeof AuthenticatedMembersProfileIdRoute
@@ -120,6 +128,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/auth': typeof AuthRoute
   '/discover': typeof DiscoverRoute
+  '/ecosystem': typeof EcosystemRoute
   '/_authenticated/dashboard': typeof AuthenticatedDashboardRoute
   '/_authenticated/profile': typeof AuthenticatedProfileRoute
   '/_authenticated/members/$profileId': typeof AuthenticatedMembersProfileIdRoute
@@ -135,6 +144,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/auth'
     | '/discover'
+    | '/ecosystem'
     | '/dashboard'
     | '/profile'
     | '/members/$profileId'
@@ -148,6 +158,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/auth'
     | '/discover'
+    | '/ecosystem'
     | '/dashboard'
     | '/profile'
     | '/members/$profileId'
@@ -162,6 +173,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/auth'
     | '/discover'
+    | '/ecosystem'
     | '/_authenticated/dashboard'
     | '/_authenticated/profile'
     | '/_authenticated/members/$profileId'
@@ -177,6 +189,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   AuthRoute: typeof AuthRoute
   DiscoverRoute: typeof DiscoverRoute
+  EcosystemRoute: typeof EcosystemRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -214,6 +227,13 @@ declare module '@tanstack/react-router' {
       path: '/discover'
       fullPath: '/discover'
       preLoaderRoute: typeof DiscoverRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ecosystem': {
+      id: '/ecosystem'
+      path: '/ecosystem'
+      fullPath: '/ecosystem'
+      preLoaderRoute: typeof EcosystemRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_authenticated/dashboard': {
@@ -297,6 +317,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   AuthRoute: AuthRoute,
   DiscoverRoute: DiscoverRoute,
+  EcosystemRoute: EcosystemRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
