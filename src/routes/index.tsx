@@ -100,6 +100,21 @@ function Index() {
           “The opportunity is not simply to extend life. It is to extend healthy, active and
           independent life — this is the purpose of MR Longevity.”
         </blockquote>
+        <figure className="mt-12 rounded-2xl border border-line bg-paper p-6 md:p-8">
+          <figcaption className="mb-2 flex flex-wrap items-center justify-between gap-3">
+            <span className="font-serif text-sm italic text-gold">Fig. 01 — Compressing morbidity</span>
+            <span className="flex items-center gap-5 text-xs text-ink-soft">
+              <span className="flex items-center gap-2">
+                <span className="h-0.5 w-6 bg-ink-mute" /> Health today
+              </span>
+              <span className="flex items-center gap-2">
+                <span className="h-0.5 w-6 bg-gold" /> Health extended
+              </span>
+            </span>
+          </figcaption>
+          <HealthspanCurve />
+        </figure>
+
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           <div className="rounded-xl border border-line bg-paper p-6">
             <h3 className="text-xl font-semibold text-navy">Our Vision</h3>
