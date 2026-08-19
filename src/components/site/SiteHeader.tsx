@@ -7,9 +7,9 @@ import { Button } from "@/components/ui/button";
 import { DISCOVER_PILLARS } from "@/lib/discover-pillars";
 import { ECOSYSTEM_PILLARS } from "@/lib/ecosystem-pillars";
 
-const publicLinks = [
-  { to: "/", label: "Home" },
-  { to: "/about", label: "About" },
+const HOME_ITEMS = [
+  { slug: "about", to: "/about", name: "About" },
+  { slug: "contact", to: "/contact", name: "Contact" },
 ] as const;
 
 const memberLinks = [
@@ -17,6 +17,7 @@ const memberLinks = [
   { to: "/projects", label: "Projects" },
   { to: "/members", label: "Members" },
 ] as const;
+
 
 function Dropdown({
   label,
