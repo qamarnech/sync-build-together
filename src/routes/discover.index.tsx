@@ -56,6 +56,12 @@ function DiscoverPage() {
           title="What does healthy longevity mean?"
           intro="Protecting and improving the physical, metabolic, cognitive and emotional capacities that allow people to keep living well as they age."
         />
+        <figure className="mt-10">
+          <HealthspanCurve />
+          <figcaption className="mt-3 text-center text-xs text-ink-mute">
+            Fig. 05 — The goal is not simply more years, but keeping function high for longer.
+          </figcaption>
+        </figure>
         <h3 className="mt-12 text-center font-serif text-xl text-navy">Healthspan Foundations</h3>
         <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {FOUNDATIONS.map((item) => (
