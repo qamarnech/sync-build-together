@@ -371,7 +371,12 @@ export function ParticipantOrbit({
             />
             <circle cx={x} cy={y} r={on ? 26 : 23} className={on ? "fill-gold" : "fill-white"} />
             <circle cx={x} cy={y} r={on ? 26 : 23} fill="none" className="text-gold/50" stroke="currentColor" strokeWidth="1" />
-            <text x={x} y={y + 3.5} textAnchor="middle" className={cn("text-[9px] font-semibold", on ? "fill-white" : "fill-navy")}>
+            <text
+              x={x}
+              y={y + 3.5}
+              textAnchor="middle"
+              className={cn(label.length > 9 ? "text-[7.5px]" : "text-[9px]", "font-semibold", on ? "fill-white" : "fill-navy")}
+            >
               {label}
             </text>
           </g>
