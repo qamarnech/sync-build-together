@@ -83,22 +83,10 @@ export function SiteHeader() {
         </Link>
 
         <nav className="hidden items-center gap-6 md:flex">
-          <Link
-            to="/"
-            className="text-sm text-ink-soft transition-colors hover:text-navy"
-            activeProps={{ className: "text-navy font-semibold" }}
-          >
-            Home
-          </Link>
+          <Dropdown label="Home" to="/" items={HOME_ITEMS} />
           <Dropdown label="Discover" to="/discover" items={DISCOVER_PILLARS} />
           <Dropdown label="Ecosystem" to="/ecosystem" items={ECOSYSTEM_PILLARS} />
-          <Link
-            to="/about"
-            className="text-sm text-ink-soft transition-colors hover:text-navy"
-            activeProps={{ className: "text-navy font-semibold" }}
-          >
-            About
-          </Link>
+
           {user &&
             memberLinks.map((link) => (
               <Link
