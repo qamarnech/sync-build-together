@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Flourish, Kicker, Section, SectionHead, Tag } from "@/components/site/ui-bits";
+import { HealthspanCurve, TranslationFlywheel } from "@/components/site/infographics";
 import { FLYWHEEL, PERSONAS, VERBS } from "@/lib/site-content";
 
 export const Route = createFileRoute("/")({
