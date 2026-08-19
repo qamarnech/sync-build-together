@@ -120,6 +120,13 @@ function EcosystemPage() {
           ))}
         </div>
 
+        <figure className="mt-10">
+          <SystemsRings />
+          <figcaption className="mt-3 text-center text-xs text-ink-mute">
+            Fig. 06 — The person sits at the centre; capability areas surround them as one system.
+          </figcaption>
+        </figure>
+
         {["Human foundations", "Systems & science"].map((group) => (
           <div key={group} className="mt-12">
             <h3 className="font-serif text-sm italic tracking-wide text-gold">{group}</h3>
