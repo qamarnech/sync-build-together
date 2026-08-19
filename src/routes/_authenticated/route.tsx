@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Outlet, createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useAuth } from "@/hooks/useAuth";
+import { supabase } from "@/integrations/supabase/client";
 
 export const Route = createFileRoute("/_authenticated")({
   component: AuthenticatedLayout,
@@ -13,6 +14,11 @@ function AuthenticatedLayout() {
   useEffect(() => {
     if (!loading && !user) void navigate({ to: "/auth" });
   }, [loading, user, navigate]);
+
+  useEffect(() => {
+    if (!user) return;
+    void supabase.rpc("claim_my_profile");
+  }, [user]);
 
   if (loading || !user) {
     return (
