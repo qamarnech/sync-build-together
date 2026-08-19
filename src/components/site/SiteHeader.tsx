@@ -6,6 +6,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { DISCOVER_PILLARS } from "@/lib/discover-pillars";
 import { ECOSYSTEM_PILLARS } from "@/lib/ecosystem-pillars";
+import { INSIGHTS_ITEMS } from "@/lib/insights-nav";
 
 const HOME_ITEMS = [
   { slug: "about", to: "/about", name: "About" },
