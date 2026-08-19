@@ -9,6 +9,7 @@ import {
   TRANSLATION_STAGES,
 } from "@/lib/site-content";
 import { DISCOVER_PILLARS } from "@/lib/discover-pillars";
+import { EvidenceLadder, HealthspanCurve, PathwayTrack } from "@/components/site/infographics";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/discover/")({
