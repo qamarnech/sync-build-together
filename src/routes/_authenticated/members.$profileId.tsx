@@ -3,6 +3,13 @@ import { useQuery } from "@tanstack/react-query";
 import { profilesQuery, projectMembersQuery, projectsQuery } from "@/lib/data";
 import { ROLE_TYPES } from "@/lib/site-content";
 import { Tag } from "@/components/site/ui-bits";
+import { FOUNDER_NAME } from "@/lib/founder-fu";
+import {
+  FounderAffiliations,
+  FounderGrants,
+  FounderPatents,
+  FounderPublications,
+} from "@/components/site/FounderRecord";
 
 export const Route = createFileRoute("/_authenticated/members/$profileId")({
   head: () => ({
@@ -30,6 +37,7 @@ function MemberProfilePage() {
   }
 
   const roleLabel = ROLE_TYPES.find((r) => r.value === profile.role_type)?.label ?? profile.role_type;
+  const isFounder = profile.full_name === FOUNDER_NAME;
   const led = projects.filter((p) => p.owner_id === profile.id);
   const joined = projects.filter((p) =>
     memberships.some((m) => m.project_id === p.id && m.profile_id === profile.id),
@@ -66,7 +74,44 @@ function MemberProfilePage() {
               </div>
             </>
           )}
+          {isFounder && (
+            <Link
+              to="/founder"
+              className="mt-6 inline-flex items-center rounded-full border border-gold px-4 py-2 text-sm text-gold transition-colors hover:bg-gold hover:text-white"
+            >
+              View public founder page
+            </Link>
+          )}
         </div>
+
+        {isFounder && (
+          <div className="space-y-6">
+            <div className="rounded-2xl border border-line bg-white p-8">
+              <h2 className="font-serif text-xl font-bold text-navy">Affiliations</h2>
+              <div className="mt-4">
+                <FounderAffiliations />
+              </div>
+            </div>
+            <div className="rounded-2xl border border-line bg-white p-8">
+              <h2 className="font-serif text-xl font-bold text-navy">Selected publications</h2>
+              <div className="mt-4">
+                <FounderPublications />
+              </div>
+            </div>
+            <div className="rounded-2xl border border-line bg-white p-8">
+              <h2 className="font-serif text-xl font-bold text-navy">Patents</h2>
+              <div className="mt-4">
+                <FounderPatents />
+              </div>
+            </div>
+            <div className="rounded-2xl border border-line bg-white p-8">
+              <h2 className="font-serif text-xl font-bold text-navy">Grants</h2>
+              <div className="mt-4">
+                <FounderGrants />
+              </div>
+            </div>
+          </div>
+        )}
 
         <div className="grid gap-6 md:grid-cols-2">
           <div className="rounded-2xl border border-line bg-white p-6">

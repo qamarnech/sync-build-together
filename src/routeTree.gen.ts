@@ -16,6 +16,7 @@ import { Route as AuthRouteImport } from './routes/auth'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DiscoverRouteImport } from './routes/discover'
 import { Route as EcosystemRouteImport } from './routes/ecosystem'
+import { Route as FounderRouteImport } from './routes/founder'
 import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
 import { Route as AuthenticatedProfileRouteImport } from './routes/_authenticated/profile'
 import { Route as DiscoverIndexRouteImport } from './routes/discover.index'
@@ -65,6 +66,11 @@ const DiscoverRoute = DiscoverRouteImport.update({
 const EcosystemRoute = EcosystemRouteImport.update({
   id: '/ecosystem',
   path: '/ecosystem',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FounderRoute = FounderRouteImport.update({
+  id: '/founder',
+  path: '/founder',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthenticatedDashboardRoute = AuthenticatedDashboardRouteImport.update({
@@ -166,6 +172,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/discover': typeof DiscoverRouteWithChildren
   '/ecosystem': typeof EcosystemRouteWithChildren
+  '/founder': typeof FounderRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/profile': typeof AuthenticatedProfileRoute
   '/discover/biology-of-aging': typeof DiscoverBiologyOfAgingRoute
@@ -188,6 +195,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/auth': typeof AuthRoute
   '/contact': typeof ContactRoute
+  '/founder': typeof FounderRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/profile': typeof AuthenticatedProfileRoute
   '/discover/biology-of-aging': typeof DiscoverBiologyOfAgingRoute
@@ -214,6 +222,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/discover': typeof DiscoverRouteWithChildren
   '/ecosystem': typeof EcosystemRouteWithChildren
+  '/founder': typeof FounderRoute
   '/_authenticated/dashboard': typeof AuthenticatedDashboardRoute
   '/_authenticated/profile': typeof AuthenticatedProfileRoute
   '/discover/biology-of-aging': typeof DiscoverBiologyOfAgingRoute
@@ -240,6 +249,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/discover'
     | '/ecosystem'
+    | '/founder'
     | '/dashboard'
     | '/profile'
     | '/discover/biology-of-aging'
@@ -262,6 +272,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/auth'
     | '/contact'
+    | '/founder'
     | '/dashboard'
     | '/profile'
     | '/discover/biology-of-aging'
@@ -287,6 +298,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/discover'
     | '/ecosystem'
+    | '/founder'
     | '/_authenticated/dashboard'
     | '/_authenticated/profile'
     | '/discover/biology-of-aging'
@@ -313,6 +325,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   DiscoverRoute: typeof DiscoverRouteWithChildren
   EcosystemRoute: typeof EcosystemRouteWithChildren
+  FounderRoute: typeof FounderRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -364,6 +377,13 @@ declare module '@tanstack/react-router' {
       path: '/ecosystem'
       fullPath: '/ecosystem'
       preLoaderRoute: typeof EcosystemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/founder': {
+      id: '/founder'
+      path: '/founder'
+      fullPath: '/founder'
+      preLoaderRoute: typeof FounderRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_authenticated/dashboard': {
@@ -550,6 +570,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   DiscoverRoute: DiscoverRouteWithChildren,
   EcosystemRoute: EcosystemRouteWithChildren,
+  FounderRoute: FounderRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

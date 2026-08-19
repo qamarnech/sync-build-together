@@ -9,6 +9,7 @@ import { ECOSYSTEM_PILLARS } from "@/lib/ecosystem-pillars";
 
 const HOME_ITEMS = [
   { slug: "about", to: "/about", name: "About" },
+  { slug: "founder", to: "/founder", name: "Founder" },
   { slug: "contact", to: "/contact", name: "Contact" },
 ];
 
