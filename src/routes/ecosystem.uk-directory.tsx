@@ -11,7 +11,7 @@ import {
   UK_DIRECTORY_INTRO,
 } from "@/lib/uk-directory";
 
-const URL = "https://mrlongevity-ecosystem.lovable.app/ecosystem/uk-directory";
+const PAGE_URL = "https://mrlongevity-ecosystem.lovable.app/ecosystem/uk-directory";
 const DESCRIPTION =
   "A curated directory of the UK healthy longevity ecosystem: geroscience institutes, gerontology centres, NHS research units, longevity clinics, biotech companies, AgeTech, charities, funders and population cohorts — each with a source link.";
 
@@ -23,10 +23,10 @@ export const Route = createFileRoute("/ecosystem/uk-directory")({
       { property: "og:title", content: "UK Longevity Directory" },
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: URL },
+      { property: "og:url", content: PAGE_URL },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: URL }],
+    links: [{ rel: "canonical", href: PAGE_URL }],
   }),
   component: UkDirectoryPage,
 });
