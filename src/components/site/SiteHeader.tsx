@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { Link, useNavigate } from "@tanstack/react-router";
-import { Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
+import { ECOSYSTEM_PILLARS } from "@/lib/ecosystem-pillars";
 
 const publicLinks = [
   { to: "/", label: "Home" },
-  { to: "/ecosystem", label: "Ecosystem" },
   { to: "/discover", label: "Discover" },
   { to: "/about", label: "About" },
 ] as const;
@@ -17,6 +17,7 @@ const memberLinks = [
   { to: "/projects", label: "Projects" },
   { to: "/members", label: "Members" },
 ] as const;
+
 
 export function SiteHeader() {
   const { user, loading } = useAuth();
@@ -38,17 +39,45 @@ export function SiteHeader() {
         </Link>
 
         <nav className="hidden items-center gap-6 md:flex">
-          {links.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              className="text-sm text-ink-soft transition-colors hover:text-navy"
-              activeProps={{ className: "text-navy font-semibold" }}
-            >
-              {link.label}
-            </Link>
+          {links.map((link, index) => (
+            <div key={link.to} className="contents">
+              <Link
+                to={link.to}
+                className="text-sm text-ink-soft transition-colors hover:text-navy"
+                activeProps={{ className: "text-navy font-semibold" }}
+              >
+                {link.label}
+              </Link>
+              {index === 0 && (
+                <div className="group relative">
+                  <Link
+                    to="/ecosystem"
+                    className="flex items-center gap-1 text-sm text-ink-soft transition-colors hover:text-navy"
+                    activeProps={{ className: "text-navy font-semibold" }}
+                  >
+                    Ecosystem
+                    <ChevronDown className="h-3.5 w-3.5" />
+                  </Link>
+                  <div className="invisible absolute left-0 top-full z-50 w-64 pt-3 opacity-0 transition-opacity group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                    <div className="rounded-xl border border-line bg-paper p-2 shadow-lg">
+                      {ECOSYSTEM_PILLARS.map((pillar) => (
+                        <Link
+                          key={pillar.slug}
+                          to={pillar.to}
+                          className="block rounded-lg px-3 py-2 text-sm text-ink-soft transition-colors hover:bg-gold/10 hover:text-navy"
+                          activeProps={{ className: "text-navy font-semibold" }}
+                        >
+                          {pillar.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
           ))}
         </nav>
+
 
         <div className="hidden items-center gap-2 md:flex">
           {!loading && user ? (
@@ -96,6 +125,22 @@ export function SiteHeader() {
                 {link.label}
               </Link>
             ))}
+            <Link to="/ecosystem" onClick={() => setOpen(false)} className="text-sm text-ink-soft">
+              Ecosystem
+            </Link>
+            <div className="flex flex-col gap-2 border-l border-line pl-3">
+              {ECOSYSTEM_PILLARS.map((pillar) => (
+                <Link
+                  key={pillar.slug}
+                  to={pillar.to}
+                  onClick={() => setOpen(false)}
+                  className="text-sm text-ink-soft"
+                >
+                  {pillar.name}
+                </Link>
+              ))}
+            </div>
+
             {user ? (
               <>
                 <Link to="/profile" onClick={() => setOpen(false)} className="text-sm text-ink-soft">

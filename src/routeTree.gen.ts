@@ -17,6 +17,11 @@ import { Route as DiscoverRouteImport } from './routes/discover'
 import { Route as EcosystemRouteImport } from './routes/ecosystem'
 import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
 import { Route as AuthenticatedProfileRouteImport } from './routes/_authenticated/profile'
+import { Route as EcosystemIndexRouteImport } from './routes/ecosystem.index'
+import { Route as EcosystemClinicalValidationRouteImport } from './routes/ecosystem.clinical-validation'
+import { Route as EcosystemInvestmentCommercialRouteImport } from './routes/ecosystem.investment-commercial'
+import { Route as EcosystemManufacturingSupplyRouteImport } from './routes/ecosystem.manufacturing-supply'
+import { Route as EcosystemScienceDiscoveryRouteImport } from './routes/ecosystem.science-discovery'
 import { Route as AuthenticatedMembersIndexRouteImport } from './routes/_authenticated/members.index'
 import { Route as AuthenticatedMembersProfileIdRouteImport } from './routes/_authenticated/members.$profileId'
 import { Route as AuthenticatedProjectsIndexRouteImport } from './routes/_authenticated/projects.index'
@@ -62,6 +67,35 @@ const AuthenticatedProfileRoute = AuthenticatedProfileRouteImport.update({
   path: '/profile',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+const EcosystemIndexRoute = EcosystemIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => EcosystemRoute,
+} as any)
+const EcosystemClinicalValidationRoute =
+  EcosystemClinicalValidationRouteImport.update({
+    id: '/clinical-validation',
+    path: '/clinical-validation',
+    getParentRoute: () => EcosystemRoute,
+  } as any)
+const EcosystemInvestmentCommercialRoute =
+  EcosystemInvestmentCommercialRouteImport.update({
+    id: '/investment-commercial',
+    path: '/investment-commercial',
+    getParentRoute: () => EcosystemRoute,
+  } as any)
+const EcosystemManufacturingSupplyRoute =
+  EcosystemManufacturingSupplyRouteImport.update({
+    id: '/manufacturing-supply',
+    path: '/manufacturing-supply',
+    getParentRoute: () => EcosystemRoute,
+  } as any)
+const EcosystemScienceDiscoveryRoute =
+  EcosystemScienceDiscoveryRouteImport.update({
+    id: '/science-discovery',
+    path: '/science-discovery',
+    getParentRoute: () => EcosystemRoute,
+  } as any)
 const AuthenticatedMembersIndexRoute =
   AuthenticatedMembersIndexRouteImport.update({
     id: '/members/',
@@ -98,9 +132,14 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/auth': typeof AuthRoute
   '/discover': typeof DiscoverRoute
-  '/ecosystem': typeof EcosystemRoute
+  '/ecosystem': typeof EcosystemRouteWithChildren
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/profile': typeof AuthenticatedProfileRoute
+  '/ecosystem/clinical-validation': typeof EcosystemClinicalValidationRoute
+  '/ecosystem/investment-commercial': typeof EcosystemInvestmentCommercialRoute
+  '/ecosystem/manufacturing-supply': typeof EcosystemManufacturingSupplyRoute
+  '/ecosystem/science-discovery': typeof EcosystemScienceDiscoveryRoute
+  '/ecosystem/': typeof EcosystemIndexRoute
   '/members/$profileId': typeof AuthenticatedMembersProfileIdRoute
   '/projects/$projectId': typeof AuthenticatedProjectsProjectIdRoute
   '/projects/new': typeof AuthenticatedProjectsNewRoute
@@ -112,9 +151,13 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/auth': typeof AuthRoute
   '/discover': typeof DiscoverRoute
-  '/ecosystem': typeof EcosystemRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/profile': typeof AuthenticatedProfileRoute
+  '/ecosystem/clinical-validation': typeof EcosystemClinicalValidationRoute
+  '/ecosystem/investment-commercial': typeof EcosystemInvestmentCommercialRoute
+  '/ecosystem/manufacturing-supply': typeof EcosystemManufacturingSupplyRoute
+  '/ecosystem/science-discovery': typeof EcosystemScienceDiscoveryRoute
+  '/ecosystem': typeof EcosystemIndexRoute
   '/members/$profileId': typeof AuthenticatedMembersProfileIdRoute
   '/projects/$projectId': typeof AuthenticatedProjectsProjectIdRoute
   '/projects/new': typeof AuthenticatedProjectsNewRoute
@@ -128,9 +171,14 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/auth': typeof AuthRoute
   '/discover': typeof DiscoverRoute
-  '/ecosystem': typeof EcosystemRoute
+  '/ecosystem': typeof EcosystemRouteWithChildren
   '/_authenticated/dashboard': typeof AuthenticatedDashboardRoute
   '/_authenticated/profile': typeof AuthenticatedProfileRoute
+  '/ecosystem/clinical-validation': typeof EcosystemClinicalValidationRoute
+  '/ecosystem/investment-commercial': typeof EcosystemInvestmentCommercialRoute
+  '/ecosystem/manufacturing-supply': typeof EcosystemManufacturingSupplyRoute
+  '/ecosystem/science-discovery': typeof EcosystemScienceDiscoveryRoute
+  '/ecosystem/': typeof EcosystemIndexRoute
   '/_authenticated/members/$profileId': typeof AuthenticatedMembersProfileIdRoute
   '/_authenticated/projects/$projectId': typeof AuthenticatedProjectsProjectIdRoute
   '/_authenticated/projects/new': typeof AuthenticatedProjectsNewRoute
@@ -147,6 +195,11 @@ export interface FileRouteTypes {
     | '/ecosystem'
     | '/dashboard'
     | '/profile'
+    | '/ecosystem/clinical-validation'
+    | '/ecosystem/investment-commercial'
+    | '/ecosystem/manufacturing-supply'
+    | '/ecosystem/science-discovery'
+    | '/ecosystem/'
     | '/members/$profileId'
     | '/projects/$projectId'
     | '/projects/new'
@@ -158,9 +211,13 @@ export interface FileRouteTypes {
     | '/about'
     | '/auth'
     | '/discover'
-    | '/ecosystem'
     | '/dashboard'
     | '/profile'
+    | '/ecosystem/clinical-validation'
+    | '/ecosystem/investment-commercial'
+    | '/ecosystem/manufacturing-supply'
+    | '/ecosystem/science-discovery'
+    | '/ecosystem'
     | '/members/$profileId'
     | '/projects/$projectId'
     | '/projects/new'
@@ -176,6 +233,11 @@ export interface FileRouteTypes {
     | '/ecosystem'
     | '/_authenticated/dashboard'
     | '/_authenticated/profile'
+    | '/ecosystem/clinical-validation'
+    | '/ecosystem/investment-commercial'
+    | '/ecosystem/manufacturing-supply'
+    | '/ecosystem/science-discovery'
+    | '/ecosystem/'
     | '/_authenticated/members/$profileId'
     | '/_authenticated/projects/$projectId'
     | '/_authenticated/projects/new'
@@ -189,7 +251,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   AuthRoute: typeof AuthRoute
   DiscoverRoute: typeof DiscoverRoute
-  EcosystemRoute: typeof EcosystemRoute
+  EcosystemRoute: typeof EcosystemRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -249,6 +311,41 @@ declare module '@tanstack/react-router' {
       fullPath: '/profile'
       preLoaderRoute: typeof AuthenticatedProfileRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/ecosystem/': {
+      id: '/ecosystem/'
+      path: '/'
+      fullPath: '/ecosystem/'
+      preLoaderRoute: typeof EcosystemIndexRouteImport
+      parentRoute: typeof EcosystemRoute
+    }
+    '/ecosystem/clinical-validation': {
+      id: '/ecosystem/clinical-validation'
+      path: '/clinical-validation'
+      fullPath: '/ecosystem/clinical-validation'
+      preLoaderRoute: typeof EcosystemClinicalValidationRouteImport
+      parentRoute: typeof EcosystemRoute
+    }
+    '/ecosystem/investment-commercial': {
+      id: '/ecosystem/investment-commercial'
+      path: '/investment-commercial'
+      fullPath: '/ecosystem/investment-commercial'
+      preLoaderRoute: typeof EcosystemInvestmentCommercialRouteImport
+      parentRoute: typeof EcosystemRoute
+    }
+    '/ecosystem/manufacturing-supply': {
+      id: '/ecosystem/manufacturing-supply'
+      path: '/manufacturing-supply'
+      fullPath: '/ecosystem/manufacturing-supply'
+      preLoaderRoute: typeof EcosystemManufacturingSupplyRouteImport
+      parentRoute: typeof EcosystemRoute
+    }
+    '/ecosystem/science-discovery': {
+      id: '/ecosystem/science-discovery'
+      path: '/science-discovery'
+      fullPath: '/ecosystem/science-discovery'
+      preLoaderRoute: typeof EcosystemScienceDiscoveryRouteImport
+      parentRoute: typeof EcosystemRoute
     }
     '/_authenticated/members/': {
       id: '/_authenticated/members/'
@@ -311,13 +408,33 @@ const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
 const AuthenticatedRouteRouteWithChildren =
   AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
 
+interface EcosystemRouteChildren {
+  EcosystemClinicalValidationRoute: typeof EcosystemClinicalValidationRoute
+  EcosystemInvestmentCommercialRoute: typeof EcosystemInvestmentCommercialRoute
+  EcosystemManufacturingSupplyRoute: typeof EcosystemManufacturingSupplyRoute
+  EcosystemScienceDiscoveryRoute: typeof EcosystemScienceDiscoveryRoute
+  EcosystemIndexRoute: typeof EcosystemIndexRoute
+}
+
+const EcosystemRouteChildren: EcosystemRouteChildren = {
+  EcosystemClinicalValidationRoute: EcosystemClinicalValidationRoute,
+  EcosystemInvestmentCommercialRoute: EcosystemInvestmentCommercialRoute,
+  EcosystemManufacturingSupplyRoute: EcosystemManufacturingSupplyRoute,
+  EcosystemScienceDiscoveryRoute: EcosystemScienceDiscoveryRoute,
+  EcosystemIndexRoute: EcosystemIndexRoute,
+}
+
+const EcosystemRouteWithChildren = EcosystemRoute._addFileChildren(
+  EcosystemRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AboutRoute: AboutRoute,
   AuthRoute: AuthRoute,
   DiscoverRoute: DiscoverRoute,
-  EcosystemRoute: EcosystemRoute,
+  EcosystemRoute: EcosystemRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
