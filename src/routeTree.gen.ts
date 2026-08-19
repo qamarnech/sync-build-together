@@ -19,6 +19,7 @@ import { Route as AuthenticatedDashboardRouteImport } from './routes/_authentica
 import { Route as AuthenticatedProfileRouteImport } from './routes/_authenticated/profile'
 import { Route as EcosystemIndexRouteImport } from './routes/ecosystem.index'
 import { Route as EcosystemClinicalValidationRouteImport } from './routes/ecosystem.clinical-validation'
+import { Route as EcosystemManufacturingSupplyRouteImport } from './routes/ecosystem.manufacturing-supply'
 import { Route as EcosystemScienceDiscoveryRouteImport } from './routes/ecosystem.science-discovery'
 import { Route as AuthenticatedMembersIndexRouteImport } from './routes/_authenticated/members.index'
 import { Route as AuthenticatedMembersProfileIdRouteImport } from './routes/_authenticated/members.$profileId'
@@ -76,6 +77,12 @@ const EcosystemClinicalValidationRoute =
     path: '/clinical-validation',
     getParentRoute: () => EcosystemRoute,
   } as any)
+const EcosystemManufacturingSupplyRoute =
+  EcosystemManufacturingSupplyRouteImport.update({
+    id: '/manufacturing-supply',
+    path: '/manufacturing-supply',
+    getParentRoute: () => EcosystemRoute,
+  } as any)
 const EcosystemScienceDiscoveryRoute =
   EcosystemScienceDiscoveryRouteImport.update({
     id: '/science-discovery',
@@ -122,6 +129,7 @@ export interface FileRoutesByFullPath {
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/profile': typeof AuthenticatedProfileRoute
   '/ecosystem/clinical-validation': typeof EcosystemClinicalValidationRoute
+  '/ecosystem/manufacturing-supply': typeof EcosystemManufacturingSupplyRoute
   '/ecosystem/science-discovery': typeof EcosystemScienceDiscoveryRoute
   '/ecosystem/': typeof EcosystemIndexRoute
   '/members/$profileId': typeof AuthenticatedMembersProfileIdRoute
@@ -138,6 +146,7 @@ export interface FileRoutesByTo {
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/profile': typeof AuthenticatedProfileRoute
   '/ecosystem/clinical-validation': typeof EcosystemClinicalValidationRoute
+  '/ecosystem/manufacturing-supply': typeof EcosystemManufacturingSupplyRoute
   '/ecosystem/science-discovery': typeof EcosystemScienceDiscoveryRoute
   '/ecosystem': typeof EcosystemIndexRoute
   '/members/$profileId': typeof AuthenticatedMembersProfileIdRoute
@@ -157,6 +166,7 @@ export interface FileRoutesById {
   '/_authenticated/dashboard': typeof AuthenticatedDashboardRoute
   '/_authenticated/profile': typeof AuthenticatedProfileRoute
   '/ecosystem/clinical-validation': typeof EcosystemClinicalValidationRoute
+  '/ecosystem/manufacturing-supply': typeof EcosystemManufacturingSupplyRoute
   '/ecosystem/science-discovery': typeof EcosystemScienceDiscoveryRoute
   '/ecosystem/': typeof EcosystemIndexRoute
   '/_authenticated/members/$profileId': typeof AuthenticatedMembersProfileIdRoute
@@ -176,6 +186,7 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/profile'
     | '/ecosystem/clinical-validation'
+    | '/ecosystem/manufacturing-supply'
     | '/ecosystem/science-discovery'
     | '/ecosystem/'
     | '/members/$profileId'
@@ -192,6 +203,7 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/profile'
     | '/ecosystem/clinical-validation'
+    | '/ecosystem/manufacturing-supply'
     | '/ecosystem/science-discovery'
     | '/ecosystem'
     | '/members/$profileId'
@@ -210,6 +222,7 @@ export interface FileRouteTypes {
     | '/_authenticated/dashboard'
     | '/_authenticated/profile'
     | '/ecosystem/clinical-validation'
+    | '/ecosystem/manufacturing-supply'
     | '/ecosystem/science-discovery'
     | '/ecosystem/'
     | '/_authenticated/members/$profileId'
@@ -300,6 +313,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EcosystemClinicalValidationRouteImport
       parentRoute: typeof EcosystemRoute
     }
+    '/ecosystem/manufacturing-supply': {
+      id: '/ecosystem/manufacturing-supply'
+      path: '/manufacturing-supply'
+      fullPath: '/ecosystem/manufacturing-supply'
+      preLoaderRoute: typeof EcosystemManufacturingSupplyRouteImport
+      parentRoute: typeof EcosystemRoute
+    }
     '/ecosystem/science-discovery': {
       id: '/ecosystem/science-discovery'
       path: '/science-discovery'
@@ -370,12 +390,14 @@ const AuthenticatedRouteRouteWithChildren =
 
 interface EcosystemRouteChildren {
   EcosystemClinicalValidationRoute: typeof EcosystemClinicalValidationRoute
+  EcosystemManufacturingSupplyRoute: typeof EcosystemManufacturingSupplyRoute
   EcosystemScienceDiscoveryRoute: typeof EcosystemScienceDiscoveryRoute
   EcosystemIndexRoute: typeof EcosystemIndexRoute
 }
 
 const EcosystemRouteChildren: EcosystemRouteChildren = {
   EcosystemClinicalValidationRoute: EcosystemClinicalValidationRoute,
+  EcosystemManufacturingSupplyRoute: EcosystemManufacturingSupplyRoute,
   EcosystemScienceDiscoveryRoute: EcosystemScienceDiscoveryRoute,
   EcosystemIndexRoute: EcosystemIndexRoute,
 }
