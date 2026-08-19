@@ -319,3 +319,215 @@ export function EvidenceLadder({ invert = false, className }: { invert?: boolean
     </ol>
   );
 }
+
+/* ------------------------------------------------------------------ */
+/* Participant orbit — who is in the ecosystem                         */
+/* ------------------------------------------------------------------ */
+
+export function ParticipantOrbit({
+  labels,
+  active,
+  onSelect,
+  className,
+}: {
+  labels: string[];
+  active: number;
+  onSelect: (i: number) => void;
+  className?: string;
+}) {
+  const size = 360;
+  const c = size / 2;
+  const r = 132;
+  return (
+    <svg
+      viewBox={`0 0 ${size} ${size}`}
+      className={cn("mx-auto w-full max-w-[360px]", className)}
+      role="img"
+      aria-label="Participants orbiting the healthy longevity ecosystem"
+    >
+      <circle cx={c} cy={c} r={r} fill="none" className="text-line" stroke="currentColor" strokeWidth="0.75" strokeDasharray="2 6" />
+      <circle cx={c} cy={c} r="52" className="fill-navy" />
+      <text x={c} y={c - 2} textAnchor="middle" className="fill-gold-pale text-[10px] tracking-[0.18em]">
+        HEALTHY
+      </text>
+      <text x={c} y={c + 14} textAnchor="middle" className="fill-gold-light text-[12px] font-semibold">
+        LONGEVITY
+      </text>
+      {labels.map((label, i) => {
+        const a = (i / labels.length) * Math.PI * 2 - Math.PI / 2;
+        const x = c + Math.cos(a) * r;
+        const y = c + Math.sin(a) * r;
+        const on = i === active;
+        return (
+          <g key={label} onClick={() => onSelect(i)} onMouseEnter={() => onSelect(i)} className="cursor-pointer">
+            <line
+              x1={c + Math.cos(a) * 54}
+              y1={c + Math.sin(a) * 54}
+              x2={c + Math.cos(a) * (r - 24)}
+              y2={c + Math.sin(a) * (r - 24)}
+              className={on ? "text-gold" : "text-line"}
+              stroke="currentColor"
+              strokeWidth="0.75"
+            />
+            <circle cx={x} cy={y} r={on ? 26 : 23} className={on ? "fill-gold" : "fill-white"} />
+            <circle cx={x} cy={y} r={on ? 26 : 23} fill="none" className="text-gold/50" stroke="currentColor" strokeWidth="1" />
+            <text x={x} y={y + 3.5} textAnchor="middle" className={cn("text-[9px] font-semibold", on ? "fill-white" : "fill-navy")}>
+              {label}
+            </text>
+          </g>
+        );
+      })}
+    </svg>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Cycle wheel — continuous opportunity cycle                          */
+/* ------------------------------------------------------------------ */
+
+export function CycleWheel({
+  labels,
+  active,
+  onSelect,
+  className,
+}: {
+  labels: string[];
+  active: number;
+  onSelect: (i: number) => void;
+  className?: string;
+}) {
+  const size = 400;
+  const c = size / 2;
+  const r = 150;
+  return (
+    <svg
+      viewBox={`0 0 ${size} ${size}`}
+      className={cn("mx-auto w-full max-w-[400px]", className)}
+      role="img"
+      aria-label="Continuous opportunity cycle of the ecosystem"
+    >
+      <defs>
+        <marker id="cw-arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+          <path d="M0 0 L8 4 L0 8 z" className="fill-gold" />
+        </marker>
+      </defs>
+      <circle cx={c} cy={c} r={r} fill="none" className="text-line" stroke="currentColor" strokeWidth="0.75" />
+      <path
+        d={`M ${c + r * 0.78} ${c} A ${r * 0.78} ${r * 0.78} 0 1 1 ${c - r * 0.39} ${c - r * 0.675}`}
+        fill="none"
+        className="text-gold/45"
+        stroke="currentColor"
+        strokeWidth="1.25"
+        markerEnd="url(#cw-arrow)"
+      />
+      <text x={c} y={c - 4} textAnchor="middle" className="fill-navy text-[12px] font-semibold tracking-[0.14em]">
+        LEARN
+      </text>
+      <text x={c} y={c + 14} textAnchor="middle" className="fill-ink-mute text-[10px] tracking-[0.14em]">
+        &amp; REPEAT
+      </text>
+      {labels.map((label, i) => {
+        const a = (i / labels.length) * Math.PI * 2 - Math.PI / 2;
+        const x = c + Math.cos(a) * r;
+        const y = c + Math.sin(a) * r;
+        const on = i === active;
+        return (
+          <g key={label} onClick={() => onSelect(i)} onMouseEnter={() => onSelect(i)} className="cursor-pointer">
+            <circle cx={x} cy={y} r={on ? 24 : 21} className={on ? "fill-navy" : "fill-white"} />
+            <circle cx={x} cy={y} r={on ? 24 : 21} fill="none" className="text-gold/60" stroke="currentColor" strokeWidth="1" />
+            <text x={x} y={y + 3.5} textAnchor="middle" className={cn("text-[8.5px] font-semibold", on ? "fill-gold-light" : "fill-navy")}>
+              {label}
+            </text>
+          </g>
+        );
+      })}
+    </svg>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Pathway track — linear stage progression                            */
+/* ------------------------------------------------------------------ */
+
+export function PathwayTrack({
+  labels,
+  active,
+  onSelect,
+  className,
+}: {
+  labels: string[];
+  active: number;
+  onSelect?: (i: number) => void;
+  className?: string;
+}) {
+  return (
+    <div className={cn("relative", className)}>
+      <div className="absolute left-0 right-0 top-3 h-px bg-line" aria-hidden />
+      <div
+        className="absolute left-0 top-3 h-px bg-gold transition-all"
+        style={{ width: `${((active + 1) / labels.length) * 100}%` }}
+        aria-hidden
+      />
+      <ol className="relative grid grid-cols-4 gap-2 md:grid-cols-8">
+        {labels.map((label, i) => {
+          const done = i <= active;
+          return (
+            <li key={label} className="flex flex-col items-center text-center">
+              <button
+                type="button"
+                onClick={() => onSelect?.(i)}
+                aria-current={i === active ? "step" : undefined}
+                className={cn(
+                  "flex h-6 w-6 items-center justify-center rounded-full border text-[10px] font-bold transition-colors",
+                  done ? "border-gold bg-gold text-white" : "border-line bg-white text-ink-mute",
+                  i === active && "ring-4 ring-gold/20",
+                )}
+              >
+                {i + 1}
+              </button>
+              <span className={cn("mt-2 text-[10px] leading-tight", i === active ? "font-semibold text-navy" : "text-ink-mute")}>
+                {label}
+              </span>
+            </li>
+          );
+        })}
+      </ol>
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Stage chain — position of a pillar in the ecosystem sequence        */
+/* ------------------------------------------------------------------ */
+
+export function StageChain({
+  items,
+  activeIndex,
+  className,
+}: {
+  items: string[];
+  activeIndex: number;
+  className?: string;
+}) {
+  return (
+    <div className={cn("flex flex-wrap items-center justify-center gap-2", className)}>
+      {items.map((item, i) => (
+        <div key={item} className="flex items-center gap-2">
+          <span
+            className={cn(
+              "rounded-full border px-4 py-1.5 text-xs font-medium",
+              i === activeIndex
+                ? "border-gold bg-gold text-white"
+                : i < activeIndex
+                  ? "border-gold/40 bg-gold/10 text-gold"
+                  : "border-white/20 bg-white/5 text-gold-pale/70",
+            )}
+          >
+            {item}
+          </span>
+          {i < items.length - 1 && <span className="text-gold/60">→</span>}
+        </div>
+      ))}
+    </div>
+  );
+}
