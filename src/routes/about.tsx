@@ -183,10 +183,7 @@ function AboutPage() {
           </div>
           <div className="rounded-xl border border-white/10 bg-white/5 p-6">
             <p className="text-sm leading-relaxed text-gold-pale/80">
-              That means distinguishing between:
-            </p>
-            <p className="mt-3 font-serif text-lg font-semibold tracking-wide text-white">
-              Hypothesis → Emerging Evidence → Clinical Evidence → Validated Practice
+              That means distinguishing between each level of certainty:
             </p>
             <p className="mt-3 text-sm leading-relaxed text-gold-pale/80">
               This principle allows MR Longevity to remain ambitious about what may become possible
@@ -194,6 +191,13 @@ function AboutPage() {
             </p>
           </div>
         </div>
+        <figure className="mt-8">
+          <figcaption className="mb-4 font-serif text-sm italic text-gold-light">
+            Fig. 04 — From hypothesis to validated practice
+          </figcaption>
+          <EvidenceLadder invert />
+        </figure>
+
       </Section>
 
       <Section tone="sand">
