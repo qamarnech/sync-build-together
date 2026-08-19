@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { Section, SectionHead, Tag } from "@/components/site/ui-bits";
+import { EvidenceLadder, SystemsRings } from "@/components/site/infographics";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -37,6 +38,22 @@ function AboutPage() {
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-balance text-3xl font-bold text-navy md:text-4xl">Our Approach</h2>
         </div>
+
+        <figure className="mt-10 grid items-center gap-8 rounded-2xl border border-line bg-white p-6 md:grid-cols-2 md:p-8">
+          <SystemsRings />
+          <figcaption className="text-sm leading-relaxed text-ink-soft">
+            <span className="font-serif text-sm italic text-gold">Fig. 03 — The person as a system</span>
+            <p className="mt-3">
+              Healthy longevity is not a single lever. Seven interacting dimensions surround every
+              individual, each measurable, each modifiable, none sufficient alone.
+            </p>
+            <p className="mt-3 text-xs tracking-[0.18em] text-ink-mute">
+              CONCENTRIC MAP · 7 DIMENSIONS · ONE PERSON
+            </p>
+          </figcaption>
+        </figure>
+
+
 
         <div className="mt-10 grid gap-8 md:grid-cols-2">
           <div className="rounded-xl border border-line bg-white p-6">
@@ -182,10 +199,7 @@ function AboutPage() {
           </div>
           <div className="rounded-xl border border-white/10 bg-white/5 p-6">
             <p className="text-sm leading-relaxed text-gold-pale/80">
-              That means distinguishing between:
-            </p>
-            <p className="mt-3 font-serif text-lg font-semibold tracking-wide text-white">
-              Hypothesis → Emerging Evidence → Clinical Evidence → Validated Practice
+              That means distinguishing between each level of certainty:
             </p>
             <p className="mt-3 text-sm leading-relaxed text-gold-pale/80">
               This principle allows MR Longevity to remain ambitious about what may become possible
@@ -193,6 +207,13 @@ function AboutPage() {
             </p>
           </div>
         </div>
+        <figure className="mt-8">
+          <figcaption className="mb-4 font-serif text-sm italic text-gold-light">
+            Fig. 04 — From hypothesis to validated practice
+          </figcaption>
+          <EvidenceLadder invert />
+        </figure>
+
       </Section>
 
       <Section tone="sand">
