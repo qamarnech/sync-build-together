@@ -15,5 +15,5 @@ export const Route = createFileRoute("/discover/biology-of-aging")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
-  component: () => <PillarPage pillar={pillar} backTo="/discover" />,
+  component: () => <PillarPage pillar={pillar} backTo="/discover" sequence={DISCOVER_PILLARS.map((p) => p.name)} />,
 });
