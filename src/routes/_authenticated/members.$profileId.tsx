@@ -37,6 +37,7 @@ function MemberProfilePage() {
   }
 
   const roleLabel = ROLE_TYPES.find((r) => r.value === profile.role_type)?.label ?? profile.role_type;
+  const isFounder = profile.full_name === FOUNDER_NAME;
   const led = projects.filter((p) => p.owner_id === profile.id);
   const joined = projects.filter((p) =>
     memberships.some((m) => m.project_id === p.id && m.profile_id === profile.id),
