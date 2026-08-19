@@ -1,0 +1,7 @@
+UPDATE public.profiles
+SET headline = 'Longevity Scientist · Biotech Entrepreneur · MR Longevity Founder',
+    organisation = 'MR Longevity · Institute of Aging Medicine, Binzhou Medical University',
+    expertise = ARRAY['Cellular Senescence','Geroscience','Regenerative Medicine','Stem Cells','Pharmacology','Longevity Biotechnology','Biomarkers','AI Models of Ageing','Immune Ageing','Translation'],
+    bio = E'Professor Qiang Fu is a scientist and biotechnology entrepreneur working to understand the biology of ageing and translate scientific discoveries into practical solutions for healthier, longer lives.\n\nHis research spans cellular senescence, NK-cell immunology, reproductive immunology, stem-cell and ovarian biology, exosomes, cancer, and the use of biomarkers and AI in ageing. Alongside fundamental science, his focus is increasingly translational: identifying promising interventions, validating them rigorously, and creating pathways through which research becomes technologies, products and health solutions.\n\nAs founder of MR Longevity, his wider ambition is to build an international ecosystem connecting science, people, technology, healthcare, data and investment to accelerate progress in healthy longevity.',
+    updated_at = now()
+WHERE full_name = 'Professor Qiang Fu 付强';
