@@ -18,6 +18,7 @@ import { Route as EcosystemRouteImport } from './routes/ecosystem'
 import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
 import { Route as AuthenticatedProfileRouteImport } from './routes/_authenticated/profile'
 import { Route as EcosystemIndexRouteImport } from './routes/ecosystem.index'
+import { Route as EcosystemClinicalValidationRouteImport } from './routes/ecosystem.clinical-validation'
 import { Route as EcosystemScienceDiscoveryRouteImport } from './routes/ecosystem.science-discovery'
 import { Route as AuthenticatedMembersIndexRouteImport } from './routes/_authenticated/members.index'
 import { Route as AuthenticatedMembersProfileIdRouteImport } from './routes/_authenticated/members.$profileId'
@@ -69,6 +70,12 @@ const EcosystemIndexRoute = EcosystemIndexRouteImport.update({
   path: '/',
   getParentRoute: () => EcosystemRoute,
 } as any)
+const EcosystemClinicalValidationRoute =
+  EcosystemClinicalValidationRouteImport.update({
+    id: '/clinical-validation',
+    path: '/clinical-validation',
+    getParentRoute: () => EcosystemRoute,
+  } as any)
 const EcosystemScienceDiscoveryRoute =
   EcosystemScienceDiscoveryRouteImport.update({
     id: '/science-discovery',
@@ -114,6 +121,7 @@ export interface FileRoutesByFullPath {
   '/ecosystem': typeof EcosystemRouteWithChildren
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/profile': typeof AuthenticatedProfileRoute
+  '/ecosystem/clinical-validation': typeof EcosystemClinicalValidationRoute
   '/ecosystem/science-discovery': typeof EcosystemScienceDiscoveryRoute
   '/ecosystem/': typeof EcosystemIndexRoute
   '/members/$profileId': typeof AuthenticatedMembersProfileIdRoute
@@ -129,6 +137,7 @@ export interface FileRoutesByTo {
   '/discover': typeof DiscoverRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/profile': typeof AuthenticatedProfileRoute
+  '/ecosystem/clinical-validation': typeof EcosystemClinicalValidationRoute
   '/ecosystem/science-discovery': typeof EcosystemScienceDiscoveryRoute
   '/ecosystem': typeof EcosystemIndexRoute
   '/members/$profileId': typeof AuthenticatedMembersProfileIdRoute
@@ -147,6 +156,7 @@ export interface FileRoutesById {
   '/ecosystem': typeof EcosystemRouteWithChildren
   '/_authenticated/dashboard': typeof AuthenticatedDashboardRoute
   '/_authenticated/profile': typeof AuthenticatedProfileRoute
+  '/ecosystem/clinical-validation': typeof EcosystemClinicalValidationRoute
   '/ecosystem/science-discovery': typeof EcosystemScienceDiscoveryRoute
   '/ecosystem/': typeof EcosystemIndexRoute
   '/_authenticated/members/$profileId': typeof AuthenticatedMembersProfileIdRoute
@@ -165,6 +175,7 @@ export interface FileRouteTypes {
     | '/ecosystem'
     | '/dashboard'
     | '/profile'
+    | '/ecosystem/clinical-validation'
     | '/ecosystem/science-discovery'
     | '/ecosystem/'
     | '/members/$profileId'
@@ -180,6 +191,7 @@ export interface FileRouteTypes {
     | '/discover'
     | '/dashboard'
     | '/profile'
+    | '/ecosystem/clinical-validation'
     | '/ecosystem/science-discovery'
     | '/ecosystem'
     | '/members/$profileId'
@@ -197,6 +209,7 @@ export interface FileRouteTypes {
     | '/ecosystem'
     | '/_authenticated/dashboard'
     | '/_authenticated/profile'
+    | '/ecosystem/clinical-validation'
     | '/ecosystem/science-discovery'
     | '/ecosystem/'
     | '/_authenticated/members/$profileId'
@@ -280,6 +293,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EcosystemIndexRouteImport
       parentRoute: typeof EcosystemRoute
     }
+    '/ecosystem/clinical-validation': {
+      id: '/ecosystem/clinical-validation'
+      path: '/clinical-validation'
+      fullPath: '/ecosystem/clinical-validation'
+      preLoaderRoute: typeof EcosystemClinicalValidationRouteImport
+      parentRoute: typeof EcosystemRoute
+    }
     '/ecosystem/science-discovery': {
       id: '/ecosystem/science-discovery'
       path: '/science-discovery'
@@ -349,11 +369,13 @@ const AuthenticatedRouteRouteWithChildren =
   AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
 
 interface EcosystemRouteChildren {
+  EcosystemClinicalValidationRoute: typeof EcosystemClinicalValidationRoute
   EcosystemScienceDiscoveryRoute: typeof EcosystemScienceDiscoveryRoute
   EcosystemIndexRoute: typeof EcosystemIndexRoute
 }
 
 const EcosystemRouteChildren: EcosystemRouteChildren = {
+  EcosystemClinicalValidationRoute: EcosystemClinicalValidationRoute,
   EcosystemScienceDiscoveryRoute: EcosystemScienceDiscoveryRoute,
   EcosystemIndexRoute: EcosystemIndexRoute,
 }
