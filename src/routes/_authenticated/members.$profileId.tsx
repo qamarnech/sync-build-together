@@ -45,7 +45,7 @@ function MemberProfilePage() {
           <p className="mt-2 text-sm text-ink-mute">
             {[profile.organisation, profile.country].filter(Boolean).join(" · ")}
           </p>
-          {profile.bio && <p className="mt-5 text-sm text-ink-soft">{profile.bio}</p>}
+          {profile.bio && <p className="mt-5 whitespace-pre-line text-sm text-ink-soft">{profile.bio}</p>}
 
           <p className="mt-6 text-xs uppercase tracking-wide text-ink-mute">Expertise</p>
           <div className="mt-2 flex flex-wrap gap-2">
