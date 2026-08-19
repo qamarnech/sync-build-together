@@ -258,3 +258,37 @@ export const FOUNDER_SAME_AS = [
   "https://kyc.sdmpu.edu.cn/2024/0626/c5166a122862/page.htm",
   "https://pubmed.ncbi.nlm.nih.gov/?term=Qiang+Fu+Binzhou+Medical+University",
 ];
+
+/** Stable URL slug derived from a publication title. */
+export function publicationSlug(publication: Pick<Publication, "title" | "year">): string {
+  const base = publication.title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .split("-")
+    .slice(0, 10)
+    .join("-");
+  return `${base}-${publication.year}`;
+}
+
+export function findPublication(slug: string): Publication | undefined {
+  return FOUNDER_PUBLICATIONS.find((publication) => publicationSlug(publication) === slug);
+}
+
+/** Human-readable name of the host serving the public source record. */
+export function sourceName(href: string): string {
+  try {
+    const host = new URL(href).hostname.replace(/^www\./, "");
+    if (host.includes("pubmed")) return "PubMed";
+    if (host.includes("pmc")) return "PubMed Central";
+    if (host.includes("semanticscholar")) return "Semantic Scholar";
+    return host;
+  } catch {
+    return "External source";
+  }
+}
+
+/** Formatted citation line for a publication. */
+export function citation(publication: Publication): string {
+  return `Fu Q. ${publication.title}. ${publication.journal}. ${publication.year}. ${publication.role}.`;
+}
