@@ -8,6 +8,7 @@ import {
   OPPORTUNITY_CYCLE,
   PARTICIPANT_GROUPS,
 } from "@/lib/ecosystem-content";
+import { CycleWheel, ParticipantOrbit, SystemsRings } from "@/components/site/infographics";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/ecosystem/")({
@@ -59,6 +60,17 @@ function EcosystemPage() {
           intro="Healthy longevity only works when science, healthcare, industry, capital, policy and society move together."
         />
 
+        <figure className="mt-10">
+          <ParticipantOrbit
+            labels={PARTICIPANT_GROUPS.map((g) => g.label)}
+            active={participant}
+            onSelect={setParticipant}
+          />
+          <figcaption className="mt-3 text-center text-xs text-ink-mute">
+            Fig. 05 — Every participant group orbits the same goal. Hover a node to read its role.
+          </figcaption>
+        </figure>
+
         <div className="mt-10 grid gap-8 lg:grid-cols-[280px_1fr]">
           <div className="flex flex-wrap gap-2 lg:flex-col">
             {PARTICIPANT_GROUPS.map((group, index) => (
@@ -108,6 +120,13 @@ function EcosystemPage() {
           ))}
         </div>
 
+        <figure className="mt-10">
+          <SystemsRings />
+          <figcaption className="mt-3 text-center text-xs text-ink-mute">
+            Fig. 06 — The person sits at the centre; capability areas surround them as one system.
+          </figcaption>
+        </figure>
+
         {["Human foundations", "Systems & science"].map((group) => (
           <div key={group} className="mt-12">
             <h3 className="font-serif text-sm italic tracking-wide text-gold">{group}</h3>
@@ -137,22 +156,16 @@ function EcosystemPage() {
           intro="Not a linear innovation pipeline. Every cycle returns evidence and learning to the beginning."
         />
 
-        <div className="mt-10 flex flex-wrap justify-center gap-2">
-          {OPPORTUNITY_CYCLE.map((item, index) => (
-            <button
-              key={item.title}
-              onClick={() => setStage(index)}
-              className={cn(
-                "rounded-full border px-4 py-2 text-sm transition-colors",
-                index === stage
-                  ? "border-gold bg-gold text-white"
-                  : "border-line bg-paper text-ink-soft hover:border-gold/50",
-              )}
-            >
-              {item.title}
-            </button>
-          ))}
-        </div>
+        <figure className="mt-10">
+          <CycleWheel
+            labels={OPPORTUNITY_CYCLE.map((item) => item.title)}
+            active={stage}
+            onSelect={setStage}
+          />
+          <figcaption className="mt-3 text-center text-xs text-ink-mute">
+            Fig. 07 — A loop, not a pipeline: each stage feeds the next and learning returns to the start.
+          </figcaption>
+        </figure>
 
         <div className="mx-auto mt-8 max-w-2xl rounded-2xl border border-gold/30 bg-gold/5 p-8 text-center">
           <p className="font-serif text-sm italic text-gold">

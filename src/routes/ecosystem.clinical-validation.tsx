@@ -15,5 +15,5 @@ export const Route = createFileRoute("/ecosystem/clinical-validation")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
-  component: () => <PillarPage pillar={pillar} backTo="/ecosystem" />,
+  component: () => <PillarPage pillar={pillar} backTo="/ecosystem" sequence={ECOSYSTEM_PILLARS.map((p) => p.name)} />,
 });

@@ -9,6 +9,7 @@ import {
   TRANSLATION_STAGES,
 } from "@/lib/site-content";
 import { DISCOVER_PILLARS } from "@/lib/discover-pillars";
+import { EvidenceLadder, HealthspanCurve, PathwayTrack } from "@/components/site/infographics";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/discover/")({
@@ -55,6 +56,12 @@ function DiscoverPage() {
           title="What does healthy longevity mean?"
           intro="Protecting and improving the physical, metabolic, cognitive and emotional capacities that allow people to keep living well as they age."
         />
+        <figure className="mt-10">
+          <HealthspanCurve />
+          <figcaption className="mt-3 text-center text-xs text-ink-mute">
+            Fig. 05 — The goal is not simply more years, but keeping function high for longer.
+          </figcaption>
+        </figure>
         <h3 className="mt-12 text-center font-serif text-xl text-navy">Healthspan Foundations</h3>
         <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {FOUNDATIONS.map((item) => (
@@ -100,6 +107,17 @@ function DiscoverPage() {
           title="Connecting the Biology of Ageing"
           intro="Ageing is not one process. MR Longevity brings metabolism, immunity, cellular repair, movement, nutrition, sleep, mental wellbeing, environment and genetics into one connected ecosystem."
         />
+        <figure className="mt-10">
+          <PathwayTrack
+            labels={TRANSLATION_STAGES.map((s) => s.title)}
+            active={stage}
+            onSelect={setStage}
+          />
+          <figcaption className="mt-4 text-center text-xs text-ink-mute">
+            Fig. 06 — The eight-stage translation pathway, from first insight to population impact.
+          </figcaption>
+        </figure>
+
         <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {TRANSLATION_STAGES.map((stage) => (
             <button
@@ -167,6 +185,10 @@ function DiscoverPage() {
               </div>
             ))}
           </div>
+          <EvidenceLadder className="mt-6" />
+          <p className="mt-3 text-center text-xs text-ink-mute">
+            Fig. 07 — How confidence grows as a claim moves from hypothesis to validated practice.
+          </p>
         </div>
         <div className="mt-8 text-center">
           <Button asChild variant="outline" className="border-navy/30 text-navy hover:bg-navy/5">
