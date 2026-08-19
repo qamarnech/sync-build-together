@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { Section, SectionHead, Tag } from "@/components/site/ui-bits";
+import { StageChain } from "@/components/site/infographics";
 
 export interface Pillar {
   slug: string;
@@ -16,11 +17,23 @@ export interface Pillar {
   handoff: string;
 }
 
-export function PillarPage({ pillar, backTo }: { pillar: Pillar; backTo: string }) {
+export function PillarPage({
+  pillar,
+  backTo,
+  sequence,
+}: {
+  pillar: Pillar;
+  backTo: string;
+  sequence?: string[];
+}) {
+  const activeIndex = sequence ? sequence.indexOf(pillar.name) : -1;
   return (
     <div>
       <Section tone="navy">
         <SectionHead kicker={pillar.kicker} num={pillar.num} title={pillar.title} intro={pillar.intro} invert />
+        {sequence && activeIndex >= 0 && (
+          <StageChain items={sequence} activeIndex={activeIndex} className="mt-8" />
+        )}
       </Section>
 
       <Section tone="white">
