@@ -7,7 +7,7 @@ const URL = "https://mrlongevity-ecosystem.lovable.app/publications";
 const DESCRIPTION =
   "Peer-reviewed publications by Professor Qiang Fu, 2014–2025 — full citations and links to each public source record.";
 
-export const Route = createFileRoute("/publications")({
+export const Route = createFileRoute("/publications/")({
   head: () => ({
     meta: [
       { title: "Publications — Professor Qiang Fu, MR Longevity" },

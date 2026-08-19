@@ -28,6 +28,8 @@ import { Route as EcosystemClinicalValidationRouteImport } from './routes/ecosys
 import { Route as EcosystemInvestmentCommercialRouteImport } from './routes/ecosystem.investment-commercial'
 import { Route as EcosystemManufacturingSupplyRouteImport } from './routes/ecosystem.manufacturing-supply'
 import { Route as EcosystemScienceDiscoveryRouteImport } from './routes/ecosystem.science-discovery'
+import { Route as PublicationsIndexRouteImport } from './routes/publications.index'
+import { Route as PublicationsSlugRouteImport } from './routes/publications.$slug'
 import { Route as AuthenticatedMembersIndexRouteImport } from './routes/_authenticated/members.index'
 import { Route as AuthenticatedMembersProfileIdRouteImport } from './routes/_authenticated/members.$profileId'
 import { Route as AuthenticatedProjectsIndexRouteImport } from './routes/_authenticated/projects.index'
@@ -134,6 +136,16 @@ const EcosystemScienceDiscoveryRoute =
     path: '/science-discovery',
     getParentRoute: () => EcosystemRoute,
   } as any)
+const PublicationsIndexRoute = PublicationsIndexRouteImport.update({
+  id: '/publications/',
+  path: '/publications/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PublicationsSlugRoute = PublicationsSlugRouteImport.update({
+  id: '/publications/$slug',
+  path: '/publications/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AuthenticatedMembersIndexRoute =
   AuthenticatedMembersIndexRouteImport.update({
     id: '/members/',
@@ -182,8 +194,10 @@ export interface FileRoutesByFullPath {
   '/ecosystem/investment-commercial': typeof EcosystemInvestmentCommercialRoute
   '/ecosystem/manufacturing-supply': typeof EcosystemManufacturingSupplyRoute
   '/ecosystem/science-discovery': typeof EcosystemScienceDiscoveryRoute
+  '/publications/$slug': typeof PublicationsSlugRoute
   '/discover/': typeof DiscoverIndexRoute
   '/ecosystem/': typeof EcosystemIndexRoute
+  '/publications/': typeof PublicationsIndexRoute
   '/members/$profileId': typeof AuthenticatedMembersProfileIdRoute
   '/projects/$projectId': typeof AuthenticatedProjectsProjectIdRoute
   '/projects/new': typeof AuthenticatedProjectsNewRoute
@@ -205,8 +219,10 @@ export interface FileRoutesByTo {
   '/ecosystem/investment-commercial': typeof EcosystemInvestmentCommercialRoute
   '/ecosystem/manufacturing-supply': typeof EcosystemManufacturingSupplyRoute
   '/ecosystem/science-discovery': typeof EcosystemScienceDiscoveryRoute
+  '/publications/$slug': typeof PublicationsSlugRoute
   '/discover': typeof DiscoverIndexRoute
   '/ecosystem': typeof EcosystemIndexRoute
+  '/publications': typeof PublicationsIndexRoute
   '/members/$profileId': typeof AuthenticatedMembersProfileIdRoute
   '/projects/$projectId': typeof AuthenticatedProjectsProjectIdRoute
   '/projects/new': typeof AuthenticatedProjectsNewRoute
@@ -232,8 +248,10 @@ export interface FileRoutesById {
   '/ecosystem/investment-commercial': typeof EcosystemInvestmentCommercialRoute
   '/ecosystem/manufacturing-supply': typeof EcosystemManufacturingSupplyRoute
   '/ecosystem/science-discovery': typeof EcosystemScienceDiscoveryRoute
+  '/publications/$slug': typeof PublicationsSlugRoute
   '/discover/': typeof DiscoverIndexRoute
   '/ecosystem/': typeof EcosystemIndexRoute
+  '/publications/': typeof PublicationsIndexRoute
   '/_authenticated/members/$profileId': typeof AuthenticatedMembersProfileIdRoute
   '/_authenticated/projects/$projectId': typeof AuthenticatedProjectsProjectIdRoute
   '/_authenticated/projects/new': typeof AuthenticatedProjectsNewRoute
@@ -259,8 +277,10 @@ export interface FileRouteTypes {
     | '/ecosystem/investment-commercial'
     | '/ecosystem/manufacturing-supply'
     | '/ecosystem/science-discovery'
+    | '/publications/$slug'
     | '/discover/'
     | '/ecosystem/'
+    | '/publications/'
     | '/members/$profileId'
     | '/projects/$projectId'
     | '/projects/new'
@@ -282,8 +302,10 @@ export interface FileRouteTypes {
     | '/ecosystem/investment-commercial'
     | '/ecosystem/manufacturing-supply'
     | '/ecosystem/science-discovery'
+    | '/publications/$slug'
     | '/discover'
     | '/ecosystem'
+    | '/publications'
     | '/members/$profileId'
     | '/projects/$projectId'
     | '/projects/new'
@@ -308,8 +330,10 @@ export interface FileRouteTypes {
     | '/ecosystem/investment-commercial'
     | '/ecosystem/manufacturing-supply'
     | '/ecosystem/science-discovery'
+    | '/publications/$slug'
     | '/discover/'
     | '/ecosystem/'
+    | '/publications/'
     | '/_authenticated/members/$profileId'
     | '/_authenticated/projects/$projectId'
     | '/_authenticated/projects/new'
@@ -326,6 +350,8 @@ export interface RootRouteChildren {
   DiscoverRoute: typeof DiscoverRouteWithChildren
   EcosystemRoute: typeof EcosystemRouteWithChildren
   FounderRoute: typeof FounderRoute
+  PublicationsSlugRoute: typeof PublicationsSlugRoute
+  PublicationsIndexRoute: typeof PublicationsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -463,6 +489,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EcosystemScienceDiscoveryRouteImport
       parentRoute: typeof EcosystemRoute
     }
+    '/publications/': {
+      id: '/publications/'
+      path: '/publications'
+      fullPath: '/publications/'
+      preLoaderRoute: typeof PublicationsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/publications/$slug': {
+      id: '/publications/$slug'
+      path: '/publications/$slug'
+      fullPath: '/publications/$slug'
+      preLoaderRoute: typeof PublicationsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/_authenticated/members/': {
       id: '/_authenticated/members/'
       path: '/members'
@@ -571,6 +611,8 @@ const rootRouteChildren: RootRouteChildren = {
   DiscoverRoute: DiscoverRouteWithChildren,
   EcosystemRoute: EcosystemRouteWithChildren,
   FounderRoute: FounderRoute,
+  PublicationsSlugRoute: PublicationsSlugRoute,
+  PublicationsIndexRoute: PublicationsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
