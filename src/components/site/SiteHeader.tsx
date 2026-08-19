@@ -93,6 +93,7 @@ export function SiteHeader() {
           <Dropdown label="Home" to="/" items={HOME_ITEMS} />
           <Dropdown label="Discover" to="/discover" items={DISCOVER_PILLARS} />
           <Dropdown label="Ecosystem" to="/ecosystem" items={ECOSYSTEM_ITEMS} />
+          <Dropdown label="Insights" to="/insights" items={[...INSIGHTS_ITEMS]} />
 
           {user &&
             memberLinks.map((link) => (
