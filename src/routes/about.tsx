@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { Section, SectionHead, Tag } from "@/components/site/ui-bits";
+import { EvidenceLadder, SystemsRings } from "@/components/site/infographics";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
