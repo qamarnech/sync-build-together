@@ -30,7 +30,7 @@ function HighlightsPage() {
         <SectionHead
           kicker="Research Highlights"
           title="What the evidence is telling us"
-          body="Each highlight pairs the current state of the science with the practical implication for translation."
+          intro="Each highlight pairs the current state of the science with the practical implication for translation."
         />
         <div className="mt-10 grid gap-4 md:grid-cols-2">
           {RESEARCH_HIGHLIGHTS.map((item) => (

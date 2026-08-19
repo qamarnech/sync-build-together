@@ -30,7 +30,7 @@ function EventsPage() {
       <SectionHead
         kicker="Events"
         title="Where the ecosystem convenes"
-        body="The recurring meetings that move healthy longevity forward — plus our own invitation-based collaboration roundtables."
+        intro="The recurring meetings that move healthy longevity forward — plus our own invitation-based collaboration roundtables."
       />
       <div className="mt-10 grid gap-4 md:grid-cols-2">
         {EVENTS.map((event) => {

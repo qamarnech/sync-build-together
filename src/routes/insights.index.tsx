@@ -38,7 +38,7 @@ function InsightsIndex() {
         <SectionHead
           kicker="Insights"
           title="Signals, gatherings and evidence from the healthy longevity ecosystem"
-          body="Insights keeps the ecosystem oriented: what is happening, where people meet, and what the science now supports."
+          intro="Insights keeps the ecosystem oriented: what is happening, where people meet, and what the science now supports."
         />
         <div className="mt-10 grid gap-4 md:grid-cols-3">
           {INSIGHTS_ITEMS.map((item, i) => (

@@ -30,7 +30,7 @@ function NewsPage() {
       <SectionHead
         kicker="Longevity News"
         title="Where the field is moving"
-        body="A curated set of primary sources we track — research, policy, standards and funding. Each links to the original record."
+        intro="A curated set of primary sources we track — research, policy, standards and funding. Each links to the original record."
       />
       <div className="mt-10 grid gap-4 md:grid-cols-2">
         {LONGEVITY_NEWS.map((item) => (
