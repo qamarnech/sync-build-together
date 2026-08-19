@@ -17,6 +17,10 @@ import { Route as DiscoverRouteImport } from './routes/discover'
 import { Route as EcosystemRouteImport } from './routes/ecosystem'
 import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
 import { Route as AuthenticatedProfileRouteImport } from './routes/_authenticated/profile'
+import { Route as DiscoverIndexRouteImport } from './routes/discover.index'
+import { Route as DiscoverBiologyOfAgingRouteImport } from './routes/discover.biology-of-aging'
+import { Route as DiscoverHealthyLongevityRouteImport } from './routes/discover.healthy-longevity'
+import { Route as DiscoverScientificMissionsRouteImport } from './routes/discover.scientific-missions'
 import { Route as EcosystemIndexRouteImport } from './routes/ecosystem.index'
 import { Route as EcosystemClinicalValidationRouteImport } from './routes/ecosystem.clinical-validation'
 import { Route as EcosystemInvestmentCommercialRouteImport } from './routes/ecosystem.investment-commercial'
@@ -67,6 +71,28 @@ const AuthenticatedProfileRoute = AuthenticatedProfileRouteImport.update({
   path: '/profile',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+const DiscoverIndexRoute = DiscoverIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => DiscoverRoute,
+} as any)
+const DiscoverBiologyOfAgingRoute = DiscoverBiologyOfAgingRouteImport.update({
+  id: '/biology-of-aging',
+  path: '/biology-of-aging',
+  getParentRoute: () => DiscoverRoute,
+} as any)
+const DiscoverHealthyLongevityRoute =
+  DiscoverHealthyLongevityRouteImport.update({
+    id: '/healthy-longevity',
+    path: '/healthy-longevity',
+    getParentRoute: () => DiscoverRoute,
+  } as any)
+const DiscoverScientificMissionsRoute =
+  DiscoverScientificMissionsRouteImport.update({
+    id: '/scientific-missions',
+    path: '/scientific-missions',
+    getParentRoute: () => DiscoverRoute,
+  } as any)
 const EcosystemIndexRoute = EcosystemIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -131,14 +157,18 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/auth': typeof AuthRoute
-  '/discover': typeof DiscoverRoute
+  '/discover': typeof DiscoverRouteWithChildren
   '/ecosystem': typeof EcosystemRouteWithChildren
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/profile': typeof AuthenticatedProfileRoute
+  '/discover/biology-of-aging': typeof DiscoverBiologyOfAgingRoute
+  '/discover/healthy-longevity': typeof DiscoverHealthyLongevityRoute
+  '/discover/scientific-missions': typeof DiscoverScientificMissionsRoute
   '/ecosystem/clinical-validation': typeof EcosystemClinicalValidationRoute
   '/ecosystem/investment-commercial': typeof EcosystemInvestmentCommercialRoute
   '/ecosystem/manufacturing-supply': typeof EcosystemManufacturingSupplyRoute
   '/ecosystem/science-discovery': typeof EcosystemScienceDiscoveryRoute
+  '/discover/': typeof DiscoverIndexRoute
   '/ecosystem/': typeof EcosystemIndexRoute
   '/members/$profileId': typeof AuthenticatedMembersProfileIdRoute
   '/projects/$projectId': typeof AuthenticatedProjectsProjectIdRoute
@@ -150,13 +180,16 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/auth': typeof AuthRoute
-  '/discover': typeof DiscoverRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/profile': typeof AuthenticatedProfileRoute
+  '/discover/biology-of-aging': typeof DiscoverBiologyOfAgingRoute
+  '/discover/healthy-longevity': typeof DiscoverHealthyLongevityRoute
+  '/discover/scientific-missions': typeof DiscoverScientificMissionsRoute
   '/ecosystem/clinical-validation': typeof EcosystemClinicalValidationRoute
   '/ecosystem/investment-commercial': typeof EcosystemInvestmentCommercialRoute
   '/ecosystem/manufacturing-supply': typeof EcosystemManufacturingSupplyRoute
   '/ecosystem/science-discovery': typeof EcosystemScienceDiscoveryRoute
+  '/discover': typeof DiscoverIndexRoute
   '/ecosystem': typeof EcosystemIndexRoute
   '/members/$profileId': typeof AuthenticatedMembersProfileIdRoute
   '/projects/$projectId': typeof AuthenticatedProjectsProjectIdRoute
@@ -170,14 +203,18 @@ export interface FileRoutesById {
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/about': typeof AboutRoute
   '/auth': typeof AuthRoute
-  '/discover': typeof DiscoverRoute
+  '/discover': typeof DiscoverRouteWithChildren
   '/ecosystem': typeof EcosystemRouteWithChildren
   '/_authenticated/dashboard': typeof AuthenticatedDashboardRoute
   '/_authenticated/profile': typeof AuthenticatedProfileRoute
+  '/discover/biology-of-aging': typeof DiscoverBiologyOfAgingRoute
+  '/discover/healthy-longevity': typeof DiscoverHealthyLongevityRoute
+  '/discover/scientific-missions': typeof DiscoverScientificMissionsRoute
   '/ecosystem/clinical-validation': typeof EcosystemClinicalValidationRoute
   '/ecosystem/investment-commercial': typeof EcosystemInvestmentCommercialRoute
   '/ecosystem/manufacturing-supply': typeof EcosystemManufacturingSupplyRoute
   '/ecosystem/science-discovery': typeof EcosystemScienceDiscoveryRoute
+  '/discover/': typeof DiscoverIndexRoute
   '/ecosystem/': typeof EcosystemIndexRoute
   '/_authenticated/members/$profileId': typeof AuthenticatedMembersProfileIdRoute
   '/_authenticated/projects/$projectId': typeof AuthenticatedProjectsProjectIdRoute
@@ -195,10 +232,14 @@ export interface FileRouteTypes {
     | '/ecosystem'
     | '/dashboard'
     | '/profile'
+    | '/discover/biology-of-aging'
+    | '/discover/healthy-longevity'
+    | '/discover/scientific-missions'
     | '/ecosystem/clinical-validation'
     | '/ecosystem/investment-commercial'
     | '/ecosystem/manufacturing-supply'
     | '/ecosystem/science-discovery'
+    | '/discover/'
     | '/ecosystem/'
     | '/members/$profileId'
     | '/projects/$projectId'
@@ -210,13 +251,16 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/auth'
-    | '/discover'
     | '/dashboard'
     | '/profile'
+    | '/discover/biology-of-aging'
+    | '/discover/healthy-longevity'
+    | '/discover/scientific-missions'
     | '/ecosystem/clinical-validation'
     | '/ecosystem/investment-commercial'
     | '/ecosystem/manufacturing-supply'
     | '/ecosystem/science-discovery'
+    | '/discover'
     | '/ecosystem'
     | '/members/$profileId'
     | '/projects/$projectId'
@@ -233,10 +277,14 @@ export interface FileRouteTypes {
     | '/ecosystem'
     | '/_authenticated/dashboard'
     | '/_authenticated/profile'
+    | '/discover/biology-of-aging'
+    | '/discover/healthy-longevity'
+    | '/discover/scientific-missions'
     | '/ecosystem/clinical-validation'
     | '/ecosystem/investment-commercial'
     | '/ecosystem/manufacturing-supply'
     | '/ecosystem/science-discovery'
+    | '/discover/'
     | '/ecosystem/'
     | '/_authenticated/members/$profileId'
     | '/_authenticated/projects/$projectId'
@@ -250,7 +298,7 @@ export interface RootRouteChildren {
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   AboutRoute: typeof AboutRoute
   AuthRoute: typeof AuthRoute
-  DiscoverRoute: typeof DiscoverRoute
+  DiscoverRoute: typeof DiscoverRouteWithChildren
   EcosystemRoute: typeof EcosystemRouteWithChildren
 }
 
@@ -311,6 +359,34 @@ declare module '@tanstack/react-router' {
       fullPath: '/profile'
       preLoaderRoute: typeof AuthenticatedProfileRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/discover/': {
+      id: '/discover/'
+      path: '/'
+      fullPath: '/discover/'
+      preLoaderRoute: typeof DiscoverIndexRouteImport
+      parentRoute: typeof DiscoverRoute
+    }
+    '/discover/biology-of-aging': {
+      id: '/discover/biology-of-aging'
+      path: '/biology-of-aging'
+      fullPath: '/discover/biology-of-aging'
+      preLoaderRoute: typeof DiscoverBiologyOfAgingRouteImport
+      parentRoute: typeof DiscoverRoute
+    }
+    '/discover/healthy-longevity': {
+      id: '/discover/healthy-longevity'
+      path: '/healthy-longevity'
+      fullPath: '/discover/healthy-longevity'
+      preLoaderRoute: typeof DiscoverHealthyLongevityRouteImport
+      parentRoute: typeof DiscoverRoute
+    }
+    '/discover/scientific-missions': {
+      id: '/discover/scientific-missions'
+      path: '/scientific-missions'
+      fullPath: '/discover/scientific-missions'
+      preLoaderRoute: typeof DiscoverScientificMissionsRouteImport
+      parentRoute: typeof DiscoverRoute
     }
     '/ecosystem/': {
       id: '/ecosystem/'
@@ -408,6 +484,24 @@ const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
 const AuthenticatedRouteRouteWithChildren =
   AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
 
+interface DiscoverRouteChildren {
+  DiscoverBiologyOfAgingRoute: typeof DiscoverBiologyOfAgingRoute
+  DiscoverHealthyLongevityRoute: typeof DiscoverHealthyLongevityRoute
+  DiscoverScientificMissionsRoute: typeof DiscoverScientificMissionsRoute
+  DiscoverIndexRoute: typeof DiscoverIndexRoute
+}
+
+const DiscoverRouteChildren: DiscoverRouteChildren = {
+  DiscoverBiologyOfAgingRoute: DiscoverBiologyOfAgingRoute,
+  DiscoverHealthyLongevityRoute: DiscoverHealthyLongevityRoute,
+  DiscoverScientificMissionsRoute: DiscoverScientificMissionsRoute,
+  DiscoverIndexRoute: DiscoverIndexRoute,
+}
+
+const DiscoverRouteWithChildren = DiscoverRoute._addFileChildren(
+  DiscoverRouteChildren,
+)
+
 interface EcosystemRouteChildren {
   EcosystemClinicalValidationRoute: typeof EcosystemClinicalValidationRoute
   EcosystemInvestmentCommercialRoute: typeof EcosystemInvestmentCommercialRoute
@@ -433,7 +527,7 @@ const rootRouteChildren: RootRouteChildren = {
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AboutRoute: AboutRoute,
   AuthRoute: AuthRoute,
-  DiscoverRoute: DiscoverRoute,
+  DiscoverRoute: DiscoverRouteWithChildren,
   EcosystemRoute: EcosystemRouteWithChildren,
 }
 export const routeTree = rootRouteImport
