@@ -125,6 +125,22 @@ export function SiteHeader() {
                 {link.label}
               </Link>
             ))}
+            <Link to="/ecosystem" onClick={() => setOpen(false)} className="text-sm text-ink-soft">
+              Ecosystem
+            </Link>
+            <div className="flex flex-col gap-2 border-l border-line pl-3">
+              {ECOSYSTEM_PILLARS.map((pillar) => (
+                <Link
+                  key={pillar.slug}
+                  to={pillar.to}
+                  onClick={() => setOpen(false)}
+                  className="text-sm text-ink-soft"
+                >
+                  {pillar.name}
+                </Link>
+              ))}
+            </div>
+
             {user ? (
               <>
                 <Link to="/profile" onClick={() => setOpen(false)} className="text-sm text-ink-soft">
