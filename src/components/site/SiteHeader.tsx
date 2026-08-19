@@ -10,7 +10,8 @@ import { ECOSYSTEM_PILLARS } from "@/lib/ecosystem-pillars";
 const HOME_ITEMS = [
   { slug: "about", to: "/about", name: "About" },
   { slug: "contact", to: "/contact", name: "Contact" },
-] as const;
+];
+
 
 const memberLinks = [
   { to: "/dashboard", label: "Dashboard" },
