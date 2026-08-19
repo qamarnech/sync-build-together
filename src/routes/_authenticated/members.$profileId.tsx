@@ -3,6 +3,13 @@ import { useQuery } from "@tanstack/react-query";
 import { profilesQuery, projectMembersQuery, projectsQuery } from "@/lib/data";
 import { ROLE_TYPES } from "@/lib/site-content";
 import { Tag } from "@/components/site/ui-bits";
+import { FOUNDER_NAME } from "@/lib/founder-fu";
+import {
+  FounderAffiliations,
+  FounderGrants,
+  FounderPatents,
+  FounderPublications,
+} from "@/components/site/FounderRecord";
 
 export const Route = createFileRoute("/_authenticated/members/$profileId")({
   head: () => ({
