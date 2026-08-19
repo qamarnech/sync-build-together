@@ -156,22 +156,16 @@ function EcosystemPage() {
           intro="Not a linear innovation pipeline. Every cycle returns evidence and learning to the beginning."
         />
 
-        <div className="mt-10 flex flex-wrap justify-center gap-2">
-          {OPPORTUNITY_CYCLE.map((item, index) => (
-            <button
-              key={item.title}
-              onClick={() => setStage(index)}
-              className={cn(
-                "rounded-full border px-4 py-2 text-sm transition-colors",
-                index === stage
-                  ? "border-gold bg-gold text-white"
-                  : "border-line bg-paper text-ink-soft hover:border-gold/50",
-              )}
-            >
-              {item.title}
-            </button>
-          ))}
-        </div>
+        <figure className="mt-10">
+          <CycleWheel
+            labels={OPPORTUNITY_CYCLE.map((item) => item.title)}
+            active={stage}
+            onSelect={setStage}
+          />
+          <figcaption className="mt-3 text-center text-xs text-ink-mute">
+            Fig. 07 — A loop, not a pipeline: each stage feeds the next and learning returns to the start.
+          </figcaption>
+        </figure>
 
         <div className="mx-auto mt-8 max-w-2xl rounded-2xl border border-gold/30 bg-gold/5 p-8 text-center">
           <p className="font-serif text-sm italic text-gold">
