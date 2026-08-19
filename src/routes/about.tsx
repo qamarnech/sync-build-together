@@ -39,6 +39,22 @@ function AboutPage() {
           <h2 className="text-balance text-3xl font-bold text-navy md:text-4xl">Our Approach</h2>
         </div>
 
+        <figure className="mt-10 grid items-center gap-8 rounded-2xl border border-line bg-white p-6 md:grid-cols-2 md:p-8">
+          <SystemsRings />
+          <figcaption className="text-sm leading-relaxed text-ink-soft">
+            <span className="font-serif text-sm italic text-gold">Fig. 03 — The person as a system</span>
+            <p className="mt-3">
+              Healthy longevity is not a single lever. Seven interacting dimensions surround every
+              individual, each measurable, each modifiable, none sufficient alone.
+            </p>
+            <p className="mt-3 text-xs tracking-[0.18em] text-ink-mute">
+              CONCENTRIC MAP · 7 DIMENSIONS · ONE PERSON
+            </p>
+          </figcaption>
+        </figure>
+
+
+
         <div className="mt-10 grid gap-8 md:grid-cols-2">
           <div className="rounded-xl border border-line bg-white p-6">
             <h3 className="text-xl font-semibold text-navy">Longevity is a systems challenge</h3>
