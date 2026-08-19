@@ -1,9 +1,22 @@
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { Section, SectionHead, Tag } from "@/components/site/ui-bits";
-import type { EcosystemPillar } from "@/lib/ecosystem-pillars";
 
-export function PillarPage({ pillar }: { pillar: EcosystemPillar }) {
+export interface Pillar {
+  slug: string;
+  to: string;
+  name: string;
+  kicker: string;
+  num: string;
+  title: string;
+  intro: string;
+  focus: { title: string; body: string }[];
+  participants: string[];
+  outputs: string[];
+  handoff: string;
+}
+
+export function PillarPage({ pillar, backTo }: { pillar: Pillar; backTo: string }) {
   return (
     <div>
       <Section tone="navy">
@@ -49,10 +62,10 @@ export function PillarPage({ pillar }: { pillar: EcosystemPillar }) {
       <Section tone="navy">
         <div className="text-center">
           <h2 className="text-balance text-3xl font-bold text-white">
-            Collaborate across {pillar.name.toLowerCase()}
+            Explore {pillar.name.toLowerCase()}
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-gold-pale/80">
-            Join MR Longevity to find partners, projects and capital at this stage of the ecosystem.
+            Join MR Longevity to find projects, collaborators and capital aligned with this focus.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Button asChild className="bg-gold text-white hover:bg-gold-light">
@@ -61,7 +74,7 @@ export function PillarPage({ pillar }: { pillar: EcosystemPillar }) {
               </Link>
             </Button>
             <Button asChild variant="outline" className="border-white/40 bg-transparent text-white hover:bg-white/10">
-              <Link to="/ecosystem">Back to the ecosystem</Link>
+              <Link to={backTo}>Back to discover</Link>
             </Button>
           </div>
         </div>
