@@ -17,7 +17,7 @@ function AuthenticatedLayout() {
 
   useEffect(() => {
     if (!user) return;
-    void (supabase.rpc as (fn: string) => Promise<unknown>)("claim_my_profile");
+    void supabase.rpc("claim_my_profile");
   }, [user]);
 
   if (loading || !user) {
