@@ -149,9 +149,16 @@ function Index() {
             </div>
           ))}
         </div>
+        <figure className="mt-10 rounded-2xl border border-line bg-white p-6 md:p-8">
+          <figcaption className="mb-4 font-serif text-sm italic text-gold">
+            Fig. 02 — The MR Longevity Translation Flywheel
+          </figcaption>
+          <TranslationFlywheel />
+        </figure>
         <p className="mt-8 text-center font-serif italic text-ink-mute">
-          Science → People → Data → Better Science — the MR Longevity Translation Flywheel
+          Science → People → Data → Better Science
         </p>
+
       </Section>
 
       <Section tone="white">
