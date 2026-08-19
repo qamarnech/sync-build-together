@@ -8,8 +8,8 @@ import { cn } from "@/lib/utils";
 const FLYWHEEL_STAGES = [
   { label: "Science", note: "Discovery in labs and institutions" },
   { label: "Discovery", note: "Mechanisms, targets, hypotheses" },
-  { label: "Validation", note: "Biomarkers, trials, evidence" },
-  { label: "Translation", note: "Products, protocols, practice" },
+  { label: "Validate", note: "Biomarkers, trials, evidence" },
+  { label: "Translate", note: "Products, protocols, practice" },
   { label: "People", note: "Personalised, preventive health" },
   { label: "Outcomes", note: "Real-world data returns to science" },
 ];
@@ -96,7 +96,7 @@ export function TranslationFlywheel({ className }: { className?: string }) {
                 x={x}
                 y={y + 4}
                 textAnchor="middle"
-                className={cn("text-[11px] font-semibold", on ? "fill-white" : "fill-navy")}
+                className={cn("text-[10px] font-semibold", on ? "fill-white" : "fill-navy")}
               >
                 {stage.label}
               </text>
@@ -264,12 +264,12 @@ export function SystemsRings({ className }: { className?: string }) {
             <circle cx={px} cy={py} r="5" className="fill-gold" />
             <text
               x={px + Math.cos(a) * 12}
-              y={py + Math.sin(a) * 12 + (lines.length > 1 ? -2 : 4)}
+              y={py + Math.sin(a) * 16 + (lines.length > 1 ? -2 : 4)}
               textAnchor={anchor}
               className="fill-navy text-[10.5px] font-medium"
             >
               {lines.map((ln, j) => (
-                <tspan key={ln} x={px + Math.cos(a) * 12} dy={j === 0 ? 0 : 12}>
+                <tspan key={ln} x={px + Math.cos(a) * 14} dy={j === 0 ? 0 : 12}>
                   {j === 0 ? ln : `& ${ln}`}
                 </tspan>
               ))}
