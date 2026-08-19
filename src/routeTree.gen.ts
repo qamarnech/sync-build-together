@@ -18,6 +18,7 @@ import { Route as EcosystemRouteImport } from './routes/ecosystem'
 import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
 import { Route as AuthenticatedProfileRouteImport } from './routes/_authenticated/profile'
 import { Route as EcosystemIndexRouteImport } from './routes/ecosystem.index'
+import { Route as EcosystemScienceDiscoveryRouteImport } from './routes/ecosystem.science-discovery'
 import { Route as AuthenticatedMembersIndexRouteImport } from './routes/_authenticated/members.index'
 import { Route as AuthenticatedMembersProfileIdRouteImport } from './routes/_authenticated/members.$profileId'
 import { Route as AuthenticatedProjectsIndexRouteImport } from './routes/_authenticated/projects.index'
@@ -68,6 +69,12 @@ const EcosystemIndexRoute = EcosystemIndexRouteImport.update({
   path: '/',
   getParentRoute: () => EcosystemRoute,
 } as any)
+const EcosystemScienceDiscoveryRoute =
+  EcosystemScienceDiscoveryRouteImport.update({
+    id: '/science-discovery',
+    path: '/science-discovery',
+    getParentRoute: () => EcosystemRoute,
+  } as any)
 const AuthenticatedMembersIndexRoute =
   AuthenticatedMembersIndexRouteImport.update({
     id: '/members/',
@@ -107,6 +114,7 @@ export interface FileRoutesByFullPath {
   '/ecosystem': typeof EcosystemRouteWithChildren
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/profile': typeof AuthenticatedProfileRoute
+  '/ecosystem/science-discovery': typeof EcosystemScienceDiscoveryRoute
   '/ecosystem/': typeof EcosystemIndexRoute
   '/members/$profileId': typeof AuthenticatedMembersProfileIdRoute
   '/projects/$projectId': typeof AuthenticatedProjectsProjectIdRoute
@@ -121,6 +129,7 @@ export interface FileRoutesByTo {
   '/discover': typeof DiscoverRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/profile': typeof AuthenticatedProfileRoute
+  '/ecosystem/science-discovery': typeof EcosystemScienceDiscoveryRoute
   '/ecosystem': typeof EcosystemIndexRoute
   '/members/$profileId': typeof AuthenticatedMembersProfileIdRoute
   '/projects/$projectId': typeof AuthenticatedProjectsProjectIdRoute
@@ -138,6 +147,7 @@ export interface FileRoutesById {
   '/ecosystem': typeof EcosystemRouteWithChildren
   '/_authenticated/dashboard': typeof AuthenticatedDashboardRoute
   '/_authenticated/profile': typeof AuthenticatedProfileRoute
+  '/ecosystem/science-discovery': typeof EcosystemScienceDiscoveryRoute
   '/ecosystem/': typeof EcosystemIndexRoute
   '/_authenticated/members/$profileId': typeof AuthenticatedMembersProfileIdRoute
   '/_authenticated/projects/$projectId': typeof AuthenticatedProjectsProjectIdRoute
@@ -155,6 +165,7 @@ export interface FileRouteTypes {
     | '/ecosystem'
     | '/dashboard'
     | '/profile'
+    | '/ecosystem/science-discovery'
     | '/ecosystem/'
     | '/members/$profileId'
     | '/projects/$projectId'
@@ -169,6 +180,7 @@ export interface FileRouteTypes {
     | '/discover'
     | '/dashboard'
     | '/profile'
+    | '/ecosystem/science-discovery'
     | '/ecosystem'
     | '/members/$profileId'
     | '/projects/$projectId'
@@ -185,6 +197,7 @@ export interface FileRouteTypes {
     | '/ecosystem'
     | '/_authenticated/dashboard'
     | '/_authenticated/profile'
+    | '/ecosystem/science-discovery'
     | '/ecosystem/'
     | '/_authenticated/members/$profileId'
     | '/_authenticated/projects/$projectId'
@@ -267,6 +280,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EcosystemIndexRouteImport
       parentRoute: typeof EcosystemRoute
     }
+    '/ecosystem/science-discovery': {
+      id: '/ecosystem/science-discovery'
+      path: '/science-discovery'
+      fullPath: '/ecosystem/science-discovery'
+      preLoaderRoute: typeof EcosystemScienceDiscoveryRouteImport
+      parentRoute: typeof EcosystemRoute
+    }
     '/_authenticated/members/': {
       id: '/_authenticated/members/'
       path: '/members'
@@ -329,10 +349,12 @@ const AuthenticatedRouteRouteWithChildren =
   AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
 
 interface EcosystemRouteChildren {
+  EcosystemScienceDiscoveryRoute: typeof EcosystemScienceDiscoveryRoute
   EcosystemIndexRoute: typeof EcosystemIndexRoute
 }
 
 const EcosystemRouteChildren: EcosystemRouteChildren = {
+  EcosystemScienceDiscoveryRoute: EcosystemScienceDiscoveryRoute,
   EcosystemIndexRoute: EcosystemIndexRoute,
 }
 
