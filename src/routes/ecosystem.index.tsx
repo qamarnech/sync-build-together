@@ -60,6 +60,17 @@ function EcosystemPage() {
           intro="Healthy longevity only works when science, healthcare, industry, capital, policy and society move together."
         />
 
+        <figure className="mt-10">
+          <ParticipantOrbit
+            labels={PARTICIPANT_GROUPS.map((g) => g.label)}
+            active={participant}
+            onSelect={setParticipant}
+          />
+          <figcaption className="mt-3 text-center text-xs text-ink-mute">
+            Fig. 05 — Every participant group orbits the same goal. Hover a node to read its role.
+          </figcaption>
+        </figure>
+
         <div className="mt-10 grid gap-8 lg:grid-cols-[280px_1fr]">
           <div className="flex flex-wrap gap-2 lg:flex-col">
             {PARTICIPANT_GROUPS.map((group, index) => (
