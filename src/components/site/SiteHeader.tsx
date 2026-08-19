@@ -7,16 +7,18 @@ import { Button } from "@/components/ui/button";
 import { DISCOVER_PILLARS } from "@/lib/discover-pillars";
 import { ECOSYSTEM_PILLARS } from "@/lib/ecosystem-pillars";
 
-const publicLinks = [
-  { to: "/", label: "Home" },
-  { to: "/about", label: "About" },
-] as const;
+const HOME_ITEMS = [
+  { slug: "about", to: "/about", name: "About" },
+  { slug: "contact", to: "/contact", name: "Contact" },
+];
+
 
 const memberLinks = [
   { to: "/dashboard", label: "Dashboard" },
   { to: "/projects", label: "Projects" },
   { to: "/members", label: "Members" },
 ] as const;
+
 
 function Dropdown({
   label,
@@ -81,22 +83,10 @@ export function SiteHeader() {
         </Link>
 
         <nav className="hidden items-center gap-6 md:flex">
-          <Link
-            to="/"
-            className="text-sm text-ink-soft transition-colors hover:text-navy"
-            activeProps={{ className: "text-navy font-semibold" }}
-          >
-            Home
-          </Link>
+          <Dropdown label="Home" to="/" items={HOME_ITEMS} />
           <Dropdown label="Discover" to="/discover" items={DISCOVER_PILLARS} />
           <Dropdown label="Ecosystem" to="/ecosystem" items={ECOSYSTEM_PILLARS} />
-          <Link
-            to="/about"
-            className="text-sm text-ink-soft transition-colors hover:text-navy"
-            activeProps={{ className: "text-navy font-semibold" }}
-          >
-            About
-          </Link>
+
           {user &&
             memberLinks.map((link) => (
               <Link
@@ -146,16 +136,22 @@ export function SiteHeader() {
       {open && (
         <div className="border-t border-line bg-paper px-6 py-4 md:hidden">
           <div className="flex flex-col gap-3">
-            {publicLinks.map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
-                onClick={() => setOpen(false)}
-                className="text-sm text-ink-soft"
-              >
-                {link.label}
-              </Link>
-            ))}
+            <Link to="/" onClick={() => setOpen(false)} className="text-sm font-semibold text-navy">
+              Home
+            </Link>
+            <div className="flex flex-col gap-2 border-l border-line pl-3">
+              {HOME_ITEMS.map((item) => (
+                <Link
+                  key={item.slug}
+                  to={item.to}
+                  onClick={() => setOpen(false)}
+                  className="text-sm text-ink-soft"
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+
 
             <Link to="/discover" onClick={() => setOpen(false)} className="text-sm font-semibold text-navy">
               Discover

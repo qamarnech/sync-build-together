@@ -15,7 +15,9 @@ export function SiteFooter() {
           <p className="font-serif text-white">Explore</p>
           <Link to="/discover">Discover</Link>
           <Link to="/about">About</Link>
+          <Link to="/contact">Contact</Link>
         </div>
+
         <div className="flex flex-col gap-2 text-sm">
           <p className="font-serif text-white">Participate</p>
           <Link to="/projects">Projects</Link>
