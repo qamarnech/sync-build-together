@@ -136,16 +136,22 @@ export function SiteHeader() {
       {open && (
         <div className="border-t border-line bg-paper px-6 py-4 md:hidden">
           <div className="flex flex-col gap-3">
-            {publicLinks.map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
-                onClick={() => setOpen(false)}
-                className="text-sm text-ink-soft"
-              >
-                {link.label}
-              </Link>
-            ))}
+            <Link to="/" onClick={() => setOpen(false)} className="text-sm font-semibold text-navy">
+              Home
+            </Link>
+            <div className="flex flex-col gap-2 border-l border-line pl-3">
+              {HOME_ITEMS.map((item) => (
+                <Link
+                  key={item.slug}
+                  to={item.to}
+                  onClick={() => setOpen(false)}
+                  className="text-sm text-ink-soft"
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+
 
             <Link to="/discover" onClick={() => setOpen(false)} className="text-sm font-semibold text-navy">
               Discover
