@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { Link, useNavigate } from "@tanstack/react-router";
-import { Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
+import { ECOSYSTEM_PILLARS } from "@/lib/ecosystem-pillars";
 
 const publicLinks = [
   { to: "/", label: "Home" },
-  { to: "/ecosystem", label: "Ecosystem" },
   { to: "/discover", label: "Discover" },
   { to: "/about", label: "About" },
 ] as const;
@@ -17,6 +17,7 @@ const memberLinks = [
   { to: "/projects", label: "Projects" },
   { to: "/members", label: "Members" },
 ] as const;
+
 
 export function SiteHeader() {
   const { user, loading } = useAuth();
