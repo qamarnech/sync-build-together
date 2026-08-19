@@ -6,6 +6,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { DISCOVER_PILLARS } from "@/lib/discover-pillars";
 import { ECOSYSTEM_PILLARS } from "@/lib/ecosystem-pillars";
+import { INSIGHTS_ITEMS } from "@/lib/insights-nav";
 
 const HOME_ITEMS = [
   { slug: "about", to: "/about", name: "About" },
@@ -92,6 +93,7 @@ export function SiteHeader() {
           <Dropdown label="Home" to="/" items={HOME_ITEMS} />
           <Dropdown label="Discover" to="/discover" items={DISCOVER_PILLARS} />
           <Dropdown label="Ecosystem" to="/ecosystem" items={ECOSYSTEM_ITEMS} />
+          <Dropdown label="Insights" to="/insights" items={[...INSIGHTS_ITEMS]} />
 
           {user &&
             memberLinks.map((link) => (
@@ -196,6 +198,27 @@ export function SiteHeader() {
                 </Link>
               ))}
             </div>
+
+            <Link to="/insights" onClick={() => setOpen(false)} className="text-sm font-semibold text-navy">
+              Insights
+            </Link>
+            <div className="flex flex-col gap-2 border-l border-line pl-3">
+              <Link to="/insights" onClick={() => setOpen(false)} className="text-sm text-ink-soft">
+                Overview
+              </Link>
+              {INSIGHTS_ITEMS.map((item) => (
+                <Link
+                  key={item.slug}
+                  to={item.to}
+                  onClick={() => setOpen(false)}
+                  className="text-sm text-ink-soft"
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+
+
 
             {user ? (
               <>

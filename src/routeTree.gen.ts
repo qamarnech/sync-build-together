@@ -17,6 +17,7 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DiscoverRouteImport } from './routes/discover'
 import { Route as EcosystemRouteImport } from './routes/ecosystem'
 import { Route as FounderRouteImport } from './routes/founder'
+import { Route as InsightsRouteImport } from './routes/insights'
 import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
 import { Route as AuthenticatedProfileRouteImport } from './routes/_authenticated/profile'
 import { Route as DiscoverIndexRouteImport } from './routes/discover.index'
@@ -29,6 +30,10 @@ import { Route as EcosystemInvestmentCommercialRouteImport } from './routes/ecos
 import { Route as EcosystemManufacturingSupplyRouteImport } from './routes/ecosystem.manufacturing-supply'
 import { Route as EcosystemScienceDiscoveryRouteImport } from './routes/ecosystem.science-discovery'
 import { Route as EcosystemUkDirectoryRouteImport } from './routes/ecosystem.uk-directory'
+import { Route as InsightsIndexRouteImport } from './routes/insights.index'
+import { Route as InsightsEventsRouteImport } from './routes/insights.events'
+import { Route as InsightsLongevityNewsRouteImport } from './routes/insights.longevity-news'
+import { Route as InsightsResearchHighlightsRouteImport } from './routes/insights.research-highlights'
 import { Route as PublicationsIndexRouteImport } from './routes/publications.index'
 import { Route as PublicationsSlugRouteImport } from './routes/publications.$slug'
 import { Route as AuthenticatedMembersIndexRouteImport } from './routes/_authenticated/members.index'
@@ -74,6 +79,11 @@ const EcosystemRoute = EcosystemRouteImport.update({
 const FounderRoute = FounderRouteImport.update({
   id: '/founder',
   path: '/founder',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InsightsRoute = InsightsRouteImport.update({
+  id: '/insights',
+  path: '/insights',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthenticatedDashboardRoute = AuthenticatedDashboardRouteImport.update({
@@ -142,6 +152,27 @@ const EcosystemUkDirectoryRoute = EcosystemUkDirectoryRouteImport.update({
   path: '/uk-directory',
   getParentRoute: () => EcosystemRoute,
 } as any)
+const InsightsIndexRoute = InsightsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => InsightsRoute,
+} as any)
+const InsightsEventsRoute = InsightsEventsRouteImport.update({
+  id: '/events',
+  path: '/events',
+  getParentRoute: () => InsightsRoute,
+} as any)
+const InsightsLongevityNewsRoute = InsightsLongevityNewsRouteImport.update({
+  id: '/longevity-news',
+  path: '/longevity-news',
+  getParentRoute: () => InsightsRoute,
+} as any)
+const InsightsResearchHighlightsRoute =
+  InsightsResearchHighlightsRouteImport.update({
+    id: '/research-highlights',
+    path: '/research-highlights',
+    getParentRoute: () => InsightsRoute,
+  } as any)
 const PublicationsIndexRoute = PublicationsIndexRouteImport.update({
   id: '/publications/',
   path: '/publications/',
@@ -191,6 +222,7 @@ export interface FileRoutesByFullPath {
   '/discover': typeof DiscoverRouteWithChildren
   '/ecosystem': typeof EcosystemRouteWithChildren
   '/founder': typeof FounderRoute
+  '/insights': typeof InsightsRouteWithChildren
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/profile': typeof AuthenticatedProfileRoute
   '/discover/biology-of-aging': typeof DiscoverBiologyOfAgingRoute
@@ -201,9 +233,13 @@ export interface FileRoutesByFullPath {
   '/ecosystem/manufacturing-supply': typeof EcosystemManufacturingSupplyRoute
   '/ecosystem/science-discovery': typeof EcosystemScienceDiscoveryRoute
   '/ecosystem/uk-directory': typeof EcosystemUkDirectoryRoute
+  '/insights/events': typeof InsightsEventsRoute
+  '/insights/longevity-news': typeof InsightsLongevityNewsRoute
+  '/insights/research-highlights': typeof InsightsResearchHighlightsRoute
   '/publications/$slug': typeof PublicationsSlugRoute
   '/discover/': typeof DiscoverIndexRoute
   '/ecosystem/': typeof EcosystemIndexRoute
+  '/insights/': typeof InsightsIndexRoute
   '/publications/': typeof PublicationsIndexRoute
   '/members/$profileId': typeof AuthenticatedMembersProfileIdRoute
   '/projects/$projectId': typeof AuthenticatedProjectsProjectIdRoute
@@ -227,9 +263,13 @@ export interface FileRoutesByTo {
   '/ecosystem/manufacturing-supply': typeof EcosystemManufacturingSupplyRoute
   '/ecosystem/science-discovery': typeof EcosystemScienceDiscoveryRoute
   '/ecosystem/uk-directory': typeof EcosystemUkDirectoryRoute
+  '/insights/events': typeof InsightsEventsRoute
+  '/insights/longevity-news': typeof InsightsLongevityNewsRoute
+  '/insights/research-highlights': typeof InsightsResearchHighlightsRoute
   '/publications/$slug': typeof PublicationsSlugRoute
   '/discover': typeof DiscoverIndexRoute
   '/ecosystem': typeof EcosystemIndexRoute
+  '/insights': typeof InsightsIndexRoute
   '/publications': typeof PublicationsIndexRoute
   '/members/$profileId': typeof AuthenticatedMembersProfileIdRoute
   '/projects/$projectId': typeof AuthenticatedProjectsProjectIdRoute
@@ -247,6 +287,7 @@ export interface FileRoutesById {
   '/discover': typeof DiscoverRouteWithChildren
   '/ecosystem': typeof EcosystemRouteWithChildren
   '/founder': typeof FounderRoute
+  '/insights': typeof InsightsRouteWithChildren
   '/_authenticated/dashboard': typeof AuthenticatedDashboardRoute
   '/_authenticated/profile': typeof AuthenticatedProfileRoute
   '/discover/biology-of-aging': typeof DiscoverBiologyOfAgingRoute
@@ -257,9 +298,13 @@ export interface FileRoutesById {
   '/ecosystem/manufacturing-supply': typeof EcosystemManufacturingSupplyRoute
   '/ecosystem/science-discovery': typeof EcosystemScienceDiscoveryRoute
   '/ecosystem/uk-directory': typeof EcosystemUkDirectoryRoute
+  '/insights/events': typeof InsightsEventsRoute
+  '/insights/longevity-news': typeof InsightsLongevityNewsRoute
+  '/insights/research-highlights': typeof InsightsResearchHighlightsRoute
   '/publications/$slug': typeof PublicationsSlugRoute
   '/discover/': typeof DiscoverIndexRoute
   '/ecosystem/': typeof EcosystemIndexRoute
+  '/insights/': typeof InsightsIndexRoute
   '/publications/': typeof PublicationsIndexRoute
   '/_authenticated/members/$profileId': typeof AuthenticatedMembersProfileIdRoute
   '/_authenticated/projects/$projectId': typeof AuthenticatedProjectsProjectIdRoute
@@ -277,6 +322,7 @@ export interface FileRouteTypes {
     | '/discover'
     | '/ecosystem'
     | '/founder'
+    | '/insights'
     | '/dashboard'
     | '/profile'
     | '/discover/biology-of-aging'
@@ -287,9 +333,13 @@ export interface FileRouteTypes {
     | '/ecosystem/manufacturing-supply'
     | '/ecosystem/science-discovery'
     | '/ecosystem/uk-directory'
+    | '/insights/events'
+    | '/insights/longevity-news'
+    | '/insights/research-highlights'
     | '/publications/$slug'
     | '/discover/'
     | '/ecosystem/'
+    | '/insights/'
     | '/publications/'
     | '/members/$profileId'
     | '/projects/$projectId'
@@ -313,9 +363,13 @@ export interface FileRouteTypes {
     | '/ecosystem/manufacturing-supply'
     | '/ecosystem/science-discovery'
     | '/ecosystem/uk-directory'
+    | '/insights/events'
+    | '/insights/longevity-news'
+    | '/insights/research-highlights'
     | '/publications/$slug'
     | '/discover'
     | '/ecosystem'
+    | '/insights'
     | '/publications'
     | '/members/$profileId'
     | '/projects/$projectId'
@@ -332,6 +386,7 @@ export interface FileRouteTypes {
     | '/discover'
     | '/ecosystem'
     | '/founder'
+    | '/insights'
     | '/_authenticated/dashboard'
     | '/_authenticated/profile'
     | '/discover/biology-of-aging'
@@ -342,9 +397,13 @@ export interface FileRouteTypes {
     | '/ecosystem/manufacturing-supply'
     | '/ecosystem/science-discovery'
     | '/ecosystem/uk-directory'
+    | '/insights/events'
+    | '/insights/longevity-news'
+    | '/insights/research-highlights'
     | '/publications/$slug'
     | '/discover/'
     | '/ecosystem/'
+    | '/insights/'
     | '/publications/'
     | '/_authenticated/members/$profileId'
     | '/_authenticated/projects/$projectId'
@@ -362,6 +421,7 @@ export interface RootRouteChildren {
   DiscoverRoute: typeof DiscoverRouteWithChildren
   EcosystemRoute: typeof EcosystemRouteWithChildren
   FounderRoute: typeof FounderRoute
+  InsightsRoute: typeof InsightsRouteWithChildren
   PublicationsSlugRoute: typeof PublicationsSlugRoute
   PublicationsIndexRoute: typeof PublicationsIndexRoute
 }
@@ -422,6 +482,13 @@ declare module '@tanstack/react-router' {
       path: '/founder'
       fullPath: '/founder'
       preLoaderRoute: typeof FounderRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/insights': {
+      id: '/insights'
+      path: '/insights'
+      fullPath: '/insights'
+      preLoaderRoute: typeof InsightsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_authenticated/dashboard': {
@@ -507,6 +574,34 @@ declare module '@tanstack/react-router' {
       fullPath: '/ecosystem/uk-directory'
       preLoaderRoute: typeof EcosystemUkDirectoryRouteImport
       parentRoute: typeof EcosystemRoute
+    }
+    '/insights/': {
+      id: '/insights/'
+      path: '/'
+      fullPath: '/insights/'
+      preLoaderRoute: typeof InsightsIndexRouteImport
+      parentRoute: typeof InsightsRoute
+    }
+    '/insights/events': {
+      id: '/insights/events'
+      path: '/events'
+      fullPath: '/insights/events'
+      preLoaderRoute: typeof InsightsEventsRouteImport
+      parentRoute: typeof InsightsRoute
+    }
+    '/insights/longevity-news': {
+      id: '/insights/longevity-news'
+      path: '/longevity-news'
+      fullPath: '/insights/longevity-news'
+      preLoaderRoute: typeof InsightsLongevityNewsRouteImport
+      parentRoute: typeof InsightsRoute
+    }
+    '/insights/research-highlights': {
+      id: '/insights/research-highlights'
+      path: '/research-highlights'
+      fullPath: '/insights/research-highlights'
+      preLoaderRoute: typeof InsightsResearchHighlightsRouteImport
+      parentRoute: typeof InsightsRoute
     }
     '/publications/': {
       id: '/publications/'
@@ -623,6 +718,24 @@ const EcosystemRouteWithChildren = EcosystemRoute._addFileChildren(
   EcosystemRouteChildren,
 )
 
+interface InsightsRouteChildren {
+  InsightsEventsRoute: typeof InsightsEventsRoute
+  InsightsLongevityNewsRoute: typeof InsightsLongevityNewsRoute
+  InsightsResearchHighlightsRoute: typeof InsightsResearchHighlightsRoute
+  InsightsIndexRoute: typeof InsightsIndexRoute
+}
+
+const InsightsRouteChildren: InsightsRouteChildren = {
+  InsightsEventsRoute: InsightsEventsRoute,
+  InsightsLongevityNewsRoute: InsightsLongevityNewsRoute,
+  InsightsResearchHighlightsRoute: InsightsResearchHighlightsRoute,
+  InsightsIndexRoute: InsightsIndexRoute,
+}
+
+const InsightsRouteWithChildren = InsightsRoute._addFileChildren(
+  InsightsRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
@@ -632,6 +745,7 @@ const rootRouteChildren: RootRouteChildren = {
   DiscoverRoute: DiscoverRouteWithChildren,
   EcosystemRoute: EcosystemRouteWithChildren,
   FounderRoute: FounderRoute,
+  InsightsRoute: InsightsRouteWithChildren,
   PublicationsSlugRoute: PublicationsSlugRoute,
   PublicationsIndexRoute: PublicationsIndexRoute,
 }
