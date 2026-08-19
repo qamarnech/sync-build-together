@@ -73,7 +73,44 @@ function MemberProfilePage() {
               </div>
             </>
           )}
+          {isFounder && (
+            <Link
+              to="/founder"
+              className="mt-6 inline-flex items-center rounded-full border border-gold px-4 py-2 text-sm text-gold transition-colors hover:bg-gold hover:text-white"
+            >
+              View public founder page
+            </Link>
+          )}
         </div>
+
+        {isFounder && (
+          <div className="space-y-6">
+            <div className="rounded-2xl border border-line bg-white p-8">
+              <h2 className="font-serif text-xl font-bold text-navy">Affiliations</h2>
+              <div className="mt-4">
+                <FounderAffiliations />
+              </div>
+            </div>
+            <div className="rounded-2xl border border-line bg-white p-8">
+              <h2 className="font-serif text-xl font-bold text-navy">Selected publications</h2>
+              <div className="mt-4">
+                <FounderPublications />
+              </div>
+            </div>
+            <div className="rounded-2xl border border-line bg-white p-8">
+              <h2 className="font-serif text-xl font-bold text-navy">Patents</h2>
+              <div className="mt-4">
+                <FounderPatents />
+              </div>
+            </div>
+            <div className="rounded-2xl border border-line bg-white p-8">
+              <h2 className="font-serif text-xl font-bold text-navy">Grants</h2>
+              <div className="mt-4">
+                <FounderGrants />
+              </div>
+            </div>
+          </div>
+        )}
 
         <div className="grid gap-6 md:grid-cols-2">
           <div className="rounded-2xl border border-line bg-white p-6">
