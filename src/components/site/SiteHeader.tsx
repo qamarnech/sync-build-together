@@ -199,6 +199,27 @@ export function SiteHeader() {
               ))}
             </div>
 
+            <Link to="/insights" onClick={() => setOpen(false)} className="text-sm font-semibold text-navy">
+              Insights
+            </Link>
+            <div className="flex flex-col gap-2 border-l border-line pl-3">
+              <Link to="/insights" onClick={() => setOpen(false)} className="text-sm text-ink-soft">
+                Overview
+              </Link>
+              {INSIGHTS_ITEMS.map((item) => (
+                <Link
+                  key={item.slug}
+                  to={item.to}
+                  onClick={() => setOpen(false)}
+                  className="text-sm text-ink-soft"
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+
+
+
             {user ? (
               <>
                 {memberLinks.map((link) => (
