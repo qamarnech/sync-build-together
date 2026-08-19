@@ -28,6 +28,7 @@ import { Route as EcosystemClinicalValidationRouteImport } from './routes/ecosys
 import { Route as EcosystemInvestmentCommercialRouteImport } from './routes/ecosystem.investment-commercial'
 import { Route as EcosystemManufacturingSupplyRouteImport } from './routes/ecosystem.manufacturing-supply'
 import { Route as EcosystemScienceDiscoveryRouteImport } from './routes/ecosystem.science-discovery'
+import { Route as EcosystemUkDirectoryRouteImport } from './routes/ecosystem.uk-directory'
 import { Route as PublicationsIndexRouteImport } from './routes/publications.index'
 import { Route as PublicationsSlugRouteImport } from './routes/publications.$slug'
 import { Route as AuthenticatedMembersIndexRouteImport } from './routes/_authenticated/members.index'
@@ -136,6 +137,11 @@ const EcosystemScienceDiscoveryRoute =
     path: '/science-discovery',
     getParentRoute: () => EcosystemRoute,
   } as any)
+const EcosystemUkDirectoryRoute = EcosystemUkDirectoryRouteImport.update({
+  id: '/uk-directory',
+  path: '/uk-directory',
+  getParentRoute: () => EcosystemRoute,
+} as any)
 const PublicationsIndexRoute = PublicationsIndexRouteImport.update({
   id: '/publications/',
   path: '/publications/',
@@ -194,6 +200,7 @@ export interface FileRoutesByFullPath {
   '/ecosystem/investment-commercial': typeof EcosystemInvestmentCommercialRoute
   '/ecosystem/manufacturing-supply': typeof EcosystemManufacturingSupplyRoute
   '/ecosystem/science-discovery': typeof EcosystemScienceDiscoveryRoute
+  '/ecosystem/uk-directory': typeof EcosystemUkDirectoryRoute
   '/publications/$slug': typeof PublicationsSlugRoute
   '/discover/': typeof DiscoverIndexRoute
   '/ecosystem/': typeof EcosystemIndexRoute
@@ -219,6 +226,7 @@ export interface FileRoutesByTo {
   '/ecosystem/investment-commercial': typeof EcosystemInvestmentCommercialRoute
   '/ecosystem/manufacturing-supply': typeof EcosystemManufacturingSupplyRoute
   '/ecosystem/science-discovery': typeof EcosystemScienceDiscoveryRoute
+  '/ecosystem/uk-directory': typeof EcosystemUkDirectoryRoute
   '/publications/$slug': typeof PublicationsSlugRoute
   '/discover': typeof DiscoverIndexRoute
   '/ecosystem': typeof EcosystemIndexRoute
@@ -248,6 +256,7 @@ export interface FileRoutesById {
   '/ecosystem/investment-commercial': typeof EcosystemInvestmentCommercialRoute
   '/ecosystem/manufacturing-supply': typeof EcosystemManufacturingSupplyRoute
   '/ecosystem/science-discovery': typeof EcosystemScienceDiscoveryRoute
+  '/ecosystem/uk-directory': typeof EcosystemUkDirectoryRoute
   '/publications/$slug': typeof PublicationsSlugRoute
   '/discover/': typeof DiscoverIndexRoute
   '/ecosystem/': typeof EcosystemIndexRoute
@@ -277,6 +286,7 @@ export interface FileRouteTypes {
     | '/ecosystem/investment-commercial'
     | '/ecosystem/manufacturing-supply'
     | '/ecosystem/science-discovery'
+    | '/ecosystem/uk-directory'
     | '/publications/$slug'
     | '/discover/'
     | '/ecosystem/'
@@ -302,6 +312,7 @@ export interface FileRouteTypes {
     | '/ecosystem/investment-commercial'
     | '/ecosystem/manufacturing-supply'
     | '/ecosystem/science-discovery'
+    | '/ecosystem/uk-directory'
     | '/publications/$slug'
     | '/discover'
     | '/ecosystem'
@@ -330,6 +341,7 @@ export interface FileRouteTypes {
     | '/ecosystem/investment-commercial'
     | '/ecosystem/manufacturing-supply'
     | '/ecosystem/science-discovery'
+    | '/ecosystem/uk-directory'
     | '/publications/$slug'
     | '/discover/'
     | '/ecosystem/'
@@ -489,6 +501,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EcosystemScienceDiscoveryRouteImport
       parentRoute: typeof EcosystemRoute
     }
+    '/ecosystem/uk-directory': {
+      id: '/ecosystem/uk-directory'
+      path: '/uk-directory'
+      fullPath: '/ecosystem/uk-directory'
+      preLoaderRoute: typeof EcosystemUkDirectoryRouteImport
+      parentRoute: typeof EcosystemRoute
+    }
     '/publications/': {
       id: '/publications/'
       path: '/publications'
@@ -587,6 +606,7 @@ interface EcosystemRouteChildren {
   EcosystemInvestmentCommercialRoute: typeof EcosystemInvestmentCommercialRoute
   EcosystemManufacturingSupplyRoute: typeof EcosystemManufacturingSupplyRoute
   EcosystemScienceDiscoveryRoute: typeof EcosystemScienceDiscoveryRoute
+  EcosystemUkDirectoryRoute: typeof EcosystemUkDirectoryRoute
   EcosystemIndexRoute: typeof EcosystemIndexRoute
 }
 
@@ -595,6 +615,7 @@ const EcosystemRouteChildren: EcosystemRouteChildren = {
   EcosystemInvestmentCommercialRoute: EcosystemInvestmentCommercialRoute,
   EcosystemManufacturingSupplyRoute: EcosystemManufacturingSupplyRoute,
   EcosystemScienceDiscoveryRoute: EcosystemScienceDiscoveryRoute,
+  EcosystemUkDirectoryRoute: EcosystemUkDirectoryRoute,
   EcosystemIndexRoute: EcosystemIndexRoute,
 }
 

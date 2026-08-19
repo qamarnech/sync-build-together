@@ -28,6 +28,13 @@ function EcosystemLayout() {
               {pillar.name}
             </Link>
           ))}
+          <Link
+            to="/ecosystem/uk-directory"
+            className="text-sm text-ink-soft transition-colors hover:text-navy"
+            activeProps={{ className: "text-navy font-semibold" }}
+          >
+            UK Directory
+          </Link>
         </div>
       </div>
       <Outlet />
