@@ -14,6 +14,11 @@ const HOME_ITEMS = [
 ];
 
 
+const ECOSYSTEM_ITEMS = [
+  ...ECOSYSTEM_PILLARS,
+  { slug: "uk-directory", to: "/ecosystem/uk-directory", name: "UK Longevity Directory" },
+];
+
 const memberLinks = [
   { to: "/dashboard", label: "Dashboard" },
   { to: "/projects", label: "Projects" },
@@ -86,7 +91,7 @@ export function SiteHeader() {
         <nav className="hidden items-center gap-6 md:flex">
           <Dropdown label="Home" to="/" items={HOME_ITEMS} />
           <Dropdown label="Discover" to="/discover" items={DISCOVER_PILLARS} />
-          <Dropdown label="Ecosystem" to="/ecosystem" items={ECOSYSTEM_PILLARS} />
+          <Dropdown label="Ecosystem" to="/ecosystem" items={ECOSYSTEM_ITEMS} />
 
           {user &&
             memberLinks.map((link) => (
@@ -180,7 +185,7 @@ export function SiteHeader() {
               <Link to="/ecosystem" onClick={() => setOpen(false)} className="text-sm text-ink-soft">
                 Overview
               </Link>
-              {ECOSYSTEM_PILLARS.map((pillar) => (
+              {ECOSYSTEM_ITEMS.map((pillar) => (
                 <Link
                   key={pillar.slug}
                   to={pillar.to}
