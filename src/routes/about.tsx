@@ -258,6 +258,18 @@ function AboutPage() {
         </div>
       </Section>
 
+      <Section tone="paper" className="text-center">
+        <h2 className="font-serif text-3xl text-navy">Founded by Professor Qiang Fu 付强</h2>
+        <p className="mx-auto mt-3 max-w-2xl text-sm text-ink-soft">
+          Longevity scientist and biotech entrepreneur working across cellular senescence,
+          geroscience, regenerative medicine and longevity biotechnology — with a peer-reviewed
+          publication record, granted patents and nationally funded research programmes.
+        </p>
+        <Button asChild variant="outline" className="mt-6 border-navy text-navy hover:bg-navy hover:text-white">
+          <Link to="/founder">See the founder's research record</Link>
+        </Button>
+      </Section>
+
       <Section tone="white" className="text-center">
         <h2 className="font-serif text-3xl text-navy">Who is MR Longevity for?</h2>
         <p className="mx-auto mt-3 max-w-2xl text-sm text-ink-soft">
