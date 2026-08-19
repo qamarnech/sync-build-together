@@ -185,6 +185,10 @@ function DiscoverPage() {
               </div>
             ))}
           </div>
+          <EvidenceLadder className="mt-6" />
+          <p className="mt-3 text-center text-xs text-ink-mute">
+            Fig. 07 — How confidence grows as a claim moves from hypothesis to validated practice.
+          </p>
         </div>
         <div className="mt-8 text-center">
           <Button asChild variant="outline" className="border-navy/30 text-navy hover:bg-navy/5">
