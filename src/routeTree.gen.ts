@@ -17,6 +17,7 @@ import { Route as DiscoverRouteImport } from './routes/discover'
 import { Route as EcosystemRouteImport } from './routes/ecosystem'
 import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
 import { Route as AuthenticatedProfileRouteImport } from './routes/_authenticated/profile'
+import { Route as EcosystemIndexRouteImport } from './routes/ecosystem.index'
 import { Route as AuthenticatedMembersIndexRouteImport } from './routes/_authenticated/members.index'
 import { Route as AuthenticatedMembersProfileIdRouteImport } from './routes/_authenticated/members.$profileId'
 import { Route as AuthenticatedProjectsIndexRouteImport } from './routes/_authenticated/projects.index'
@@ -62,6 +63,11 @@ const AuthenticatedProfileRoute = AuthenticatedProfileRouteImport.update({
   path: '/profile',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+const EcosystemIndexRoute = EcosystemIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => EcosystemRoute,
+} as any)
 const AuthenticatedMembersIndexRoute =
   AuthenticatedMembersIndexRouteImport.update({
     id: '/members/',
@@ -98,9 +104,10 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/auth': typeof AuthRoute
   '/discover': typeof DiscoverRoute
-  '/ecosystem': typeof EcosystemRoute
+  '/ecosystem': typeof EcosystemRouteWithChildren
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/profile': typeof AuthenticatedProfileRoute
+  '/ecosystem/': typeof EcosystemIndexRoute
   '/members/$profileId': typeof AuthenticatedMembersProfileIdRoute
   '/projects/$projectId': typeof AuthenticatedProjectsProjectIdRoute
   '/projects/new': typeof AuthenticatedProjectsNewRoute
@@ -112,9 +119,9 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/auth': typeof AuthRoute
   '/discover': typeof DiscoverRoute
-  '/ecosystem': typeof EcosystemRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/profile': typeof AuthenticatedProfileRoute
+  '/ecosystem': typeof EcosystemIndexRoute
   '/members/$profileId': typeof AuthenticatedMembersProfileIdRoute
   '/projects/$projectId': typeof AuthenticatedProjectsProjectIdRoute
   '/projects/new': typeof AuthenticatedProjectsNewRoute
@@ -128,9 +135,10 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/auth': typeof AuthRoute
   '/discover': typeof DiscoverRoute
-  '/ecosystem': typeof EcosystemRoute
+  '/ecosystem': typeof EcosystemRouteWithChildren
   '/_authenticated/dashboard': typeof AuthenticatedDashboardRoute
   '/_authenticated/profile': typeof AuthenticatedProfileRoute
+  '/ecosystem/': typeof EcosystemIndexRoute
   '/_authenticated/members/$profileId': typeof AuthenticatedMembersProfileIdRoute
   '/_authenticated/projects/$projectId': typeof AuthenticatedProjectsProjectIdRoute
   '/_authenticated/projects/new': typeof AuthenticatedProjectsNewRoute
@@ -147,6 +155,7 @@ export interface FileRouteTypes {
     | '/ecosystem'
     | '/dashboard'
     | '/profile'
+    | '/ecosystem/'
     | '/members/$profileId'
     | '/projects/$projectId'
     | '/projects/new'
@@ -158,9 +167,9 @@ export interface FileRouteTypes {
     | '/about'
     | '/auth'
     | '/discover'
-    | '/ecosystem'
     | '/dashboard'
     | '/profile'
+    | '/ecosystem'
     | '/members/$profileId'
     | '/projects/$projectId'
     | '/projects/new'
@@ -176,6 +185,7 @@ export interface FileRouteTypes {
     | '/ecosystem'
     | '/_authenticated/dashboard'
     | '/_authenticated/profile'
+    | '/ecosystem/'
     | '/_authenticated/members/$profileId'
     | '/_authenticated/projects/$projectId'
     | '/_authenticated/projects/new'
@@ -189,7 +199,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   AuthRoute: typeof AuthRoute
   DiscoverRoute: typeof DiscoverRoute
-  EcosystemRoute: typeof EcosystemRoute
+  EcosystemRoute: typeof EcosystemRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -249,6 +259,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/profile'
       preLoaderRoute: typeof AuthenticatedProfileRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/ecosystem/': {
+      id: '/ecosystem/'
+      path: '/'
+      fullPath: '/ecosystem/'
+      preLoaderRoute: typeof EcosystemIndexRouteImport
+      parentRoute: typeof EcosystemRoute
     }
     '/_authenticated/members/': {
       id: '/_authenticated/members/'
@@ -311,13 +328,25 @@ const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
 const AuthenticatedRouteRouteWithChildren =
   AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
 
+interface EcosystemRouteChildren {
+  EcosystemIndexRoute: typeof EcosystemIndexRoute
+}
+
+const EcosystemRouteChildren: EcosystemRouteChildren = {
+  EcosystemIndexRoute: EcosystemIndexRoute,
+}
+
+const EcosystemRouteWithChildren = EcosystemRoute._addFileChildren(
+  EcosystemRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AboutRoute: AboutRoute,
   AuthRoute: AuthRoute,
   DiscoverRoute: DiscoverRoute,
-  EcosystemRoute: EcosystemRoute,
+  EcosystemRoute: EcosystemRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
