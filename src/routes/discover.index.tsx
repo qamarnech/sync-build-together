@@ -107,6 +107,17 @@ function DiscoverPage() {
           title="Connecting the Biology of Ageing"
           intro="Ageing is not one process. MR Longevity brings metabolism, immunity, cellular repair, movement, nutrition, sleep, mental wellbeing, environment and genetics into one connected ecosystem."
         />
+        <figure className="mt-10">
+          <PathwayTrack
+            labels={TRANSLATION_STAGES.map((s) => s.title)}
+            active={stage}
+            onSelect={setStage}
+          />
+          <figcaption className="mt-4 text-center text-xs text-ink-mute">
+            Fig. 06 — The eight-stage translation pathway, from first insight to population impact.
+          </figcaption>
+        </figure>
+
         <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {TRANSLATION_STAGES.map((stage) => (
             <button
