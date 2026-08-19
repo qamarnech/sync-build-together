@@ -90,15 +90,7 @@ export function TranslationFlywheel({ className }: { className?: string }) {
                 stroke="currentColor"
                 strokeWidth="0.75"
               />
-              <circle
-                cx={x}
-                cy={y}
-                r={on ? 30 : 27}
-                className={on ? "fill-gold" : "fill-white"}
-                stroke="currentColor"
-                strokeWidth="1"
-                {...{ style: undefined }}
-              />
+              <circle cx={x} cy={y} r={on ? 30 : 27} className={on ? "fill-gold" : "fill-white"} />
               <circle cx={x} cy={y} r={on ? 30 : 27} fill="none" className="text-gold/50" stroke="currentColor" strokeWidth="1" />
               <text
                 x={x}
