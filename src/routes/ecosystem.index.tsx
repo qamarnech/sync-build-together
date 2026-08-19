@@ -8,6 +8,7 @@ import {
   OPPORTUNITY_CYCLE,
   PARTICIPANT_GROUPS,
 } from "@/lib/ecosystem-content";
+import { CycleWheel, ParticipantOrbit, SystemsRings } from "@/components/site/infographics";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/ecosystem/")({
