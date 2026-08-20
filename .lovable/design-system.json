@@ -1,0 +1,585 @@
+{
+  "meta": {
+    "name": "Connect \u0026 Create",
+    "package": "@ws-ozwcz9rkgxwbpakj7xtd/bd3ccc17-61ac-40c1-8efd-13efffbb4936",
+    "version": "1.0.0",
+    "framework": "react",
+    "css_framework": "tailwind",
+    "starter_template": "custom_design_system_tailwind",
+    "theme_files": [
+      "src/styles.css"
+    ],
+    "source_type": "local",
+    "source_manifest": {
+      "#enrichment": "7bf2aab289d9c5fc3c7747217d6009b26bac71119e832add0b5c6cfdb54e105e",
+      ".gitignore": "6d9e901a692b46a83707c245fb03bc91",
+      ".lovable/plan/founder-record-professor-qiang-fu-付强-2026-08-19.md": "15161f39f023299aa99234c148535f76",
+      ".lovable/plan/mr-longevity-collaborative-platform-2026-08-18.md": "d2edfaaeb6d8968caed9d92ca0e2ada4",
+      ".lovable/project.json": "cd369d2c1a917c3065a94c968eeb6939",
+      ".prettierignore": "7279a476f196a2da5f7edd18db568dc6",
+      ".prettierrc": "185ef0234746ab738ac1ab6cec5e2bd9",
+      "AGENTS.md": "3da3c4cd15b686e79a248c25735d6aaf",
+      "README.md": "f3e3cb8a9930332ffcf761e03cc04e26",
+      "bunfig.toml": "89115995d9de72fdfc894e16b1e75297",
+      "components.json": "30d3d035361ce807021f5c54620962e9",
+      "eslint.config.js": "345bdd57e188e0e4525edcd00e5003f5",
+      "package.json": "aed10be4c7c7b115c313e155632bf57d",
+      "public/favicon.ico": "9f504444f85a5af2eef9264b02ae40be",
+      "public/robots.txt": "f9dff89adf98833e676de2205921996a",
+      "src/components/site/FounderRecord.tsx": "c33e30191411d86da43ec3701fc00171",
+      "src/components/site/PillarPage.tsx": "0249b3939d48bc3771914cace5edf485",
+      "src/components/site/SiteFooter.tsx": "b45d01dddeb828f8bdda972ec27249de",
+      "src/components/site/SiteHeader.tsx": "0012f4ce0b26765b4a94c8403bffb860",
+      "src/components/site/infographics.tsx": "a0ecf1ac9a110f3b8047100c3610dd01",
+      "src/components/site/ui-bits.tsx": "318a91dee826e048213c503548715366",
+      "src/components/ui/accordion.tsx": "55f9dda62b4e3913c9b23e5015a86aef",
+      "src/components/ui/alert-dialog.tsx": "96350e949e9b7b674545430a410ab89c",
+      "src/components/ui/alert.tsx": "f993d7e96b1e25ce50e68ed97e11d2a8",
+      "src/components/ui/aspect-ratio.tsx": "c5c364545e1b25a94e9e752cd67ad048",
+      "src/components/ui/avatar.tsx": "72989cd32f72c4122802540ef32525a5",
+      "src/components/ui/badge.tsx": "81cade001fc4260f9943e18dcd79449b",
+      "src/components/ui/breadcrumb.tsx": "bb9ac254f12662b20d5d50b84308bf3a",
+      "src/components/ui/button.tsx": "7d07d520f486b12bd47373d694ecd2ee",
+      "src/components/ui/calendar.tsx": "d849cc610e2683271f3f1c47d093cf30",
+      "src/components/ui/card.tsx": "d6c48ea36221b9cdc3576d305d12d5d5",
+      "src/components/ui/carousel.tsx": "e324c68ae00cd5aed49317638abd429a",
+      "src/components/ui/chart.tsx": "6a3baf94f2e89f1f97d4d7a28f3622d2",
+      "src/components/ui/checkbox.tsx": "f78aac270ca482c8c2cb907ef6260462",
+      "src/components/ui/collapsible.tsx": "767631bbc344945c236f185f4078d71d",
+      "src/components/ui/command.tsx": "014782599cc838b021ec68b07ad4ea02",
+      "src/components/ui/context-menu.tsx": "3ba8244ea23df34a1dba92f3a1230dad",
+      "src/components/ui/dialog.tsx": "ef4fe8e7de8675730afe3d633b260e09",
+      "src/components/ui/drawer.tsx": "8be333e8fd8e42576b1b5f72f07f4337",
+      "src/components/ui/dropdown-menu.tsx": "28d6e98d3c7811fc0514bfa69416f087",
+      "src/components/ui/form.tsx": "1b0aa6302b9017ea2a1307c22a1d2983",
+      "src/components/ui/hover-card.tsx": "1442794c5ca2a78d69e4e613b315ed3d",
+      "src/components/ui/input-otp.tsx": "65625f2f1c4d731a760aeed7b54459d1",
+      "src/components/ui/input.tsx": "1d4cc52a4cd8afb3e18e45bda942bb8a",
+      "src/components/ui/label.tsx": "7e35df4ca8edd0835efd97ca7937ef92",
+      "src/components/ui/menubar.tsx": "3c4121a1e78d3f424a7295381a8997d3",
+      "src/components/ui/navigation-menu.tsx": "e85351147a02b29577ff83d188b63c24",
+      "src/components/ui/pagination.tsx": "fac6cdbb4bbf78b273d85cd36d6cbb49",
+      "src/components/ui/popover.tsx": "f18aa1da2144f25ee60795c539c51bcd",
+      "src/components/ui/progress.tsx": "55c462e5c9dd678dcf2c0c510b014ac4",
+      "src/components/ui/radio-group.tsx": "0e1ace237a5da3197e3eb1e6683faba9",
+      "src/components/ui/resizable.tsx": "d9fcb9203c749fcab4e125a99bb12a86",
+      "src/components/ui/scroll-area.tsx": "87b65d3eb26f2b02ff35a7acea585ba5",
+      "src/components/ui/select.tsx": "31ea1bbd6671833b010b2e852c8a55d0",
+      "src/components/ui/separator.tsx": "433d163c4ffa00b59398a0c293198b5e",
+      "src/components/ui/sheet.tsx": "0221fbf97b69611b47fcbc10bb27669a",
+      "src/components/ui/sidebar.tsx": "83c1623eb50ebc370d7b1b84a542e369",
+      "src/components/ui/skeleton.tsx": "41b182e6e2fc3805960d41e767d4a972",
+      "src/components/ui/slider.tsx": "4752f1bfa26426988d325599e01c335b",
+      "src/components/ui/sonner.tsx": "97f59f60be3413196d095fcbf7383216",
+      "src/components/ui/switch.tsx": "82f5d8b0c59bb7ff305caa9f502e79ff",
+      "src/components/ui/table.tsx": "7cc889989d53894b659903c73aded96e",
+      "src/components/ui/tabs.tsx": "56e725558c2ce72c18243bf51717f385",
+      "src/components/ui/textarea.tsx": "c7aad96fb9545210d53135a96c76ed6b",
+      "src/components/ui/toggle-group.tsx": "ac26383acf721d116ca8e3ab5c5355d5",
+      "src/components/ui/toggle.tsx": "ee8c5adac74e7242b85b544db1a8fbad",
+      "src/components/ui/tooltip.tsx": "67d71db5a1ab935695d1def497f5b8a6",
+      "src/hooks/use-mobile.tsx": "c0a0bdd4638c391a1dd06ac82074e60b",
+      "src/hooks/useAuth.tsx": "8326e813cb25ba4a1c4328a547f42e6a",
+      "src/integrations/lovable/index.ts": "c997b4d5cc51f8fe73119e270709d8f1",
+      "src/integrations/supabase/auth-attacher.ts": "dad043cda134d909e52de0346c16625e",
+      "src/integrations/supabase/auth-middleware.ts": "5d9d831f79177b7c6327cbd794a97367",
+      "src/integrations/supabase/client.server.ts": "23f838ab7633e0a97e695f3c500d91aa",
+      "src/integrations/supabase/client.ts": "cfde7d4a33f62e4c33e89eb55c654ead",
+      "src/integrations/supabase/types.ts": "b4f783d87e47ba57c1cc36a9d3f7ca00",
+      "src/lib/data.ts": "cc6dd8392dd5b6533f63d53b6f33f0dc",
+      "src/lib/discover-pillars.ts": "58b0b97ae20b1d5dd6aa7009e0737968",
+      "src/lib/ecosystem-content.ts": "9665596c1fbece584db7738cc93f3299",
+      "src/lib/ecosystem-pillars.ts": "51e615ae3d52f21ab1da44f9d659d27a",
+      "src/lib/error-capture.ts": "f630d9686a9a989170f22eff4de7b30d",
+      "src/lib/error-page.ts": "8da0ddd7569bac2676b9a5c8edff8a36",
+      "src/lib/founder-fu.ts": "886872549e53a42ba5dd4b0cafc46241",
+      "src/lib/insights-content.ts": "415bc2ee7b07de1d604aabba640f95d7",
+      "src/lib/insights-nav.ts": "d07c796ab4d4c2fc7ffc6d5bfb4ffa13",
+      "src/lib/lovable-error-reporting.ts": "77368331b8ef6e6edcf1a29b24a52d39",
+      "src/lib/match.ts": "896ff5010d0f2219408eede7310bca4b",
+      "src/lib/site-content.ts": "794b5d488efc0f528b19a754c07f8f3c",
+      "src/lib/uk-directory.ts": "0b2247edc87ec332ea0285580a0f0529",
+      "src/lib/utils.ts": "d9837f38cc05303254571985e3164050",
+      "src/routeTree.gen.ts": "383719701bb618619ba84edc01f61aea",
+      "src/router.tsx": "8f905e713b0eba7fa8148b7995a708c9",
+      "src/routes/README.md": "b3a2f259b66fd1a11f54b6d5ac83bf57",
+      "src/routes/__root.tsx": "67d343d6cc01c2a186dc1d8d5b5b1a6a",
+      "src/routes/_authenticated/dashboard.tsx": "7377335926f7b6cdc36b93b32543a0d5",
+      "src/routes/_authenticated/members.$profileId.tsx": "e04dd58ef24e2401416ed21ee831c69d",
+      "src/routes/_authenticated/members.index.tsx": "c53442fb7404d1208ead255c05c1c1d0",
+      "src/routes/_authenticated/profile.tsx": "2021437baab204f5ae1e672f784e48c7",
+      "src/routes/_authenticated/projects.$projectId.tsx": "8d2aacb7c321a82c3f22991d60741e13",
+      "src/routes/_authenticated/projects.index.tsx": "2b1943c0d6d58aae56319a1fadeea3ad",
+      "src/routes/_authenticated/projects.new.tsx": "c2d1f0980fc211fc589db68a2c2aa537",
+      "src/routes/_authenticated/route.tsx": "52ac77af5a2f5dbb804b5872ec2a8a98",
+      "src/routes/about.approach.tsx": "a7a77e8d0029db5d5914bd788bcb3bc6",
+      "src/routes/about.index.tsx": "8cfa4efee7f145f1f2a1418f7ebb38ee",
+      "src/routes/about.team.tsx": "968d7ee5dc9b747557a3c43522661131",
+      "src/routes/about.tsx": "476e1be5d817fcff852cc306d041c24a",
+      "src/routes/about.vision-mission.tsx": "f83cf81a6b71a603b6d2c0a4b5b16513",
+      "src/routes/about.why.tsx": "974b5adf5edeb5d7339f6069169ce549",
+      "src/routes/auth.tsx": "1d9896651d5e3094b031921e97a6768c",
+      "src/routes/contact.tsx": "1b7826d5911fc0e9dd88537c3be91984",
+      "src/routes/discover.healthy-longevity.tsx": "9168e0118c996d2811209ea1df3ab705",
+      "src/routes/discover.index.tsx": "c77596631b4fce2c068335c3a62d2a9e",
+      "src/routes/discover.longevity-101.tsx": "9c16458fe4cb292779878b6a826ccfc6",
+      "src/routes/discover.prevention-healthspan.tsx": "16e84d167afd3449a1f5290614e8adb5",
+      "src/routes/discover.science-of-ageing.tsx": "154357fbda7c91e708ac517fc8adc189",
+      "src/routes/discover.tsx": "20020281a2a485637d49efdbf3d36199",
+      "src/routes/discover.what-is-longevity.tsx": "748b8caca0c566949e77fe30d924014e",
+      "src/routes/ecosystem.clinical-validation.tsx": "071ac40a32109be93770d07d15da476c",
+      "src/routes/ecosystem.index.tsx": "eed630078c8ed895e9b9e6fb982e17b1",
+      "src/routes/ecosystem.investment-commercial.tsx": "b8963ba8b15184913374013cdf0349a6",
+      "src/routes/ecosystem.manufacturing-supply.tsx": "048f051c0decfdce326d5be62e472368",
+      "src/routes/ecosystem.science-discovery.tsx": "d07b10ca5b2b4e7ebc1000027d43f918",
+      "src/routes/ecosystem.tsx": "4e63cba3af35ec1fedab9a556d97f81a",
+      "src/routes/ecosystem.uk-directory.tsx": "c6a7655a2240d2d4689a2e7f42011204",
+      "src/routes/founder.tsx": "45e2cf526c994320e0aabe1e3ed6ec88",
+      "src/routes/index.tsx": "50be014ff96e1e39e9ae0e05d59be28d",
+      "src/routes/insights.events.tsx": "baf078911168cd07c69b8813b1caeba5",
+      "src/routes/insights.index.tsx": "a1f8b900c4736117a07d372eb2073c42",
+      "src/routes/insights.longevity-news.tsx": "9a5e8f46da153d8fe4da07d22943eb85",
+      "src/routes/insights.research-highlights.tsx": "c50f5c821035f0ae209a71acb41a5072",
+      "src/routes/insights.tsx": "39e5226f10101fb3de3f89737daa3b84",
+      "src/routes/publications.$slug.tsx": "7b1c669aa57a9af7e8f6928e123a754f",
+      "src/routes/publications.index.tsx": "d98898d0c212f1fb7b4d51ba1c7e55e1",
+      "src/server.ts": "c7bbc49bb70e318af618d92775ee0f27",
+      "src/start.ts": "d77c1c12904be5077c6955d9b30071af",
+      "src/styles.css": "efe56c328efe2ab0884f2c3408b7d973",
+      "supabase/config.toml": "feee65490dd520a567b648a0b6c7d7e9",
+      "supabase/migrations/20260818160726_f2302cc6-c024-4745-8853-159fe67aad11.sql": "677bd5a51b87d3a8bd3f5027f3008f12",
+      "supabase/migrations/20260818160735_25a4664c-baa1-4d9d-915f-658cb91f1433.sql": "0184608586c082a69ece1fc66f419309",
+      "supabase/migrations/20260819112030_8159f174-3cb7-4203-b4de-920a4a3905a2.sql": "a1ae3d1bf5937dd2e940825906fc48a2",
+      "supabase/migrations/20260819131038_fe0737f3-1dbc-495c-8222-21dd8751d488.sql": "516227a53e1a7bde40f881c3c4e0e2a6",
+      "tsconfig.json": "e84e5c7fe88e3c5a4d54f55a816d42c1",
+      "vite.config.ts": "d67e8217e5f31b87c276b6357c9aedcf"
+    },
+    "pipeline_version": 8
+  },
+  "tokens": {
+    "color": [
+      {
+        "name": "--navy",
+        "raw": "oklch(0.31 0.084 258.4)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--navy-2",
+        "raw": "oklch(0.34 0.087 258.6)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--navy-deep",
+        "raw": "oklch(0.22 0.072 258)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--gold",
+        "raw": "oklch(0.606 0.076 72.6)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--gold-light",
+        "raw": "oklch(0.735 0.073 78.5)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--gold-pale",
+        "raw": "oklch(0.876 0.049 82.5)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--sand",
+        "raw": "oklch(0.958 0.014 90)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--paper",
+        "raw": "oklch(0.978 0.009 90)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--ink",
+        "raw": "oklch(0.234 0.026 262)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--ink-soft",
+        "raw": "oklch(0.44 0.019 74)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--ink-mute",
+        "raw": "oklch(0.633 0.02 82)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--card",
+        "raw": "oklch(1 0 0)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--popover",
+        "raw": "oklch(1 0 0)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--primary-foreground",
+        "raw": "oklch(0.985 0.006 90)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--accent-foreground",
+        "raw": "oklch(1 0 0)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--destructive",
+        "raw": "oklch(0.505 0.13 18)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--destructive-foreground",
+        "raw": "oklch(0.985 0.006 90)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--chart-3",
+        "raw": "oklch(0.45 0.05 190)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--chart-4",
+        "raw": "oklch(0.4 0.09 18)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--sidebar-primary-foreground",
+        "raw": "oklch(0.985 0.006 90)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--background",
+        "raw": "oklch(0.129 0.042 264.695)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--foreground",
+        "raw": "oklch(0.984 0.003 247.858)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--card-foreground",
+        "raw": "oklch(0.984 0.003 247.858)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--popover-foreground",
+        "raw": "oklch(0.984 0.003 247.858)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--primary",
+        "raw": "oklch(0.929 0.013 255.508)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--secondary",
+        "raw": "oklch(0.279 0.041 260.031)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--secondary-foreground",
+        "raw": "oklch(0.984 0.003 247.858)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--muted",
+        "raw": "oklch(0.279 0.041 260.031)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--muted-foreground",
+        "raw": "oklch(0.704 0.04 256.788)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--accent",
+        "raw": "oklch(0.279 0.041 260.031)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--border",
+        "raw": "oklch(1 0 0 / 10%)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--input",
+        "raw": "oklch(1 0 0 / 15%)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--ring",
+        "raw": "oklch(0.551 0.027 264.364)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--chart-1",
+        "raw": "oklch(0.488 0.243 264.376)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--chart-2",
+        "raw": "oklch(0.696 0.17 162.48)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--chart-5",
+        "raw": "oklch(0.645 0.246 16.439)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--sidebar",
+        "raw": "oklch(0.208 0.042 265.755)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--sidebar-foreground",
+        "raw": "oklch(0.984 0.003 247.858)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--sidebar-primary",
+        "raw": "oklch(0.488 0.243 264.376)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--sidebar-accent",
+        "raw": "oklch(0.279 0.041 260.031)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--sidebar-accent-foreground",
+        "raw": "oklch(0.984 0.003 247.858)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--sidebar-border",
+        "raw": "oklch(1 0 0 / 10%)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--sidebar-ring",
+        "raw": "oklch(0.551 0.027 264.364)",
+        "source": "src/styles.css"
+      }
+    ],
+    "typography": [
+      {
+        "name": "--font-serif",
+        "raw": "\"Playfair Display\", Georgia, \"Times New Roman\", serif",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--font-display",
+        "raw": "\"Cormorant Garamond\", Georgia, serif",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--line",
+        "raw": "oklch(0.887 0.026 85)",
+        "source": "src/styles.css"
+      }
+    ],
+    "radius": [
+      {
+        "name": "--radius-sm",
+        "raw": "calc(var(--radius) - 4px)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--radius-md",
+        "raw": "calc(var(--radius) - 2px)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--radius-xl",
+        "raw": "calc(var(--radius) + 4px)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--radius-2xl",
+        "raw": "calc(var(--radius) + 8px)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--radius-3xl",
+        "raw": "calc(var(--radius) + 12px)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--radius-4xl",
+        "raw": "calc(var(--radius) + 16px)",
+        "source": "src/styles.css"
+      },
+      {
+        "name": "--radius",
+        "raw": "0.875rem",
+        "source": "src/styles.css"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "FounderFigures",
+      "file": "src/components/site/FounderRecord",
+      "import_path": ""
+    },
+    {
+      "name": "FounderDomains",
+      "file": "src/components/site/FounderRecord",
+      "import_path": ""
+    },
+    {
+      "name": "FounderAffiliations",
+      "file": "src/components/site/FounderRecord",
+      "import_path": ""
+    },
+    {
+      "name": "FounderPublications",
+      "file": "src/components/site/FounderRecord",
+      "import_path": ""
+    },
+    {
+      "name": "FounderPatents",
+      "file": "src/components/site/FounderRecord",
+      "import_path": ""
+    },
+    {
+      "name": "FounderGrants",
+      "file": "src/components/site/FounderRecord",
+      "import_path": ""
+    },
+    {
+      "name": "PillarPage",
+      "file": "src/components/site/PillarPage",
+      "import_path": ""
+    },
+    {
+      "name": "SiteFooter",
+      "file": "src/components/site/SiteFooter",
+      "import_path": ""
+    },
+    {
+      "name": "SiteHeader",
+      "file": "src/components/site/SiteHeader",
+      "import_path": ""
+    },
+    {
+      "name": "TranslationFlywheel",
+      "file": "src/components/site/infographics",
+      "import_path": ""
+    },
+    {
+      "name": "HealthspanCurve",
+      "file": "src/components/site/infographics",
+      "import_path": ""
+    },
+    {
+      "name": "SystemsRings",
+      "file": "src/components/site/infographics",
+      "import_path": ""
+    },
+    {
+      "name": "EvidenceLadder",
+      "file": "src/components/site/infographics",
+      "import_path": ""
+    },
+    {
+      "name": "ParticipantOrbit",
+      "file": "src/components/site/infographics",
+      "import_path": ""
+    },
+    {
+      "name": "CycleWheel",
+      "file": "src/components/site/infographics",
+      "import_path": ""
+    },
+    {
+      "name": "PathwayTrack",
+      "file": "src/components/site/infographics",
+      "import_path": ""
+    },
+    {
+      "name": "StageChain",
+      "file": "src/components/site/infographics",
+      "import_path": ""
+    },
+    {
+      "name": "Flourish",
+      "file": "src/components/site/ui-bits",
+      "import_path": ""
+    },
+    {
+      "name": "Kicker",
+      "file": "src/components/site/ui-bits",
+      "import_path": ""
+    },
+    {
+      "name": "SectionHead",
+      "file": "src/components/site/ui-bits",
+      "import_path": ""
+    },
+    {
+      "name": "Tag",
+      "file": "src/components/site/ui-bits",
+      "import_path": ""
+    },
+    {
+      "name": "Section",
+      "file": "src/components/site/ui-bits",
+      "import_path": ""
+    },
+    {
+      "name": "Button",
+      "file": "src/components/ui/button",
+      "import_path": "",
+      "props": [
+        {
+          "name": "variant",
+          "type": "enum",
+          "values": [
+            "default",
+            "destructive",
+            "outline",
+            "secondary",
+            "ghost",
+            "link"
+          ],
+          "default": "default"
+        },
+        {
+          "name": "size",
+          "type": "enum",
+          "values": [
+            "default",
+            "sm",
+            "lg",
+            "icon"
+          ],
+          "default": "default"
+        },
+        {
+          "name": "asChild",
+          "type": "boolean",
+          "default": "false"
+        }
+      ]
+    },
+    {
+      "name": "Constants",
+      "file": "src/integrations/supabase/types",
+      "import_path": ""
+    }
+  ]
+}
