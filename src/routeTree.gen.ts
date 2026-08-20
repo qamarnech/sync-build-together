@@ -20,10 +20,17 @@ import { Route as FounderRouteImport } from './routes/founder'
 import { Route as InsightsRouteImport } from './routes/insights'
 import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
 import { Route as AuthenticatedProfileRouteImport } from './routes/_authenticated/profile'
+import { Route as AboutIndexRouteImport } from './routes/about.index'
+import { Route as AboutApproachRouteImport } from './routes/about.approach'
+import { Route as AboutTeamRouteImport } from './routes/about.team'
+import { Route as AboutVisionMissionRouteImport } from './routes/about.vision-mission'
+import { Route as AboutWhyRouteImport } from './routes/about.why'
 import { Route as DiscoverIndexRouteImport } from './routes/discover.index'
-import { Route as DiscoverBiologyOfAgingRouteImport } from './routes/discover.biology-of-aging'
 import { Route as DiscoverHealthyLongevityRouteImport } from './routes/discover.healthy-longevity'
-import { Route as DiscoverScientificMissionsRouteImport } from './routes/discover.scientific-missions'
+import { Route as DiscoverLongevity101RouteImport } from './routes/discover.longevity-101'
+import { Route as DiscoverPreventionHealthspanRouteImport } from './routes/discover.prevention-healthspan'
+import { Route as DiscoverScienceOfAgeingRouteImport } from './routes/discover.science-of-ageing'
+import { Route as DiscoverWhatIsLongevityRouteImport } from './routes/discover.what-is-longevity'
 import { Route as EcosystemIndexRouteImport } from './routes/ecosystem.index'
 import { Route as EcosystemClinicalValidationRouteImport } from './routes/ecosystem.clinical-validation'
 import { Route as EcosystemInvestmentCommercialRouteImport } from './routes/ecosystem.investment-commercial'
@@ -96,14 +103,34 @@ const AuthenticatedProfileRoute = AuthenticatedProfileRouteImport.update({
   path: '/profile',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+const AboutIndexRoute = AboutIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AboutRoute,
+} as any)
+const AboutApproachRoute = AboutApproachRouteImport.update({
+  id: '/approach',
+  path: '/approach',
+  getParentRoute: () => AboutRoute,
+} as any)
+const AboutTeamRoute = AboutTeamRouteImport.update({
+  id: '/team',
+  path: '/team',
+  getParentRoute: () => AboutRoute,
+} as any)
+const AboutVisionMissionRoute = AboutVisionMissionRouteImport.update({
+  id: '/vision-mission',
+  path: '/vision-mission',
+  getParentRoute: () => AboutRoute,
+} as any)
+const AboutWhyRoute = AboutWhyRouteImport.update({
+  id: '/why',
+  path: '/why',
+  getParentRoute: () => AboutRoute,
+} as any)
 const DiscoverIndexRoute = DiscoverIndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => DiscoverRoute,
-} as any)
-const DiscoverBiologyOfAgingRoute = DiscoverBiologyOfAgingRouteImport.update({
-  id: '/biology-of-aging',
-  path: '/biology-of-aging',
   getParentRoute: () => DiscoverRoute,
 } as any)
 const DiscoverHealthyLongevityRoute =
@@ -112,12 +139,27 @@ const DiscoverHealthyLongevityRoute =
     path: '/healthy-longevity',
     getParentRoute: () => DiscoverRoute,
   } as any)
-const DiscoverScientificMissionsRoute =
-  DiscoverScientificMissionsRouteImport.update({
-    id: '/scientific-missions',
-    path: '/scientific-missions',
+const DiscoverLongevity101Route = DiscoverLongevity101RouteImport.update({
+  id: '/longevity-101',
+  path: '/longevity-101',
+  getParentRoute: () => DiscoverRoute,
+} as any)
+const DiscoverPreventionHealthspanRoute =
+  DiscoverPreventionHealthspanRouteImport.update({
+    id: '/prevention-healthspan',
+    path: '/prevention-healthspan',
     getParentRoute: () => DiscoverRoute,
   } as any)
+const DiscoverScienceOfAgeingRoute = DiscoverScienceOfAgeingRouteImport.update({
+  id: '/science-of-ageing',
+  path: '/science-of-ageing',
+  getParentRoute: () => DiscoverRoute,
+} as any)
+const DiscoverWhatIsLongevityRoute = DiscoverWhatIsLongevityRouteImport.update({
+  id: '/what-is-longevity',
+  path: '/what-is-longevity',
+  getParentRoute: () => DiscoverRoute,
+} as any)
 const EcosystemIndexRoute = EcosystemIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -216,7 +258,7 @@ const AuthenticatedProjectsNewRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
+  '/about': typeof AboutRouteWithChildren
   '/auth': typeof AuthRoute
   '/contact': typeof ContactRoute
   '/discover': typeof DiscoverRouteWithChildren
@@ -225,9 +267,15 @@ export interface FileRoutesByFullPath {
   '/insights': typeof InsightsRouteWithChildren
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/profile': typeof AuthenticatedProfileRoute
-  '/discover/biology-of-aging': typeof DiscoverBiologyOfAgingRoute
+  '/about/approach': typeof AboutApproachRoute
+  '/about/team': typeof AboutTeamRoute
+  '/about/vision-mission': typeof AboutVisionMissionRoute
+  '/about/why': typeof AboutWhyRoute
   '/discover/healthy-longevity': typeof DiscoverHealthyLongevityRoute
-  '/discover/scientific-missions': typeof DiscoverScientificMissionsRoute
+  '/discover/longevity-101': typeof DiscoverLongevity101Route
+  '/discover/prevention-healthspan': typeof DiscoverPreventionHealthspanRoute
+  '/discover/science-of-ageing': typeof DiscoverScienceOfAgeingRoute
+  '/discover/what-is-longevity': typeof DiscoverWhatIsLongevityRoute
   '/ecosystem/clinical-validation': typeof EcosystemClinicalValidationRoute
   '/ecosystem/investment-commercial': typeof EcosystemInvestmentCommercialRoute
   '/ecosystem/manufacturing-supply': typeof EcosystemManufacturingSupplyRoute
@@ -237,6 +285,7 @@ export interface FileRoutesByFullPath {
   '/insights/longevity-news': typeof InsightsLongevityNewsRoute
   '/insights/research-highlights': typeof InsightsResearchHighlightsRoute
   '/publications/$slug': typeof PublicationsSlugRoute
+  '/about/': typeof AboutIndexRoute
   '/discover/': typeof DiscoverIndexRoute
   '/ecosystem/': typeof EcosystemIndexRoute
   '/insights/': typeof InsightsIndexRoute
@@ -249,15 +298,20 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
   '/auth': typeof AuthRoute
   '/contact': typeof ContactRoute
   '/founder': typeof FounderRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/profile': typeof AuthenticatedProfileRoute
-  '/discover/biology-of-aging': typeof DiscoverBiologyOfAgingRoute
+  '/about/approach': typeof AboutApproachRoute
+  '/about/team': typeof AboutTeamRoute
+  '/about/vision-mission': typeof AboutVisionMissionRoute
+  '/about/why': typeof AboutWhyRoute
   '/discover/healthy-longevity': typeof DiscoverHealthyLongevityRoute
-  '/discover/scientific-missions': typeof DiscoverScientificMissionsRoute
+  '/discover/longevity-101': typeof DiscoverLongevity101Route
+  '/discover/prevention-healthspan': typeof DiscoverPreventionHealthspanRoute
+  '/discover/science-of-ageing': typeof DiscoverScienceOfAgeingRoute
+  '/discover/what-is-longevity': typeof DiscoverWhatIsLongevityRoute
   '/ecosystem/clinical-validation': typeof EcosystemClinicalValidationRoute
   '/ecosystem/investment-commercial': typeof EcosystemInvestmentCommercialRoute
   '/ecosystem/manufacturing-supply': typeof EcosystemManufacturingSupplyRoute
@@ -267,6 +321,7 @@ export interface FileRoutesByTo {
   '/insights/longevity-news': typeof InsightsLongevityNewsRoute
   '/insights/research-highlights': typeof InsightsResearchHighlightsRoute
   '/publications/$slug': typeof PublicationsSlugRoute
+  '/about': typeof AboutIndexRoute
   '/discover': typeof DiscoverIndexRoute
   '/ecosystem': typeof EcosystemIndexRoute
   '/insights': typeof InsightsIndexRoute
@@ -281,7 +336,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
-  '/about': typeof AboutRoute
+  '/about': typeof AboutRouteWithChildren
   '/auth': typeof AuthRoute
   '/contact': typeof ContactRoute
   '/discover': typeof DiscoverRouteWithChildren
@@ -290,9 +345,15 @@ export interface FileRoutesById {
   '/insights': typeof InsightsRouteWithChildren
   '/_authenticated/dashboard': typeof AuthenticatedDashboardRoute
   '/_authenticated/profile': typeof AuthenticatedProfileRoute
-  '/discover/biology-of-aging': typeof DiscoverBiologyOfAgingRoute
+  '/about/approach': typeof AboutApproachRoute
+  '/about/team': typeof AboutTeamRoute
+  '/about/vision-mission': typeof AboutVisionMissionRoute
+  '/about/why': typeof AboutWhyRoute
   '/discover/healthy-longevity': typeof DiscoverHealthyLongevityRoute
-  '/discover/scientific-missions': typeof DiscoverScientificMissionsRoute
+  '/discover/longevity-101': typeof DiscoverLongevity101Route
+  '/discover/prevention-healthspan': typeof DiscoverPreventionHealthspanRoute
+  '/discover/science-of-ageing': typeof DiscoverScienceOfAgeingRoute
+  '/discover/what-is-longevity': typeof DiscoverWhatIsLongevityRoute
   '/ecosystem/clinical-validation': typeof EcosystemClinicalValidationRoute
   '/ecosystem/investment-commercial': typeof EcosystemInvestmentCommercialRoute
   '/ecosystem/manufacturing-supply': typeof EcosystemManufacturingSupplyRoute
@@ -302,6 +363,7 @@ export interface FileRoutesById {
   '/insights/longevity-news': typeof InsightsLongevityNewsRoute
   '/insights/research-highlights': typeof InsightsResearchHighlightsRoute
   '/publications/$slug': typeof PublicationsSlugRoute
+  '/about/': typeof AboutIndexRoute
   '/discover/': typeof DiscoverIndexRoute
   '/ecosystem/': typeof EcosystemIndexRoute
   '/insights/': typeof InsightsIndexRoute
@@ -325,9 +387,15 @@ export interface FileRouteTypes {
     | '/insights'
     | '/dashboard'
     | '/profile'
-    | '/discover/biology-of-aging'
+    | '/about/approach'
+    | '/about/team'
+    | '/about/vision-mission'
+    | '/about/why'
     | '/discover/healthy-longevity'
-    | '/discover/scientific-missions'
+    | '/discover/longevity-101'
+    | '/discover/prevention-healthspan'
+    | '/discover/science-of-ageing'
+    | '/discover/what-is-longevity'
     | '/ecosystem/clinical-validation'
     | '/ecosystem/investment-commercial'
     | '/ecosystem/manufacturing-supply'
@@ -337,6 +405,7 @@ export interface FileRouteTypes {
     | '/insights/longevity-news'
     | '/insights/research-highlights'
     | '/publications/$slug'
+    | '/about/'
     | '/discover/'
     | '/ecosystem/'
     | '/insights/'
@@ -349,15 +418,20 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/about'
     | '/auth'
     | '/contact'
     | '/founder'
     | '/dashboard'
     | '/profile'
-    | '/discover/biology-of-aging'
+    | '/about/approach'
+    | '/about/team'
+    | '/about/vision-mission'
+    | '/about/why'
     | '/discover/healthy-longevity'
-    | '/discover/scientific-missions'
+    | '/discover/longevity-101'
+    | '/discover/prevention-healthspan'
+    | '/discover/science-of-ageing'
+    | '/discover/what-is-longevity'
     | '/ecosystem/clinical-validation'
     | '/ecosystem/investment-commercial'
     | '/ecosystem/manufacturing-supply'
@@ -367,6 +441,7 @@ export interface FileRouteTypes {
     | '/insights/longevity-news'
     | '/insights/research-highlights'
     | '/publications/$slug'
+    | '/about'
     | '/discover'
     | '/ecosystem'
     | '/insights'
@@ -389,9 +464,15 @@ export interface FileRouteTypes {
     | '/insights'
     | '/_authenticated/dashboard'
     | '/_authenticated/profile'
-    | '/discover/biology-of-aging'
+    | '/about/approach'
+    | '/about/team'
+    | '/about/vision-mission'
+    | '/about/why'
     | '/discover/healthy-longevity'
-    | '/discover/scientific-missions'
+    | '/discover/longevity-101'
+    | '/discover/prevention-healthspan'
+    | '/discover/science-of-ageing'
+    | '/discover/what-is-longevity'
     | '/ecosystem/clinical-validation'
     | '/ecosystem/investment-commercial'
     | '/ecosystem/manufacturing-supply'
@@ -401,6 +482,7 @@ export interface FileRouteTypes {
     | '/insights/longevity-news'
     | '/insights/research-highlights'
     | '/publications/$slug'
+    | '/about/'
     | '/discover/'
     | '/ecosystem/'
     | '/insights/'
@@ -415,7 +497,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
-  AboutRoute: typeof AboutRoute
+  AboutRoute: typeof AboutRouteWithChildren
   AuthRoute: typeof AuthRoute
   ContactRoute: typeof ContactRoute
   DiscoverRoute: typeof DiscoverRouteWithChildren
@@ -505,18 +587,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedProfileRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/about/': {
+      id: '/about/'
+      path: '/'
+      fullPath: '/about/'
+      preLoaderRoute: typeof AboutIndexRouteImport
+      parentRoute: typeof AboutRoute
+    }
+    '/about/approach': {
+      id: '/about/approach'
+      path: '/approach'
+      fullPath: '/about/approach'
+      preLoaderRoute: typeof AboutApproachRouteImport
+      parentRoute: typeof AboutRoute
+    }
+    '/about/team': {
+      id: '/about/team'
+      path: '/team'
+      fullPath: '/about/team'
+      preLoaderRoute: typeof AboutTeamRouteImport
+      parentRoute: typeof AboutRoute
+    }
+    '/about/vision-mission': {
+      id: '/about/vision-mission'
+      path: '/vision-mission'
+      fullPath: '/about/vision-mission'
+      preLoaderRoute: typeof AboutVisionMissionRouteImport
+      parentRoute: typeof AboutRoute
+    }
+    '/about/why': {
+      id: '/about/why'
+      path: '/why'
+      fullPath: '/about/why'
+      preLoaderRoute: typeof AboutWhyRouteImport
+      parentRoute: typeof AboutRoute
+    }
     '/discover/': {
       id: '/discover/'
       path: '/'
       fullPath: '/discover/'
       preLoaderRoute: typeof DiscoverIndexRouteImport
-      parentRoute: typeof DiscoverRoute
-    }
-    '/discover/biology-of-aging': {
-      id: '/discover/biology-of-aging'
-      path: '/biology-of-aging'
-      fullPath: '/discover/biology-of-aging'
-      preLoaderRoute: typeof DiscoverBiologyOfAgingRouteImport
       parentRoute: typeof DiscoverRoute
     }
     '/discover/healthy-longevity': {
@@ -526,11 +636,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DiscoverHealthyLongevityRouteImport
       parentRoute: typeof DiscoverRoute
     }
-    '/discover/scientific-missions': {
-      id: '/discover/scientific-missions'
-      path: '/scientific-missions'
-      fullPath: '/discover/scientific-missions'
-      preLoaderRoute: typeof DiscoverScientificMissionsRouteImport
+    '/discover/longevity-101': {
+      id: '/discover/longevity-101'
+      path: '/longevity-101'
+      fullPath: '/discover/longevity-101'
+      preLoaderRoute: typeof DiscoverLongevity101RouteImport
+      parentRoute: typeof DiscoverRoute
+    }
+    '/discover/prevention-healthspan': {
+      id: '/discover/prevention-healthspan'
+      path: '/prevention-healthspan'
+      fullPath: '/discover/prevention-healthspan'
+      preLoaderRoute: typeof DiscoverPreventionHealthspanRouteImport
+      parentRoute: typeof DiscoverRoute
+    }
+    '/discover/science-of-ageing': {
+      id: '/discover/science-of-ageing'
+      path: '/science-of-ageing'
+      fullPath: '/discover/science-of-ageing'
+      preLoaderRoute: typeof DiscoverScienceOfAgeingRouteImport
+      parentRoute: typeof DiscoverRoute
+    }
+    '/discover/what-is-longevity': {
+      id: '/discover/what-is-longevity'
+      path: '/what-is-longevity'
+      fullPath: '/discover/what-is-longevity'
+      preLoaderRoute: typeof DiscoverWhatIsLongevityRouteImport
       parentRoute: typeof DiscoverRoute
     }
     '/ecosystem/': {
@@ -678,17 +809,39 @@ const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
 const AuthenticatedRouteRouteWithChildren =
   AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
 
+interface AboutRouteChildren {
+  AboutApproachRoute: typeof AboutApproachRoute
+  AboutTeamRoute: typeof AboutTeamRoute
+  AboutVisionMissionRoute: typeof AboutVisionMissionRoute
+  AboutWhyRoute: typeof AboutWhyRoute
+  AboutIndexRoute: typeof AboutIndexRoute
+}
+
+const AboutRouteChildren: AboutRouteChildren = {
+  AboutApproachRoute: AboutApproachRoute,
+  AboutTeamRoute: AboutTeamRoute,
+  AboutVisionMissionRoute: AboutVisionMissionRoute,
+  AboutWhyRoute: AboutWhyRoute,
+  AboutIndexRoute: AboutIndexRoute,
+}
+
+const AboutRouteWithChildren = AboutRoute._addFileChildren(AboutRouteChildren)
+
 interface DiscoverRouteChildren {
-  DiscoverBiologyOfAgingRoute: typeof DiscoverBiologyOfAgingRoute
   DiscoverHealthyLongevityRoute: typeof DiscoverHealthyLongevityRoute
-  DiscoverScientificMissionsRoute: typeof DiscoverScientificMissionsRoute
+  DiscoverLongevity101Route: typeof DiscoverLongevity101Route
+  DiscoverPreventionHealthspanRoute: typeof DiscoverPreventionHealthspanRoute
+  DiscoverScienceOfAgeingRoute: typeof DiscoverScienceOfAgeingRoute
+  DiscoverWhatIsLongevityRoute: typeof DiscoverWhatIsLongevityRoute
   DiscoverIndexRoute: typeof DiscoverIndexRoute
 }
 
 const DiscoverRouteChildren: DiscoverRouteChildren = {
-  DiscoverBiologyOfAgingRoute: DiscoverBiologyOfAgingRoute,
   DiscoverHealthyLongevityRoute: DiscoverHealthyLongevityRoute,
-  DiscoverScientificMissionsRoute: DiscoverScientificMissionsRoute,
+  DiscoverLongevity101Route: DiscoverLongevity101Route,
+  DiscoverPreventionHealthspanRoute: DiscoverPreventionHealthspanRoute,
+  DiscoverScienceOfAgeingRoute: DiscoverScienceOfAgeingRoute,
+  DiscoverWhatIsLongevityRoute: DiscoverWhatIsLongevityRoute,
   DiscoverIndexRoute: DiscoverIndexRoute,
 }
 
@@ -739,7 +892,7 @@ const InsightsRouteWithChildren = InsightsRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
-  AboutRoute: AboutRoute,
+  AboutRoute: AboutRouteWithChildren,
   AuthRoute: AuthRoute,
   ContactRoute: ContactRoute,
   DiscoverRoute: DiscoverRouteWithChildren,
