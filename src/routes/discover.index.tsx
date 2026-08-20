@@ -192,7 +192,7 @@ function DiscoverPage() {
         </div>
         <div className="mt-8 text-center">
           <Button asChild variant="outline" className="border-navy/30 text-navy hover:bg-navy/5">
-            <Link to="/discover/science-of-ageing">Read more on the Science of Ageing</Link>
+            <Link to="/discover/biology-of-aging">Read more on Biology of Aging</Link>
           </Button>
         </div>
       </Section>
@@ -214,7 +214,7 @@ function DiscoverPage() {
         </div>
         <div className="mt-10 text-center">
           <Button asChild variant="outline" className="border-navy/30 text-navy hover:bg-navy/5">
-            <Link to="/discover/longevity-101">Start with Longevity 101</Link>
+            <Link to="/discover/scientific-missions">Read more on Scientific Missions</Link>
           </Button>
         </div>
       </Section>

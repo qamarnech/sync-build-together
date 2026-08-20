@@ -2,54 +2,18 @@ import type { Pillar } from "@/components/site/PillarPage";
 
 export type DiscoverPillar = Pillar & {
   to:
-    | "/discover/what-is-longevity"
     | "/discover/healthy-longevity"
-    | "/discover/science-of-ageing"
-    | "/discover/prevention-healthspan"
-    | "/discover/longevity-101";
+    | "/discover/biology-of-aging"
+    | "/discover/scientific-missions";
 };
 
 export const DISCOVER_PILLARS: DiscoverPillar[] = [
-  {
-    slug: "what-is-longevity",
-    to: "/discover/what-is-longevity",
-    name: "What is Longevity?",
-    kicker: "What is Longevity?",
-    num: "I",
-    title: "Lifespan, healthspan and the difference that matters",
-    intro:
-      "Longevity is often reduced to living longer. The more useful question is how long a person stays healthy, capable and independent — and what determines that trajectory.",
-    focus: [
-      { title: "Lifespan", body: "Total years lived — the measure most familiar, and the least informative on its own." },
-      { title: "Healthspan", body: "The years lived in good health, free of significant disease or functional limitation." },
-      { title: "Functional ability", body: "Strength, mobility, cognition and independence — what people actually experience day to day." },
-      { title: "Biological age", body: "How old the body behaves, measured through biomarkers rather than birthdays." },
-      { title: "Compression of morbidity", body: "Shortening the period of illness and decline at the end of life." },
-      { title: "Why it is a systems question", body: "Biology, behaviour, environment, healthcare and society all shape the same trajectory." },
-    ],
-    participants: [
-      "Individuals",
-      "Clinicians",
-      "Researchers",
-      "Public health professionals",
-      "Educators",
-      "Policymakers",
-    ],
-    outputs: [
-      "Shared definitions",
-      "Healthspan literacy",
-      "Comparable measures",
-      "Clear public communication",
-    ],
-    handoff:
-      "A shared definition of longevity sets up the healthy longevity dimensions that follow.",
-  },
   {
     slug: "healthy-longevity",
     to: "/discover/healthy-longevity",
     name: "Healthy Longevity",
     kicker: "Healthy Longevity",
-    num: "II",
+    num: "I",
     title: "Protecting and improving the capacity to live well as we age",
     intro:
       "Healthy longevity is about more than lifespan. It is the physical, metabolic, cognitive and emotional resilience that allows people to keep living well as they age.",
@@ -77,14 +41,14 @@ export const DISCOVER_PILLARS: DiscoverPillar[] = [
       "Population health guidance",
     ],
     handoff:
-      "Healthy longevity foundations inform the science of ageing and set priorities for research.",
+      "Healthy longevity foundations inform biology of ageing research and set priorities for scientific missions.",
   },
   {
-    slug: "science-of-ageing",
-    to: "/discover/science-of-ageing",
-    name: "Science of Ageing",
-    kicker: "Science of Ageing",
-    num: "III",
+    slug: "biology-of-aging",
+    to: "/discover/biology-of-aging",
+    name: "Biology of Aging",
+    kicker: "Biology of Aging",
+    num: "II",
     title: "Understanding the mechanisms of ageing and how they can be influenced",
     intro:
       "Ageing is not a single process. It is the interplay of cellular senescence, metabolism, immunity, repair, brain health and musculoskeletal decline — and the systems that coordinate them.",
@@ -115,75 +79,47 @@ export const DISCOVER_PILLARS: DiscoverPillar[] = [
       "IP and spin-out potential",
     ],
     handoff:
-      "Mechanistic insight guides what can realistically be prevented, delayed or reversed.",
+      "Biology of ageing insights feed into scientific missions and guide translational research priorities.",
   },
   {
-    slug: "prevention-healthspan",
-    to: "/discover/prevention-healthspan",
-    name: "Prevention & Healthspan",
-    kicker: "Prevention & Healthspan",
-    num: "IV",
-    title: "Detecting change earlier and acting before disease is established",
+    slug: "scientific-missions",
+    to: "/discover/scientific-missions",
+    name: "Scientific Missions",
+    kicker: "Scientific Missions",
+    num: "III",
+    title: "The challenges the ecosystem is organised around",
     intro:
-      "Most age-related disease develops silently for years. Prevention is the discipline of finding that change early and intervening while the trajectory can still be altered.",
+      "Rather than a directory of researchers, MR Longevity is organised around major scientific challenges where collaboration can meaningfully advance healthy longevity.",
     focus: [
-      { title: "Early detection", body: "Screening, diagnostics and biomarkers that surface risk before symptoms." },
-      { title: "Risk stratification", body: "Identifying who benefits most from which intervention, and when." },
-      { title: "Lifestyle medicine", body: "Movement, nutrition, sleep and stress as first-line, evidence-backed interventions." },
-      { title: "Metabolic and cardiovascular prevention", body: "The largest modifiable contributors to lost healthy years." },
-      { title: "Cognitive and musculoskeletal preservation", body: "Protecting the capacities that determine independence." },
-      { title: "Population prevention", body: "Turning individual prevention science into population healthspan gains." },
+      { title: "Cellular Senescence", body: "Senescent cells and their effects on ageing." },
+      { title: "Biological Age", body: "Measuring ageing and intervention response." },
+      { title: "Regenerative Medicine", body: "Maintaining and restoring function." },
+      { title: "Metabolic Ageing", body: "Metabolism and mitochondrial health." },
+      { title: "Women's Healthy Longevity", body: "Reproductive ageing and menopause." },
+      { title: "Brain Longevity", body: "Cognitive resilience and neurodegeneration." },
+      { title: "Immune Ageing", body: "Immune-system change across the lifespan." },
+      { title: "Musculoskeletal Longevity", body: "Muscle, bone, mobility, independence." },
+      { title: "Longevity Therapeutics", body: "Validating interventions on ageing mechanisms." },
+      { title: "AI Models of Ageing", body: "Computation for complex health trajectories." },
+      { title: "Population Impact", body: "Turning prevention science into measurable population healthspan." },
     ],
     participants: [
+      "Researchers",
       "Clinicians",
-      "Diagnostics providers",
-      "Public health organisations",
-      "Digital health innovators",
-      "Employers and insurers",
-      "Individuals",
-    ],
-    outputs: [
-      "Prevention pathways",
-      "Screening protocols",
-      "Real-world evidence",
-      "Population programmes",
-      "Healthspan outcome measures",
-    ],
-    handoff:
-      "Prevention turns scientific insight into everyday practice — and generates the data that improves it.",
-  },
-  {
-    slug: "longevity-101",
-    to: "/discover/longevity-101",
-    name: "Longevity 101",
-    kicker: "Longevity 101",
-    num: "V",
-    title: "A plain-language starting point for the whole field",
-    intro:
-      "A short orientation for anyone new to healthy longevity: the core vocabulary, what the evidence currently supports, and how to tell a strong claim from a weak one.",
-    focus: [
-      { title: "The vocabulary", body: "Healthspan, biological age, hallmarks of ageing, geroscience, senolytics — defined plainly." },
-      { title: "What the evidence supports today", body: "Physical activity, nutrition quality, sleep, smoking cessation, metabolic and blood-pressure control." },
-      { title: "What is promising but unproven", body: "Most longevity therapeutics remain investigational; strong preclinical data is not clinical proof." },
-      { title: "Reading a study", body: "Study design, sample size, endpoints, replication and conflicts of interest." },
-      { title: "Spotting weak claims", body: "Anecdote, surrogate endpoints presented as outcomes, and products sold ahead of evidence." },
-      { title: "Where to go next", body: "Follow the mechanisms in Science of Ageing, or the practice in Prevention & Healthspan." },
-    ],
-    participants: [
-      "Individuals",
-      "Students",
-      "Clinicians new to the field",
-      "Journalists",
+      "Innovators",
       "Investors",
-      "Policy teams",
+      "International partners",
+      "Public health experts",
+      "Policymakers",
     ],
     outputs: [
-      "Shared literacy",
-      "Evidence labelling",
-      "Better questions",
-      "Informed participation",
+      "Research collaborations",
+      "Clinical studies",
+      "Translation projects",
+      "International partnerships",
+      "Public health programmes",
     ],
     handoff:
-      "With the basics in place, the ecosystem pages show who does what and where you can contribute.",
+      "Scientific missions guide project creation and MR Match connections across the ecosystem.",
   },
 ];

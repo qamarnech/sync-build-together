@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PillarPage } from "@/components/site/PillarPage";
 import { DISCOVER_PILLARS } from "@/lib/discover-pillars";
 
-const pillar = DISCOVER_PILLARS[1]!;
+const pillar = DISCOVER_PILLARS[0]!;
 
 export const Route = createFileRoute("/discover/healthy-longevity")({
   head: () => ({

@@ -1,8 +1,0 @@
-export { FounderFigures, FounderDomains, FounderAffiliations, FounderPublications, FounderPatents, FounderGrants } from "./components/site/FounderRecord"
-export { PillarPage } from "./components/site/PillarPage"
-export { SiteFooter } from "./components/site/SiteFooter"
-export { SiteHeader } from "./components/site/SiteHeader"
-export { TranslationFlywheel, HealthspanCurve, SystemsRings, EvidenceLadder, ParticipantOrbit, CycleWheel, PathwayTrack, StageChain } from "./components/site/infographics"
-export { Flourish, Kicker, SectionHead, Tag, Section } from "./components/site/ui-bits"
-export { Button } from "./components/ui/button"
-export { Constants } from "./integrations/supabase/types"
