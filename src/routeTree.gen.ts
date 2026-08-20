@@ -20,6 +20,7 @@ import { Route as FounderRouteImport } from './routes/founder'
 import { Route as InsightsRouteImport } from './routes/insights'
 import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
 import { Route as AuthenticatedProfileRouteImport } from './routes/_authenticated/profile'
+import { Route as AboutIndexRouteImport } from './routes/about.index'
 import { Route as DiscoverIndexRouteImport } from './routes/discover.index'
 import { Route as DiscoverHealthyLongevityRouteImport } from './routes/discover.healthy-longevity'
 import { Route as DiscoverLongevity101RouteImport } from './routes/discover.longevity-101'
@@ -97,6 +98,11 @@ const AuthenticatedProfileRoute = AuthenticatedProfileRouteImport.update({
   id: '/profile',
   path: '/profile',
   getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AboutIndexRoute = AboutIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AboutRoute,
 } as any)
 const DiscoverIndexRoute = DiscoverIndexRouteImport.update({
   id: '/',
@@ -228,7 +234,7 @@ const AuthenticatedProjectsNewRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
+  '/about': typeof AboutRouteWithChildren
   '/auth': typeof AuthRoute
   '/contact': typeof ContactRoute
   '/discover': typeof DiscoverRouteWithChildren
@@ -251,6 +257,7 @@ export interface FileRoutesByFullPath {
   '/insights/longevity-news': typeof InsightsLongevityNewsRoute
   '/insights/research-highlights': typeof InsightsResearchHighlightsRoute
   '/publications/$slug': typeof PublicationsSlugRoute
+  '/about/': typeof AboutIndexRoute
   '/discover/': typeof DiscoverIndexRoute
   '/ecosystem/': typeof EcosystemIndexRoute
   '/insights/': typeof InsightsIndexRoute
@@ -263,7 +270,6 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
   '/auth': typeof AuthRoute
   '/contact': typeof ContactRoute
   '/founder': typeof FounderRoute
@@ -283,6 +289,7 @@ export interface FileRoutesByTo {
   '/insights/longevity-news': typeof InsightsLongevityNewsRoute
   '/insights/research-highlights': typeof InsightsResearchHighlightsRoute
   '/publications/$slug': typeof PublicationsSlugRoute
+  '/about': typeof AboutIndexRoute
   '/discover': typeof DiscoverIndexRoute
   '/ecosystem': typeof EcosystemIndexRoute
   '/insights': typeof InsightsIndexRoute
@@ -297,7 +304,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
-  '/about': typeof AboutRoute
+  '/about': typeof AboutRouteWithChildren
   '/auth': typeof AuthRoute
   '/contact': typeof ContactRoute
   '/discover': typeof DiscoverRouteWithChildren
@@ -320,6 +327,7 @@ export interface FileRoutesById {
   '/insights/longevity-news': typeof InsightsLongevityNewsRoute
   '/insights/research-highlights': typeof InsightsResearchHighlightsRoute
   '/publications/$slug': typeof PublicationsSlugRoute
+  '/about/': typeof AboutIndexRoute
   '/discover/': typeof DiscoverIndexRoute
   '/ecosystem/': typeof EcosystemIndexRoute
   '/insights/': typeof InsightsIndexRoute
@@ -357,6 +365,7 @@ export interface FileRouteTypes {
     | '/insights/longevity-news'
     | '/insights/research-highlights'
     | '/publications/$slug'
+    | '/about/'
     | '/discover/'
     | '/ecosystem/'
     | '/insights/'
@@ -369,7 +378,6 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/about'
     | '/auth'
     | '/contact'
     | '/founder'
@@ -389,6 +397,7 @@ export interface FileRouteTypes {
     | '/insights/longevity-news'
     | '/insights/research-highlights'
     | '/publications/$slug'
+    | '/about'
     | '/discover'
     | '/ecosystem'
     | '/insights'
@@ -425,6 +434,7 @@ export interface FileRouteTypes {
     | '/insights/longevity-news'
     | '/insights/research-highlights'
     | '/publications/$slug'
+    | '/about/'
     | '/discover/'
     | '/ecosystem/'
     | '/insights/'
@@ -439,7 +449,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
-  AboutRoute: typeof AboutRoute
+  AboutRoute: typeof AboutRouteWithChildren
   AuthRoute: typeof AuthRoute
   ContactRoute: typeof ContactRoute
   DiscoverRoute: typeof DiscoverRouteWithChildren
@@ -528,6 +538,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/profile'
       preLoaderRoute: typeof AuthenticatedProfileRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/about/': {
+      id: '/about/'
+      path: '/'
+      fullPath: '/about/'
+      preLoaderRoute: typeof AboutIndexRouteImport
+      parentRoute: typeof AboutRoute
     }
     '/discover/': {
       id: '/discover/'
@@ -716,6 +733,16 @@ const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
 const AuthenticatedRouteRouteWithChildren =
   AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
 
+interface AboutRouteChildren {
+  AboutIndexRoute: typeof AboutIndexRoute
+}
+
+const AboutRouteChildren: AboutRouteChildren = {
+  AboutIndexRoute: AboutIndexRoute,
+}
+
+const AboutRouteWithChildren = AboutRoute._addFileChildren(AboutRouteChildren)
+
 interface DiscoverRouteChildren {
   DiscoverHealthyLongevityRoute: typeof DiscoverHealthyLongevityRoute
   DiscoverLongevity101Route: typeof DiscoverLongevity101Route
@@ -781,7 +808,7 @@ const InsightsRouteWithChildren = InsightsRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
-  AboutRoute: AboutRoute,
+  AboutRoute: AboutRouteWithChildren,
   AuthRoute: AuthRoute,
   ContactRoute: ContactRoute,
   DiscoverRoute: DiscoverRouteWithChildren,
