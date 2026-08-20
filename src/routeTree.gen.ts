@@ -21,6 +21,7 @@ import { Route as InsightsRouteImport } from './routes/insights'
 import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
 import { Route as AuthenticatedProfileRouteImport } from './routes/_authenticated/profile'
 import { Route as AboutIndexRouteImport } from './routes/about.index'
+import { Route as AboutWhyRouteImport } from './routes/about.why'
 import { Route as DiscoverIndexRouteImport } from './routes/discover.index'
 import { Route as DiscoverHealthyLongevityRouteImport } from './routes/discover.healthy-longevity'
 import { Route as DiscoverLongevity101RouteImport } from './routes/discover.longevity-101'
@@ -102,6 +103,11 @@ const AuthenticatedProfileRoute = AuthenticatedProfileRouteImport.update({
 const AboutIndexRoute = AboutIndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => AboutRoute,
+} as any)
+const AboutWhyRoute = AboutWhyRouteImport.update({
+  id: '/why',
+  path: '/why',
   getParentRoute: () => AboutRoute,
 } as any)
 const DiscoverIndexRoute = DiscoverIndexRouteImport.update({
@@ -243,6 +249,7 @@ export interface FileRoutesByFullPath {
   '/insights': typeof InsightsRouteWithChildren
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/profile': typeof AuthenticatedProfileRoute
+  '/about/why': typeof AboutWhyRoute
   '/discover/healthy-longevity': typeof DiscoverHealthyLongevityRoute
   '/discover/longevity-101': typeof DiscoverLongevity101Route
   '/discover/prevention-healthspan': typeof DiscoverPreventionHealthspanRoute
@@ -275,6 +282,7 @@ export interface FileRoutesByTo {
   '/founder': typeof FounderRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/profile': typeof AuthenticatedProfileRoute
+  '/about/why': typeof AboutWhyRoute
   '/discover/healthy-longevity': typeof DiscoverHealthyLongevityRoute
   '/discover/longevity-101': typeof DiscoverLongevity101Route
   '/discover/prevention-healthspan': typeof DiscoverPreventionHealthspanRoute
@@ -313,6 +321,7 @@ export interface FileRoutesById {
   '/insights': typeof InsightsRouteWithChildren
   '/_authenticated/dashboard': typeof AuthenticatedDashboardRoute
   '/_authenticated/profile': typeof AuthenticatedProfileRoute
+  '/about/why': typeof AboutWhyRoute
   '/discover/healthy-longevity': typeof DiscoverHealthyLongevityRoute
   '/discover/longevity-101': typeof DiscoverLongevity101Route
   '/discover/prevention-healthspan': typeof DiscoverPreventionHealthspanRoute
@@ -351,6 +360,7 @@ export interface FileRouteTypes {
     | '/insights'
     | '/dashboard'
     | '/profile'
+    | '/about/why'
     | '/discover/healthy-longevity'
     | '/discover/longevity-101'
     | '/discover/prevention-healthspan'
@@ -383,6 +393,7 @@ export interface FileRouteTypes {
     | '/founder'
     | '/dashboard'
     | '/profile'
+    | '/about/why'
     | '/discover/healthy-longevity'
     | '/discover/longevity-101'
     | '/discover/prevention-healthspan'
@@ -420,6 +431,7 @@ export interface FileRouteTypes {
     | '/insights'
     | '/_authenticated/dashboard'
     | '/_authenticated/profile'
+    | '/about/why'
     | '/discover/healthy-longevity'
     | '/discover/longevity-101'
     | '/discover/prevention-healthspan'
@@ -544,6 +556,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/about/'
       preLoaderRoute: typeof AboutIndexRouteImport
+      parentRoute: typeof AboutRoute
+    }
+    '/about/why': {
+      id: '/about/why'
+      path: '/why'
+      fullPath: '/about/why'
+      preLoaderRoute: typeof AboutWhyRouteImport
       parentRoute: typeof AboutRoute
     }
     '/discover/': {
@@ -734,10 +753,12 @@ const AuthenticatedRouteRouteWithChildren =
   AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
 
 interface AboutRouteChildren {
+  AboutWhyRoute: typeof AboutWhyRoute
   AboutIndexRoute: typeof AboutIndexRoute
 }
 
 const AboutRouteChildren: AboutRouteChildren = {
+  AboutWhyRoute: AboutWhyRoute,
   AboutIndexRoute: AboutIndexRoute,
 }
 
