@@ -23,6 +23,7 @@ import { Route as AuthenticatedProfileRouteImport } from './routes/_authenticate
 import { Route as DiscoverIndexRouteImport } from './routes/discover.index'
 import { Route as DiscoverBiologyOfAgingRouteImport } from './routes/discover.biology-of-aging'
 import { Route as DiscoverHealthyLongevityRouteImport } from './routes/discover.healthy-longevity'
+import { Route as DiscoverLongevity101RouteImport } from './routes/discover.longevity-101'
 import { Route as DiscoverPreventionHealthspanRouteImport } from './routes/discover.prevention-healthspan'
 import { Route as DiscoverScienceOfAgeingRouteImport } from './routes/discover.science-of-ageing'
 import { Route as DiscoverScientificMissionsRouteImport } from './routes/discover.scientific-missions'
@@ -115,6 +116,11 @@ const DiscoverHealthyLongevityRoute =
     path: '/healthy-longevity',
     getParentRoute: () => DiscoverRoute,
   } as any)
+const DiscoverLongevity101Route = DiscoverLongevity101RouteImport.update({
+  id: '/longevity-101',
+  path: '/longevity-101',
+  getParentRoute: () => DiscoverRoute,
+} as any)
 const DiscoverPreventionHealthspanRoute =
   DiscoverPreventionHealthspanRouteImport.update({
     id: '/prevention-healthspan',
@@ -246,6 +252,7 @@ export interface FileRoutesByFullPath {
   '/profile': typeof AuthenticatedProfileRoute
   '/discover/biology-of-aging': typeof DiscoverBiologyOfAgingRoute
   '/discover/healthy-longevity': typeof DiscoverHealthyLongevityRoute
+  '/discover/longevity-101': typeof DiscoverLongevity101Route
   '/discover/prevention-healthspan': typeof DiscoverPreventionHealthspanRoute
   '/discover/science-of-ageing': typeof DiscoverScienceOfAgeingRoute
   '/discover/scientific-missions': typeof DiscoverScientificMissionsRoute
@@ -279,6 +286,7 @@ export interface FileRoutesByTo {
   '/profile': typeof AuthenticatedProfileRoute
   '/discover/biology-of-aging': typeof DiscoverBiologyOfAgingRoute
   '/discover/healthy-longevity': typeof DiscoverHealthyLongevityRoute
+  '/discover/longevity-101': typeof DiscoverLongevity101Route
   '/discover/prevention-healthspan': typeof DiscoverPreventionHealthspanRoute
   '/discover/science-of-ageing': typeof DiscoverScienceOfAgeingRoute
   '/discover/scientific-missions': typeof DiscoverScientificMissionsRoute
@@ -317,6 +325,7 @@ export interface FileRoutesById {
   '/_authenticated/profile': typeof AuthenticatedProfileRoute
   '/discover/biology-of-aging': typeof DiscoverBiologyOfAgingRoute
   '/discover/healthy-longevity': typeof DiscoverHealthyLongevityRoute
+  '/discover/longevity-101': typeof DiscoverLongevity101Route
   '/discover/prevention-healthspan': typeof DiscoverPreventionHealthspanRoute
   '/discover/science-of-ageing': typeof DiscoverScienceOfAgeingRoute
   '/discover/scientific-missions': typeof DiscoverScientificMissionsRoute
@@ -355,6 +364,7 @@ export interface FileRouteTypes {
     | '/profile'
     | '/discover/biology-of-aging'
     | '/discover/healthy-longevity'
+    | '/discover/longevity-101'
     | '/discover/prevention-healthspan'
     | '/discover/science-of-ageing'
     | '/discover/scientific-missions'
@@ -388,6 +398,7 @@ export interface FileRouteTypes {
     | '/profile'
     | '/discover/biology-of-aging'
     | '/discover/healthy-longevity'
+    | '/discover/longevity-101'
     | '/discover/prevention-healthspan'
     | '/discover/science-of-ageing'
     | '/discover/scientific-missions'
@@ -425,6 +436,7 @@ export interface FileRouteTypes {
     | '/_authenticated/profile'
     | '/discover/biology-of-aging'
     | '/discover/healthy-longevity'
+    | '/discover/longevity-101'
     | '/discover/prevention-healthspan'
     | '/discover/science-of-ageing'
     | '/discover/scientific-missions'
@@ -561,6 +573,13 @@ declare module '@tanstack/react-router' {
       path: '/healthy-longevity'
       fullPath: '/discover/healthy-longevity'
       preLoaderRoute: typeof DiscoverHealthyLongevityRouteImport
+      parentRoute: typeof DiscoverRoute
+    }
+    '/discover/longevity-101': {
+      id: '/discover/longevity-101'
+      path: '/longevity-101'
+      fullPath: '/discover/longevity-101'
+      preLoaderRoute: typeof DiscoverLongevity101RouteImport
       parentRoute: typeof DiscoverRoute
     }
     '/discover/prevention-healthspan': {
@@ -739,6 +758,7 @@ const AuthenticatedRouteRouteWithChildren =
 interface DiscoverRouteChildren {
   DiscoverBiologyOfAgingRoute: typeof DiscoverBiologyOfAgingRoute
   DiscoverHealthyLongevityRoute: typeof DiscoverHealthyLongevityRoute
+  DiscoverLongevity101Route: typeof DiscoverLongevity101Route
   DiscoverPreventionHealthspanRoute: typeof DiscoverPreventionHealthspanRoute
   DiscoverScienceOfAgeingRoute: typeof DiscoverScienceOfAgeingRoute
   DiscoverScientificMissionsRoute: typeof DiscoverScientificMissionsRoute
@@ -749,6 +769,7 @@ interface DiscoverRouteChildren {
 const DiscoverRouteChildren: DiscoverRouteChildren = {
   DiscoverBiologyOfAgingRoute: DiscoverBiologyOfAgingRoute,
   DiscoverHealthyLongevityRoute: DiscoverHealthyLongevityRoute,
+  DiscoverLongevity101Route: DiscoverLongevity101Route,
   DiscoverPreventionHealthspanRoute: DiscoverPreventionHealthspanRoute,
   DiscoverScienceOfAgeingRoute: DiscoverScienceOfAgeingRoute,
   DiscoverScientificMissionsRoute: DiscoverScientificMissionsRoute,
