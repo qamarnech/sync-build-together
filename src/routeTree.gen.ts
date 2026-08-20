@@ -21,6 +21,7 @@ import { Route as InsightsRouteImport } from './routes/insights'
 import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
 import { Route as AuthenticatedProfileRouteImport } from './routes/_authenticated/profile'
 import { Route as AboutIndexRouteImport } from './routes/about.index'
+import { Route as AboutApproachRouteImport } from './routes/about.approach'
 import { Route as AboutVisionMissionRouteImport } from './routes/about.vision-mission'
 import { Route as AboutWhyRouteImport } from './routes/about.why'
 import { Route as DiscoverIndexRouteImport } from './routes/discover.index'
@@ -104,6 +105,11 @@ const AuthenticatedProfileRoute = AuthenticatedProfileRouteImport.update({
 const AboutIndexRoute = AboutIndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => AboutRoute,
+} as any)
+const AboutApproachRoute = AboutApproachRouteImport.update({
+  id: '/approach',
+  path: '/approach',
   getParentRoute: () => AboutRoute,
 } as any)
 const AboutVisionMissionRoute = AboutVisionMissionRouteImport.update({
@@ -255,6 +261,7 @@ export interface FileRoutesByFullPath {
   '/insights': typeof InsightsRouteWithChildren
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/profile': typeof AuthenticatedProfileRoute
+  '/about/approach': typeof AboutApproachRoute
   '/about/vision-mission': typeof AboutVisionMissionRoute
   '/about/why': typeof AboutWhyRoute
   '/discover/healthy-longevity': typeof DiscoverHealthyLongevityRoute
@@ -289,6 +296,7 @@ export interface FileRoutesByTo {
   '/founder': typeof FounderRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/profile': typeof AuthenticatedProfileRoute
+  '/about/approach': typeof AboutApproachRoute
   '/about/vision-mission': typeof AboutVisionMissionRoute
   '/about/why': typeof AboutWhyRoute
   '/discover/healthy-longevity': typeof DiscoverHealthyLongevityRoute
@@ -329,6 +337,7 @@ export interface FileRoutesById {
   '/insights': typeof InsightsRouteWithChildren
   '/_authenticated/dashboard': typeof AuthenticatedDashboardRoute
   '/_authenticated/profile': typeof AuthenticatedProfileRoute
+  '/about/approach': typeof AboutApproachRoute
   '/about/vision-mission': typeof AboutVisionMissionRoute
   '/about/why': typeof AboutWhyRoute
   '/discover/healthy-longevity': typeof DiscoverHealthyLongevityRoute
@@ -369,6 +378,7 @@ export interface FileRouteTypes {
     | '/insights'
     | '/dashboard'
     | '/profile'
+    | '/about/approach'
     | '/about/vision-mission'
     | '/about/why'
     | '/discover/healthy-longevity'
@@ -403,6 +413,7 @@ export interface FileRouteTypes {
     | '/founder'
     | '/dashboard'
     | '/profile'
+    | '/about/approach'
     | '/about/vision-mission'
     | '/about/why'
     | '/discover/healthy-longevity'
@@ -442,6 +453,7 @@ export interface FileRouteTypes {
     | '/insights'
     | '/_authenticated/dashboard'
     | '/_authenticated/profile'
+    | '/about/approach'
     | '/about/vision-mission'
     | '/about/why'
     | '/discover/healthy-longevity'
@@ -568,6 +580,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/about/'
       preLoaderRoute: typeof AboutIndexRouteImport
+      parentRoute: typeof AboutRoute
+    }
+    '/about/approach': {
+      id: '/about/approach'
+      path: '/approach'
+      fullPath: '/about/approach'
+      preLoaderRoute: typeof AboutApproachRouteImport
       parentRoute: typeof AboutRoute
     }
     '/about/vision-mission': {
@@ -772,12 +791,14 @@ const AuthenticatedRouteRouteWithChildren =
   AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
 
 interface AboutRouteChildren {
+  AboutApproachRoute: typeof AboutApproachRoute
   AboutVisionMissionRoute: typeof AboutVisionMissionRoute
   AboutWhyRoute: typeof AboutWhyRoute
   AboutIndexRoute: typeof AboutIndexRoute
 }
 
 const AboutRouteChildren: AboutRouteChildren = {
+  AboutApproachRoute: AboutApproachRoute,
   AboutVisionMissionRoute: AboutVisionMissionRoute,
   AboutWhyRoute: AboutWhyRoute,
   AboutIndexRoute: AboutIndexRoute,
