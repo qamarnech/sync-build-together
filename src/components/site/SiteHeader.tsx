@@ -37,11 +37,15 @@ function Dropdown({
   to,
   items,
   showOverview = true,
+  bottomItems,
+  bottomLabel,
 }: {
   label: string;
   to: string;
   items: { slug: string; to: string; name: string }[];
   showOverview?: boolean;
+  bottomItems?: { slug: string; to: string; name: string }[];
+  bottomLabel?: string;
 }) {
   return (
     <div className="group relative">
@@ -75,6 +79,26 @@ function Dropdown({
               {item.name}
             </Link>
           ))}
+          {bottomItems && bottomItems.length > 0 && (
+            <>
+              <div className="my-2 border-t border-line" />
+              {bottomLabel && (
+                <p className="px-3 py-1 text-xs font-semibold uppercase tracking-wider text-gold">
+                  {bottomLabel}
+                </p>
+              )}
+              {bottomItems.map((item) => (
+                <Link
+                  key={item.slug}
+                  to={item.to}
+                  className="block rounded-lg px-3 py-2 text-sm text-ink-soft transition-colors hover:bg-gold/10 hover:text-navy"
+                  activeProps={{ className: "text-navy font-semibold" }}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </>
+          )}
         </div>
       </div>
     </div>
@@ -100,7 +124,13 @@ export function SiteHeader() {
 
         <nav className="hidden items-center gap-6 md:flex">
           <Dropdown label="Home" to="/" items={HOME_ITEMS} />
-          <Dropdown label="Discover" to="/discover" items={DISCOVER_ITEMS} />
+          <Dropdown
+            label="Discover"
+            to="/discover"
+            items={DISCOVER_ITEMS}
+            bottomItems={ECOSYSTEM_ITEMS}
+            bottomLabel="Longevity Landscape"
+          />
           <Dropdown label="Ecosystem" to="/ecosystem" items={ECOSYSTEM_ITEMS} showOverview={false} />
           <Dropdown label="Insights" to="/insights" items={[...INSIGHTS_ITEMS]} />
 
@@ -178,6 +208,18 @@ export function SiteHeader() {
                 Overview
               </Link>
               {DISCOVER_ITEMS.map((item) => (
+                <Link
+                  key={item.slug}
+                  to={item.to}
+                  onClick={() => setOpen(false)}
+                  className="text-sm text-ink-soft"
+                >
+                  {item.name}
+                </Link>
+              ))}
+              <div className="my-1 border-t border-line" />
+              <p className="text-xs font-semibold uppercase tracking-wider text-gold">Longevity Landscape</p>
+              {ECOSYSTEM_ITEMS.map((item) => (
                 <Link
                   key={item.slug}
                   to={item.to}
