@@ -3,6 +3,8 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Section, SectionHead } from "@/components/site/ui-bits";
 import { COLLABORATE_PILLARS } from "@/lib/collaborate-pillars";
+import bannerCollaborate from "@/assets/banner-collaborate.jpg";
+
 
 export const Route = createFileRoute("/collaborate/")({
   head: () => ({
@@ -28,14 +30,27 @@ export const Route = createFileRoute("/collaborate/")({
 function CollaborateOverview() {
   return (
     <div>
-      <Section tone="navy">
-        <SectionHead
-          kicker="Collaborate"
-          title="Turning knowledge and expertise into real-world impact"
-          intro="A space for turning knowledge, expertise and ideas into research, innovation, partnerships and real-world impact."
-          invert
+      <div className="relative overflow-hidden bg-navy">
+        <img
+          src={bannerCollaborate}
+          alt="Teams collaborating around a glowing holographic globe linked by golden network lines"
+          width={1920}
+          height={768}
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-45"
         />
-      </Section>
+        <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-b from-navy/70 to-navy/90" />
+        <div className="relative">
+          <Section tone="navy">
+            <SectionHead
+              kicker="Collaborate"
+              title="Turning knowledge and expertise into real-world impact"
+              intro="A space for turning knowledge, expertise and ideas into research, innovation, partnerships and real-world impact."
+              invert
+            />
+          </Section>
+        </div>
+      </div>
+
 
       <Section tone="white">
         <SectionHead kicker="The logic" title="Four questions, four routes in" align="left" />

@@ -11,6 +11,8 @@ import {
 import { DISCOVER_PILLARS } from "@/lib/discover-pillars";
 import { EvidenceLadder, HealthspanCurve, PathwayTrack } from "@/components/site/infographics";
 import { cn } from "@/lib/utils";
+import bannerDiscover from "@/assets/banner-discover.jpg";
+
 
 export const Route = createFileRoute("/discover/")({
   head: () => ({
@@ -40,14 +42,27 @@ function DiscoverPage() {
 
   return (
     <div>
-      <Section tone="navy">
-        <SectionHead
-          kicker="Discover"
-          title="Explore the science and focus of healthy longevity"
-          intro="Three lenses into the knowledge that powers the mission: what healthy longevity means, the biology of ageing, and the scientific missions we are organised around."
-          invert
+      <div className="relative overflow-hidden bg-navy">
+        <img
+          src={bannerDiscover}
+          alt="Holographic cell and DNA structures glowing above a futuristic data platform"
+          width={1920}
+          height={768}
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-45"
         />
-      </Section>
+        <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-b from-navy/70 to-navy/90" />
+        <div className="relative">
+          <Section tone="navy">
+            <SectionHead
+              kicker="Discover"
+              title="Explore the science and focus of healthy longevity"
+              intro="Three lenses into the knowledge that powers the mission: what healthy longevity means, the biology of ageing, and the scientific missions we are organised around."
+              invert
+            />
+          </Section>
+        </div>
+      </div>
+
 
       <Section tone="white">
         <SectionHead
