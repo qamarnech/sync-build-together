@@ -48,9 +48,9 @@ function DiscoverPage() {
           alt="Holographic cell and DNA structures glowing above a futuristic data platform"
           width={1920}
           height={768}
-          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-65"
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-100"
         />
-        <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-b from-navy/45 to-navy/85" />
+        <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-b from-navy/50 via-navy/20 to-navy/60" />
         <div className="relative">
           <Section tone="navy" className="bg-transparent">
             <SectionHead
