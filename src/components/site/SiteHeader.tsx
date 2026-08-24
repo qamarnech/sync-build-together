@@ -37,11 +37,15 @@ function Dropdown({
   to,
   items,
   showOverview = true,
+  bottomItems,
+  bottomLabel,
 }: {
   label: string;
   to: string;
   items: { slug: string; to: string; name: string }[];
   showOverview?: boolean;
+  bottomItems?: { slug: string; to: string; name: string }[];
+  bottomLabel?: string;
 }) {
   return (
     <div className="group relative">
@@ -75,6 +79,26 @@ function Dropdown({
               {item.name}
             </Link>
           ))}
+          {bottomItems && bottomItems.length > 0 && (
+            <>
+              <div className="my-2 border-t border-line" />
+              {bottomLabel && (
+                <p className="px-3 py-1 text-xs font-semibold uppercase tracking-wider text-gold">
+                  {bottomLabel}
+                </p>
+              )}
+              {bottomItems.map((item) => (
+                <Link
+                  key={item.slug}
+                  to={item.to}
+                  className="block rounded-lg px-3 py-2 text-sm text-ink-soft transition-colors hover:bg-gold/10 hover:text-navy"
+                  activeProps={{ className: "text-navy font-semibold" }}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </>
+          )}
         </div>
       </div>
     </div>
