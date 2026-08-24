@@ -26,11 +26,11 @@ export const Route = createFileRoute("/")({
 });
 
 const FIVE_PATHS = [
-  { num: "I. Why", label: "Why does MR Longevity exist?" },
-  { num: "II. What", label: "What is it?" },
-  { num: "III. How", label: "How does it work?" },
-  { num: "IV. Gain", label: "What can I get from it?" },
-  { num: "V. Join", label: "How can I participate?" },
+  { num: "WHY", label: "THE VISION - A shared ambition for healthier, longer lives." },
+  { num: "WHAT", label: "THE WORLD OF LONGEVITY - Discover the science, ideas and possibilities shaping how we live longer and healthier." },
+  { num: "HOW", label: "FROM SCIENCE TO LIFE - See how research, innovation and collaboration become real-world solutions." },
+  { num: "GAIN", label: "WHAT’S POSSIBLE - Explore knowledge, connections, projects and opportunities across longevity." },
+  { num: "JOIN", label: "BE PART OF IT - Contribute your expertise, ideas or resources and help shape the future of longevity." },
 ];
 
 function Index() {
@@ -50,7 +50,7 @@ function Index() {
             in human healthspan.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Button asChild size="lg" className="bg-gold text-white hover:bg-gold-light">
+            <Button asChild size="lg" variant="gold">
               <Link to="/auth">Join MR Longevity</Link>
             </Button>
             <Button
@@ -207,7 +207,7 @@ function Index() {
             connect your needs with the capabilities of the ecosystem.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Button asChild size="lg" className="bg-gold text-white hover:bg-gold-light">
+            <Button asChild size="lg" variant="gold">
               <Link to="/auth">
                 Join MR Longevity <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
