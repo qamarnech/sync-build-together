@@ -81,7 +81,7 @@ export function PillarPage({
             Join MR Longevity to find projects, collaborators and capital aligned with this focus.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <Button asChild variant="gold">
+            <Button asChild className="bg-gold text-white hover:bg-gold-light">
               <Link to="/auth" search={{ mode: "signup" }}>
                 Join MR Longevity
               </Link>

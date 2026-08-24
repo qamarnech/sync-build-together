@@ -56,7 +56,7 @@ function DashboardPage() {
             ))}
           </div>
           <div className="mt-6 flex flex-wrap gap-2">
-            <Button asChild>
+            <Button asChild className="bg-navy text-white hover:bg-navy-2">
               <Link to="/profile">Edit profile</Link>
             </Button>
             <Button asChild variant="outline">

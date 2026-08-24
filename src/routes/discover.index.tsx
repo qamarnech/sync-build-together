@@ -144,7 +144,7 @@ function DiscoverPage() {
               Matchmaking actively connects what a project is missing with who can provide it. Every
               project on the board is scored against the expertise of every member.
             </p>
-            <Button asChild className="mt-5" variant="gold">
+            <Button asChild className="mt-5 bg-gold text-white hover:bg-gold-light">
               <Link to="/projects">See live matches</Link>
             </Button>
           </div>
@@ -228,7 +228,7 @@ function DiscoverPage() {
             Join MR Longevity to browse projects, meet collaborators and use MR Match.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <Button asChild variant="gold">
+            <Button asChild className="bg-gold text-white hover:bg-gold-light">
               <Link to="/auth" search={{ mode: "signup" }}>
                 Join MR Longevity
               </Link>

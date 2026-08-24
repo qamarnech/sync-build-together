@@ -47,7 +47,7 @@ function ProjectsPage() {
               Every project states what it is missing. Find where your capability meets a need.
             </p>
           </div>
-          <Button asChild variant="gold">
+          <Button asChild className="bg-gold text-white hover:bg-gold-light">
             <Link to="/projects/new">Propose a project</Link>
           </Button>
         </div>

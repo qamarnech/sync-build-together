@@ -123,7 +123,7 @@ export function SiteHeader() {
               <Button asChild variant="outline" size="sm">
                 <Link to="/auth">Sign in</Link>
               </Button>
-              <Button asChild size="sm" variant="gold">
+              <Button asChild size="sm" className="bg-gold text-white hover:bg-gold-light">
                 <Link to="/auth" search={{ mode: "signup" }}>
                   Join MR Longevity
                 </Link>

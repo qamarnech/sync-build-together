@@ -185,7 +185,7 @@ function EcosystemPage() {
             Join MR Longevity to browse projects, meet collaborators and use MR Match.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <Button asChild variant="gold">
+            <Button asChild className="bg-gold text-white hover:bg-gold-light">
               <Link to="/auth" search={{ mode: "signup" }}>
                 Join MR Longevity
               </Link>

@@ -75,7 +75,6 @@
   --color-line: var(--line);
   --font-serif: "Playfair Display", Georgia, "Times New Roman", serif;
   --font-display: "Cormorant Garamond", Georgia, serif;
-  --font-sans: "Karla", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
 }
 
 :root {
@@ -186,7 +185,8 @@
   }
 
   body {
-    font-family: var(--font-sans);
+    font-family:
+      -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, "Helvetica Neue", Arial, sans-serif;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }

@@ -276,7 +276,7 @@ function AboutPage() {
           Researchers, clinicians, innovators, investors, international partners, public-health
           organisations and individuals who want to live healthier for longer.
         </p>
-        <Button asChild className="mt-6" variant="gold">
+        <Button asChild className="mt-6 bg-gold text-white hover:bg-gold-light">
           <Link to="/auth">Join MR Longevity</Link>
         </Button>
       </Section>
