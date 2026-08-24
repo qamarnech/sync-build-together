@@ -36,7 +36,6 @@ function Dropdown({
   showOverview = true,
   bottomItems,
   bottomLabel,
-  bottomTo,
 }: {
   label: string;
   to: string;
@@ -44,7 +43,6 @@ function Dropdown({
   showOverview?: boolean;
   bottomItems?: { slug: string; to: string; name: string }[];
   bottomLabel?: string;
-  bottomTo?: string;
 }) {
   return (
     <div className="group relative">
@@ -83,7 +81,7 @@ function Dropdown({
               <div className="my-2 border-t border-line" />
               <div className="group/sub relative">
                 <Link
-                  to={bottomTo ?? "/ecosystem"}
+                  to="/ecosystem"
                   className="flex items-center justify-between gap-2 rounded-lg px-3 py-2 text-sm text-ink-soft transition-colors hover:bg-gold/10 hover:text-navy"
                   activeProps={{ className: "text-navy font-semibold" }}
                 >
@@ -226,7 +224,7 @@ export function SiteHeader() {
                 </Link>
               ))}
               <div className="my-1 border-t border-line" />
-              <p className="text-xs font-semibold uppercase tracking-wider text-gold">Longevity Landscape</p>
+              <Link to="/ecosystem" onClick={() => setOpen(false)} className="text-xs font-semibold uppercase tracking-wider text-gold">Longevity Landscape</Link>
               {ECOSYSTEM_ITEMS.map((item) => (
                 <Link
                   key={item.slug}
