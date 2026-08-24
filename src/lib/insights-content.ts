@@ -143,6 +143,7 @@ export type HighlightItem = {
   area: string;
   body: string;
   implication: string;
+  source: { label: string; citation: string; url: string };
 };
 
 export const RESEARCH_HIGHLIGHTS: HighlightItem[] = [
@@ -153,6 +154,11 @@ export const RESEARCH_HIGHLIGHTS: HighlightItem[] = [
     body: "Senescent cells accumulate with age and drive chronic inflammation and tissue dysfunction. Selective clearance and modulation strategies remain among the most actively studied interventions in ageing biology.",
     implication:
       "Needs validated biomarkers of senescent burden before clinical claims can be made responsibly.",
+    source: {
+      label: "Cell, 2023",
+      citation: "López-Otín et al., Hallmarks of aging: an expanding universe",
+      url: "https://doi.org/10.1016/j.cell.2022.11.001",
+    },
   },
   {
     slug: "biological-age",
@@ -161,6 +167,11 @@ export const RESEARCH_HIGHLIGHTS: HighlightItem[] = [
     body: "Epigenetic, proteomic and functional measures increasingly agree on direction, but not magnitude. Consortium work is standardising how clocks are reported and validated.",
     implication:
       "Comparable endpoints make it possible to judge whether an intervention actually changes ageing trajectory.",
+    source: {
+      label: "Cell, 2023",
+      citation: "Biomarkers of Aging Consortium, Biomarkers of aging for the identification and evaluation of longevity interventions",
+      url: "https://www.cell.com/cell/fulltext/S0092-8674(23)00857-7",
+    },
   },
   {
     slug: "immune-ageing",
@@ -169,6 +180,11 @@ export const RESEARCH_HIGHLIGHTS: HighlightItem[] = [
     body: "Thymic involution, clonal expansion and inflammageing alter response to infection, cancer and vaccination, connecting ageing biology directly to mainstream clinical medicine.",
     implication:
       "A strong entry point for clinical validation partnerships within existing care pathways.",
+    source: {
+      label: "Nature Immunology, 2021",
+      citation: "Mittelbrunn & Kroemer, Hallmarks of T cell aging",
+      url: "https://www.nature.com/articles/s41590-021-00927-z",
+    },
   },
   {
     slug: "regenerative",
@@ -177,6 +193,11 @@ export const RESEARCH_HIGHLIGHTS: HighlightItem[] = [
     body: "Stem-cell, NK-cell and exosome technologies are progressing from mechanism to manufacturable products, with manufacturing and regulatory capability now the limiting step.",
     implication:
       "Manufacturing and supply capability determines which discoveries reach patients.",
+    source: {
+      label: "ISSCR",
+      citation: "Guidelines for Stem Cell Research and Clinical Translation",
+      url: "https://www.isscr.org/guidelines",
+    },
   },
   {
     slug: "metabolic",
@@ -185,6 +206,11 @@ export const RESEARCH_HIGHLIGHTS: HighlightItem[] = [
     body: "Nutrition, body composition, muscle mass and mitochondrial function influence nearly every downstream ageing pathway, and are measurable and modifiable at population scale.",
     implication:
       "Population impact is achievable now, without waiting for novel therapeutics.",
+    source: {
+      label: "World Health Organization",
+      citation: "UN Decade of Healthy Ageing (2021 to 2030)",
+      url: "https://www.who.int/en/initiatives/decade-of-healthy-ageing",
+    },
   },
   {
     slug: "ai-models",
@@ -193,5 +219,10 @@ export const RESEARCH_HIGHLIGHTS: HighlightItem[] = [
     body: "Multi-omic and multimodal models can predict health trajectories, but generalisability across cohorts and ethnicities is the open question. Reporting guidelines are emerging.",
     implication:
       "Model claims need external validation cohorts before entering clinical or consumer use.",
+    source: {
+      label: "The BMJ, 2024",
+      citation: "TRIPOD+AI statement: reporting guidance for clinical prediction models",
+      url: "https://doi.org/10.1136/bmj-2023-078378",
+    },
   },
 ];
