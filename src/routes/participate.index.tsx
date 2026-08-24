@@ -2,43 +2,43 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { Section, SectionHead, Tag } from "@/components/site/ui-bits";
 import { PARTICIPATE_ITEMS } from "@/lib/participate-nav";
-import { EVENTS, LONGEVITY_NEWS, RESEARCH_HIGHLIGHTS } from "@/lib/insights-content";
+import { EVENTS, LONGEVITY_NEWS } from "@/lib/insights-content";
 
 export const Route = createFileRoute("/participate/")({
   head: () => ({
     meta: [
-      { title: "Insights | MR Longevity" },
+      { title: "Participate | MR Longevity" },
       {
         name: "description",
         content:
-          "Longevity news, events and research highlights curated for the MR Longevity mission, signals that move healthy longevity from science to real-world outcomes.",
+          "News, events and members of the MR Longevity mission. Find what is happening, where the mission meets, and who to work with.",
       },
-      { property: "og:title", content: "Insights | MR Longevity" },
+      { property: "og:title", content: "Participate | MR Longevity" },
       {
         property: "og:description",
-        content: "Curated longevity news, global events and research highlights.",
+        content: "Longevity news, global events and the people taking part.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
-  component: InsightsIndex,
+  component: ParticipateIndex,
 });
 
 const SUMMARY = [
-  { name: "Longevity News", count: LONGEVITY_NEWS.length, body: "Sources and signals shaping healthy longevity worldwide." },
+  { name: "News", count: LONGEVITY_NEWS.length, body: "Sources and signals shaping healthy longevity worldwide." },
   { name: "Events", count: EVENTS.length, body: "Where the mission convenes across science, clinic and capital." },
-  { name: "Research Highlights", count: RESEARCH_HIGHLIGHTS.length, body: "What the evidence is telling us, and what it means next." },
+  { name: "Meet MR Longevity Members", count: 4, body: "The people taking part, and how to join them." },
 ];
 
-function InsightsIndex() {
+function ParticipateIndex() {
   return (
     <div>
       <Section tone="white">
         <SectionHead
-          kicker="Insights"
-          title="Signals, gatherings and evidence from the healthy longevity mission"
-          intro="Insights keeps the mission oriented: what is happening, where people meet, and what the science now supports."
+          kicker="Participate"
+          title="Take part in the healthy longevity mission"
+          intro="Follow what is happening, join the gatherings, and meet the people building healthy longevity."
         />
         <div className="mt-10 grid gap-4 md:grid-cols-3">
           {PARTICIPATE_ITEMS.map((item, i) => (

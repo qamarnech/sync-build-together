@@ -6,13 +6,13 @@ import { LONGEVITY_NEWS } from "@/lib/insights-content";
 export const Route = createFileRoute("/participate/news")({
   head: () => ({
     meta: [
-      { title: "Longevity News | MR Longevity Participate" },
+      { title: "News | MR Longevity Participate" },
       {
         name: "description",
         content:
           "Curated longevity news sources: geroscience research, healthy ageing policy, biomarkers standards and funding signals shaping the field.",
       },
-      { property: "og:title", content: "Longevity News | MR Longevity Participate" },
+      { property: "og:title", content: "News | MR Longevity Participate" },
       {
         property: "og:description",
         content: "Sources and signals shaping healthy longevity worldwide.",
@@ -28,7 +28,7 @@ function NewsPage() {
   return (
     <Section tone="white">
       <SectionHead
-        kicker="Longevity News"
+        kicker="News"
         title="Where the field is moving"
         intro="A curated set of primary sources we track, research, policy, standards and funding. Each links to the original record."
       />
