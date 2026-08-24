@@ -111,13 +111,55 @@ export const MISSION_CARDS = [
 ];
 
 export const PERSONAS = [
-  { kicker: "I am a Researcher", title: "Move your research towards impact", body: "Find collaborators, clinical partners and funding." },
-  { kicker: "I am a Clinician", title: "Connect evidence with practice", body: "Bring healthy-longevity science into responsible clinical use." },
-  { kicker: "I am an Innovator", title: "Move innovation to adoption", body: "Validate, demonstrate and scale technologies and products." },
-  { kicker: "I am an Investor", title: "Discover grounded opportunities", body: "See validated science before it becomes a crowded market." },
-  { kicker: "I am a Partner", title: "Build international partnerships", body: "Work across the China ↔ UK ↔ global translation corridor." },
-  { kicker: "I work in Public Health", title: "Connect innovation to population impact", body: "Turn prevention science into measurable population healthspan." },
-  { kicker: "I am an Individual", title: "Live healthier for longer", body: "Assess, understand, personalise, act, measure, improve." },
+  {
+    kicker: "I am a Researcher",
+    title: "Move your research towards impact",
+    body: "Find collaborators, clinical partners and funding.",
+    bullets: ["Laboratories & datasets", "Clinical & industry partners", "International collaborators", "Translation opportunities"],
+    cta: { label: "Explore Research", href: "/ecosystem/science-discovery" },
+  },
+  {
+    kicker: "I am a Clinician",
+    title: "Connect evidence with practice",
+    body: "Bring healthy-longevity science into responsible care.",
+    bullets: ["Emerging evidence & biomarkers", "Validated interventions", "Clinical studies", "Healthy-ageing programmes"],
+    cta: { label: "Explore Clinical Collaboration", href: "/ecosystem/clinical-validation" },
+  },
+  {
+    kicker: "I am a Company or Startup",
+    title: "Move innovation to adoption",
+    body: "Validate and scale what you're building.",
+    bullets: ["Scientific & validation partners", "Clinical partners", "Investors & manufacturing", "Market-access partners"],
+    cta: { label: "Explore Innovation", href: "/ecosystem/investment-commercial" },
+  },
+  {
+    kicker: "I am an Investor or Funder",
+    title: "Discover grounded opportunities",
+    body: "Back science with a credible translation pathway.",
+    bullets: ["Emerging science & technologies", "Startups & validation projects", "Translational & co-investment"],
+    cta: { label: "Explore Opportunities", href: "/ecosystem/investment-commercial" },
+  },
+  {
+    kicker: "I represent a University",
+    title: "Build international partnerships",
+    body: "Extend research and translation reach.",
+    bullets: ["Institutional & industry partners", "Joint projects & funding", "China–UK opportunities"],
+    cta: { label: "Explore Partnerships", href: "/about" },
+  },
+  {
+    kicker: "I represent Government / Public Health",
+    title: "Connect innovation to population impact",
+    body: "Bring prevention and evidence to scale.",
+    bullets: ["Prevention & population health", "Evidence standards", "Policy & international collaboration"],
+    cta: { label: "Explore Public Health", href: "/ecosystem/manufacturing-supply" },
+  },
+  {
+    kicker: "I am an Individual",
+    title: "Live healthier for longer",
+    body: "Understand and act on your own healthspan.",
+    bullets: ["Health assessments & biomarkers", "Movement, nutrition, sleep, connection", "Personalised programmes"],
+    cta: { label: "Explore My Health", href: "/discover/healthy-longevity" },
+  },
 ];
 
 export const VERBS = [
