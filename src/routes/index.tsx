@@ -25,12 +25,42 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const FIVE_PATHS = [
-  { num: "I. Why", label: "Why does MR Longevity exist?" },
-  { num: "II. What", label: "What is it?" },
-  { num: "III. How", label: "How does it work?" },
-  { num: "IV. Gain", label: "What can I get from it?" },
-  { num: "V. Join", label: "How can I participate?" },
+const JOURNEY = [
+  {
+    num: "I",
+    step: "Why",
+    title: "The Vision",
+    body: "A shared ambition for healthier, longer lives.",
+    href: "#why",
+  },
+  {
+    num: "II",
+    step: "What",
+    title: "The World of Longevity",
+    body: "The science, systems and people that shape how we age.",
+    href: "#what",
+  },
+  {
+    num: "III",
+    step: "How",
+    title: "From Science to Life",
+    body: "Discovery translated into validated, everyday health.",
+    href: "#how",
+  },
+  {
+    num: "IV",
+    step: "Gain",
+    title: "What's Possible",
+    body: "The value the ecosystem creates for you.",
+    href: "#gain",
+  },
+  {
+    num: "V",
+    step: "Join",
+    title: "Be Part of It",
+    body: "Your place in the healthy longevity movement.",
+    href: "#join",
+  },
 ];
 
 function Index() {
@@ -64,21 +94,48 @@ function Index() {
           </div>
         </div>
 
-        <div className="mx-auto mt-14 grid max-w-5xl gap-3 md:grid-cols-5">
-          {FIVE_PATHS.map((path) => (
-            <div key={path.num} className="rounded-xl border border-white/10 bg-white/5 p-4">
-              <p className="font-serif text-sm italic text-gold-light">{path.num}</p>
-              <p className="mt-1 text-sm text-gold-pale/80">{path.label}</p>
-            </div>
-          ))}
+        <div className="mx-auto mt-16 max-w-5xl">
+          <div className="mb-5 flex items-center gap-4">
+            <span className="flourish-line" />
+            <span className="whitespace-nowrap font-serif text-xs italic tracking-[0.25em] text-gold-light uppercase">
+              The MR Longevity story in five steps
+            </span>
+            <span className="flourish-line" />
+          </div>
+          <ol className="grid gap-3 md:grid-cols-5">
+            {JOURNEY.map((item) => (
+              <li key={item.step}>
+                <a
+                  href={item.href}
+                  className="group flex h-full flex-col rounded-xl border border-white/10 bg-white/5 p-5 transition-colors hover:border-gold/60 hover:bg-white/10"
+                >
+                  <span className="flex items-center gap-2">
+                    <span className="inline-flex h-6 min-w-6 items-center justify-center rounded-full border border-gold/50 px-1 font-serif text-[11px] text-gold-light">
+                      {item.num}
+                    </span>
+                    <span className="text-[11px] font-semibold tracking-[0.18em] text-gold-light uppercase">
+                      {item.step}
+                    </span>
+                  </span>
+                  <span className="mt-3 font-serif text-lg leading-snug text-white">
+                    {item.title}
+                  </span>
+                  <span className="mt-2 text-sm text-gold-pale/70">{item.body}</span>
+                  <span className="mt-auto pt-4 text-gold-light opacity-0 transition-opacity group-hover:opacity-100">
+                    <ArrowRight className="h-4 w-4" />
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
-      <Section tone="white">
+      <Section id="why" tone="white">
         <SectionHead
-          kicker="Why MR Longevity?"
+          kicker="Why — The Vision"
           num={1}
-          title="We Were Built to Survive. Can We Learn to Thrive Longer?"
+          title="A Shared Ambition for Healthier, Longer Lives"
           intro="Human biology is extraordinarily resilient — but it was not shaped for the lives we live today. Longer lifespans require a new approach to health."
         />
         <div className="mt-10 flex flex-wrap justify-center gap-2">
@@ -133,9 +190,9 @@ function Index() {
         </div>
       </Section>
 
-      <Section tone="sand">
+      <Section id="what" tone="sand">
         <SectionHead
-          kicker="What is MR Longevity?"
+          kicker="What — The World of Longevity"
           num={2}
           title="From Treating Disease to Extending Health"
           intro="Medicine helped us survive diseases that once shortened human life. The next challenge is understanding ageing itself and protecting health before disease takes it away."
@@ -149,7 +206,23 @@ function Index() {
             </div>
           ))}
         </div>
-        <figure className="mt-10 rounded-2xl border border-line bg-white p-6 md:p-8">
+        <div className="mt-10 text-center">
+          <Button asChild variant="outline" className="border-navy/25 text-navy hover:bg-navy/5">
+            <Link to="/ecosystem">
+              Explore the world of longevity <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </Button>
+        </div>
+      </Section>
+
+      <Section id="how" tone="white">
+        <SectionHead
+          kicker="How — From Science to Life"
+          num={3}
+          title="One Continuous Loop, From Discovery to Daily Health"
+          intro="Nothing stops at publication. Insight becomes evidence, evidence becomes practice, and real-world outcomes feed the next question."
+        />
+        <figure className="mt-10 rounded-2xl border border-line bg-paper p-6 md:p-8">
           <figcaption className="mb-4 font-serif text-sm italic text-gold">
             Fig. 02 — The MR Longevity Translation Flywheel
           </figcaption>
@@ -158,19 +231,18 @@ function Index() {
         <p className="mt-8 text-center font-serif italic text-ink-mute">
           Science → People → Data → Better Science
         </p>
-
       </Section>
 
-      <Section tone="white">
+      <Section id="gain" tone="sand">
         <SectionHead
-          kicker="What can I get from it?"
+          kicker="Gain — What's Possible"
           num={4}
           title="Turning Longevity Science Into Longer, Healthier Lives"
           intro="MR Longevity connects scientific discovery, data, technology, prevention and real-world application to help translate knowledge into better health."
         />
         <div className="mt-10 grid gap-4 md:grid-cols-3">
           {VERBS.map((verb) => (
-            <div key={verb.title} className="rounded-xl border border-line bg-paper p-6">
+            <div key={verb.title} className="rounded-xl border border-line bg-white p-6">
               <h3 className="text-lg font-semibold text-navy">{verb.title}</h3>
               <p className="mt-2 text-sm text-ink-soft">{verb.body}</p>
             </div>
@@ -178,16 +250,16 @@ function Index() {
         </div>
       </Section>
 
-      <Section tone="sand">
+      <Section id="join" tone="white">
         <SectionHead
-          kicker="How can I participate?"
+          kicker="Join — Be Part of It"
           num={5}
           title="Become Part of the Healthy Longevity Evolution"
           intro="Individuals, scientists, clinicians, innovators, businesses and institutions all have a role in building systems that help future generations live healthier for longer."
         />
         <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {PERSONAS.map((persona) => (
-            <div key={persona.kicker} className="rounded-xl border border-line bg-white p-6">
+            <div key={persona.kicker} className="rounded-xl border border-line bg-paper p-6">
               <p className="font-serif text-sm italic text-gold">{persona.kicker}</p>
               <h3 className="mt-1 text-lg font-semibold text-navy">{persona.title}</h3>
               <p className="mt-2 text-sm text-ink-soft">{persona.body}</p>
