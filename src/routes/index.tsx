@@ -50,7 +50,7 @@ function Index() {
             in human healthspan.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Button asChild size="lg" className="bg-gold text-white hover:bg-gold-light">
+            <Button asChild size="lg" variant="gold">
               <Link to="/auth">Join MR Longevity</Link>
             </Button>
             <Button
@@ -207,7 +207,7 @@ function Index() {
             connect your needs with the capabilities of the ecosystem.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Button asChild size="lg" className="bg-gold text-white hover:bg-gold-light">
+            <Button asChild size="lg" variant="gold">
               <Link to="/auth">
                 Join MR Longevity <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
