@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "@tanstack/react-router";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { ChevronDown, ChevronRight, Menu, X } from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
@@ -20,10 +20,7 @@ const ECOSYSTEM_ITEMS = [
   { slug: "uk-directory", to: "/ecosystem/uk-directory", name: "UK Longevity Directory" },
 ];
 
-const DISCOVER_ITEMS = [
-  { slug: "longevity-landscape", to: "/ecosystem", name: "Longevity Landscape" },
-  ...DISCOVER_PILLARS,
-];
+const DISCOVER_ITEMS = [...DISCOVER_PILLARS];
 
 const memberLinks = [
   { to: "/dashboard", label: "Dashboard" },
@@ -82,21 +79,30 @@ function Dropdown({
           {bottomItems && bottomItems.length > 0 && (
             <>
               <div className="my-2 border-t border-line" />
-              {bottomLabel && (
-                <p className="px-3 py-1 text-xs font-semibold uppercase tracking-wider text-gold">
-                  {bottomLabel}
-                </p>
-              )}
-              {bottomItems.map((item) => (
+              <div className="group/sub relative">
                 <Link
-                  key={item.slug}
-                  to={item.to}
-                  className="block rounded-lg px-3 py-2 text-sm text-ink-soft transition-colors hover:bg-gold/10 hover:text-navy"
+                  to="/ecosystem"
+                  className="flex items-center justify-between gap-2 rounded-lg px-3 py-2 text-sm text-ink-soft transition-colors hover:bg-gold/10 hover:text-navy"
                   activeProps={{ className: "text-navy font-semibold" }}
                 >
-                  {item.name}
+                  {bottomLabel ?? "More"}
+                  <ChevronRight className="h-3.5 w-3.5" />
                 </Link>
-              ))}
+                <div className="invisible absolute left-full top-0 z-50 w-64 pl-2 opacity-0 transition-opacity group-hover/sub:visible group-hover/sub:opacity-100 group-focus-within/sub:visible group-focus-within/sub:opacity-100">
+                  <div className="rounded-xl border border-line bg-paper p-2 shadow-lg">
+                    {bottomItems.map((item) => (
+                      <Link
+                        key={item.slug}
+                        to={item.to}
+                        className="block rounded-lg px-3 py-2 text-sm text-ink-soft transition-colors hover:bg-gold/10 hover:text-navy"
+                        activeProps={{ className: "text-navy font-semibold" }}
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </>
           )}
         </div>
@@ -218,7 +224,7 @@ export function SiteHeader() {
                 </Link>
               ))}
               <div className="my-1 border-t border-line" />
-              <p className="text-xs font-semibold uppercase tracking-wider text-gold">Longevity Landscape</p>
+              <Link to="/ecosystem" onClick={() => setOpen(false)} className="text-xs font-semibold uppercase tracking-wider text-gold">Longevity Landscape</Link>
               {ECOSYSTEM_ITEMS.map((item) => (
                 <Link
                   key={item.slug}
