@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { Section, SectionHead, Tag } from "@/components/site/ui-bits";
@@ -21,10 +22,12 @@ export function PillarPage({
   pillar,
   backTo,
   sequence,
+  children,
 }: {
   pillar: Pillar;
   backTo: string;
   sequence?: string[];
+  children?: ReactNode;
 }) {
   const activeIndex = sequence ? sequence.indexOf(pillar.name) : -1;
   return (
@@ -71,6 +74,8 @@ export function PillarPage({
         </div>
         <p className="mx-auto mt-10 max-w-2xl text-center text-sm italic text-ink-soft">{pillar.handoff}</p>
       </Section>
+
+      {children}
 
       <Section tone="navy">
         <div className="text-center">
