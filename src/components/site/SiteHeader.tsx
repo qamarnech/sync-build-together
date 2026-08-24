@@ -20,10 +20,7 @@ const ECOSYSTEM_ITEMS = [
   { slug: "uk-directory", to: "/ecosystem/uk-directory", name: "UK Longevity Directory" },
 ];
 
-const DISCOVER_ITEMS = [
-  { slug: "longevity-landscape", to: "/ecosystem", name: "Longevity Landscape" },
-  ...DISCOVER_PILLARS,
-];
+const DISCOVER_ITEMS = [...DISCOVER_PILLARS];
 
 const memberLinks = [
   { to: "/dashboard", label: "Dashboard" },
