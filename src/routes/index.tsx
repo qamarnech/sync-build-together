@@ -11,6 +11,8 @@ import personaInvestor from "@/assets/persona-investor.jpg";
 import personaUniversity from "@/assets/persona-university.jpg";
 import personaGovernment from "@/assets/persona-government.jpg";
 import personaIndividual from "@/assets/persona-individual.jpg";
+import heroLongevity from "@/assets/hero-longevity.jpg";
+
 
 const PERSONA_IMAGES: Record<string, { src: string; alt: string }> = {
   "I am a Researcher": { src: personaResearcher, alt: "Futuristic scene of a longevity scientist studying glowing holographic DNA and cells" },
@@ -85,7 +87,19 @@ function Index() {
   return (
     <div>
       <section className="relative overflow-hidden bg-navy px-6 py-24 text-white md:py-32">
-        <div className="mx-auto max-w-4xl text-center">
+        <img
+          src={heroLongevity}
+          alt="Glowing futuristic DNA helix connected to a neural network of light"
+          width={1920}
+          height={912}
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-40"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-gradient-to-b from-navy/70 via-navy/80 to-navy"
+        />
+        <div className="relative mx-auto max-w-4xl text-center">
+
           <Kicker>Global Healthy Longevity Mission</Kicker>
           <h1 className="text-balance text-4xl font-bold leading-tight md:text-6xl">
             Making Life <span className="text-gold-light">Healthier</span> and{" "}
