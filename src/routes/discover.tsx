@@ -18,6 +18,13 @@ function DiscoverLayout() {
           >
             Overview
           </Link>
+          <Link
+            to="/ecosystem"
+            className="text-sm text-ink-soft transition-colors hover:text-navy"
+            activeProps={{ className: "text-navy font-semibold" }}
+          >
+            Longevity Landscape
+          </Link>
           {DISCOVER_PILLARS.map((pillar) => (
             <Link
               key={pillar.slug}
