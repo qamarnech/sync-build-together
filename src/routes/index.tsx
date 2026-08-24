@@ -4,6 +4,23 @@ import { Button } from "@/components/ui/button";
 import { FigureTitle, Flourish, Kicker, Section, SectionHead, Tag } from "@/components/site/ui-bits";
 import { HealthspanCurve, TranslationFlywheel } from "@/components/site/infographics";
 import { FLYWHEEL, PERSONAS, VERBS } from "@/lib/site-content";
+import personaResearcher from "@/assets/persona-researcher.jpg";
+import personaClinician from "@/assets/persona-clinician.jpg";
+import personaCompany from "@/assets/persona-company.jpg";
+import personaInvestor from "@/assets/persona-investor.jpg";
+import personaUniversity from "@/assets/persona-university.jpg";
+import personaGovernment from "@/assets/persona-government.jpg";
+import personaIndividual from "@/assets/persona-individual.jpg";
+
+const PERSONA_IMAGES: Record<string, { src: string; alt: string }> = {
+  "I am a Researcher": { src: personaResearcher, alt: "Illustration of a researcher at a microscope studying molecules" },
+  "I am a Clinician": { src: personaClinician, alt: "Illustration of a clinician with a stethoscope reviewing a patient's health data" },
+  "I am a Company or Startup": { src: personaCompany, alt: "Illustration of startup founders presenting a prototype and growth curve" },
+  "I am an Investor or Funder": { src: personaInvestor, alt: "Illustration of an investor reviewing charts and funding growth" },
+  "I represent a University": { src: personaUniversity, alt: "Illustration of academics in front of a university building" },
+  "I represent Government / Public Health": { src: personaGovernment, alt: "Illustration of public health officials before a civic building with a world map" },
+  "I am an Individual": { src: personaIndividual, alt: "Illustration of an active older person walking with healthy lifestyle symbols" },
+};
 
 export const Route = createFileRoute("/")({
   head: () => ({
