@@ -28,7 +28,7 @@ export function SiteFooter() {
       </div>
       <div className="mx-auto mt-10 max-w-6xl border-t border-white/10 pt-6 text-xs">
         © {new Date().getFullYear()} MR Longevity. Evidence status is labelled throughout the
-        mission.
+        site.
       </div>
     </footer>
   );

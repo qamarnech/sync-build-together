@@ -29,7 +29,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "A global healthy longevity mission connecting science, healthcare, innovation, capital and AI, join researchers, clinicians and innovators building measurable healthspan.",
+          "A global healthy longevity mission connecting science, healthcare, innovation, capital and AI. Join researchers, clinicians and innovators building measurable healthspan.",
       },
       { property: "og:title", content: "MR Longevity, Making Life Healthier and Longer" },
       {
