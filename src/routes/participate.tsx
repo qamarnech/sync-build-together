@@ -1,24 +1,24 @@
 import { createFileRoute, Link, Outlet } from "@tanstack/react-router";
-import { INSIGHTS_ITEMS } from "@/lib/insights-nav";
+import { PARTICIPATE_ITEMS } from "@/lib/participate-nav";
 
-export const Route = createFileRoute("/insights")({
-  component: InsightsLayout,
+export const Route = createFileRoute("/participate")({
+  component: ParticipateLayout,
 });
 
-function InsightsLayout() {
+function ParticipateLayout() {
   return (
     <div>
       <div className="border-b border-line bg-paper">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-6 gap-y-2 px-6 py-3">
           <Link
-            to="/insights"
+            to="/participate"
             activeOptions={{ exact: true }}
             className="text-sm text-ink-soft transition-colors hover:text-navy"
             activeProps={{ className: "text-navy font-semibold" }}
           >
             Overview
           </Link>
-          {INSIGHTS_ITEMS.map((item) => (
+          {PARTICIPATE_ITEMS.map((item) => (
             <Link
               key={item.slug}
               to={item.to}

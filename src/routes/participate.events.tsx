@@ -3,16 +3,16 @@ import { CalendarDays, ExternalLink, MapPin } from "lucide-react";
 import { Section, SectionHead, Tag } from "@/components/site/ui-bits";
 import { EVENTS } from "@/lib/insights-content";
 
-export const Route = createFileRoute("/insights/events")({
+export const Route = createFileRoute("/participate/events")({
   head: () => ({
     meta: [
-      { title: "Events | MR Longevity Insights" },
+      { title: "Events | MR Longevity Participate" },
       {
         name: "description",
         content:
           "Global healthy longevity events: geroscience conferences, gerontology congresses, translation summits and MR Longevity collaboration roundtables.",
       },
-      { property: "og:title", content: "Events | MR Longevity Insights" },
+      { property: "og:title", content: "Events | MR Longevity Participate" },
       {
         property: "og:description",
         content: "Where the healthy longevity mission convenes across science, clinic and capital.",
