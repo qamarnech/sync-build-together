@@ -279,8 +279,8 @@ function Index() {
             <div key={persona.kicker} className="group flex flex-col overflow-hidden rounded-xl border border-line bg-paper transition-colors hover:border-gold/40 hover:bg-white">
               {PERSONA_IMAGES[persona.kicker] ? (
                 <img
-                  src={PERSONA_IMAGES[persona.kicker].src}
-                  alt={PERSONA_IMAGES[persona.kicker].alt}
+                  src={PERSONA_IMAGES[persona.kicker]!.src}
+                  alt={PERSONA_IMAGES[persona.kicker]!.alt}
                   loading="lazy"
                   width={768}
                   height={512}
