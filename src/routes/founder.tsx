@@ -118,7 +118,7 @@ function FounderPage() {
           kicker="Publications"
           num="03"
           title="Selected peer-reviewed record"
-          intro="Verified publications from 2014 to 2025. Each entry links to its public source."
+          intro="Publications from 2014 to 2025."
         />
         <div className="mt-10">
           <FounderPublications />
