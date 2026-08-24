@@ -10,7 +10,7 @@ import { Tag } from "@/components/site/ui-bits";
 export const Route = createFileRoute("/_authenticated/projects/")({
   head: () => ({
     meta: [
-      { title: "Projects Board — MR Longevity" },
+      { title: "Projects Board | MR Longevity" },
       {
         name: "description",
         content: "Browse healthy longevity projects seeking collaborators, capabilities and funding.",

@@ -7,13 +7,13 @@ import { EVENTS, LONGEVITY_NEWS, RESEARCH_HIGHLIGHTS } from "@/lib/insights-cont
 export const Route = createFileRoute("/insights/")({
   head: () => ({
     meta: [
-      { title: "Insights — MR Longevity" },
+      { title: "Insights | MR Longevity" },
       {
         name: "description",
         content:
-          "Longevity news, events and research highlights curated for the MR Longevity ecosystem — signals that move healthy longevity from science to real-world outcomes.",
+          "Longevity news, events and research highlights curated for the MR Longevity mission, signals that move healthy longevity from science to real-world outcomes.",
       },
-      { property: "og:title", content: "Insights — MR Longevity" },
+      { property: "og:title", content: "Insights | MR Longevity" },
       {
         property: "og:description",
         content: "Curated longevity news, global events and research highlights.",
@@ -27,7 +27,7 @@ export const Route = createFileRoute("/insights/")({
 
 const SUMMARY = [
   { name: "Longevity News", count: LONGEVITY_NEWS.length, body: "Sources and signals shaping healthy longevity worldwide." },
-  { name: "Events", count: EVENTS.length, body: "Where the ecosystem convenes across science, clinic and capital." },
+  { name: "Events", count: EVENTS.length, body: "Where the mission convenes across science, clinic and capital." },
   { name: "Research Highlights", count: RESEARCH_HIGHLIGHTS.length, body: "What the evidence is telling us, and what it means next." },
 ];
 
@@ -37,8 +37,8 @@ function InsightsIndex() {
       <Section tone="white">
         <SectionHead
           kicker="Insights"
-          title="Signals, gatherings and evidence from the healthy longevity ecosystem"
-          intro="Insights keeps the ecosystem oriented: what is happening, where people meet, and what the science now supports."
+          title="Signals, gatherings and evidence from the healthy longevity mission"
+          intro="Insights keeps the mission oriented: what is happening, where people meet, and what the science now supports."
         />
         <div className="mt-10 grid gap-4 md:grid-cols-3">
           {INSIGHTS_ITEMS.map((item, i) => (

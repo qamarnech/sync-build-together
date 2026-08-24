@@ -25,13 +25,13 @@ const PERSONA_IMAGES: Record<string, { src: string; alt: string }> = {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "MR Longevity — Making Life Healthier and Longer" },
+      { title: "MR Longevity, Making Life Healthier and Longer" },
       {
         name: "description",
         content:
-          "A global healthy longevity ecosystem connecting science, healthcare, innovation, capital and AI — join researchers, clinicians and innovators building measurable healthspan.",
+          "A global healthy longevity mission connecting science, healthcare, innovation, capital and AI. Join researchers, clinicians and innovators building measurable healthspan.",
       },
-      { property: "og:title", content: "MR Longevity — Making Life Healthier and Longer" },
+      { property: "og:title", content: "MR Longevity, Making Life Healthier and Longer" },
       {
         property: "og:description",
         content:
@@ -68,7 +68,7 @@ const JOURNEY = [
     num: "IV",
     step: "Gain",
     title: "What's Possible",
-    body: "The value the ecosystem creates for you.",
+    body: "The value the mission creates for you.",
     href: "#gain",
   },
   {
@@ -85,15 +85,15 @@ function Index() {
     <div>
       <section className="relative overflow-hidden bg-navy px-6 py-24 text-white md:py-32">
         <div className="mx-auto max-w-4xl text-center">
-          <Kicker>Global Healthy Longevity Ecosystem</Kicker>
+          <Kicker>Global Healthy Longevity Mission</Kicker>
           <h1 className="text-balance text-4xl font-bold leading-tight md:text-6xl">
             Making Life <span className="text-gold-light">Healthier</span> and{" "}
             <span className="text-gold-light">Longer</span>
           </h1>
           <Flourish />
           <p className="mx-auto max-w-2xl text-base text-gold-pale/80 md:text-lg">
-            A healthy longevity ecosystem connecting science, healthcare, innovation, people,
-            capital, data and AI — turning advances in ageing research into measurable improvements
+            A healthy longevity mission connecting science, healthcare, innovation, people,
+            capital, data and AI, turning advances in ageing research into measurable improvements
             in human healthspan.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
@@ -106,7 +106,7 @@ function Index() {
               variant="outline"
               className="border-gold-pale/40 bg-transparent text-gold-pale hover:bg-white/10 hover:text-white"
             >
-              <Link to="/ecosystem">Explore the Ecosystem</Link>
+              <Link to="/ecosystem">Explore the Mission</Link>
             </Button>
           </div>
         </div>
@@ -150,10 +150,10 @@ function Index() {
 
       <Section id="why" tone="white">
         <SectionHead
-          kicker="Why — The Vision"
+          kicker="Why, The Vision"
           num={1}
           title="A Shared Ambition for Healthier, Longer Lives"
-          intro="Human biology is extraordinarily resilient — but it was not shaped for the lives we live today. Longer lifespans require a new approach to health."
+          intro="Human biology is extraordinarily resilient, but it was not shaped for the lives we live today. Longer lifespans require a new approach to health."
         />
         <div className="mt-10 flex flex-wrap justify-center gap-2">
           {[
@@ -172,7 +172,7 @@ function Index() {
         </div>
         <blockquote className="mx-auto mt-10 max-w-3xl border-l-2 border-gold pl-6 font-serif text-xl italic text-navy">
           “The opportunity is not simply to extend life. It is to extend healthy, active and
-          independent life — this is the purpose of MR Longevity.”
+          independent life, this is the purpose of MR Longevity.”
         </blockquote>
         <figure className="mt-12 rounded-2xl border border-line bg-paper p-6 md:p-8">
           <figcaption className="mb-2 flex flex-wrap items-center justify-between gap-3">
@@ -193,14 +193,14 @@ function Index() {
           <div className="rounded-xl border border-line bg-paper p-6">
             <h3 className="text-xl font-semibold text-navy">Our Vision</h3>
             <p className="mt-2 text-sm text-ink-soft">
-              A future where longer life means healthier life — ageing better understood, health
+              A future where longer life means healthier life, ageing better understood, health
               changes detected earlier, disease prevented or delayed.
             </p>
           </div>
           <div className="rounded-xl border border-line bg-paper p-6">
             <h3 className="text-xl font-semibold text-navy">Our Mission</h3>
             <p className="mt-2 text-sm text-ink-soft">
-              To make life healthier and longer — connecting science, discovery, validation,
+              To make life healthier and longer, connecting science, discovery, validation,
               translation, personalised health and real-world outcomes with Data + AI.
             </p>
           </div>
@@ -209,7 +209,7 @@ function Index() {
 
       <Section id="what" tone="sand">
         <SectionHead
-          kicker="What — The World of Longevity"
+          kicker="What, The World of Longevity"
           num={2}
           title="From Treating Disease to Extending Health"
           intro="Medicine helped us survive diseases that once shortened human life. The next challenge is understanding ageing itself and protecting health before disease takes it away."
@@ -234,7 +234,7 @@ function Index() {
 
       <Section id="how" tone="white">
         <SectionHead
-          kicker="How — From Science to Life"
+          kicker="How, From Science to Life"
           num={3}
           title="One Continuous Loop, From Discovery to Daily Health"
           intro="Nothing stops at publication. Insight becomes evidence, evidence becomes practice, and real-world outcomes feed the next question."
@@ -252,7 +252,7 @@ function Index() {
 
       <Section id="gain" tone="sand">
         <SectionHead
-          kicker="Gain — What's Possible"
+          kicker="Gain, What's Possible"
           num={4}
           title="Turning Longevity Science Into Longer, Healthier Lives"
           intro="MR Longevity connects scientific discovery, data, technology, prevention and real-world application to help translate knowledge into better health."
@@ -269,7 +269,7 @@ function Index() {
 
       <Section id="join" tone="white">
         <SectionHead
-          kicker="Join — Be Part of It"
+          kicker="Join, Be Part of It"
           num={5}
           title="Become Part of the Healthy Longevity Evolution"
           intro="Healthy longevity cannot be created by medicine alone. Individuals, scientists, clinicians, innovators, businesses and institutions all have a role in building the systems that could help future generations live healthier for longer."
@@ -319,7 +319,7 @@ function Index() {
           <Flourish />
           <p className="text-gold-pale/80">
             Create your member profile, publish the project you need help with, and let MR Match
-            connect your needs with the capabilities of the ecosystem.
+            connect your needs with the capabilities of the mission.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Button asChild size="lg" className="bg-gold text-white hover:bg-gold-light">

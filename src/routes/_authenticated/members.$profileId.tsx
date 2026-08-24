@@ -14,8 +14,8 @@ import {
 export const Route = createFileRoute("/_authenticated/members/$profileId")({
   head: () => ({
     meta: [
-      { title: "Member Profile — MR Longevity" },
-      { name: "description", content: "Member expertise, needs and projects in the MR Longevity ecosystem." },
+      { title: "Member Profile | MR Longevity" },
+      { name: "description", content: "Member expertise, needs and projects in the MR Longevity mission." },
     ],
   }),
   component: MemberProfilePage,

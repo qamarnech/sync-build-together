@@ -19,7 +19,7 @@ export const Route = createFileRoute("/auth")({
   validateSearch: searchSchema,
   head: () => ({
     meta: [
-      { title: "Join MR Longevity — Member Sign In" },
+      { title: "Join MR Longevity, Member Sign In" },
       {
         name: "description",
         content:
@@ -28,7 +28,7 @@ export const Route = createFileRoute("/auth")({
       { property: "og:title", content: "Join MR Longevity" },
       {
         property: "og:description",
-        content: "Create your member account to collaborate across the healthy longevity ecosystem.",
+        content: "Create your member account to collaborate across the healthy longevity mission.",
       },
     ],
   }),

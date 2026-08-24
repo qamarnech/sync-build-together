@@ -2,7 +2,7 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 
 /* ------------------------------------------------------------------ */
-/* Translation Flywheel — circular cycle with a Data + AI core         */
+/* Translation Flywheel, circular cycle with a Data + AI core         */
 /* ------------------------------------------------------------------ */
 
 const FLYWHEEL_STAGES = [
@@ -112,7 +112,7 @@ export function TranslationFlywheel({ className }: { className?: string }) {
         <h4 className="mt-1 text-lg font-semibold text-navy">{FLYWHEEL_STAGES[active]?.label}</h4>
         <p className="mt-2 text-sm text-ink-soft">{FLYWHEEL_STAGES[active]?.note}</p>
         <p className="mt-4 border-t border-line pt-3 text-xs text-ink-mute">
-          Hover a node — the cycle never ends: outcomes feed back into better science.
+          Hover a node, the cycle never ends: outcomes feed back into better science.
         </p>
       </div>
     </div>
@@ -189,7 +189,7 @@ export function HealthspanCurve({ className }: { className?: string }) {
 }
 
 /* ------------------------------------------------------------------ */
-/* Systems rings — dimensions of healthy longevity                     */
+/* Systems rings, dimensions of healthy longevity                     */
 /* ------------------------------------------------------------------ */
 
 const DIMENSIONS = [
@@ -321,7 +321,7 @@ export function EvidenceLadder({ invert = false, className }: { invert?: boolean
 }
 
 /* ------------------------------------------------------------------ */
-/* Participant orbit — who is in the ecosystem                         */
+/* Participant orbit, who is in the mission                         */
 /* ------------------------------------------------------------------ */
 
 export function ParticipantOrbit({
@@ -343,7 +343,7 @@ export function ParticipantOrbit({
       viewBox={`0 0 ${size} ${size}`}
       className={cn("mx-auto w-full max-w-[360px]", className)}
       role="img"
-      aria-label="Participants orbiting the healthy longevity ecosystem"
+      aria-label="Participants orbiting the healthy longevity mission"
     >
       <circle cx={c} cy={c} r={r} fill="none" className="text-line" stroke="currentColor" strokeWidth="0.75" strokeDasharray="2 6" />
       <circle cx={c} cy={c} r="52" className="fill-navy" />
@@ -387,7 +387,7 @@ export function ParticipantOrbit({
 }
 
 /* ------------------------------------------------------------------ */
-/* Cycle wheel — continuous opportunity cycle                          */
+/* Cycle wheel, continuous opportunity cycle                          */
 /* ------------------------------------------------------------------ */
 
 export function CycleWheel({
@@ -409,7 +409,7 @@ export function CycleWheel({
       viewBox={`0 0 ${size} ${size}`}
       className={cn("mx-auto w-full max-w-[400px]", className)}
       role="img"
-      aria-label="Continuous opportunity cycle of the ecosystem"
+      aria-label="Continuous opportunity cycle of the mission"
     >
       <defs>
         <marker id="cw-arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
@@ -451,7 +451,7 @@ export function CycleWheel({
 }
 
 /* ------------------------------------------------------------------ */
-/* Pathway track — linear stage progression                            */
+/* Pathway track, linear stage progression                            */
 /* ------------------------------------------------------------------ */
 
 export function PathwayTrack({
@@ -502,7 +502,7 @@ export function PathwayTrack({
 }
 
 /* ------------------------------------------------------------------ */
-/* Stage chain — position of a pillar in the ecosystem sequence        */
+/* Stage chain, position of a pillar in the mission sequence        */
 /* ------------------------------------------------------------------ */
 
 export function StageChain({

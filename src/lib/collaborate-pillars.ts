@@ -22,7 +22,7 @@ export const COLLABORATE_PILLARS: CollaboratePillar[] = [
       "Current and emerging longevity initiatives across research, clinical, technology, public health and commercial work.",
     title: "Current and emerging longevity initiatives",
     intro:
-      "Projects show what the ecosystem is actively building: what each initiative aims to achieve, who is involved, the stage it has reached and where collaborators are needed.",
+      "Projects show what the mission is actively building: what each initiative aims to achieve, who is involved, the stage it has reached and where collaborators are needed.",
     focus: [
       { title: "Research projects", body: "Discovery science, ageing biology, biomarkers and translational research programmes." },
       { title: "Clinical projects", body: "Trials, validation studies, diagnostics and longevity clinic protocols." },
@@ -43,8 +43,8 @@ export const COLLABORATE_PILLARS: CollaboratePillar[] = [
     num: "II",
     question: "Who can we work with?",
     summary:
-      "Organisations contributing capabilities to the ecosystem, each with a profile of expertise, projects and collaboration interests.",
-    title: "Organisations contributing capabilities to the ecosystem",
+      "Organisations contributing capabilities to the mission, each with a profile of expertise, projects and collaboration interests.",
+    title: "Organisations contributing capabilities to the mission",
     intro:
       "Partners are the organisations that make delivery possible. Each partner profile sets out expertise, capabilities, active projects and the collaborations they are open to.",
     focus: [
@@ -91,7 +91,7 @@ export const COLLABORATE_PILLARS: CollaboratePillar[] = [
     num: "IV",
     question: "Where can I get involved?",
     summary:
-      "Open calls for collaboration, funding, investment, expertise and resources across the ecosystem.",
+      "Open calls for collaboration, funding, investment, expertise and resources across the mission.",
     title: "Practical ways to work together",
     intro:
       "Opportunities is the practical entry point: specific, current calls where expertise, capital or capability is needed and collaboration can start quickly.",

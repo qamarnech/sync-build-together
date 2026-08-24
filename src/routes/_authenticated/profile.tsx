@@ -15,7 +15,7 @@ import { Textarea } from "@/components/ui/textarea";
 export const Route = createFileRoute("/_authenticated/profile")({
   head: () => ({
     meta: [
-      { title: "My Profile — MR Longevity" },
+      { title: "My Profile | MR Longevity" },
       { name: "description", content: "Edit your MR Longevity member profile, expertise and needs." },
     ],
   }),
@@ -103,7 +103,7 @@ function ProfilePage() {
           <p className="font-serif text-sm italic text-gold">Your membership</p>
           <h1 className="text-3xl font-bold text-navy">Member profile</h1>
           <p className="mt-2 text-sm text-ink-soft">
-            Your expertise and needs power MR Match across the ecosystem.
+            Your expertise and needs power MR Match across the mission.
           </p>
         </div>
 

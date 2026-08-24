@@ -28,7 +28,7 @@ export const Route = createFileRoute("/publications/$slug")({
     const description = citation(publication);
     return {
       meta: [
-        { title: `${publication.title} — Qiang Fu` },
+        { title: `${publication.title}, Qiang Fu` },
         { name: "description", content: description },
         { property: "og:title", content: publication.title },
         { property: "og:description", content: description },

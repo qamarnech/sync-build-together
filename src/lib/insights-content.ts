@@ -10,16 +10,16 @@ export type NewsItem = {
 export const LONGEVITY_NEWS: NewsItem[] = [
   {
     slug: "nature-aging",
-    title: "Nature Aging — ageing biology and geroscience research",
+    title: "Nature Aging, ageing biology and geroscience research",
     source: "Nature Aging",
     url: "https://www.nature.com/nataging/",
     topic: "Geroscience",
     summary:
-      "Peer-reviewed research across the biology of ageing, interventions and translational geroscience. A primary signal source for the ecosystem.",
+      "Peer-reviewed research across the biology of ageing, interventions and translational geroscience. A primary signal source for the mission.",
   },
   {
     slug: "who-healthy-ageing",
-    title: "WHO — Decade of Healthy Ageing",
+    title: "WHO, Decade of Healthy Ageing",
     source: "World Health Organization",
     url: "https://www.who.int/initiatives/decade-of-healthy-ageing",
     topic: "Population Impact",
@@ -28,16 +28,16 @@ export const LONGEVITY_NEWS: NewsItem[] = [
   },
   {
     slug: "uk-ageing-society",
-    title: "UKRI — Healthy Ageing Challenge",
+    title: "UKRI, Healthy Ageing Challenge",
     source: "UK Research and Innovation",
     url: "https://www.ukri.org/what-we-do/our-main-funds-and-areas-of-support/browse-our-areas-of-investment-and-support/healthy-ageing-challenge/",
-    topic: "UK Ecosystem",
+    topic: "UK Mission",
     summary:
       "UK national investment connecting research, industry and services to extend healthy, independent living.",
   },
   {
     slug: "hevolution",
-    title: "Hevolution Foundation — funding healthspan science",
+    title: "Hevolution Foundation, funding healthspan science",
     source: "Hevolution",
     url: "https://hevolution.com/",
     topic: "Funding",
@@ -60,7 +60,7 @@ export const LONGEVITY_NEWS: NewsItem[] = [
     url: "https://www.cell.com/cell/fulltext/S0092-8674(22)01377-0",
     topic: "Foundations",
     summary:
-      "The 2023 update to the hallmarks framework — the shared vocabulary underpinning most ageing research programmes.",
+      "The 2023 update to the hallmarks framework, the shared vocabulary underpinning most ageing research programmes.",
   },
 ];
 
@@ -103,11 +103,11 @@ export const EVENTS: EventItem[] = [
     url: "https://bsra.org.uk/",
     focus: "UK research community",
     summary:
-      "The UK's principal scientific society for biogerontology — a key node in the UK longevity directory.",
+      "The UK's principal scientific society for biogerontology, a key node in the UK longevity directory.",
   },
   {
     slug: "gsa",
-    name: "Gerontological Society of America — Annual Scientific Meeting",
+    name: "Gerontological Society of America, Annual Scientific Meeting",
     cadence: "Annual · November",
     location: "United States",
     url: "https://www.geron.org/",
@@ -166,7 +166,7 @@ export const RESEARCH_HIGHLIGHTS: HighlightItem[] = [
     slug: "immune-ageing",
     title: "Immune ageing shapes outcomes across disease",
     area: "Immune Ageing",
-    body: "Thymic involution, clonal expansion and inflammageing alter response to infection, cancer and vaccination — connecting ageing biology directly to mainstream clinical medicine.",
+    body: "Thymic involution, clonal expansion and inflammageing alter response to infection, cancer and vaccination, connecting ageing biology directly to mainstream clinical medicine.",
     implication:
       "A strong entry point for clinical validation partnerships within existing care pathways.",
   },

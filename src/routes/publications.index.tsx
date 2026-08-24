@@ -5,14 +5,14 @@ import { FOUNDER_NAME, FOUNDER_PUBLICATIONS, publicationSlug, sourceName } from 
 
 const URL = "https://mrlongevity-ecosystem.lovable.app/publications";
 const DESCRIPTION =
-  "Peer-reviewed publications by Professor Qiang Fu, 2014–2025 — full citations and links to each public source record.";
+  "Peer-reviewed publications by Professor Qiang Fu, 2014–2025, full citations and links to each public source record.";
 
 export const Route = createFileRoute("/publications/")({
   head: () => ({
     meta: [
-      { title: "Publications — Professor Qiang Fu, MR Longevity" },
+      { title: "Publications, Professor Qiang Fu, MR Longevity" },
       { name: "description", content: DESCRIPTION },
-      { property: "og:title", content: "Publications — Professor Qiang Fu" },
+      { property: "og:title", content: "Publications, Professor Qiang Fu" },
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
       { property: "og:url", content: URL },

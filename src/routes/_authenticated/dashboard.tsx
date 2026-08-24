@@ -9,7 +9,7 @@ import { Tag } from "@/components/site/ui-bits";
 export const Route = createFileRoute("/_authenticated/dashboard")({
   head: () => ({
     meta: [
-      { title: "Member Dashboard — MR Longevity" },
+      { title: "Member Dashboard | MR Longevity" },
       { name: "description", content: "Your MR Longevity profile, projects and MR Match suggestions." },
     ],
   }),

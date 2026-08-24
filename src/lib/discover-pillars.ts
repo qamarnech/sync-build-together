@@ -51,7 +51,7 @@ export const DISCOVER_PILLARS: DiscoverPillar[] = [
     num: "II",
     title: "Understanding the mechanisms of ageing and how they can be influenced",
     intro:
-      "Ageing is not a single process. It is the interplay of cellular senescence, metabolism, immunity, repair, brain health and musculoskeletal decline — and the systems that coordinate them.",
+      "Ageing is not a single process. It is the interplay of cellular senescence, metabolism, immunity, repair, brain health and musculoskeletal decline, and the systems that coordinate them.",
     focus: [
       { title: "Cellular Senescence", body: "Senescent cells and their effects on tissue function and ageing." },
       { title: "Biological Age", body: "Measuring biological ageing and response to interventions." },
@@ -87,7 +87,7 @@ export const DISCOVER_PILLARS: DiscoverPillar[] = [
     name: "Scientific Missions",
     kicker: "Scientific Missions",
     num: "III",
-    title: "The challenges the ecosystem is organised around",
+    title: "The challenges the mission is organised around",
     intro:
       "Rather than a directory of researchers, MR Longevity is organised around major scientific challenges where collaboration can meaningfully advance healthy longevity.",
     focus: [
@@ -120,6 +120,6 @@ export const DISCOVER_PILLARS: DiscoverPillar[] = [
       "Public health programmes",
     ],
     handoff:
-      "Scientific missions guide project creation and MR Match connections across the ecosystem.",
+      "Scientific missions guide project creation and MR Match connections across the mission.",
   },
 ];

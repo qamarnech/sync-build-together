@@ -5,13 +5,13 @@ import { Section, SectionHead, Tag } from "@/components/site/ui-bits";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Longevity MR Alliance" },
+      { title: "Contact, Longevity MR Alliance" },
       {
         name: "description",
         content:
-          "Join the LONGEVITY MR alliance — pioneers bridging AI, biomarkers, clinical medicine and geroscience research for healthy longevity. Get in touch with the team.",
+          "Join the LONGEVITY MR alliance, pioneers bridging AI, biomarkers, clinical medicine and geroscience research for healthy longevity. Get in touch with the team.",
       },
-      { property: "og:title", content: "Contact — Longevity MR Alliance" },
+      { property: "og:title", content: "Contact, Longevity MR Alliance" },
       {
         property: "og:description",
         content:

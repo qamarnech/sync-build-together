@@ -80,14 +80,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "MR. LONGEVITY — Global Healthy Longevity Ecosystem" },
+      { title: "MR. LONGEVITY, Global Healthy Longevity Mission" },
       {
         name: "description",
         content:
-          "A members' ecosystem connecting longevity researchers, clinicians, innovators, investors and partners around shared projects.",
+          "A members' mission connecting longevity researchers, clinicians, innovators, investors and partners around shared projects.",
       },
       { name: "author", content: "MR. LONGEVITY" },
-      { property: "og:title", content: "MR. LONGEVITY — Global Healthy Longevity Ecosystem" },
+      { property: "og:title", content: "MR. LONGEVITY, Global Healthy Longevity Mission" },
       {
         property: "og:description",
         content: "Connect, collaborate and build the future of healthy longevity together.",

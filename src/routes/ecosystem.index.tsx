@@ -14,17 +14,17 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/ecosystem/")({
   head: () => ({
     meta: [
-      { title: "Ecosystem Architecture — MR Longevity" },
+      { title: "Mission Architecture | MR Longevity" },
       {
         name: "description",
         content:
-          "Who is in the healthy longevity ecosystem, the capability areas it spans and the continuous opportunity cycle that connects discovery to real-world impact.",
+          "Who is in the healthy longevity mission, the capability areas it spans and the continuous opportunity cycle that connects discovery to real-world impact.",
       },
-      { property: "og:title", content: "Ecosystem Architecture — MR Longevity" },
+      { property: "og:title", content: "Mission Architecture | MR Longevity" },
       {
         property: "og:description",
         content:
-          "Participants, capability areas and the continuous opportunity cycle of the MR Longevity ecosystem.",
+          "Participants, capability areas and the continuous opportunity cycle of the MR Longevity mission.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -44,9 +44,9 @@ function EcosystemPage() {
     <div>
       <Section tone="navy">
         <SectionHead
-          kicker="Ecosystem architecture"
-          title="One ecosystem, many capabilities"
-          intro="The ecosystem is designed as a connected system: participants, capability areas and a continuous opportunity cycle that keeps returning evidence to the beginning."
+          kicker="Mission architecture"
+          title="One mission, many capabilities"
+          intro="The mission is designed as a connected system: participants, capability areas and a continuous opportunity cycle that keeps returning evidence to the beginning."
           invert
         />
       </Section>
@@ -56,7 +56,7 @@ function EcosystemPage() {
         <SectionHead
           kicker="Participants"
           num="I"
-          title="Who is in the ecosystem"
+          title="Who is in the mission"
           intro="Healthy longevity only works when science, healthcare, industry, capital, policy and society move together."
         />
 
@@ -158,7 +158,7 @@ function EcosystemPage() {
         <SectionHead
           kicker="Opportunity cycle"
           num="III"
-          title="A continuous learning ecosystem"
+          title="A continuous learning mission"
           intro="Not a linear innovation pipeline. Every cycle returns evidence and learning to the beginning."
         />
 
@@ -188,7 +188,7 @@ function EcosystemPage() {
       <Section tone="navy">
         <div className="text-center">
           <h2 className="text-balance text-3xl font-bold text-white">
-            Find your place in the ecosystem
+            Find your place in the mission
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-gold-pale/80">
             Join MR Longevity to browse projects, meet collaborators and use MR Match.
