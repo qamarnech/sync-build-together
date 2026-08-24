@@ -139,7 +139,7 @@ export function SiteHeader() {
             bottomLabel="Longevity Landscape"
           />
           <Dropdown label="Collaborate" to="/collaborate" items={COLLABORATE_ITEMS} />
-          <Dropdown label="Insights" to="/participate" items={[...PARTICIPATE_ITEMS]} />
+          <Dropdown label="Participate" to="/participate" items={[...PARTICIPATE_ITEMS]} />
 
           {user &&
             memberLinks.map((link) => (
@@ -258,7 +258,7 @@ export function SiteHeader() {
             </div>
 
             <Link to="/participate" onClick={() => setOpen(false)} className="text-sm font-semibold text-navy">
-              Insights
+              Participate
             </Link>
             <div className="flex flex-col gap-2 border-l border-line pl-3">
               <Link to="/participate" onClick={() => setOpen(false)} className="text-sm text-ink-soft">

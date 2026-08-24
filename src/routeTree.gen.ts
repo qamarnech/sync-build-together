@@ -38,6 +38,7 @@ import { Route as EcosystemScienceDiscoveryRouteImport } from './routes/ecosyste
 import { Route as EcosystemUkDirectoryRouteImport } from './routes/ecosystem.uk-directory'
 import { Route as ParticipateIndexRouteImport } from './routes/participate.index'
 import { Route as ParticipateEventsRouteImport } from './routes/participate.events'
+import { Route as ParticipateMembersRouteImport } from './routes/participate.members'
 import { Route as ParticipateNewsRouteImport } from './routes/participate.news'
 import { Route as PublicationsIndexRouteImport } from './routes/publications.index'
 import { Route as PublicationsSlugRouteImport } from './routes/publications.$slug'
@@ -199,6 +200,11 @@ const ParticipateEventsRoute = ParticipateEventsRouteImport.update({
   path: '/events',
   getParentRoute: () => ParticipateRoute,
 } as any)
+const ParticipateMembersRoute = ParticipateMembersRouteImport.update({
+  id: '/members',
+  path: '/members',
+  getParentRoute: () => ParticipateRoute,
+} as any)
 const ParticipateNewsRoute = ParticipateNewsRouteImport.update({
   id: '/news',
   path: '/news',
@@ -270,6 +276,7 @@ export interface FileRoutesByFullPath {
   '/ecosystem/science-discovery': typeof EcosystemScienceDiscoveryRoute
   '/ecosystem/uk-directory': typeof EcosystemUkDirectoryRoute
   '/participate/events': typeof ParticipateEventsRoute
+  '/participate/members': typeof ParticipateMembersRoute
   '/participate/news': typeof ParticipateNewsRoute
   '/publications/$slug': typeof PublicationsSlugRoute
   '/collaborate/': typeof CollaborateIndexRoute
@@ -304,6 +311,7 @@ export interface FileRoutesByTo {
   '/ecosystem/science-discovery': typeof EcosystemScienceDiscoveryRoute
   '/ecosystem/uk-directory': typeof EcosystemUkDirectoryRoute
   '/participate/events': typeof ParticipateEventsRoute
+  '/participate/members': typeof ParticipateMembersRoute
   '/participate/news': typeof ParticipateNewsRoute
   '/publications/$slug': typeof PublicationsSlugRoute
   '/collaborate': typeof CollaborateIndexRoute
@@ -344,6 +352,7 @@ export interface FileRoutesById {
   '/ecosystem/science-discovery': typeof EcosystemScienceDiscoveryRoute
   '/ecosystem/uk-directory': typeof EcosystemUkDirectoryRoute
   '/participate/events': typeof ParticipateEventsRoute
+  '/participate/members': typeof ParticipateMembersRoute
   '/participate/news': typeof ParticipateNewsRoute
   '/publications/$slug': typeof PublicationsSlugRoute
   '/collaborate/': typeof CollaborateIndexRoute
@@ -384,6 +393,7 @@ export interface FileRouteTypes {
     | '/ecosystem/science-discovery'
     | '/ecosystem/uk-directory'
     | '/participate/events'
+    | '/participate/members'
     | '/participate/news'
     | '/publications/$slug'
     | '/collaborate/'
@@ -418,6 +428,7 @@ export interface FileRouteTypes {
     | '/ecosystem/science-discovery'
     | '/ecosystem/uk-directory'
     | '/participate/events'
+    | '/participate/members'
     | '/participate/news'
     | '/publications/$slug'
     | '/collaborate'
@@ -457,6 +468,7 @@ export interface FileRouteTypes {
     | '/ecosystem/science-discovery'
     | '/ecosystem/uk-directory'
     | '/participate/events'
+    | '/participate/members'
     | '/participate/news'
     | '/publications/$slug'
     | '/collaborate/'
@@ -691,6 +703,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ParticipateEventsRouteImport
       parentRoute: typeof ParticipateRoute
     }
+    '/participate/members': {
+      id: '/participate/members'
+      path: '/members'
+      fullPath: '/participate/members'
+      preLoaderRoute: typeof ParticipateMembersRouteImport
+      parentRoute: typeof ParticipateRoute
+    }
     '/participate/news': {
       id: '/participate/news'
       path: '/news'
@@ -835,12 +854,14 @@ const EcosystemRouteWithChildren = EcosystemRoute._addFileChildren(
 
 interface ParticipateRouteChildren {
   ParticipateEventsRoute: typeof ParticipateEventsRoute
+  ParticipateMembersRoute: typeof ParticipateMembersRoute
   ParticipateNewsRoute: typeof ParticipateNewsRoute
   ParticipateIndexRoute: typeof ParticipateIndexRoute
 }
 
 const ParticipateRouteChildren: ParticipateRouteChildren = {
   ParticipateEventsRoute: ParticipateEventsRoute,
+  ParticipateMembersRoute: ParticipateMembersRoute,
   ParticipateNewsRoute: ParticipateNewsRoute,
   ParticipateIndexRoute: ParticipateIndexRoute,
 }
