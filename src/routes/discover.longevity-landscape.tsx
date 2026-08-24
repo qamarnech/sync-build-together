@@ -11,7 +11,7 @@ import {
 import { CycleWheel, ParticipantOrbit, SystemsRings } from "@/components/site/infographics";
 import { cn } from "@/lib/utils";
 
-export const Route = createFileRoute("/ecosystem/")({
+export const Route = createFileRoute("/discover/longevity-landscape")({
   head: () => ({
     meta: [
       { title: "Ecosystem Architecture — MR Longevity" },
