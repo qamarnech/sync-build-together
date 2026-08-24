@@ -15,7 +15,7 @@ const PAGE_URL = "https://mrlongevity-ecosystem.lovable.app/ecosystem/uk-directo
 const DESCRIPTION =
   "A curated directory of the UK healthy longevity ecosystem: geroscience institutes, gerontology centres, NHS research units, longevity clinics, biotech companies, AgeTech, charities, funders and population cohorts — each with a source link.";
 
-export const Route = createFileRoute("/ecosystem/uk-directory")({
+export const Route = createFileRoute("/discover/uk-directory")({
   head: () => ({
     meta: [
       { title: "UK Longevity Directory — MR. LONGEVITY" },

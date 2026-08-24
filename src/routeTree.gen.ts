@@ -23,6 +23,7 @@ import { Route as AuthenticatedProfileRouteImport } from './routes/_authenticate
 import { Route as AboutIndexRouteImport } from './routes/about.index'
 import { Route as AboutVisionMissionRouteImport } from './routes/about.vision-mission'
 import { Route as CollaborateIndexRouteImport } from './routes/collaborate.index'
+import { Route as CollaborateOpportunitiesRouteImport } from './routes/collaborate.opportunities'
 import { Route as CollaboratePartnersRouteImport } from './routes/collaborate.partners'
 import { Route as CollaborateProjectsRouteImport } from './routes/collaborate.projects'
 import { Route as DiscoverIndexRouteImport } from './routes/discover.index'
@@ -116,6 +117,12 @@ const CollaborateIndexRoute = CollaborateIndexRouteImport.update({
   path: '/',
   getParentRoute: () => CollaborateRoute,
 } as any)
+const CollaborateOpportunitiesRoute =
+  CollaborateOpportunitiesRouteImport.update({
+    id: '/opportunities',
+    path: '/opportunities',
+    getParentRoute: () => CollaborateRoute,
+  } as any)
 const CollaboratePartnersRoute = CollaboratePartnersRouteImport.update({
   id: '/partners',
   path: '/partners',
@@ -257,6 +264,7 @@ export interface FileRoutesByFullPath {
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/profile': typeof AuthenticatedProfileRoute
   '/about/vision-mission': typeof AboutVisionMissionRoute
+  '/collaborate/opportunities': typeof CollaborateOpportunitiesRoute
   '/collaborate/partners': typeof CollaboratePartnersRoute
   '/collaborate/projects': typeof CollaborateProjectsRoute
   '/discover/biology-of-aging': typeof DiscoverBiologyOfAgingRoute
@@ -291,6 +299,7 @@ export interface FileRoutesByTo {
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/profile': typeof AuthenticatedProfileRoute
   '/about/vision-mission': typeof AboutVisionMissionRoute
+  '/collaborate/opportunities': typeof CollaborateOpportunitiesRoute
   '/collaborate/partners': typeof CollaboratePartnersRoute
   '/collaborate/projects': typeof CollaborateProjectsRoute
   '/discover/biology-of-aging': typeof DiscoverBiologyOfAgingRoute
@@ -331,6 +340,7 @@ export interface FileRoutesById {
   '/_authenticated/dashboard': typeof AuthenticatedDashboardRoute
   '/_authenticated/profile': typeof AuthenticatedProfileRoute
   '/about/vision-mission': typeof AboutVisionMissionRoute
+  '/collaborate/opportunities': typeof CollaborateOpportunitiesRoute
   '/collaborate/partners': typeof CollaboratePartnersRoute
   '/collaborate/projects': typeof CollaborateProjectsRoute
   '/discover/biology-of-aging': typeof DiscoverBiologyOfAgingRoute
@@ -371,6 +381,7 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/profile'
     | '/about/vision-mission'
+    | '/collaborate/opportunities'
     | '/collaborate/partners'
     | '/collaborate/projects'
     | '/discover/biology-of-aging'
@@ -405,6 +416,7 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/profile'
     | '/about/vision-mission'
+    | '/collaborate/opportunities'
     | '/collaborate/partners'
     | '/collaborate/projects'
     | '/discover/biology-of-aging'
@@ -444,6 +456,7 @@ export interface FileRouteTypes {
     | '/_authenticated/dashboard'
     | '/_authenticated/profile'
     | '/about/vision-mission'
+    | '/collaborate/opportunities'
     | '/collaborate/partners'
     | '/collaborate/projects'
     | '/discover/biology-of-aging'
@@ -587,6 +600,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/collaborate/'
       preLoaderRoute: typeof CollaborateIndexRouteImport
+      parentRoute: typeof CollaborateRoute
+    }
+    '/collaborate/opportunities': {
+      id: '/collaborate/opportunities'
+      path: '/opportunities'
+      fullPath: '/collaborate/opportunities'
+      preLoaderRoute: typeof CollaborateOpportunitiesRouteImport
       parentRoute: typeof CollaborateRoute
     }
     '/collaborate/partners': {
@@ -789,12 +809,14 @@ const AboutRouteChildren: AboutRouteChildren = {
 const AboutRouteWithChildren = AboutRoute._addFileChildren(AboutRouteChildren)
 
 interface CollaborateRouteChildren {
+  CollaborateOpportunitiesRoute: typeof CollaborateOpportunitiesRoute
   CollaboratePartnersRoute: typeof CollaboratePartnersRoute
   CollaborateProjectsRoute: typeof CollaborateProjectsRoute
   CollaborateIndexRoute: typeof CollaborateIndexRoute
 }
 
 const CollaborateRouteChildren: CollaborateRouteChildren = {
+  CollaborateOpportunitiesRoute: CollaborateOpportunitiesRoute,
   CollaboratePartnersRoute: CollaboratePartnersRoute,
   CollaborateProjectsRoute: CollaborateProjectsRoute,
   CollaborateIndexRoute: CollaborateIndexRoute,
