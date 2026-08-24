@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { Section, SectionHead, Tag } from "@/components/site/ui-bits";
 import { PARTICIPATE_ITEMS } from "@/lib/participate-nav";
-import { EVENTS, LONGEVITY_NEWS, RESEARCH_HIGHLIGHTS } from "@/lib/participate-content";
+import { EVENTS, LONGEVITY_NEWS, RESEARCH_HIGHLIGHTS } from "@/lib/insights-content";
 
 export const Route = createFileRoute("/participate/")({
   head: () => ({

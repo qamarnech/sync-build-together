@@ -2,10 +2,10 @@ import { createFileRoute, Link, Outlet } from "@tanstack/react-router";
 import { PARTICIPATE_ITEMS } from "@/lib/participate-nav";
 
 export const Route = createFileRoute("/participate")({
-  component: InsightsLayout,
+  component: ParticipateLayout,
 });
 
-function InsightsLayout() {
+function ParticipateLayout() {
   return (
     <div>
       <div className="border-b border-line bg-paper">

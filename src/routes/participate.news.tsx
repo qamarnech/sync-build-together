@@ -1,18 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ExternalLink } from "lucide-react";
 import { Section, SectionHead, Tag } from "@/components/site/ui-bits";
-import { LONGEVITY_NEWS } from "@/lib/participate-content";
+import { LONGEVITY_NEWS } from "@/lib/insights-content";
 
 export const Route = createFileRoute("/participate/news")({
   head: () => ({
     meta: [
-      { title: "Longevity News | MR Longevity Insights" },
+      { title: "Longevity News | MR Longevity Participate" },
       {
         name: "description",
         content:
           "Curated longevity news sources: geroscience research, healthy ageing policy, biomarkers standards and funding signals shaping the field.",
       },
-      { property: "og:title", content: "Longevity News | MR Longevity Insights" },
+      { property: "og:title", content: "Longevity News | MR Longevity Participate" },
       {
         property: "og:description",
         content: "Sources and signals shaping healthy longevity worldwide.",
