@@ -13,13 +13,14 @@ import personaGovernment from "@/assets/persona-government.jpg";
 import personaIndividual from "@/assets/persona-individual.jpg";
 
 const PERSONA_IMAGES: Record<string, { src: string; alt: string }> = {
-  "I am a Researcher": { src: personaResearcher, alt: "Illustration of a researcher at a microscope studying molecules" },
-  "I am a Clinician": { src: personaClinician, alt: "Illustration of a clinician with a stethoscope reviewing a patient's health data" },
-  "I am a Company or Startup": { src: personaCompany, alt: "Illustration of startup founders presenting a prototype and growth curve" },
-  "I am an Investor or Funder": { src: personaInvestor, alt: "Illustration of an investor reviewing charts and funding growth" },
-  "I represent a University": { src: personaUniversity, alt: "Illustration of academics in front of a university building" },
-  "I represent Government / Public Health": { src: personaGovernment, alt: "Illustration of public health officials before a civic building with a world map" },
-  "I am an Individual": { src: personaIndividual, alt: "Illustration of an active older person walking with healthy lifestyle symbols" },
+  "I am a Researcher": { src: personaResearcher, alt: "Futuristic scene of a longevity scientist studying glowing holographic DNA and cells" },
+  "I am a Clinician": { src: personaClinician, alt: "Futuristic scene of a clinician reading a holographic body scan and biomarker charts" },
+  "I am a Company or Startup": { src: personaCompany, alt: "Futuristic scene of founders presenting a glowing biotech prototype and growth curves" },
+  "I am an Investor or Funder": { src: personaInvestor, alt: "Futuristic scene of an investor reviewing holographic portfolio charts and networks" },
+  "I represent a University": { src: personaUniversity, alt: "Futuristic scene of academics on a glowing campus linked by holographic research networks" },
+  "I represent Government / Public Health": { src: personaGovernment, alt: "Futuristic scene of public health officials before a glowing holographic world health map" },
+  "I am an Individual": { src: personaIndividual, alt: "Futuristic scene of an active older person running inside glowing holographic health rings" },
+
 };
 
 export const Route = createFileRoute("/")({
