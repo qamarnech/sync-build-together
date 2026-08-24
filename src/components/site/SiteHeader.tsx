@@ -20,6 +20,11 @@ const ECOSYSTEM_ITEMS = [
   { slug: "uk-directory", to: "/ecosystem/uk-directory", name: "UK Longevity Directory" },
 ];
 
+const DISCOVER_ITEMS = [
+  { slug: "longevity-landscape", to: "/ecosystem", name: "Longevity Landscape" },
+  ...DISCOVER_PILLARS,
+];
+
 const memberLinks = [
   { to: "/dashboard", label: "Dashboard" },
   { to: "/projects", label: "Projects" },
@@ -31,10 +36,12 @@ function Dropdown({
   label,
   to,
   items,
+  showOverview = true,
 }: {
   label: string;
   to: string;
   items: { slug: string; to: string; name: string }[];
+  showOverview?: boolean;
 }) {
   return (
     <div className="group relative">
@@ -48,14 +55,16 @@ function Dropdown({
       </Link>
       <div className="invisible absolute left-0 top-full z-50 w-64 pt-3 opacity-0 transition-opacity group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
         <div className="rounded-xl border border-line bg-paper p-2 shadow-lg">
-          <Link
-            to={to}
-            activeOptions={{ exact: true }}
-            className="block rounded-lg px-3 py-2 text-sm text-ink-soft transition-colors hover:bg-gold/10 hover:text-navy"
-            activeProps={{ className: "text-navy font-semibold" }}
-          >
-            Overview
-          </Link>
+          {showOverview && (
+            <Link
+              to={to}
+              activeOptions={{ exact: true }}
+              className="block rounded-lg px-3 py-2 text-sm text-ink-soft transition-colors hover:bg-gold/10 hover:text-navy"
+              activeProps={{ className: "text-navy font-semibold" }}
+            >
+              Overview
+            </Link>
+          )}
           {items.map((item) => (
             <Link
               key={item.slug}
