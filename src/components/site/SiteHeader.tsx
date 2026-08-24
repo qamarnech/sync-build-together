@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { DISCOVER_PILLARS } from "@/lib/discover-pillars";
 import { ECOSYSTEM_PILLARS } from "@/lib/ecosystem-pillars";
 import { INSIGHTS_ITEMS } from "@/lib/insights-nav";
+import { COLLABORATE_ITEMS } from "@/lib/collaborate-pillars";
 
 const HOME_ITEMS = [
   { slug: "about", to: "/about", name: "About" },
@@ -137,7 +138,7 @@ export function SiteHeader() {
             bottomItems={ECOSYSTEM_ITEMS}
             bottomLabel="Longevity Landscape"
           />
-          <Dropdown label="Ecosystem" to="/ecosystem" items={ECOSYSTEM_ITEMS} showOverview={false} />
+          <Dropdown label="Collaborate" to="/collaborate" items={COLLABORATE_ITEMS} />
           <Dropdown label="Insights" to="/insights" items={[...INSIGHTS_ITEMS]} />
 
           {user &&
