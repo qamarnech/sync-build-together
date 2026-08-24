@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as AuthRouteImport } from './routes/auth'
+import { Route as CollaborateRouteImport } from './routes/collaborate'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DiscoverRouteImport } from './routes/discover'
 import { Route as EcosystemRouteImport } from './routes/ecosystem'
@@ -20,6 +21,11 @@ import { Route as FounderRouteImport } from './routes/founder'
 import { Route as InsightsRouteImport } from './routes/insights'
 import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
 import { Route as AuthenticatedProfileRouteImport } from './routes/_authenticated/profile'
+import { Route as CollaborateIndexRouteImport } from './routes/collaborate.index'
+import { Route as CollaborateOpportunitiesRouteImport } from './routes/collaborate.opportunities'
+import { Route as CollaboratePartnersRouteImport } from './routes/collaborate.partners'
+import { Route as CollaborateProjectsRouteImport } from './routes/collaborate.projects'
+import { Route as CollaborateTranslationInnovationRouteImport } from './routes/collaborate.translation-innovation'
 import { Route as DiscoverIndexRouteImport } from './routes/discover.index'
 import { Route as DiscoverBiologyOfAgingRouteImport } from './routes/discover.biology-of-aging'
 import { Route as DiscoverHealthyLongevityRouteImport } from './routes/discover.healthy-longevity'
@@ -61,6 +67,11 @@ const AuthRoute = AuthRouteImport.update({
   path: '/auth',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CollaborateRoute = CollaborateRouteImport.update({
+  id: '/collaborate',
+  path: '/collaborate',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
@@ -96,6 +107,33 @@ const AuthenticatedProfileRoute = AuthenticatedProfileRouteImport.update({
   path: '/profile',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+const CollaborateIndexRoute = CollaborateIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => CollaborateRoute,
+} as any)
+const CollaborateOpportunitiesRoute =
+  CollaborateOpportunitiesRouteImport.update({
+    id: '/opportunities',
+    path: '/opportunities',
+    getParentRoute: () => CollaborateRoute,
+  } as any)
+const CollaboratePartnersRoute = CollaboratePartnersRouteImport.update({
+  id: '/partners',
+  path: '/partners',
+  getParentRoute: () => CollaborateRoute,
+} as any)
+const CollaborateProjectsRoute = CollaborateProjectsRouteImport.update({
+  id: '/projects',
+  path: '/projects',
+  getParentRoute: () => CollaborateRoute,
+} as any)
+const CollaborateTranslationInnovationRoute =
+  CollaborateTranslationInnovationRouteImport.update({
+    id: '/translation-innovation',
+    path: '/translation-innovation',
+    getParentRoute: () => CollaborateRoute,
+  } as any)
 const DiscoverIndexRoute = DiscoverIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -218,6 +256,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/auth': typeof AuthRoute
+  '/collaborate': typeof CollaborateRouteWithChildren
   '/contact': typeof ContactRoute
   '/discover': typeof DiscoverRouteWithChildren
   '/ecosystem': typeof EcosystemRouteWithChildren
@@ -225,6 +264,10 @@ export interface FileRoutesByFullPath {
   '/insights': typeof InsightsRouteWithChildren
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/profile': typeof AuthenticatedProfileRoute
+  '/collaborate/opportunities': typeof CollaborateOpportunitiesRoute
+  '/collaborate/partners': typeof CollaboratePartnersRoute
+  '/collaborate/projects': typeof CollaborateProjectsRoute
+  '/collaborate/translation-innovation': typeof CollaborateTranslationInnovationRoute
   '/discover/biology-of-aging': typeof DiscoverBiologyOfAgingRoute
   '/discover/healthy-longevity': typeof DiscoverHealthyLongevityRoute
   '/discover/scientific-missions': typeof DiscoverScientificMissionsRoute
@@ -237,6 +280,7 @@ export interface FileRoutesByFullPath {
   '/insights/longevity-news': typeof InsightsLongevityNewsRoute
   '/insights/research-highlights': typeof InsightsResearchHighlightsRoute
   '/publications/$slug': typeof PublicationsSlugRoute
+  '/collaborate/': typeof CollaborateIndexRoute
   '/discover/': typeof DiscoverIndexRoute
   '/ecosystem/': typeof EcosystemIndexRoute
   '/insights/': typeof InsightsIndexRoute
@@ -255,6 +299,10 @@ export interface FileRoutesByTo {
   '/founder': typeof FounderRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/profile': typeof AuthenticatedProfileRoute
+  '/collaborate/opportunities': typeof CollaborateOpportunitiesRoute
+  '/collaborate/partners': typeof CollaboratePartnersRoute
+  '/collaborate/projects': typeof CollaborateProjectsRoute
+  '/collaborate/translation-innovation': typeof CollaborateTranslationInnovationRoute
   '/discover/biology-of-aging': typeof DiscoverBiologyOfAgingRoute
   '/discover/healthy-longevity': typeof DiscoverHealthyLongevityRoute
   '/discover/scientific-missions': typeof DiscoverScientificMissionsRoute
@@ -267,6 +315,7 @@ export interface FileRoutesByTo {
   '/insights/longevity-news': typeof InsightsLongevityNewsRoute
   '/insights/research-highlights': typeof InsightsResearchHighlightsRoute
   '/publications/$slug': typeof PublicationsSlugRoute
+  '/collaborate': typeof CollaborateIndexRoute
   '/discover': typeof DiscoverIndexRoute
   '/ecosystem': typeof EcosystemIndexRoute
   '/insights': typeof InsightsIndexRoute
@@ -283,6 +332,7 @@ export interface FileRoutesById {
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/about': typeof AboutRoute
   '/auth': typeof AuthRoute
+  '/collaborate': typeof CollaborateRouteWithChildren
   '/contact': typeof ContactRoute
   '/discover': typeof DiscoverRouteWithChildren
   '/ecosystem': typeof EcosystemRouteWithChildren
@@ -290,6 +340,10 @@ export interface FileRoutesById {
   '/insights': typeof InsightsRouteWithChildren
   '/_authenticated/dashboard': typeof AuthenticatedDashboardRoute
   '/_authenticated/profile': typeof AuthenticatedProfileRoute
+  '/collaborate/opportunities': typeof CollaborateOpportunitiesRoute
+  '/collaborate/partners': typeof CollaboratePartnersRoute
+  '/collaborate/projects': typeof CollaborateProjectsRoute
+  '/collaborate/translation-innovation': typeof CollaborateTranslationInnovationRoute
   '/discover/biology-of-aging': typeof DiscoverBiologyOfAgingRoute
   '/discover/healthy-longevity': typeof DiscoverHealthyLongevityRoute
   '/discover/scientific-missions': typeof DiscoverScientificMissionsRoute
@@ -302,6 +356,7 @@ export interface FileRoutesById {
   '/insights/longevity-news': typeof InsightsLongevityNewsRoute
   '/insights/research-highlights': typeof InsightsResearchHighlightsRoute
   '/publications/$slug': typeof PublicationsSlugRoute
+  '/collaborate/': typeof CollaborateIndexRoute
   '/discover/': typeof DiscoverIndexRoute
   '/ecosystem/': typeof EcosystemIndexRoute
   '/insights/': typeof InsightsIndexRoute
@@ -318,6 +373,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/auth'
+    | '/collaborate'
     | '/contact'
     | '/discover'
     | '/ecosystem'
@@ -325,6 +381,10 @@ export interface FileRouteTypes {
     | '/insights'
     | '/dashboard'
     | '/profile'
+    | '/collaborate/opportunities'
+    | '/collaborate/partners'
+    | '/collaborate/projects'
+    | '/collaborate/translation-innovation'
     | '/discover/biology-of-aging'
     | '/discover/healthy-longevity'
     | '/discover/scientific-missions'
@@ -337,6 +397,7 @@ export interface FileRouteTypes {
     | '/insights/longevity-news'
     | '/insights/research-highlights'
     | '/publications/$slug'
+    | '/collaborate/'
     | '/discover/'
     | '/ecosystem/'
     | '/insights/'
@@ -355,6 +416,10 @@ export interface FileRouteTypes {
     | '/founder'
     | '/dashboard'
     | '/profile'
+    | '/collaborate/opportunities'
+    | '/collaborate/partners'
+    | '/collaborate/projects'
+    | '/collaborate/translation-innovation'
     | '/discover/biology-of-aging'
     | '/discover/healthy-longevity'
     | '/discover/scientific-missions'
@@ -367,6 +432,7 @@ export interface FileRouteTypes {
     | '/insights/longevity-news'
     | '/insights/research-highlights'
     | '/publications/$slug'
+    | '/collaborate'
     | '/discover'
     | '/ecosystem'
     | '/insights'
@@ -382,6 +448,7 @@ export interface FileRouteTypes {
     | '/_authenticated'
     | '/about'
     | '/auth'
+    | '/collaborate'
     | '/contact'
     | '/discover'
     | '/ecosystem'
@@ -389,6 +456,10 @@ export interface FileRouteTypes {
     | '/insights'
     | '/_authenticated/dashboard'
     | '/_authenticated/profile'
+    | '/collaborate/opportunities'
+    | '/collaborate/partners'
+    | '/collaborate/projects'
+    | '/collaborate/translation-innovation'
     | '/discover/biology-of-aging'
     | '/discover/healthy-longevity'
     | '/discover/scientific-missions'
@@ -401,6 +472,7 @@ export interface FileRouteTypes {
     | '/insights/longevity-news'
     | '/insights/research-highlights'
     | '/publications/$slug'
+    | '/collaborate/'
     | '/discover/'
     | '/ecosystem/'
     | '/insights/'
@@ -417,6 +489,7 @@ export interface RootRouteChildren {
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   AboutRoute: typeof AboutRoute
   AuthRoute: typeof AuthRoute
+  CollaborateRoute: typeof CollaborateRouteWithChildren
   ContactRoute: typeof ContactRoute
   DiscoverRoute: typeof DiscoverRouteWithChildren
   EcosystemRoute: typeof EcosystemRouteWithChildren
@@ -454,6 +527,13 @@ declare module '@tanstack/react-router' {
       path: '/auth'
       fullPath: '/auth'
       preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/collaborate': {
+      id: '/collaborate'
+      path: '/collaborate'
+      fullPath: '/collaborate'
+      preLoaderRoute: typeof CollaborateRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -504,6 +584,41 @@ declare module '@tanstack/react-router' {
       fullPath: '/profile'
       preLoaderRoute: typeof AuthenticatedProfileRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/collaborate/': {
+      id: '/collaborate/'
+      path: '/'
+      fullPath: '/collaborate/'
+      preLoaderRoute: typeof CollaborateIndexRouteImport
+      parentRoute: typeof CollaborateRoute
+    }
+    '/collaborate/opportunities': {
+      id: '/collaborate/opportunities'
+      path: '/opportunities'
+      fullPath: '/collaborate/opportunities'
+      preLoaderRoute: typeof CollaborateOpportunitiesRouteImport
+      parentRoute: typeof CollaborateRoute
+    }
+    '/collaborate/partners': {
+      id: '/collaborate/partners'
+      path: '/partners'
+      fullPath: '/collaborate/partners'
+      preLoaderRoute: typeof CollaboratePartnersRouteImport
+      parentRoute: typeof CollaborateRoute
+    }
+    '/collaborate/projects': {
+      id: '/collaborate/projects'
+      path: '/projects'
+      fullPath: '/collaborate/projects'
+      preLoaderRoute: typeof CollaborateProjectsRouteImport
+      parentRoute: typeof CollaborateRoute
+    }
+    '/collaborate/translation-innovation': {
+      id: '/collaborate/translation-innovation'
+      path: '/translation-innovation'
+      fullPath: '/collaborate/translation-innovation'
+      preLoaderRoute: typeof CollaborateTranslationInnovationRouteImport
+      parentRoute: typeof CollaborateRoute
     }
     '/discover/': {
       id: '/discover/'
@@ -678,6 +793,26 @@ const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
 const AuthenticatedRouteRouteWithChildren =
   AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
 
+interface CollaborateRouteChildren {
+  CollaborateOpportunitiesRoute: typeof CollaborateOpportunitiesRoute
+  CollaboratePartnersRoute: typeof CollaboratePartnersRoute
+  CollaborateProjectsRoute: typeof CollaborateProjectsRoute
+  CollaborateTranslationInnovationRoute: typeof CollaborateTranslationInnovationRoute
+  CollaborateIndexRoute: typeof CollaborateIndexRoute
+}
+
+const CollaborateRouteChildren: CollaborateRouteChildren = {
+  CollaborateOpportunitiesRoute: CollaborateOpportunitiesRoute,
+  CollaboratePartnersRoute: CollaboratePartnersRoute,
+  CollaborateProjectsRoute: CollaborateProjectsRoute,
+  CollaborateTranslationInnovationRoute: CollaborateTranslationInnovationRoute,
+  CollaborateIndexRoute: CollaborateIndexRoute,
+}
+
+const CollaborateRouteWithChildren = CollaborateRoute._addFileChildren(
+  CollaborateRouteChildren,
+)
+
 interface DiscoverRouteChildren {
   DiscoverBiologyOfAgingRoute: typeof DiscoverBiologyOfAgingRoute
   DiscoverHealthyLongevityRoute: typeof DiscoverHealthyLongevityRoute
@@ -741,6 +876,7 @@ const rootRouteChildren: RootRouteChildren = {
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AboutRoute: AboutRoute,
   AuthRoute: AuthRoute,
+  CollaborateRoute: CollaborateRouteWithChildren,
   ContactRoute: ContactRoute,
   DiscoverRoute: DiscoverRouteWithChildren,
   EcosystemRoute: EcosystemRouteWithChildren,

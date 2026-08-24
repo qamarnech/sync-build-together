@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { DISCOVER_PILLARS } from "@/lib/discover-pillars";
 import { ECOSYSTEM_PILLARS } from "@/lib/ecosystem-pillars";
 import { INSIGHTS_ITEMS } from "@/lib/insights-nav";
+import { COLLABORATE_ITEMS } from "@/lib/collaborate-pillars";
 
 const HOME_ITEMS = [
   { slug: "about", to: "/about", name: "About" },
@@ -137,7 +138,7 @@ export function SiteHeader() {
             bottomItems={ECOSYSTEM_ITEMS}
             bottomLabel="Longevity Landscape"
           />
-          <Dropdown label="Ecosystem" to="/ecosystem" items={ECOSYSTEM_ITEMS} showOverview={false} />
+          <Dropdown label="Collaborate" to="/collaborate" items={COLLABORATE_ITEMS} />
           <Dropdown label="Insights" to="/insights" items={[...INSIGHTS_ITEMS]} />
 
           {user &&
@@ -237,18 +238,21 @@ export function SiteHeader() {
               ))}
             </div>
 
-            <Link to="/ecosystem" onClick={() => setOpen(false)} className="text-sm font-semibold text-navy">
-              Ecosystem
+            <Link to="/collaborate" onClick={() => setOpen(false)} className="text-sm font-semibold text-navy">
+              Collaborate
             </Link>
             <div className="flex flex-col gap-2 border-l border-line pl-3">
-              {ECOSYSTEM_ITEMS.map((pillar) => (
+              <Link to="/collaborate" onClick={() => setOpen(false)} className="text-sm text-ink-soft">
+                Overview
+              </Link>
+              {COLLABORATE_ITEMS.map((item) => (
                 <Link
-                  key={pillar.slug}
-                  to={pillar.to}
+                  key={item.slug}
+                  to={item.to}
                   onClick={() => setOpen(false)}
                   className="text-sm text-ink-soft"
                 >
-                  {pillar.name}
+                  {item.name}
                 </Link>
               ))}
             </div>
