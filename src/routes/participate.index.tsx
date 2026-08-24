@@ -46,7 +46,7 @@ function ParticipateIndex() {
         />
         <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-b from-navy/45 to-navy/85" />
         <div className="relative">
-          <Section tone="navy">
+          <Section tone="navy" className="bg-transparent">
             <SectionHead
               kicker="Participate"
               title="Take part in the healthy longevity mission"

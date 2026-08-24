@@ -52,7 +52,7 @@ function DiscoverPage() {
         />
         <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-b from-navy/45 to-navy/85" />
         <div className="relative">
-          <Section tone="navy">
+          <Section tone="navy" className="bg-transparent">
             <SectionHead
               kicker="Discover"
               title="Explore the science and focus of healthy longevity"
