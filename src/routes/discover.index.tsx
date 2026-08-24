@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import { Section, SectionHead, Tag } from "@/components/site/ui-bits";
+import { FigureTitle, Section, SectionHead, Tag } from "@/components/site/ui-bits";
 import {
   EVIDENCE_LABELS,
   FOUNDATIONS,
@@ -58,8 +58,11 @@ function DiscoverPage() {
         />
         <figure className="mt-10">
           <HealthspanCurve />
-          <figcaption className="mt-3 text-center text-xs text-ink-mute">
-            Fig. 05 — The goal is not simply more years, but keeping function high for longer.
+          <figcaption className="mt-4">
+            <FigureTitle
+              title="Healthspan vs. Lifespan"
+              note="The goal is not simply more years, but keeping function high for longer."
+            />
           </figcaption>
         </figure>
         <h3 className="mt-12 text-center font-serif text-xl text-navy">Healthspan Foundations</h3>
@@ -113,8 +116,11 @@ function DiscoverPage() {
             active={stage}
             onSelect={setStage}
           />
-          <figcaption className="mt-4 text-center text-xs text-ink-mute">
-            Fig. 06 — The eight-stage translation pathway, from first insight to population impact.
+          <figcaption className="mt-4">
+            <FigureTitle
+              title="The Translation Pathway"
+              note="Eight stages, from first insight to population impact."
+            />
           </figcaption>
         </figure>
 
@@ -186,9 +192,11 @@ function DiscoverPage() {
             ))}
           </div>
           <EvidenceLadder className="mt-6" />
-          <p className="mt-3 text-center text-xs text-ink-mute">
-            Fig. 07 — How confidence grows as a claim moves from hypothesis to validated practice.
-          </p>
+          <FigureTitle
+            className="mt-4"
+            title="The Evidence Ladder"
+            note="How confidence grows as a claim moves from hypothesis to validated practice."
+          />
         </div>
         <div className="mt-8 text-center">
           <Button asChild variant="outline" className="border-navy/30 text-navy hover:bg-navy/5">

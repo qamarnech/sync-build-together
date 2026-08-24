@@ -100,3 +100,57 @@ export function Section({
     </section>
   );
 }
+
+export function FigureTitle({
+  title,
+  note,
+  align = "center",
+  invert = false,
+  className,
+}: {
+  title: string;
+  note?: string | undefined;
+  align?: "center" | "left";
+  invert?: boolean;
+  className?: string | undefined;
+}) {
+  return (
+    <div className={cn(align === "center" ? "text-center" : "text-left", className)}>
+      <span
+        className={cn(
+          "inline-flex items-center gap-3",
+          align === "center" ? "justify-center" : "justify-start",
+        )}
+      >
+        <span
+          className={cn(
+            "h-px w-6",
+            invert ? "bg-gold-light/50" : "bg-gold/40",
+            align === "left" && "hidden",
+          )}
+        />
+        <span className="gold-diamond" />
+        <span
+          className={cn(
+            "font-serif text-sm font-semibold tracking-[0.14em] uppercase",
+            invert ? "text-gold-light" : "text-gold",
+          )}
+        >
+          {title}
+        </span>
+        <span className={cn("h-px w-6", invert ? "bg-gold-light/50" : "bg-gold/40")} />
+      </span>
+      {note && (
+        <p
+          className={cn(
+            "mt-2 text-xs leading-relaxed",
+            invert ? "text-gold-pale/70" : "text-ink-mute",
+            align === "center" && "mx-auto max-w-2xl",
+          )}
+        >
+          {note}
+        </p>
+      )}
+    </div>
+  );
+}

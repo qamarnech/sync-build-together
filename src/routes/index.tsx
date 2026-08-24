@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Flourish, Kicker, Section, SectionHead, Tag } from "@/components/site/ui-bits";
+import { FigureTitle, Flourish, Kicker, Section, SectionHead, Tag } from "@/components/site/ui-bits";
 import { HealthspanCurve, TranslationFlywheel } from "@/components/site/infographics";
 import { FLYWHEEL, PERSONAS, VERBS } from "@/lib/site-content";
 
@@ -159,7 +159,7 @@ function Index() {
         </blockquote>
         <figure className="mt-12 rounded-2xl border border-line bg-paper p-6 md:p-8">
           <figcaption className="mb-2 flex flex-wrap items-center justify-between gap-3">
-            <span className="font-serif text-sm italic text-gold">Fig. 01 — Compressing morbidity</span>
+            <FigureTitle title="Compressing Morbidity" align="left" />
             <span className="flex items-center gap-5 text-xs text-ink-soft">
               <span className="flex items-center gap-2">
                 <span className="h-0.5 w-6 bg-ink-mute" /> Health today
@@ -223,8 +223,8 @@ function Index() {
           intro="Nothing stops at publication. Insight becomes evidence, evidence becomes practice, and real-world outcomes feed the next question."
         />
         <figure className="mt-10 rounded-2xl border border-line bg-paper p-6 md:p-8">
-          <figcaption className="mb-4 font-serif text-sm italic text-gold">
-            Fig. 02 — The MR Longevity Translation Flywheel
+          <figcaption className="mb-5">
+            <FigureTitle title="The MR Longevity Translation Flywheel" />
           </figcaption>
           <TranslationFlywheel />
         </figure>
