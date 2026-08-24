@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import { Section, SectionHead, Tag } from "@/components/site/ui-bits";
+import { FigureTitle, Section, SectionHead, Tag } from "@/components/site/ui-bits";
 import { EvidenceLadder, SystemsRings } from "@/components/site/infographics";
 
 export const Route = createFileRoute("/about")({
@@ -42,7 +42,7 @@ function AboutPage() {
         <figure className="mt-10 grid items-center gap-8 rounded-2xl border border-line bg-white p-6 md:grid-cols-2 md:p-8">
           <SystemsRings />
           <figcaption className="text-sm leading-relaxed text-ink-soft">
-            <span className="font-serif text-sm italic text-gold">Fig. 03 — The person as a system</span>
+            <FigureTitle title="The Person as a System" align="left" />
             <p className="mt-3">
               Healthy longevity is not a single lever. Seven interacting dimensions surround every
               individual, each measurable, each modifiable, none sufficient alone.
@@ -208,8 +208,8 @@ function AboutPage() {
           </div>
         </div>
         <figure className="mt-8">
-          <figcaption className="mb-4 font-serif text-sm italic text-gold-light">
-            Fig. 04 — From hypothesis to validated practice
+          <figcaption className="mb-5">
+            <FigureTitle title="From Hypothesis to Validated Practice" invert />
           </figcaption>
           <EvidenceLadder invert />
         </figure>

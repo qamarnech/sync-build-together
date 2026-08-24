@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import { Section, SectionHead, Tag } from "@/components/site/ui-bits";
+import { FigureTitle, Section, SectionHead, Tag } from "@/components/site/ui-bits";
 import {
   CAPABILITY_AREAS,
   CAPABILITY_RING,
@@ -66,8 +66,11 @@ function EcosystemPage() {
             active={participant}
             onSelect={setParticipant}
           />
-          <figcaption className="mt-3 text-center text-xs text-ink-mute">
-            Fig. 05 — Every participant group orbits the same goal. Hover a node to read its role.
+          <figcaption className="mt-4">
+            <FigureTitle
+              title="The Participant Orbit"
+              note="Every participant group orbits the same goal. Hover a node to read its role."
+            />
           </figcaption>
         </figure>
 
@@ -122,8 +125,11 @@ function EcosystemPage() {
 
         <figure className="mt-10">
           <SystemsRings />
-          <figcaption className="mt-3 text-center text-xs text-ink-mute">
-            Fig. 06 — The person sits at the centre; capability areas surround them as one system.
+          <figcaption className="mt-4">
+            <FigureTitle
+              title="The Person as a System"
+              note="The person sits at the centre; capability areas surround them as one system."
+            />
           </figcaption>
         </figure>
 
@@ -162,8 +168,11 @@ function EcosystemPage() {
             active={stage}
             onSelect={setStage}
           />
-          <figcaption className="mt-3 text-center text-xs text-ink-mute">
-            Fig. 07 — A loop, not a pipeline: each stage feeds the next and learning returns to the start.
+          <figcaption className="mt-4">
+            <FigureTitle
+              title="The Opportunity Cycle"
+              note="A loop, not a pipeline: each stage feeds the next and learning returns to the start."
+            />
           </figcaption>
         </figure>
 
