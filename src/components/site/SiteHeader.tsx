@@ -217,6 +217,18 @@ export function SiteHeader() {
                   {item.name}
                 </Link>
               ))}
+              <div className="my-1 border-t border-line" />
+              <p className="text-xs font-semibold uppercase tracking-wider text-gold">Longevity Landscape</p>
+              {ECOSYSTEM_ITEMS.map((item) => (
+                <Link
+                  key={item.slug}
+                  to={item.to}
+                  onClick={() => setOpen(false)}
+                  className="text-sm text-ink-soft"
+                >
+                  {item.name}
+                </Link>
+              ))}
             </div>
 
             <Link to="/ecosystem" onClick={() => setOpen(false)} className="text-sm font-semibold text-navy">
