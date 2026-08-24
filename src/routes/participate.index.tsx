@@ -3,6 +3,8 @@ import { ArrowRight } from "lucide-react";
 import { Section, SectionHead, Tag } from "@/components/site/ui-bits";
 import { PARTICIPATE_ITEMS } from "@/lib/participate-nav";
 import { EVENTS, LONGEVITY_NEWS } from "@/lib/insights-content";
+import bannerParticipate from "@/assets/banner-participate.jpg";
+
 
 export const Route = createFileRoute("/participate/")({
   head: () => ({
@@ -34,12 +36,29 @@ const SUMMARY = [
 function ParticipateIndex() {
   return (
     <div>
-      <Section tone="white">
-        <SectionHead
-          kicker="Participate"
-          title="Take part in the healthy longevity mission"
-          intro="Follow what is happening, join the gatherings, and meet the people building healthy longevity."
+      <div className="relative overflow-hidden bg-navy">
+        <img
+          src={bannerParticipate}
+          alt="A large audience in a glowing holographic amphitheatre with floating data panels"
+          width={1920}
+          height={768}
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-100"
         />
+        <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-b from-navy/50 via-navy/20 to-navy/60" />
+        <div className="relative">
+          <Section tone="navy" className="bg-transparent">
+            <SectionHead
+              kicker="Participate"
+              title="Take part in the healthy longevity mission"
+              intro="Follow what is happening, join the gatherings, and meet the people building healthy longevity."
+              invert
+            />
+          </Section>
+        </div>
+      </div>
+
+      <Section tone="white">
+
         <div className="mt-10 grid gap-4 md:grid-cols-3">
           {PARTICIPATE_ITEMS.map((item, i) => (
             <Link
