@@ -271,7 +271,7 @@ function Index() {
       <section className="bg-navy-deep px-6 py-20 text-center text-white">
         <div className="mx-auto max-w-3xl">
           <h2 className="text-balance text-3xl font-bold md:text-4xl">
-            What could you bring to healthy longevity?
+            Join MR Longevity
           </h2>
           <Flourish />
           <p className="text-gold-pale/80">
