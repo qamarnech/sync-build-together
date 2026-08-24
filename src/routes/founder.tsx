@@ -20,14 +20,14 @@ import { Button } from "@/components/ui/button";
 
 const URL = "https://mrlongevity-ecosystem.lovable.app/founder";
 const DESCRIPTION =
-  "Professor Qiang Fu 付强 — longevity scientist and biotech entrepreneur. Research record: publications in Nature Metabolism and Aging Cell, patents in NK-cell and exosome technology, and NSFC grants.";
+  "Professor Qiang Fu 付强, longevity scientist and biotech entrepreneur. Research record: publications in Nature Metabolism and Aging Cell, patents in NK-cell and exosome technology, and NSFC grants.";
 
 export const Route = createFileRoute("/founder")({
   head: () => ({
     meta: [
-      { title: "Professor Qiang Fu 付强 — Founder, MR Longevity" },
+      { title: "Professor Qiang Fu 付强, Founder, MR Longevity" },
       { name: "description", content: DESCRIPTION },
-      { property: "og:title", content: "Professor Qiang Fu 付强 — Founder, MR Longevity" },
+      { property: "og:title", content: "Professor Qiang Fu 付强, Founder, MR Longevity" },
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "profile" },
       { property: "og:url", content: URL },
@@ -152,8 +152,8 @@ function FounderPage() {
       <Section tone="navy">
         <SectionHead
           kicker="Join"
-          title="Build the healthy longevity ecosystem"
-          intro="Researchers, clinicians, innovators, investors and partners — collaborate on projects inside MR Longevity."
+          title="Build the healthy longevity mission"
+          intro="Researchers, clinicians, innovators, investors and partners, collaborate on projects inside MR Longevity."
           invert
         />
         <div className="mt-8 flex flex-wrap justify-center gap-3">
@@ -163,7 +163,7 @@ function FounderPage() {
             </Link>
           </Button>
           <Button asChild variant="outline" className="border-white/30 bg-transparent text-white hover:bg-white/10">
-            <Link to="/ecosystem">Explore the ecosystem</Link>
+            <Link to="/ecosystem">Explore the mission</Link>
           </Button>
         </div>
       </Section>

@@ -23,7 +23,7 @@ export const FOUNDER_LOCATIONS = "China · UK · Global";
 export const FOUNDER_ABOUT = [
   "Professor Qiang Fu is a scientist and biotechnology entrepreneur working to understand the biology of ageing and translate scientific discoveries into practical solutions for healthier, longer lives.",
   "His research spans cellular senescence, NK-cell immunology, reproductive immunology, stem-cell and ovarian biology, exosomes, cancer, and the use of biomarkers and AI in ageing. Alongside fundamental science, his focus is increasingly translational: identifying promising interventions, validating them rigorously, and creating pathways through which research becomes technologies, products and health solutions.",
-  "As founder of MR Longevity, his wider ambition is to build an international ecosystem connecting science, people, technology, healthcare, data and investment to accelerate progress in healthy longevity.",
+  "As founder of MR Longevity, his wider ambition is to build an international mission connecting science, people, technology, healthcare, data and investment to accelerate progress in healthy longevity.",
 ];
 
 export const FOUNDER_AFFILIATIONS: LinkedItem[] = [
@@ -40,7 +40,7 @@ export const FOUNDER_AFFILIATIONS: LinkedItem[] = [
   },
   {
     title: "Founder, MR Longevity",
-    meta: "Global healthy longevity ecosystem",
+    meta: "Global healthy longevity mission",
     detail: "Connecting science, healthcare, innovation, capital, data and AI.",
   },
   {
@@ -69,7 +69,7 @@ export const FOUNDER_EXPERTISE = [
   "Longevity Biotechnology",
 ];
 
-/** Institutionally reported figures — attributed to the university profile, not independent bibliometrics. */
+/** Institutionally reported figures, attributed to the university profile, not independent bibliometrics. */
 export const FOUNDER_FIGURES: { value: string; label: string }[] = [
   { value: "20+", label: "SCI papers as first or corresponding author" },
   { value: "2", label: "Scientific monographs" },

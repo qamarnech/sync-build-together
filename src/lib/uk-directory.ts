@@ -12,7 +12,7 @@ export type DirectoryGroup = {
 
 export const UK_DIRECTORY_INTRO = [
   "A consolidated map of the United Kingdom's healthy longevity landscape, separated by function: geroscience laboratories, gerontology and population-ageing institutes, NHS research units, preventive and longevity clinics, therapeutic biotechnology, AgeTech, charities, policy bodies and population cohorts.",
-  "The broadest public directories are the UKAgeNet member directory, the British Society of Gerontology centre directory, Age UK's research-centre list and the Longevity Platform ecosystem database. UKAgeNet describes itself as connecting more than 70 national centres, institutes, networks and research groups.",
+  "The broadest public directories are the UKAgeNet member directory, the British Society of Gerontology centre directory, Age UK's research-centre list and the Longevity Platform mission database. UKAgeNet describes itself as connecting more than 70 national centres, institutes, networks and research groups.",
 ];
 
 export const UK_DIRECTORY_CAVEAT =
@@ -28,7 +28,7 @@ export const UK_DIRECTORY_CLASSIFICATION = [
   "Social care and dementia",
   "Public health and policy",
   "Charities and advocacy",
-  "Investment, incubation and ecosystem support",
+  "Investment, incubation and mission support",
 ];
 
 export const UK_DIRECTORY: DirectoryGroup[] = [
@@ -56,7 +56,7 @@ export const UK_DIRECTORY: DirectoryGroup[] = [
         href: "https://www.ageuk.org.uk/our-impact/policy-research/what-we-research/resources-for-further-research/centres-for-ageing-research/"
       },
       {
-        name: "UK longevity ecosystem",
+        name: "UK longevity mission",
         description: "broad database of companies, clinics, investors and hubs; the platform states that its database is partly AI-aggregated and should be checked before relying on individual entries.",
         href: "https://www.longevity.international/uk"
       },
@@ -655,7 +655,7 @@ export const UK_DIRECTORY: DirectoryGroup[] = [
       },
       {
         name: "Digital Health and Care Alliance",
-        description: "digital health and care ecosystem.",
+        description: "digital health and care mission.",
         href: "https://dhaca.org.uk/"
       },
       {

@@ -6,17 +6,17 @@ import { EvidenceLadder, SystemsRings } from "@/components/site/infographics";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About MR Longevity — Our Approach and What We Are Building" },
+      { title: "About MR Longevity, Our Approach and What We Are Building" },
       {
         name: "description",
         content:
-          "MR Longevity connects science, healthcare, innovation, industry, capital and public health into a global translation ecosystem for healthy longevity.",
+          "MR Longevity connects science, healthcare, innovation, industry, capital and public health into a global translation mission for healthy longevity.",
       },
       { property: "og:title", content: "About MR Longevity" },
       {
         property: "og:description",
         content:
-          "Our approach: systems thinking, rigorous evidence, and a connected translation ecosystem for healthy longevity.",
+          "Our approach: systems thinking, rigorous evidence, and a connected translation mission for healthy longevity.",
       },
     ],
   }),
@@ -102,8 +102,7 @@ function AboutPage() {
           <div className="rounded-xl border border-line bg-white p-6">
             <h3 className="text-xl font-semibold text-navy">Bridging knowledge systems</h3>
             <p className="mt-3 text-sm leading-relaxed text-ink-soft">
-              We believe valuable insights can emerge from different medical and scientific traditions —
-              but they must be examined through rigorous evidence.
+              We believe valuable insights can emerge from different medical and scientific traditions, but they must be examined through rigorous evidence.
             </p>
             <p className="mt-3 text-sm leading-relaxed text-ink-soft">
               MR Longevity creates a framework in which modern biomedical science can interact with
@@ -142,7 +141,7 @@ function AboutPage() {
                 <li key={title} className="flex gap-3">
                   <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
                   <span>
-                    <span className="font-medium text-navy">{title}</span> — {desc}
+                    <span className="font-medium text-navy">{title}</span>, {desc}
                   </span>
                 </li>
               ))}
@@ -157,7 +156,7 @@ function AboutPage() {
         <div className="mt-8 rounded-2xl border border-gold/20 bg-gold/5 p-6 md:p-8">
           <h3 className="text-xl font-semibold text-navy">From Knowledge to Evidence to Impact</h3>
           <p className="mt-3 text-sm leading-relaxed text-ink-soft">
-            MR Longevity is designed as a translation ecosystem.
+            MR Longevity is designed as a translation mission.
           </p>
           <p className="mt-3 font-serif text-lg font-semibold tracking-wide text-gold">
             SCIENCE → DISCOVERY → VALIDATION → TRANSLATION → PERSONALISED HEALTH → REAL-WORLD OUTCOMES
@@ -167,7 +166,7 @@ function AboutPage() {
           </p>
           <p className="mt-3 text-sm leading-relaxed text-ink-soft">
             Data generated through research, diagnostics, clinical practice and real-world outcomes can
-            continuously return to the ecosystem. This creates a learning cycle:
+            continuously return to the mission. This creates a learning cycle:
           </p>
           <p className="mt-3 font-serif text-lg font-semibold tracking-wide text-gold">
             Science → People → Data → Better Science
@@ -219,7 +218,7 @@ function AboutPage() {
       <Section tone="sand">
         <SectionHead
           title="What We Are Building"
-          intro="MR Longevity is more than a longevity information platform. It is an emerging global translation ecosystem connecting:"
+          intro="MR Longevity is more than a longevity information platform. It is an emerging global translation mission connecting:"
         />
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {[
@@ -230,7 +229,7 @@ function AboutPage() {
             ["Capital", "investors and strategic partners"],
             ["Public Health", "prevention and population-scale healthy ageing"],
             ["People", "the ultimate beneficiaries and participants"],
-            ["Data + AI", "the intelligence layer connecting and improving the ecosystem"],
+            ["Data + AI", "the intelligence layer connecting and improving the mission"],
           ].map(([title, desc]) => (
             <div key={title} className="rounded-xl border border-line bg-white p-5">
               <h4 className="font-serif text-lg font-semibold text-navy">{title}</h4>
@@ -239,7 +238,7 @@ function AboutPage() {
           ))}
         </div>
         <div className="mt-10 rounded-2xl border border-gold/20 bg-gold/10 p-6 text-center md:p-8">
-          <h3 className="font-serif text-2xl font-semibold text-navy">One ecosystem. One shared direction.</h3>
+          <h3 className="font-serif text-2xl font-semibold text-navy">One mission. One shared direction.</h3>
           <ul className="mx-auto mt-4 inline-block text-left text-sm leading-relaxed text-ink-soft">
             {[
               "Understand ageing better.",
@@ -262,7 +261,7 @@ function AboutPage() {
         <h2 className="font-serif text-3xl text-navy">Founded by Professor Qiang Fu 付强</h2>
         <p className="mx-auto mt-3 max-w-2xl text-sm text-ink-soft">
           Longevity scientist and biotech entrepreneur working across cellular senescence,
-          geroscience, regenerative medicine and longevity biotechnology — with a peer-reviewed
+          geroscience, regenerative medicine and longevity biotechnology, with a peer-reviewed
           publication record, granted patents and nationally funded research programmes.
         </p>
         <Button asChild variant="outline" className="mt-6 border-navy text-navy hover:bg-navy hover:text-white">

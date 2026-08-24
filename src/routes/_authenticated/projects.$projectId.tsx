@@ -14,7 +14,7 @@ import { Tag } from "@/components/site/ui-bits";
 export const Route = createFileRoute("/_authenticated/projects/$projectId")({
   head: () => ({
     meta: [
-      { title: "Project — MR Longevity" },
+      { title: "Project | MR Longevity" },
       { name: "description", content: "Project detail, collaborators and MR Match suggestions." },
     ],
   }),
@@ -215,7 +215,7 @@ function ProjectDetailPage() {
           </div>
 
           <div className="rounded-2xl border border-line bg-white p-6">
-            <h2 className="font-serif text-lg text-navy">MR Match — suggested collaborators</h2>
+            <h2 className="font-serif text-lg text-navy">MR Match, suggested collaborators</h2>
             <div className="mt-3 space-y-3">
               {suggestions.length === 0 && (
                 <p className="text-sm text-ink-mute">No matches for these needs yet.</p>

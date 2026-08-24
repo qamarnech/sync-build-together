@@ -15,17 +15,17 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/discover/")({
   head: () => ({
     meta: [
-      { title: "Discover Healthy Longevity — MR Longevity" },
+      { title: "Discover Healthy Longevity | MR Longevity" },
       {
         name: "description",
         content:
           "Healthspan foundations, precision longevity, the biology of ageing, the eight-stage translation pathway, evidence labelling and the scientific missions MR Longevity is organised around.",
       },
-      { property: "og:title", content: "Discover Healthy Longevity — MR Longevity" },
+      { property: "og:title", content: "Discover Healthy Longevity | MR Longevity" },
       {
         property: "og:description",
         content:
-          "Explore healthspan foundations, the biology of ageing, the translation pathway, MR Match and the scientific missions of the ecosystem.",
+          "Explore healthspan foundations, the biology of ageing, the translation pathway, MR Match and the scientific missions of the mission.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -44,7 +44,7 @@ function DiscoverPage() {
         <SectionHead
           kicker="Discover"
           title="Explore the science and focus of healthy longevity"
-          intro="Three lenses into the knowledge that powers the ecosystem: what healthy longevity means, the biology of ageing, and the scientific missions we are organised around."
+          intro="Three lenses into the knowledge that powers the mission: what healthy longevity means, the biology of ageing, and the scientific missions we are organised around."
           invert
         />
       </Section>
@@ -78,8 +78,7 @@ function DiscoverPage() {
           <h4 className="font-serif text-lg text-navy">Precision Longevity</h4>
           <p className="mx-auto mt-2 max-w-2xl text-sm text-ink-soft">
             Where appropriate, these foundations can be supported by emerging and established health
-            technologies. Advanced longevity science should build upon the foundations of health —
-            not replace them.
+            technologies. Advanced longevity science should build upon the foundations of health, not replace them.
           </p>
           <div className="mt-4 flex flex-wrap justify-center gap-2">
             {[
@@ -108,7 +107,7 @@ function DiscoverPage() {
           kicker="Biology of Aging"
           num={2}
           title="Connecting the Biology of Ageing"
-          intro="Ageing is not one process. MR Longevity brings metabolism, immunity, cellular repair, movement, nutrition, sleep, mental wellbeing, environment and genetics into one connected ecosystem."
+          intro="Ageing is not one process. MR Longevity brings metabolism, immunity, cellular repair, movement, nutrition, sleep, mental wellbeing, environment and genetics into one connected mission."
         />
         <figure className="mt-10">
           <PathwayTrack
@@ -145,7 +144,7 @@ function DiscoverPage() {
 
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           <div className="rounded-xl border border-line bg-white p-6">
-            <h3 className="font-serif text-xl text-navy">MR Match — need meets capability</h3>
+            <h3 className="font-serif text-xl text-navy">MR Match, need meets capability</h3>
             <p className="mt-2 text-sm text-ink-soft">
               Matchmaking actively connects what a project is missing with who can provide it. Every
               project on the board is scored against the expertise of every member.
@@ -209,7 +208,7 @@ function DiscoverPage() {
         <SectionHead
           kicker="Scientific Missions"
           num={3}
-          title="The challenges the ecosystem is organised around"
+          title="The challenges the mission is organised around"
           intro="Rather than a directory of researchers, MR Longevity is organised around major challenges where collaboration can meaningfully advance healthy longevity."
         />
         <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -230,7 +229,7 @@ function DiscoverPage() {
       <Section tone="navy">
         <div className="text-center">
           <h2 className="text-balance text-3xl font-bold text-white">
-            Find your place in the ecosystem
+            Find your place in the mission
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-gold-pale/80">
             Join MR Longevity to browse projects, meet collaborators and use MR Match.
@@ -242,7 +241,7 @@ function DiscoverPage() {
               </Link>
             </Button>
             <Button asChild variant="outline" className="border-white/40 bg-transparent text-white hover:bg-white/10">
-              <Link to="/ecosystem">Explore the ecosystem</Link>
+              <Link to="/ecosystem">Explore the mission</Link>
             </Button>
           </div>
         </div>

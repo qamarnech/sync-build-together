@@ -13,12 +13,12 @@ import {
 
 const PAGE_URL = "https://mrlongevity-ecosystem.lovable.app/ecosystem/uk-directory";
 const DESCRIPTION =
-  "A curated directory of the UK healthy longevity ecosystem: geroscience institutes, gerontology centres, NHS research units, longevity clinics, biotech companies, AgeTech, charities, funders and population cohorts — each with a source link.";
+  "A curated directory of the UK healthy longevity mission: geroscience institutes, gerontology centres, NHS research units, longevity clinics, biotech companies, AgeTech, charities, funders and population cohorts, each with a source link.";
 
 export const Route = createFileRoute("/ecosystem/uk-directory")({
   head: () => ({
     meta: [
-      { title: "UK Longevity Directory — MR. LONGEVITY" },
+      { title: "UK Longevity Directory, MR. LONGEVITY" },
       { name: "description", content: DESCRIPTION },
       { property: "og:title", content: "UK Longevity Directory" },
       { property: "og:description", content: DESCRIPTION },
@@ -92,7 +92,7 @@ function UkDirectoryPage() {
         <SectionHead
           kicker="Directory"
           num="02"
-          title="Search the ecosystem"
+          title="Search the mission"
           intro="Filter by category or search by name and focus. Every entry links to its public source."
         />
 

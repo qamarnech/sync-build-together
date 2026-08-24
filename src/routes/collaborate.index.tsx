@@ -7,16 +7,16 @@ import { COLLABORATE_PILLARS } from "@/lib/collaborate-pillars";
 export const Route = createFileRoute("/collaborate/")({
   head: () => ({
     meta: [
-      { title: "Collaborate — MR Longevity" },
+      { title: "Collaborate | MR Longevity" },
       {
         name: "description",
         content:
           "Turn knowledge, expertise and ideas into research, innovation, partnerships and real-world impact: projects, partners, translation and open opportunities.",
       },
-      { property: "og:title", content: "Collaborate — MR Longevity" },
+      { property: "og:title", content: "Collaborate | MR Longevity" },
       {
         property: "og:description",
-        content: "Projects, partners, translation and innovation, and open opportunities across the healthy longevity ecosystem.",
+        content: "Projects, partners, translation and innovation, and open opportunities across the healthy longevity mission.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

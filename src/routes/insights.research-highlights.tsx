@@ -5,13 +5,13 @@ import { RESEARCH_HIGHLIGHTS } from "@/lib/insights-content";
 export const Route = createFileRoute("/insights/research-highlights")({
   head: () => ({
     meta: [
-      { title: "Research Highlights — MR Longevity Insights" },
+      { title: "Research Highlights | MR Longevity Insights" },
       {
         name: "description",
         content:
           "What the evidence now supports across senescence, biological age, immune ageing, regenerative medicine, metabolic health and AI models of ageing.",
       },
-      { property: "og:title", content: "Research Highlights — MR Longevity Insights" },
+      { property: "og:title", content: "Research Highlights | MR Longevity Insights" },
       {
         property: "og:description",
         content: "Evidence summaries and what each one means for translation.",

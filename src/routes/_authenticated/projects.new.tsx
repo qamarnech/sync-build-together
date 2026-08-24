@@ -15,7 +15,7 @@ import { Textarea } from "@/components/ui/textarea";
 export const Route = createFileRoute("/_authenticated/projects/new")({
   head: () => ({
     meta: [
-      { title: "Propose a Project — MR Longevity" },
+      { title: "Propose a Project | MR Longevity" },
       { name: "description", content: "Publish a healthy longevity project and state what it needs." },
     ],
   }),

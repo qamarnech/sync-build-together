@@ -7,8 +7,8 @@ export function SiteFooter() {
         <div>
           <p className="font-serif text-lg font-bold tracking-[0.14em] text-white">MR. LONGEVITY</p>
           <p className="mt-3 max-w-md text-sm">
-            A global healthy longevity ecosystem connecting science, healthcare, innovation, people,
-            capital, data and AI — making life healthier and longer.
+            A global healthy longevity mission connecting science, healthcare, innovation, people,
+            capital, data and AI, making life healthier and longer.
           </p>
         </div>
         <div className="flex flex-col gap-2 text-sm">
@@ -28,7 +28,7 @@ export function SiteFooter() {
       </div>
       <div className="mx-auto mt-10 max-w-6xl border-t border-white/10 pt-6 text-xs">
         © {new Date().getFullYear()} MR Longevity. Evidence status is labelled throughout the
-        ecosystem.
+        mission.
       </div>
     </footer>
   );

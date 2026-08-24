@@ -9,10 +9,10 @@ import { Tag } from "@/components/site/ui-bits";
 export const Route = createFileRoute("/_authenticated/members/")({
   head: () => ({
     meta: [
-      { title: "Member Directory — MR Longevity" },
+      { title: "Member Directory | MR Longevity" },
       {
         name: "description",
-        content: "Browse researchers, clinicians, innovators, investors and partners in the ecosystem.",
+        content: "Browse researchers, clinicians, innovators, investors and partners in the mission.",
       },
     ],
   }),

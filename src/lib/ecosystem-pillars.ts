@@ -23,9 +23,9 @@ export const ECOSYSTEM_PILLARS: EcosystemPillar[] = [
     name: "Science & Discovery",
     kicker: "Science & Discovery",
     num: "I",
-    title: "Understanding why we age — and what can be changed",
+    title: "Understanding why we age, and what can be changed",
     intro:
-      "Discovery generates the knowledge the whole ecosystem depends on: the biology of ageing, the mechanisms of decline and the targets worth pursuing.",
+      "Discovery generates the knowledge the whole mission depends on: the biology of ageing, the mechanisms of decline and the targets worth pursuing.",
     focus: [
       { title: "Biology of ageing", body: "Cellular ageing, senescence, mitochondrial and metabolic decline, and the pathways that govern them." },
       { title: "Target identification", body: "Turning mechanistic insight into credible, modifiable targets for prevention and therapy." },

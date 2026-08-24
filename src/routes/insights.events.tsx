@@ -6,16 +6,16 @@ import { EVENTS } from "@/lib/insights-content";
 export const Route = createFileRoute("/insights/events")({
   head: () => ({
     meta: [
-      { title: "Events — MR Longevity Insights" },
+      { title: "Events | MR Longevity Insights" },
       {
         name: "description",
         content:
           "Global healthy longevity events: geroscience conferences, gerontology congresses, translation summits and MR Longevity collaboration roundtables.",
       },
-      { property: "og:title", content: "Events — MR Longevity Insights" },
+      { property: "og:title", content: "Events | MR Longevity Insights" },
       {
         property: "og:description",
-        content: "Where the healthy longevity ecosystem convenes across science, clinic and capital.",
+        content: "Where the healthy longevity mission convenes across science, clinic and capital.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -29,8 +29,8 @@ function EventsPage() {
     <Section tone="white">
       <SectionHead
         kicker="Events"
-        title="Where the ecosystem convenes"
-        intro="The recurring meetings that move healthy longevity forward — plus our own invitation-based collaboration roundtables."
+        title="Where the mission convenes"
+        intro="The recurring meetings that move healthy longevity forward, plus our own invitation-based collaboration roundtables."
       />
       <div className="mt-10 grid gap-4 md:grid-cols-2">
         {EVENTS.map((event) => {
