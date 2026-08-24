@@ -126,7 +126,7 @@ function Index() {
           </div>
         </div>
 
-        <div className="mx-auto mt-16 max-w-5xl">
+        <div className="relative mx-auto mt-16 max-w-5xl">
           <div className="mb-5 flex items-center gap-4">
             <span className="flourish-line" />
             <span className="whitespace-nowrap font-serif text-xs italic tracking-[0.25em] text-gold-light uppercase">
