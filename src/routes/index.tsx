@@ -276,7 +276,18 @@ function Index() {
         />
         <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {PERSONAS.map((persona) => (
-            <div key={persona.kicker} className="group flex flex-col rounded-xl border border-line bg-paper p-6 transition-colors hover:border-gold/40 hover:bg-white">
+            <div key={persona.kicker} className="group flex flex-col overflow-hidden rounded-xl border border-line bg-paper transition-colors hover:border-gold/40 hover:bg-white">
+              {PERSONA_IMAGES[persona.kicker] ? (
+                <img
+                  src={PERSONA_IMAGES[persona.kicker].src}
+                  alt={PERSONA_IMAGES[persona.kicker].alt}
+                  loading="lazy"
+                  width={768}
+                  height={512}
+                  className="h-44 w-full border-b border-line object-cover"
+                />
+              ) : null}
+              <div className="flex flex-1 flex-col p-6">
               <p className="font-serif text-sm italic text-gold">{persona.kicker}</p>
               <h3 className="mt-1 text-lg font-semibold text-navy">{persona.title}</h3>
               <p className="mt-2 text-sm text-ink-soft">{persona.body}</p>
