@@ -255,14 +255,28 @@ function Index() {
           kicker="Join — Be Part of It"
           num={5}
           title="Become Part of the Healthy Longevity Evolution"
-          intro="Individuals, scientists, clinicians, innovators, businesses and institutions all have a role in building systems that help future generations live healthier for longer."
+          intro="Healthy longevity cannot be created by medicine alone. Individuals, scientists, clinicians, innovators, businesses and institutions all have a role in building the systems that could help future generations live healthier for longer."
         />
         <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {PERSONAS.map((persona) => (
-            <div key={persona.kicker} className="rounded-xl border border-line bg-paper p-6">
+            <div key={persona.kicker} className="group flex flex-col rounded-xl border border-line bg-paper p-6 transition-colors hover:border-gold/40 hover:bg-white">
               <p className="font-serif text-sm italic text-gold">{persona.kicker}</p>
               <h3 className="mt-1 text-lg font-semibold text-navy">{persona.title}</h3>
               <p className="mt-2 text-sm text-ink-soft">{persona.body}</p>
+              <ul className="mt-4 space-y-1.5">
+                {persona.bullets.map((bullet) => (
+                  <li key={bullet} className="flex items-start gap-2 text-sm text-ink-mute">
+                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-gold" />
+                    {bullet}
+                  </li>
+                ))}
+              </ul>
+              <Link
+                to={persona.cta.href}
+                className="mt-auto inline-flex items-center gap-1 pt-5 text-sm font-semibold text-navy transition-colors group-hover:text-gold"
+              >
+                {persona.cta.label} <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
             </div>
           ))}
         </div>
