@@ -26,6 +26,7 @@ import { Route as CollaborateIndexRouteImport } from './routes/collaborate.index
 import { Route as CollaborateOpportunitiesRouteImport } from './routes/collaborate.opportunities'
 import { Route as CollaboratePartnersRouteImport } from './routes/collaborate.partners'
 import { Route as CollaborateProjectsRouteImport } from './routes/collaborate.projects'
+import { Route as CollaborateTranslationInnovationRouteImport } from './routes/collaborate.translation-innovation'
 import { Route as DiscoverIndexRouteImport } from './routes/discover.index'
 import { Route as DiscoverBiologyOfAgingRouteImport } from './routes/discover.biology-of-aging'
 import { Route as DiscoverHealthyLongevityRouteImport } from './routes/discover.healthy-longevity'
@@ -133,6 +134,12 @@ const CollaborateProjectsRoute = CollaborateProjectsRouteImport.update({
   path: '/projects',
   getParentRoute: () => CollaborateRoute,
 } as any)
+const CollaborateTranslationInnovationRoute =
+  CollaborateTranslationInnovationRouteImport.update({
+    id: '/translation-innovation',
+    path: '/translation-innovation',
+    getParentRoute: () => CollaborateRoute,
+  } as any)
 const DiscoverIndexRoute = DiscoverIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -267,6 +274,7 @@ export interface FileRoutesByFullPath {
   '/collaborate/opportunities': typeof CollaborateOpportunitiesRoute
   '/collaborate/partners': typeof CollaboratePartnersRoute
   '/collaborate/projects': typeof CollaborateProjectsRoute
+  '/collaborate/translation-innovation': typeof CollaborateTranslationInnovationRoute
   '/discover/biology-of-aging': typeof DiscoverBiologyOfAgingRoute
   '/discover/healthy-longevity': typeof DiscoverHealthyLongevityRoute
   '/discover/longevity-landscape': typeof DiscoverLongevityLandscapeRoute
@@ -302,6 +310,7 @@ export interface FileRoutesByTo {
   '/collaborate/opportunities': typeof CollaborateOpportunitiesRoute
   '/collaborate/partners': typeof CollaboratePartnersRoute
   '/collaborate/projects': typeof CollaborateProjectsRoute
+  '/collaborate/translation-innovation': typeof CollaborateTranslationInnovationRoute
   '/discover/biology-of-aging': typeof DiscoverBiologyOfAgingRoute
   '/discover/healthy-longevity': typeof DiscoverHealthyLongevityRoute
   '/discover/longevity-landscape': typeof DiscoverLongevityLandscapeRoute
@@ -343,6 +352,7 @@ export interface FileRoutesById {
   '/collaborate/opportunities': typeof CollaborateOpportunitiesRoute
   '/collaborate/partners': typeof CollaboratePartnersRoute
   '/collaborate/projects': typeof CollaborateProjectsRoute
+  '/collaborate/translation-innovation': typeof CollaborateTranslationInnovationRoute
   '/discover/biology-of-aging': typeof DiscoverBiologyOfAgingRoute
   '/discover/healthy-longevity': typeof DiscoverHealthyLongevityRoute
   '/discover/longevity-landscape': typeof DiscoverLongevityLandscapeRoute
@@ -384,6 +394,7 @@ export interface FileRouteTypes {
     | '/collaborate/opportunities'
     | '/collaborate/partners'
     | '/collaborate/projects'
+    | '/collaborate/translation-innovation'
     | '/discover/biology-of-aging'
     | '/discover/healthy-longevity'
     | '/discover/longevity-landscape'
@@ -419,6 +430,7 @@ export interface FileRouteTypes {
     | '/collaborate/opportunities'
     | '/collaborate/partners'
     | '/collaborate/projects'
+    | '/collaborate/translation-innovation'
     | '/discover/biology-of-aging'
     | '/discover/healthy-longevity'
     | '/discover/longevity-landscape'
@@ -459,6 +471,7 @@ export interface FileRouteTypes {
     | '/collaborate/opportunities'
     | '/collaborate/partners'
     | '/collaborate/projects'
+    | '/collaborate/translation-innovation'
     | '/discover/biology-of-aging'
     | '/discover/healthy-longevity'
     | '/discover/longevity-landscape'
@@ -621,6 +634,13 @@ declare module '@tanstack/react-router' {
       path: '/projects'
       fullPath: '/collaborate/projects'
       preLoaderRoute: typeof CollaborateProjectsRouteImport
+      parentRoute: typeof CollaborateRoute
+    }
+    '/collaborate/translation-innovation': {
+      id: '/collaborate/translation-innovation'
+      path: '/translation-innovation'
+      fullPath: '/collaborate/translation-innovation'
+      preLoaderRoute: typeof CollaborateTranslationInnovationRouteImport
       parentRoute: typeof CollaborateRoute
     }
     '/discover/': {
@@ -812,6 +832,7 @@ interface CollaborateRouteChildren {
   CollaborateOpportunitiesRoute: typeof CollaborateOpportunitiesRoute
   CollaboratePartnersRoute: typeof CollaboratePartnersRoute
   CollaborateProjectsRoute: typeof CollaborateProjectsRoute
+  CollaborateTranslationInnovationRoute: typeof CollaborateTranslationInnovationRoute
   CollaborateIndexRoute: typeof CollaborateIndexRoute
 }
 
@@ -819,6 +840,7 @@ const CollaborateRouteChildren: CollaborateRouteChildren = {
   CollaborateOpportunitiesRoute: CollaborateOpportunitiesRoute,
   CollaboratePartnersRoute: CollaboratePartnersRoute,
   CollaborateProjectsRoute: CollaborateProjectsRoute,
+  CollaborateTranslationInnovationRoute: CollaborateTranslationInnovationRoute,
   CollaborateIndexRoute: CollaborateIndexRoute,
 }
 
