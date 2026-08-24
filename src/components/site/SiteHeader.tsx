@@ -124,7 +124,13 @@ export function SiteHeader() {
 
         <nav className="hidden items-center gap-6 md:flex">
           <Dropdown label="Home" to="/" items={HOME_ITEMS} />
-          <Dropdown label="Discover" to="/discover" items={DISCOVER_ITEMS} />
+          <Dropdown
+            label="Discover"
+            to="/discover"
+            items={DISCOVER_ITEMS}
+            bottomItems={ECOSYSTEM_ITEMS}
+            bottomLabel="Longevity Landscape"
+          />
           <Dropdown label="Ecosystem" to="/ecosystem" items={ECOSYSTEM_ITEMS} showOverview={false} />
           <Dropdown label="Insights" to="/insights" items={[...INSIGHTS_ITEMS]} />
 
