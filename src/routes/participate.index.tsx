@@ -1,10 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { Section, SectionHead, Tag } from "@/components/site/ui-bits";
-import { INSIGHTS_ITEMS } from "@/lib/insights-nav";
-import { EVENTS, LONGEVITY_NEWS, RESEARCH_HIGHLIGHTS } from "@/lib/insights-content";
+import { PARTICIPATE_ITEMS } from "@/lib/participate-nav";
+import { EVENTS, LONGEVITY_NEWS, RESEARCH_HIGHLIGHTS } from "@/lib/participate-content";
 
-export const Route = createFileRoute("/insights/")({
+export const Route = createFileRoute("/participate/")({
   head: () => ({
     meta: [
       { title: "Insights | MR Longevity" },
@@ -41,7 +41,7 @@ function InsightsIndex() {
           intro="Insights keeps the mission oriented: what is happening, where people meet, and what the science now supports."
         />
         <div className="mt-10 grid gap-4 md:grid-cols-3">
-          {INSIGHTS_ITEMS.map((item, i) => (
+          {PARTICIPATE_ITEMS.map((item, i) => (
             <Link
               key={item.slug}
               to={item.to}

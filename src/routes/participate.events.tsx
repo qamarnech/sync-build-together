@@ -1,9 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { CalendarDays, ExternalLink, MapPin } from "lucide-react";
 import { Section, SectionHead, Tag } from "@/components/site/ui-bits";
-import { EVENTS } from "@/lib/insights-content";
+import { EVENTS } from "@/lib/participate-content";
 
-export const Route = createFileRoute("/insights/events")({
+export const Route = createFileRoute("/participate/events")({
   head: () => ({
     meta: [
       { title: "Events | MR Longevity Insights" },

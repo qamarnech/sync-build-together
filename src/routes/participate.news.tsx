@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ExternalLink } from "lucide-react";
 import { Section, SectionHead, Tag } from "@/components/site/ui-bits";
-import { LONGEVITY_NEWS } from "@/lib/insights-content";
+import { LONGEVITY_NEWS } from "@/lib/participate-content";
 
-export const Route = createFileRoute("/insights/longevity-news")({
+export const Route = createFileRoute("/participate/news")({
   head: () => ({
     meta: [
       { title: "Longevity News | MR Longevity Insights" },

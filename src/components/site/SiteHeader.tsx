@@ -6,7 +6,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { DISCOVER_PILLARS } from "@/lib/discover-pillars";
 import { ECOSYSTEM_PILLARS } from "@/lib/ecosystem-pillars";
-import { INSIGHTS_ITEMS } from "@/lib/insights-nav";
+import { PARTICIPATE_ITEMS } from "@/lib/participate-nav";
 import { COLLABORATE_ITEMS } from "@/lib/collaborate-pillars";
 
 const HOME_ITEMS = [
@@ -139,7 +139,7 @@ export function SiteHeader() {
             bottomLabel="Longevity Landscape"
           />
           <Dropdown label="Collaborate" to="/collaborate" items={COLLABORATE_ITEMS} />
-          <Dropdown label="Insights" to="/insights" items={[...INSIGHTS_ITEMS]} />
+          <Dropdown label="Insights" to="/participate" items={[...PARTICIPATE_ITEMS]} />
 
           {user &&
             memberLinks.map((link) => (
@@ -257,14 +257,14 @@ export function SiteHeader() {
               ))}
             </div>
 
-            <Link to="/insights" onClick={() => setOpen(false)} className="text-sm font-semibold text-navy">
+            <Link to="/participate" onClick={() => setOpen(false)} className="text-sm font-semibold text-navy">
               Insights
             </Link>
             <div className="flex flex-col gap-2 border-l border-line pl-3">
-              <Link to="/insights" onClick={() => setOpen(false)} className="text-sm text-ink-soft">
+              <Link to="/participate" onClick={() => setOpen(false)} className="text-sm text-ink-soft">
                 Overview
               </Link>
-              {INSIGHTS_ITEMS.map((item) => (
+              {PARTICIPATE_ITEMS.map((item) => (
                 <Link
                   key={item.slug}
                   to={item.to}
