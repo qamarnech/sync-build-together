@@ -92,11 +92,11 @@ function Index() {
           alt="Glowing futuristic DNA helix connected to a neural network of light"
           width={1920}
           height={912}
-          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-40"
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-70"
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 bg-gradient-to-b from-navy/70 via-navy/80 to-navy"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-b from-navy/40 via-navy/65 to-navy"
         />
         <div className="relative mx-auto max-w-4xl text-center">
 
