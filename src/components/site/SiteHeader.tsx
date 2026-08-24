@@ -100,8 +100,8 @@ export function SiteHeader() {
 
         <nav className="hidden items-center gap-6 md:flex">
           <Dropdown label="Home" to="/" items={HOME_ITEMS} />
-          <Dropdown label="Discover" to="/discover" items={DISCOVER_PILLARS} />
-          <Dropdown label="Ecosystem" to="/ecosystem" items={ECOSYSTEM_ITEMS} />
+          <Dropdown label="Discover" to="/discover" items={DISCOVER_ITEMS} />
+          <Dropdown label="Ecosystem" to="/ecosystem" items={ECOSYSTEM_ITEMS} showOverview={false} />
           <Dropdown label="Insights" to="/insights" items={[...INSIGHTS_ITEMS]} />
 
           {user &&
@@ -177,14 +177,14 @@ export function SiteHeader() {
               <Link to="/discover" onClick={() => setOpen(false)} className="text-sm text-ink-soft">
                 Overview
               </Link>
-              {DISCOVER_PILLARS.map((pillar) => (
+              {DISCOVER_ITEMS.map((item) => (
                 <Link
-                  key={pillar.slug}
-                  to={pillar.to}
+                  key={item.slug}
+                  to={item.to}
                   onClick={() => setOpen(false)}
                   className="text-sm text-ink-soft"
                 >
-                  {pillar.name}
+                  {item.name}
                 </Link>
               ))}
             </div>
@@ -193,9 +193,6 @@ export function SiteHeader() {
               Ecosystem
             </Link>
             <div className="flex flex-col gap-2 border-l border-line pl-3">
-              <Link to="/ecosystem" onClick={() => setOpen(false)} className="text-sm text-ink-soft">
-                Overview
-              </Link>
               {ECOSYSTEM_ITEMS.map((pillar) => (
                 <Link
                   key={pillar.slug}
