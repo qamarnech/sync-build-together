@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PillarPage } from "@/components/site/PillarPage";
 import { DISCOVER_PILLARS } from "@/lib/discover-pillars";
+import { Section, SectionHead, Tag } from "@/components/site/ui-bits";
+import { RESEARCH_HIGHLIGHTS } from "@/lib/insights-content";
 
 const pillar = DISCOVER_PILLARS[2]!;
 
@@ -15,5 +17,36 @@ export const Route = createFileRoute("/discover/scientific-missions")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
-  component: () => <PillarPage pillar={pillar} backTo="/discover" sequence={DISCOVER_PILLARS.map((p) => p.name)} />,
+  component: ScientificMissionsPage,
 });
+
+function ResearchHighlights() {
+  return (
+    <Section tone="white">
+      <SectionHead
+        kicker="Research highlights"
+        title="What the evidence is showing now"
+        intro="Signals from current research shaping how these missions are prioritised, with the practical implication for collaboration."
+        align="left"
+      />
+      <div className="mt-8 grid gap-4 md:grid-cols-2">
+        {RESEARCH_HIGHLIGHTS.map((item) => (
+          <article key={item.slug} className="flex flex-col rounded-2xl border border-line bg-paper p-6">
+            <Tag tone="navy">{item.area}</Tag>
+            <h3 className="mt-4 font-serif text-xl text-navy">{item.title}</h3>
+            <p className="mt-2 text-sm text-ink-soft">{item.body}</p>
+            <p className="mt-4 border-t border-line pt-4 text-sm italic text-gold">{item.implication}</p>
+          </article>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+function ScientificMissionsPage() {
+  return (
+    <PillarPage pillar={pillar} backTo="/discover" sequence={DISCOVER_PILLARS.map((p) => p.name)}>
+      <ResearchHighlights />
+    </PillarPage>
+  );
+}
