@@ -37,6 +37,7 @@ import { Route as EcosystemManufacturingSupplyRouteImport } from './routes/ecosy
 import { Route as EcosystemScienceDiscoveryRouteImport } from './routes/ecosystem.science-discovery'
 import { Route as EcosystemUkDirectoryRouteImport } from './routes/ecosystem.uk-directory'
 import { Route as ParticipateIndexRouteImport } from './routes/participate.index'
+import { Route as ParticipateCommunityRouteImport } from './routes/participate.community'
 import { Route as ParticipateEventsRouteImport } from './routes/participate.events'
 import { Route as ParticipateMembersRouteImport } from './routes/participate.members'
 import { Route as ParticipateNewsRouteImport } from './routes/participate.news'
@@ -195,6 +196,11 @@ const ParticipateIndexRoute = ParticipateIndexRouteImport.update({
   path: '/',
   getParentRoute: () => ParticipateRoute,
 } as any)
+const ParticipateCommunityRoute = ParticipateCommunityRouteImport.update({
+  id: '/community',
+  path: '/community',
+  getParentRoute: () => ParticipateRoute,
+} as any)
 const ParticipateEventsRoute = ParticipateEventsRouteImport.update({
   id: '/events',
   path: '/events',
@@ -275,6 +281,7 @@ export interface FileRoutesByFullPath {
   '/ecosystem/manufacturing-supply': typeof EcosystemManufacturingSupplyRoute
   '/ecosystem/science-discovery': typeof EcosystemScienceDiscoveryRoute
   '/ecosystem/uk-directory': typeof EcosystemUkDirectoryRoute
+  '/participate/community': typeof ParticipateCommunityRoute
   '/participate/events': typeof ParticipateEventsRoute
   '/participate/members': typeof ParticipateMembersRoute
   '/participate/news': typeof ParticipateNewsRoute
@@ -310,6 +317,7 @@ export interface FileRoutesByTo {
   '/ecosystem/manufacturing-supply': typeof EcosystemManufacturingSupplyRoute
   '/ecosystem/science-discovery': typeof EcosystemScienceDiscoveryRoute
   '/ecosystem/uk-directory': typeof EcosystemUkDirectoryRoute
+  '/participate/community': typeof ParticipateCommunityRoute
   '/participate/events': typeof ParticipateEventsRoute
   '/participate/members': typeof ParticipateMembersRoute
   '/participate/news': typeof ParticipateNewsRoute
@@ -351,6 +359,7 @@ export interface FileRoutesById {
   '/ecosystem/manufacturing-supply': typeof EcosystemManufacturingSupplyRoute
   '/ecosystem/science-discovery': typeof EcosystemScienceDiscoveryRoute
   '/ecosystem/uk-directory': typeof EcosystemUkDirectoryRoute
+  '/participate/community': typeof ParticipateCommunityRoute
   '/participate/events': typeof ParticipateEventsRoute
   '/participate/members': typeof ParticipateMembersRoute
   '/participate/news': typeof ParticipateNewsRoute
@@ -392,6 +401,7 @@ export interface FileRouteTypes {
     | '/ecosystem/manufacturing-supply'
     | '/ecosystem/science-discovery'
     | '/ecosystem/uk-directory'
+    | '/participate/community'
     | '/participate/events'
     | '/participate/members'
     | '/participate/news'
@@ -427,6 +437,7 @@ export interface FileRouteTypes {
     | '/ecosystem/manufacturing-supply'
     | '/ecosystem/science-discovery'
     | '/ecosystem/uk-directory'
+    | '/participate/community'
     | '/participate/events'
     | '/participate/members'
     | '/participate/news'
@@ -467,6 +478,7 @@ export interface FileRouteTypes {
     | '/ecosystem/manufacturing-supply'
     | '/ecosystem/science-discovery'
     | '/ecosystem/uk-directory'
+    | '/participate/community'
     | '/participate/events'
     | '/participate/members'
     | '/participate/news'
@@ -696,6 +708,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ParticipateIndexRouteImport
       parentRoute: typeof ParticipateRoute
     }
+    '/participate/community': {
+      id: '/participate/community'
+      path: '/community'
+      fullPath: '/participate/community'
+      preLoaderRoute: typeof ParticipateCommunityRouteImport
+      parentRoute: typeof ParticipateRoute
+    }
     '/participate/events': {
       id: '/participate/events'
       path: '/events'
@@ -853,6 +872,7 @@ const EcosystemRouteWithChildren = EcosystemRoute._addFileChildren(
 )
 
 interface ParticipateRouteChildren {
+  ParticipateCommunityRoute: typeof ParticipateCommunityRoute
   ParticipateEventsRoute: typeof ParticipateEventsRoute
   ParticipateMembersRoute: typeof ParticipateMembersRoute
   ParticipateNewsRoute: typeof ParticipateNewsRoute
@@ -860,6 +880,7 @@ interface ParticipateRouteChildren {
 }
 
 const ParticipateRouteChildren: ParticipateRouteChildren = {
+  ParticipateCommunityRoute: ParticipateCommunityRoute,
   ParticipateEventsRoute: ParticipateEventsRoute,
   ParticipateMembersRoute: ParticipateMembersRoute,
   ParticipateNewsRoute: ParticipateNewsRoute,
