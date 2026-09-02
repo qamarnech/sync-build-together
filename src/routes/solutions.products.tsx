@@ -68,7 +68,7 @@ export const Route = createFileRoute("/solutions/products")({
         <SectionHead
           kicker="Product range"
           title="Products carrying the MR Longevity mark"
-          intro="Each product is presented with its category, intended use and evidence status."
+          intro="Senescence detection panels covering epigenetic, inflammatory, cellular and metabolic markers, the MetaAge biological-age test, and everyday wellness products. Each is presented with its category, intended use and evidence status."
           align="left"
         />
         <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
