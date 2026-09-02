@@ -27,11 +27,13 @@ export const Route = createFileRoute("/participate/")({
   component: ParticipateIndex,
 });
 
-const SUMMARY = [
-  { name: "News", count: LONGEVITY_NEWS.length, body: "Sources and signals shaping healthy longevity worldwide." },
-  { name: "Events", count: EVENTS.length, body: "Where the mission convenes across science, clinic and capital." },
-  { name: "Meet MR Longevity Members", count: 4, body: "The people taking part, and how to join them." },
-];
+const SUMMARY: Record<string, { count: string; body: string }> = {
+  community: { count: "Open to all", body: "Understand the science, act on it, share experience and progress together." },
+  news: { count: `${LONGEVITY_NEWS.length} entries`, body: "Sources and signals shaping healthy longevity worldwide." },
+  events: { count: `${EVENTS.length} entries`, body: "Where the mission convenes across science, clinic and capital." },
+  members: { count: "Member directory", body: "The people taking part, and how to join them." },
+};
+
 
 function ParticipateIndex() {
   return (
