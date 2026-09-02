@@ -20,14 +20,14 @@ import { Button } from "@/components/ui/button";
 
 const URL = "https://mrlongevity-ecosystem.lovable.app/founder";
 const DESCRIPTION =
-  "Professor Qiang Fu 付强, longevity scientist and biotech entrepreneur. Research record: publications in Nature Metabolism and Aging Cell, patents in NK-cell and exosome technology, and NSFC grants.";
+  "Professor Daniel Qiang Fu 付强, longevity scientist and biotech entrepreneur. Research record: publications in Nature Metabolism and Aging Cell, patents in NK-cell and exosome technology, and NSFC grants.";
 
 export const Route = createFileRoute("/founder")({
   head: () => ({
     meta: [
-      { title: "Professor Qiang Fu 付强, Founder, MR Longevity" },
+      { title: "Professor Daniel Qiang Fu 付强, Founder, MR Longevity" },
       { name: "description", content: DESCRIPTION },
-      { property: "og:title", content: "Professor Qiang Fu 付强, Founder, MR Longevity" },
+      { property: "og:title", content: "Professor Daniel Qiang Fu 付强, Founder, MR Longevity" },
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "profile" },
       { property: "og:url", content: URL },
@@ -40,7 +40,7 @@ export const Route = createFileRoute("/founder")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Person",
-          name: "Qiang Fu",
+          name: "Daniel Qiang Fu",
           alternateName: "付强",
           jobTitle: "Professor; Founder, MR Longevity",
           description: DESCRIPTION,

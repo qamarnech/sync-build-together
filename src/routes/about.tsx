@@ -258,7 +258,7 @@ function AboutPage() {
       </Section>
 
       <Section tone="paper" className="text-center">
-        <h2 className="font-serif text-3xl text-navy">Founded by Professor Qiang Fu 付强</h2>
+        <h2 className="font-serif text-3xl text-navy">Founded by Professor Daniel Qiang Fu 付强</h2>
         <p className="mx-auto mt-3 max-w-2xl text-sm text-ink-soft">
           Longevity scientist and biotech entrepreneur working across cellular senescence,
           geroscience, regenerative medicine and longevity biotechnology, with a peer-reviewed

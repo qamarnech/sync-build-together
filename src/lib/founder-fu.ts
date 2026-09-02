@@ -13,7 +13,7 @@ export type Publication = {
   href: string;
 };
 
-export const FOUNDER_NAME = "Professor Qiang Fu 付强";
+export const FOUNDER_NAME = "Professor Daniel Qiang Fu 付强";
 
 export const FOUNDER_HEADLINE =
   "Longevity Scientist · Biotech Entrepreneur · MR Longevity Founder";
@@ -21,7 +21,7 @@ export const FOUNDER_HEADLINE =
 export const FOUNDER_LOCATIONS = "China · UK · Global";
 
 export const FOUNDER_ABOUT = [
-  "Professor Qiang Fu is a scientist and biotechnology entrepreneur working to understand the biology of ageing and translate scientific discoveries into practical solutions for healthier, longer lives.",
+  "Professor Daniel Qiang Fu is a scientist and biotechnology entrepreneur working to understand the biology of ageing and translate scientific discoveries into practical solutions for healthier, longer lives.",
   "His research spans cellular senescence, NK-cell immunology, reproductive immunology, stem-cell and ovarian biology, exosomes, cancer, and the use of biomarkers and AI in ageing. Alongside fundamental science, his focus is increasingly translational: identifying promising interventions, validating them rigorously, and creating pathways through which research becomes technologies, products and health solutions.",
   "As founder of MR Longevity, his wider ambition is to build an international mission connecting science, people, technology, healthcare, data and investment to accelerate progress in healthy longevity.",
 ];
@@ -256,7 +256,7 @@ export const FOUNDER_GRANTS: LinkedItem[] = [
 
 export const FOUNDER_SAME_AS = [
   "https://kyc.sdmpu.edu.cn/2024/0626/c5166a122862/page.htm",
-  "https://pubmed.ncbi.nlm.nih.gov/?term=Qiang+Fu+Binzhou+Medical+University",
+  "https://pubmed.ncbi.nlm.nih.gov/?term=Daniel+Qiang+Fu+Binzhou+Medical+University",
 ];
 
 /** Stable URL slug derived from a publication title. */
