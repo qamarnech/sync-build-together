@@ -153,14 +153,18 @@ function ContactPage() {
     },
   });
 
+  const [consent, setConsent] = useState(false);
+
   const set = (key: keyof FormState) => (value: string) =>
     setForm((prev) => ({ ...prev, [key]: value }));
 
   const valid =
+    consent &&
     form.name.trim().length >= 2 &&
     /.+@.+\..+/.test(form.email.trim()) &&
     form.subject.trim().length >= 2 &&
     form.message.trim().length >= 10;
+
 
   return (
     <div>
