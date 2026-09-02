@@ -21,10 +21,12 @@ export function SiteFooter() {
 
         <div className="flex flex-col gap-2 text-sm">
           <p className="font-serif text-white">Participate</p>
+          <Link to="/participate/community">Action Community</Link>
           <Link to="/projects">Projects</Link>
           <Link to="/members">Members</Link>
           <Link to="/auth">Join MR Longevity</Link>
         </div>
+
       </div>
       <div className="mx-auto mt-10 max-w-6xl border-t border-white/10 pt-6 text-xs">
         © {new Date().getFullYear()} MR Longevity. Evidence status is labelled throughout the
