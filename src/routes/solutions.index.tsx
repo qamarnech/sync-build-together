@@ -10,7 +10,7 @@ export const Route = createFileRoute("/solutions/")({
       {
         name: "description",
         content:
-          "Diagnostics and biological age, preventive and longevity health, regenerative medicine, personalised health, aesthetics and wellness, and products across the MR Longevity mission.",
+          "Chronic disease prevention, regenerative medicine, longevity health management, personalised medicine, medical aesthetics and products across the MR Longevity mission.",
       },
       { property: "og:title", content: "Longevity Solutions | MR Longevity" },
       {
