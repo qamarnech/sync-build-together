@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FigureTitle, Flourish, Kicker, Section, SectionHead, Tag } from "@/components/site/ui-bits";
 import { HealthspanCurve, TranslationFlywheel } from "@/components/site/infographics";
-import { FLYWHEEL, PERSONAS, VERBS } from "@/lib/site-content";
+import { FLYWHEEL, GOALS, PERSONAS, VALUES, VERBS } from "@/lib/site-content";
 import personaResearcher from "@/assets/persona-researcher.jpg";
 import personaClinician from "@/assets/persona-clinician.jpg";
 import personaCompany from "@/assets/persona-company.jpg";
