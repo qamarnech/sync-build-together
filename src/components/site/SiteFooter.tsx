@@ -52,7 +52,14 @@ export function SiteFooter() {
             A global healthy longevity mission connecting science, healthcare, innovation, people,
             capital, data and AI, making life healthier and longer.
           </p>
+          <a
+            href="mailto:mr.longevity@longevitymr.com"
+            className="mt-4 inline-block text-sm text-gold-light transition-colors hover:text-white"
+          >
+            mr.longevity@longevitymr.com
+          </a>
         </div>
+
 
         {COLUMNS.map((column) => (
           <div key={column.title} className="flex flex-col gap-2">

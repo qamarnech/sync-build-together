@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useMutation } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
 import { useState } from "react";
-import { Mail, Globe, Send, CheckCircle2, Loader2 } from "lucide-react";
+import { Send, CheckCircle2, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 
 import { Section, SectionHead, Tag, Flourish } from "@/components/site/ui-bits";
@@ -376,27 +376,7 @@ function ContactPage() {
           </div>
 
           <aside className="space-y-4">
-            <div className="rounded-2xl border border-line bg-paper p-6">
-              <Tag tone="gold">Direct contact</Tag>
-              <div className="mt-4 space-y-3">
-                <a
-                  href="mailto:Mr.Longevity@LongevityMR.com"
-                  className="flex items-center gap-3 rounded-xl border border-line bg-white p-4 text-sm text-navy transition-colors hover:border-gold/50"
-                >
-                  <Mail className="h-4 w-4 text-gold" />
-                  Mr.Longevity@LongevityMR.com
-                </a>
-                <a
-                  href="https://longevitymr.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-3 rounded-xl border border-line bg-white p-4 text-sm text-navy transition-colors hover:border-gold/50"
-                >
-                  <Globe className="h-4 w-4 text-gold" />
-                  LongevityMR.com
-                </a>
-              </div>
-            </div>
+
 
             <div className="rounded-2xl border border-line bg-paper p-6">
               <Tag tone="navy">Before you write</Tag>
