@@ -6,21 +6,48 @@ import logoAsset from "@/assets/mr-longevity-logo.png.asset.json";
 
 const pillar = solutionPillar("products");
 
-const PRODUCTS = [
+type Product = {
+  name: string;
+  category: "Diagnostics and Tests" | "Wellness and Personal Care";
+  body: string;
+  markers?: string;
+};
+
+const PRODUCTS: Product[] = [
   {
-    name: "Product 1",
+    name: "Epigenetic Senescence Detection",
     category: "Diagnostics and Tests",
-    body: "MetaAge biological age test, a combined readout used to set and track a personal baseline.",
+    body: "A biological-age test based on epigenetic markers, reading DNA methylation patterns associated with ageing and cellular senescence.",
+    markers: "Epigenetic methylation",
   },
   {
-    name: "Product 2",
+    name: "Inflammatory Senescence Detection",
     category: "Diagnostics and Tests",
-    body: "Senescence detection panel covering epigenetic, inflammatory, cellular and metabolic markers.",
+    body: "A test measuring inflammation-related ageing markers, quantifying chronic low-grade inflammation linked to the senescence-associated secretory phenotype.",
+    markers: "Inflammatory SASP markers",
   },
   {
-    name: "Product 3",
+    name: "Cellular Senescence Detection",
+    category: "Diagnostics and Tests",
+    body: "A test measuring cellular ageing and senescence markers, identifying senescent cell burden through validated molecular signatures.",
+    markers: "Cellular senescence",
+  },
+  {
+    name: "Metabolic Senescence Detection",
+    category: "Diagnostics and Tests",
+    body: "A test measuring metabolic ageing markers, assessing metabolic decline that accompanies cellular senescence and biological ageing.",
+    markers: "Metabolic ageing",
+  },
+  {
+    name: "MetaAge Biological Age Test",
+    category: "Diagnostics and Tests",
+    body: "A combined biological-age readout that integrates the senescence panels above into a single baseline used to set and track a personal healthspan plan.",
+    markers: "Integrated biological age",
+  },
+  {
+    name: "Wellness and Personal Care",
     category: "Wellness and Personal Care",
-    body: "Everyday skin health and recovery products supporting daily longevity routines.",
+    body: "Everyday skin-health and recovery products supporting daily longevity routines alongside the diagnostic programme.",
   },
 ];
 
