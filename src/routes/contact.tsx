@@ -113,8 +113,10 @@ const SUBJECTS = [
   "Public health programme",
   "Membership question",
   "Media or speaking",
+  "Privacy request (data rights)",
   "Other",
 ];
+
 
 type FormState = {
   name: string;
@@ -151,14 +153,18 @@ function ContactPage() {
     },
   });
 
+  const [consent, setConsent] = useState(false);
+
   const set = (key: keyof FormState) => (value: string) =>
     setForm((prev) => ({ ...prev, [key]: value }));
 
   const valid =
+    consent &&
     form.name.trim().length >= 2 &&
     /.+@.+\..+/.test(form.email.trim()) &&
     form.subject.trim().length >= 2 &&
     form.message.trim().length >= 10;
+
 
   return (
     <div>
@@ -315,6 +321,28 @@ function ContactPage() {
                   />
                 </div>
 
+                <div className="rounded-xl border border-line bg-paper p-4">
+                  <label htmlFor="consent" className="flex items-start gap-3 text-xs text-ink-soft">
+                    <input
+                      id="consent"
+                      type="checkbox"
+                      required
+                      checked={consent}
+                      onChange={(e) => setConsent(e.target.checked)}
+                      className="mt-0.5 h-4 w-4 shrink-0 accent-[oklch(0.606_0.076_72.6)]"
+                    />
+                    <span>
+                      I agree that MR Longevity and ILMRI may store and use the details above to
+                      respond to my enquiry, as described in the{" "}
+                      <a className="text-gold underline" href="/privacy">
+                        privacy notice
+                      </a>
+                      . Enquiries are kept for up to 24 months and you can ask us to delete them at any
+                      time. Please do not include health information you would rather not share.
+                    </span>
+                  </label>
+                </div>
+
                 <div className="flex flex-wrap items-center gap-4">
                   <Button type="submit" disabled={!valid || mutation.isPending}>
                     {mutation.isPending ? (
@@ -324,6 +352,7 @@ function ContactPage() {
                     )}
                     {mutation.isPending ? "Sending" : "Send message"}
                   </Button>
+
                   <p className="text-xs text-ink-mute">
                     We use your details only to answer your enquiry.
                   </p>

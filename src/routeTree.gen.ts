@@ -15,11 +15,14 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as CollaborateRouteImport } from './routes/collaborate'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CookiesRouteImport } from './routes/cookies'
 import { Route as DiscoverRouteImport } from './routes/discover'
 import { Route as EcosystemRouteImport } from './routes/ecosystem'
 import { Route as FounderRouteImport } from './routes/founder'
 import { Route as ParticipateRouteImport } from './routes/participate'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as SolutionsRouteImport } from './routes/solutions'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
 import { Route as AuthenticatedProfileRouteImport } from './routes/_authenticated/profile'
 import { Route as CollaborateIndexRouteImport } from './routes/collaborate.index'
@@ -86,6 +89,11 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CookiesRoute = CookiesRouteImport.update({
+  id: '/cookies',
+  path: '/cookies',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DiscoverRoute = DiscoverRouteImport.update({
   id: '/discover',
   path: '/discover',
@@ -106,9 +114,19 @@ const ParticipateRoute = ParticipateRouteImport.update({
   path: '/participate',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SolutionsRoute = SolutionsRouteImport.update({
   id: '/solutions',
   path: '/solutions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthenticatedDashboardRoute = AuthenticatedDashboardRouteImport.update({
@@ -316,11 +334,14 @@ export interface FileRoutesByFullPath {
   '/auth': typeof AuthRoute
   '/collaborate': typeof CollaborateRouteWithChildren
   '/contact': typeof ContactRoute
+  '/cookies': typeof CookiesRoute
   '/discover': typeof DiscoverRouteWithChildren
   '/ecosystem': typeof EcosystemRouteWithChildren
   '/founder': typeof FounderRoute
   '/participate': typeof ParticipateRouteWithChildren
+  '/privacy': typeof PrivacyRoute
   '/solutions': typeof SolutionsRouteWithChildren
+  '/terms': typeof TermsRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/profile': typeof AuthenticatedProfileRoute
   '/collaborate/opportunities': typeof CollaborateOpportunitiesRoute
@@ -363,7 +384,10 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/auth': typeof AuthRoute
   '/contact': typeof ContactRoute
+  '/cookies': typeof CookiesRoute
   '/founder': typeof FounderRoute
+  '/privacy': typeof PrivacyRoute
+  '/terms': typeof TermsRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/profile': typeof AuthenticatedProfileRoute
   '/collaborate/opportunities': typeof CollaborateOpportunitiesRoute
@@ -409,11 +433,14 @@ export interface FileRoutesById {
   '/auth': typeof AuthRoute
   '/collaborate': typeof CollaborateRouteWithChildren
   '/contact': typeof ContactRoute
+  '/cookies': typeof CookiesRoute
   '/discover': typeof DiscoverRouteWithChildren
   '/ecosystem': typeof EcosystemRouteWithChildren
   '/founder': typeof FounderRoute
   '/participate': typeof ParticipateRouteWithChildren
+  '/privacy': typeof PrivacyRoute
   '/solutions': typeof SolutionsRouteWithChildren
+  '/terms': typeof TermsRoute
   '/_authenticated/dashboard': typeof AuthenticatedDashboardRoute
   '/_authenticated/profile': typeof AuthenticatedProfileRoute
   '/collaborate/opportunities': typeof CollaborateOpportunitiesRoute
@@ -459,11 +486,14 @@ export interface FileRouteTypes {
     | '/auth'
     | '/collaborate'
     | '/contact'
+    | '/cookies'
     | '/discover'
     | '/ecosystem'
     | '/founder'
     | '/participate'
+    | '/privacy'
     | '/solutions'
+    | '/terms'
     | '/dashboard'
     | '/profile'
     | '/collaborate/opportunities'
@@ -506,7 +536,10 @@ export interface FileRouteTypes {
     | '/about'
     | '/auth'
     | '/contact'
+    | '/cookies'
     | '/founder'
+    | '/privacy'
+    | '/terms'
     | '/dashboard'
     | '/profile'
     | '/collaborate/opportunities'
@@ -551,11 +584,14 @@ export interface FileRouteTypes {
     | '/auth'
     | '/collaborate'
     | '/contact'
+    | '/cookies'
     | '/discover'
     | '/ecosystem'
     | '/founder'
     | '/participate'
+    | '/privacy'
     | '/solutions'
+    | '/terms'
     | '/_authenticated/dashboard'
     | '/_authenticated/profile'
     | '/collaborate/opportunities'
@@ -601,11 +637,14 @@ export interface RootRouteChildren {
   AuthRoute: typeof AuthRoute
   CollaborateRoute: typeof CollaborateRouteWithChildren
   ContactRoute: typeof ContactRoute
+  CookiesRoute: typeof CookiesRoute
   DiscoverRoute: typeof DiscoverRouteWithChildren
   EcosystemRoute: typeof EcosystemRouteWithChildren
   FounderRoute: typeof FounderRoute
   ParticipateRoute: typeof ParticipateRouteWithChildren
+  PrivacyRoute: typeof PrivacyRoute
   SolutionsRoute: typeof SolutionsRouteWithChildren
+  TermsRoute: typeof TermsRoute
   PublicationsSlugRoute: typeof PublicationsSlugRoute
   PublicationsIndexRoute: typeof PublicationsIndexRoute
 }
@@ -654,6 +693,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cookies': {
+      id: '/cookies'
+      path: '/cookies'
+      fullPath: '/cookies'
+      preLoaderRoute: typeof CookiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/discover': {
       id: '/discover'
       path: '/discover'
@@ -682,11 +728,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ParticipateRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/solutions': {
       id: '/solutions'
       path: '/solutions'
       fullPath: '/solutions'
       preLoaderRoute: typeof SolutionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_authenticated/dashboard': {
@@ -1080,11 +1140,14 @@ const rootRouteChildren: RootRouteChildren = {
   AuthRoute: AuthRoute,
   CollaborateRoute: CollaborateRouteWithChildren,
   ContactRoute: ContactRoute,
+  CookiesRoute: CookiesRoute,
   DiscoverRoute: DiscoverRouteWithChildren,
   EcosystemRoute: EcosystemRouteWithChildren,
   FounderRoute: FounderRoute,
   ParticipateRoute: ParticipateRouteWithChildren,
+  PrivacyRoute: PrivacyRoute,
   SolutionsRoute: SolutionsRouteWithChildren,
+  TermsRoute: TermsRoute,
   PublicationsSlugRoute: PublicationsSlugRoute,
   PublicationsIndexRoute: PublicationsIndexRoute,
 }
