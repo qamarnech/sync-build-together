@@ -89,18 +89,8 @@ const FAQ = [
   },
 ];
 
-const SUBJECTS = [
-  "Research collaboration",
-  "Clinical collaboration",
-  "Innovation or startup",
-  "Investment or funding",
-  "University or institutional partnership",
-  "Public health programme",
-  "Membership question",
-  "Media or speaking",
-  "Privacy request (data rights)",
-  "Other",
-];
+
+
 
 
 function ContactPage() {
