@@ -103,54 +103,7 @@ const SUBJECTS = [
 ];
 
 
-type FormState = {
-  name: string;
-  email: string;
-  organisation: string;
-  role: string;
-  subject: string;
-  message: string;
-};
-
-const EMPTY: FormState = {
-  name: "",
-  email: "",
-  organisation: "",
-  role: "",
-  subject: "",
-  message: "",
-};
-
 function ContactPage() {
-  const [form, setForm] = useState<FormState>(EMPTY);
-  const [sent, setSent] = useState(false);
-  const send = useServerFn(sendContactMessage);
-
-  const mutation = useMutation({
-    mutationFn: (data: FormState) => send({ data }),
-    onSuccess: () => {
-      setSent(true);
-      setForm(EMPTY);
-      toast.success("Message sent. We will be in touch.");
-    },
-    onError: (error: Error) => {
-      toast.error(error.message || "Something went wrong. Please try again.");
-    },
-  });
-
-  const [consent, setConsent] = useState(false);
-
-  const set = (key: keyof FormState) => (value: string) =>
-    setForm((prev) => ({ ...prev, [key]: value }));
-
-  const valid =
-    consent &&
-    form.name.trim().length >= 2 &&
-    /.+@.+\..+/.test(form.email.trim()) &&
-    form.subject.trim().length >= 2 &&
-    form.message.trim().length >= 10;
-
-
   return (
     <div>
       <Section tone="white">
