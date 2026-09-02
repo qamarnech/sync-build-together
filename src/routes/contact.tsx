@@ -1,30 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useMutation } from "@tanstack/react-query";
-import { useServerFn } from "@tanstack/react-start";
-import { useState } from "react";
-import { Send, CheckCircle2, Loader2 } from "lucide-react";
-import { toast } from "sonner";
+import { Mail } from "lucide-react";
 
 import { Section, SectionHead, Tag, Flourish } from "@/components/site/ui-bits";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { sendContactMessage } from "@/lib/contact.functions";
-import { ROLE_TYPES } from "@/lib/site-content";
 import allianceMap from "@/assets/ilma-world-alliance.png.asset.json";
 
 export const Route = createFileRoute("/contact")({
