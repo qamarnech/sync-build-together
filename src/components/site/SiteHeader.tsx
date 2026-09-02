@@ -30,20 +30,21 @@ const memberLinks = [
 ] as const;
 
 
+type NavItem = { slug: string; to: string; name: string };
+type NavGroup = { label: string; to: string; items: NavItem[] };
+
 function Dropdown({
   label,
   to,
   items,
   showOverview = true,
-  bottomItems,
-  bottomLabel,
+  bottomGroups,
 }: {
   label: string;
   to: string;
-  items: { slug: string; to: string; name: string }[];
+  items: NavItem[];
   showOverview?: boolean;
-  bottomItems?: { slug: string; to: string; name: string }[];
-  bottomLabel?: string;
+  bottomGroups?: NavGroup[];
 }) {
   return (
     <div className="group relative">
@@ -77,33 +78,35 @@ function Dropdown({
               {item.name}
             </Link>
           ))}
-          {bottomItems && bottomItems.length > 0 && (
+          {bottomGroups && bottomGroups.length > 0 && (
             <>
               <div className="my-2 border-t border-line" />
-              <div className="group/sub relative">
-                <Link
-                  to="/ecosystem"
-                  className="flex items-center justify-between gap-2 rounded-lg px-3 py-2 text-sm text-ink-soft transition-colors hover:bg-gold/10 hover:text-navy"
-                  activeProps={{ className: "text-navy font-semibold" }}
-                >
-                  {bottomLabel ?? "More"}
-                  <ChevronRight className="h-3.5 w-3.5" />
-                </Link>
-                <div className="invisible absolute left-full top-0 z-50 w-64 pl-2 opacity-0 transition-opacity group-hover/sub:visible group-hover/sub:opacity-100 group-focus-within/sub:visible group-focus-within/sub:opacity-100">
-                  <div className="rounded-xl border border-line bg-paper p-2 shadow-lg">
-                    {bottomItems.map((item) => (
-                      <Link
-                        key={item.slug}
-                        to={item.to}
-                        className="block rounded-lg px-3 py-2 text-sm text-ink-soft transition-colors hover:bg-gold/10 hover:text-navy"
-                        activeProps={{ className: "text-navy font-semibold" }}
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
+              {bottomGroups.map((group) => (
+                <div key={group.to} className="group/sub relative">
+                  <Link
+                    to={group.to}
+                    className="flex items-center justify-between gap-2 rounded-lg px-3 py-2 text-sm text-ink-soft transition-colors hover:bg-gold/10 hover:text-navy"
+                    activeProps={{ className: "text-navy font-semibold" }}
+                  >
+                    {group.label}
+                    <ChevronRight className="h-3.5 w-3.5" />
+                  </Link>
+                  <div className="invisible absolute left-full top-0 z-50 w-64 pl-2 opacity-0 transition-opacity group-hover/sub:visible group-hover/sub:opacity-100 group-focus-within/sub:visible group-focus-within/sub:opacity-100">
+                    <div className="rounded-xl border border-line bg-paper p-2 shadow-lg">
+                      {group.items.map((item) => (
+                        <Link
+                          key={item.slug}
+                          to={item.to}
+                          className="block rounded-lg px-3 py-2 text-sm text-ink-soft transition-colors hover:bg-gold/10 hover:text-navy"
+                          activeProps={{ className: "text-navy font-semibold" }}
+                        >
+                          {item.name}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
+              ))}
             </>
           )}
         </div>
@@ -111,6 +114,7 @@ function Dropdown({
     </div>
   );
 }
+
 
 export function SiteHeader() {
   const { user, loading } = useAuth();
