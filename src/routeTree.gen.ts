@@ -19,6 +19,7 @@ import { Route as DiscoverRouteImport } from './routes/discover'
 import { Route as EcosystemRouteImport } from './routes/ecosystem'
 import { Route as FounderRouteImport } from './routes/founder'
 import { Route as ParticipateRouteImport } from './routes/participate'
+import { Route as SolutionsRouteImport } from './routes/solutions'
 import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
 import { Route as AuthenticatedProfileRouteImport } from './routes/_authenticated/profile'
 import { Route as CollaborateIndexRouteImport } from './routes/collaborate.index'
@@ -43,6 +44,7 @@ import { Route as ParticipateMembersRouteImport } from './routes/participate.mem
 import { Route as ParticipateNewsRouteImport } from './routes/participate.news'
 import { Route as PublicationsIndexRouteImport } from './routes/publications.index'
 import { Route as PublicationsSlugRouteImport } from './routes/publications.$slug'
+import { Route as SolutionsIndexRouteImport } from './routes/solutions.index'
 import { Route as AuthenticatedMembersIndexRouteImport } from './routes/_authenticated/members.index'
 import { Route as AuthenticatedMembersProfileIdRouteImport } from './routes/_authenticated/members.$profileId'
 import { Route as AuthenticatedProjectsIndexRouteImport } from './routes/_authenticated/projects.index'
@@ -96,6 +98,11 @@ const FounderRoute = FounderRouteImport.update({
 const ParticipateRoute = ParticipateRouteImport.update({
   id: '/participate',
   path: '/participate',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SolutionsRoute = SolutionsRouteImport.update({
+  id: '/solutions',
+  path: '/solutions',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthenticatedDashboardRoute = AuthenticatedDashboardRouteImport.update({
@@ -226,6 +233,11 @@ const PublicationsSlugRoute = PublicationsSlugRouteImport.update({
   path: '/publications/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SolutionsIndexRoute = SolutionsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => SolutionsRoute,
+} as any)
 const AuthenticatedMembersIndexRoute =
   AuthenticatedMembersIndexRouteImport.update({
     id: '/members/',
@@ -267,6 +279,7 @@ export interface FileRoutesByFullPath {
   '/ecosystem': typeof EcosystemRouteWithChildren
   '/founder': typeof FounderRoute
   '/participate': typeof ParticipateRouteWithChildren
+  '/solutions': typeof SolutionsRouteWithChildren
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/profile': typeof AuthenticatedProfileRoute
   '/collaborate/opportunities': typeof CollaborateOpportunitiesRoute
@@ -291,6 +304,7 @@ export interface FileRoutesByFullPath {
   '/ecosystem/': typeof EcosystemIndexRoute
   '/participate/': typeof ParticipateIndexRoute
   '/publications/': typeof PublicationsIndexRoute
+  '/solutions/': typeof SolutionsIndexRoute
   '/members/$profileId': typeof AuthenticatedMembersProfileIdRoute
   '/projects/$projectId': typeof AuthenticatedProjectsProjectIdRoute
   '/projects/new': typeof AuthenticatedProjectsNewRoute
@@ -327,6 +341,7 @@ export interface FileRoutesByTo {
   '/ecosystem': typeof EcosystemIndexRoute
   '/participate': typeof ParticipateIndexRoute
   '/publications': typeof PublicationsIndexRoute
+  '/solutions': typeof SolutionsIndexRoute
   '/members/$profileId': typeof AuthenticatedMembersProfileIdRoute
   '/projects/$projectId': typeof AuthenticatedProjectsProjectIdRoute
   '/projects/new': typeof AuthenticatedProjectsNewRoute
@@ -345,6 +360,7 @@ export interface FileRoutesById {
   '/ecosystem': typeof EcosystemRouteWithChildren
   '/founder': typeof FounderRoute
   '/participate': typeof ParticipateRouteWithChildren
+  '/solutions': typeof SolutionsRouteWithChildren
   '/_authenticated/dashboard': typeof AuthenticatedDashboardRoute
   '/_authenticated/profile': typeof AuthenticatedProfileRoute
   '/collaborate/opportunities': typeof CollaborateOpportunitiesRoute
@@ -369,6 +385,7 @@ export interface FileRoutesById {
   '/ecosystem/': typeof EcosystemIndexRoute
   '/participate/': typeof ParticipateIndexRoute
   '/publications/': typeof PublicationsIndexRoute
+  '/solutions/': typeof SolutionsIndexRoute
   '/_authenticated/members/$profileId': typeof AuthenticatedMembersProfileIdRoute
   '/_authenticated/projects/$projectId': typeof AuthenticatedProjectsProjectIdRoute
   '/_authenticated/projects/new': typeof AuthenticatedProjectsNewRoute
@@ -387,6 +404,7 @@ export interface FileRouteTypes {
     | '/ecosystem'
     | '/founder'
     | '/participate'
+    | '/solutions'
     | '/dashboard'
     | '/profile'
     | '/collaborate/opportunities'
@@ -411,6 +429,7 @@ export interface FileRouteTypes {
     | '/ecosystem/'
     | '/participate/'
     | '/publications/'
+    | '/solutions/'
     | '/members/$profileId'
     | '/projects/$projectId'
     | '/projects/new'
@@ -447,6 +466,7 @@ export interface FileRouteTypes {
     | '/ecosystem'
     | '/participate'
     | '/publications'
+    | '/solutions'
     | '/members/$profileId'
     | '/projects/$projectId'
     | '/projects/new'
@@ -464,6 +484,7 @@ export interface FileRouteTypes {
     | '/ecosystem'
     | '/founder'
     | '/participate'
+    | '/solutions'
     | '/_authenticated/dashboard'
     | '/_authenticated/profile'
     | '/collaborate/opportunities'
@@ -488,6 +509,7 @@ export interface FileRouteTypes {
     | '/ecosystem/'
     | '/participate/'
     | '/publications/'
+    | '/solutions/'
     | '/_authenticated/members/$profileId'
     | '/_authenticated/projects/$projectId'
     | '/_authenticated/projects/new'
@@ -506,6 +528,7 @@ export interface RootRouteChildren {
   EcosystemRoute: typeof EcosystemRouteWithChildren
   FounderRoute: typeof FounderRoute
   ParticipateRoute: typeof ParticipateRouteWithChildren
+  SolutionsRoute: typeof SolutionsRouteWithChildren
   PublicationsSlugRoute: typeof PublicationsSlugRoute
   PublicationsIndexRoute: typeof PublicationsIndexRoute
 }
@@ -580,6 +603,13 @@ declare module '@tanstack/react-router' {
       path: '/participate'
       fullPath: '/participate'
       preLoaderRoute: typeof ParticipateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/solutions': {
+      id: '/solutions'
+      path: '/solutions'
+      fullPath: '/solutions'
+      preLoaderRoute: typeof SolutionsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_authenticated/dashboard': {
@@ -750,6 +780,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PublicationsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/solutions/': {
+      id: '/solutions/'
+      path: '/'
+      fullPath: '/solutions/'
+      preLoaderRoute: typeof SolutionsIndexRouteImport
+      parentRoute: typeof SolutionsRoute
+    }
     '/_authenticated/members/': {
       id: '/_authenticated/members/'
       path: '/members'
@@ -891,6 +928,18 @@ const ParticipateRouteWithChildren = ParticipateRoute._addFileChildren(
   ParticipateRouteChildren,
 )
 
+interface SolutionsRouteChildren {
+  SolutionsIndexRoute: typeof SolutionsIndexRoute
+}
+
+const SolutionsRouteChildren: SolutionsRouteChildren = {
+  SolutionsIndexRoute: SolutionsIndexRoute,
+}
+
+const SolutionsRouteWithChildren = SolutionsRoute._addFileChildren(
+  SolutionsRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
@@ -902,6 +951,7 @@ const rootRouteChildren: RootRouteChildren = {
   EcosystemRoute: EcosystemRouteWithChildren,
   FounderRoute: FounderRoute,
   ParticipateRoute: ParticipateRouteWithChildren,
+  SolutionsRoute: SolutionsRouteWithChildren,
   PublicationsSlugRoute: PublicationsSlugRoute,
   PublicationsIndexRoute: PublicationsIndexRoute,
 }
