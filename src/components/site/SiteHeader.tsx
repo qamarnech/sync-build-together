@@ -237,7 +237,20 @@ export function SiteHeader() {
                 </Link>
               ))}
               <div className="my-1 border-t border-line" />
+              <Link to="/solutions" onClick={() => setOpen(false)} className="text-xs font-semibold uppercase tracking-wider text-gold">Longevity Solutions</Link>
+              {SOLUTION_ITEMS.map((item) => (
+                <Link
+                  key={item.slug}
+                  to={item.to}
+                  onClick={() => setOpen(false)}
+                  className="text-sm text-ink-soft"
+                >
+                  {item.name}
+                </Link>
+              ))}
+              <div className="my-1 border-t border-line" />
               <Link to="/ecosystem" onClick={() => setOpen(false)} className="text-xs font-semibold uppercase tracking-wider text-gold">Longevity Landscape</Link>
+
               {ECOSYSTEM_ITEMS.map((item) => (
                 <Link
                   key={item.slug}
