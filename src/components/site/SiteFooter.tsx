@@ -1,12 +1,46 @@
 import { Link } from "@tanstack/react-router";
-import { DISCOVER_PILLARS } from "@/lib/discover-pillars";
-import { COLLABORATE_ITEMS } from "@/lib/collaborate-pillars";
-import { PARTICIPATE_ITEMS } from "@/lib/participate-nav";
-import { SOLUTION_PILLARS } from "@/lib/solutions-pillars";
-import { ECOSYSTEM_PILLARS } from "@/lib/ecosystem-pillars";
 
 const footerLink =
   "text-sm text-gold-pale/70 transition-colors hover:text-gold-light";
+
+const COLUMNS = [
+  {
+    title: "Discover",
+    to: "/discover" as const,
+    links: [
+      { to: "/discover/healthy-longevity" as const, label: "Healthy Longevity" },
+      { to: "/discover/scientific-missions" as const, label: "Scientific Missions" },
+      { to: "/solutions" as const, label: "Longevity Solutions" },
+    ],
+  },
+  {
+    title: "Collaborate",
+    to: "/collaborate" as const,
+    links: [
+      { to: "/collaborate/projects" as const, label: "Projects" },
+      { to: "/collaborate/partners" as const, label: "Partners" },
+      { to: "/collaborate/opportunities" as const, label: "Opportunities" },
+    ],
+  },
+  {
+    title: "Participate",
+    to: "/participate" as const,
+    links: [
+      { to: "/participate/community" as const, label: "Community" },
+      { to: "/participate/events" as const, label: "Events" },
+      { to: "/participate/members" as const, label: "Members" },
+    ],
+  },
+  {
+    title: "MR Longevity",
+    to: "/about" as const,
+    links: [
+      { to: "/founder" as const, label: "Founder" },
+      { to: "/contact" as const, label: "Contact" },
+      { to: "/auth" as const, label: "Join MR Longevity" },
+    ],
+  },
+];
 
 export function SiteFooter() {
   return (
@@ -18,53 +52,22 @@ export function SiteFooter() {
             A global healthy longevity mission connecting science, healthcare, innovation, people,
             capital, data and AI, making life healthier and longer.
           </p>
-          <div className="mt-4 flex flex-col gap-1">
-            <Link to="/about" className={footerLink}>About</Link>
-            <Link to="/founder" className={footerLink}>Founder</Link>
-            <Link to="/contact" className={footerLink}>Contact</Link>
+        </div>
+
+        {COLUMNS.map((column) => (
+          <div key={column.title} className="flex flex-col gap-2">
+            <Link to={column.to} className="font-serif text-white hover:text-gold-light">
+              {column.title}
+            </Link>
+            {column.links.map((link) => (
+              <Link key={link.to} to={link.to} className={footerLink}>
+                {link.label}
+              </Link>
+            ))}
           </div>
-        </div>
-
-        <div className="flex flex-col gap-2">
-          <p className="font-serif text-white">Discover</p>
-          <Link to="/discover" className={footerLink}>Overview</Link>
-          {DISCOVER_PILLARS.map((item) => (
-            <Link key={item.slug} to={item.to} className={footerLink}>{item.name}</Link>
-          ))}
-          <Link to="/solutions" className="mt-1 font-serif text-white">Longevity Solutions</Link>
-          {SOLUTION_PILLARS.map((item) => (
-            <Link key={item.slug} to={item.to} className={footerLink}>{item.name}</Link>
-          ))}
-        </div>
-
-        <div className="flex flex-col gap-2">
-          <p className="font-serif text-white">Longevity Landscape</p>
-          <Link to="/ecosystem" className={footerLink}>Overview</Link>
-          {ECOSYSTEM_PILLARS.map((item) => (
-            <Link key={item.slug} to={item.to} className={footerLink}>{item.name}</Link>
-          ))}
-          <Link to="/ecosystem/uk-directory" className={footerLink}>UK Longevity Directory</Link>
-        </div>
-
-        <div className="flex flex-col gap-2">
-          <p className="font-serif text-white">Collaborate</p>
-          <Link to="/collaborate" className={footerLink}>Overview</Link>
-          {COLLABORATE_ITEMS.map((item) => (
-            <Link key={item.slug} to={item.to} className={footerLink}>{item.name}</Link>
-          ))}
-        </div>
-
-        <div className="flex flex-col gap-2">
-          <p className="font-serif text-white">Participate</p>
-          <Link to="/participate" className={footerLink}>Overview</Link>
-          {PARTICIPATE_ITEMS.map((item) => (
-            <Link key={item.slug} to={item.to} className={footerLink}>{item.name}</Link>
-          ))}
-          <Link to="/dashboard" className="mt-1 font-serif text-white">Members</Link>
-          <Link to="/projects" className={footerLink}>Projects</Link>
-          <Link to="/auth" className={footerLink}>Join MR Longevity</Link>
-        </div>
+        ))}
       </div>
+
 
       <div className="mx-auto mt-10 flex max-w-6xl flex-col gap-3 border-t border-white/10 pt-6 text-xs sm:flex-row sm:items-center sm:justify-between">
         <p>
