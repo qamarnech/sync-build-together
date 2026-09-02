@@ -277,7 +277,7 @@ function CommunityPage() {
         />
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           {HOW_STEPS.map((step) => (
-            <div key={step.num} className="rounded-2xl border border-line bg-white p-7">
+            <div key={step.num} className="flex flex-col rounded-2xl border border-line bg-white p-7">
               <div className="flex items-center gap-3">
                 <span className="font-serif text-3xl font-bold text-gold/40">{step.num}</span>
                 <div>
@@ -286,6 +286,13 @@ function CommunityPage() {
                 </div>
               </div>
               <p className="mt-4 text-sm leading-relaxed text-ink-soft">{step.body}</p>
+              <Link
+                to={step.link.to}
+                className="group mt-auto inline-flex items-center gap-1 pt-5 text-sm font-semibold text-navy transition-colors hover:text-gold"
+              >
+                {step.link.label}
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
             </div>
           ))}
         </div>
@@ -297,18 +304,53 @@ function CommunityPage() {
           kicker="Activities"
           num="04"
           title="Concrete activities, not an abstract idea"
-          intro="The community shows up as things members can actually do."
+          intro="The community shows up as things members can actually do. Every activity links to a live part of the platform."
         />
         <div className="mt-10 grid gap-4 md:grid-cols-3">
           {ACTIVITIES.map((activity) => (
-            <div
+            <Link
               key={activity.title}
-              className="rounded-2xl border border-line bg-paper p-6 transition-colors hover:border-gold/50"
+              to={activity.to}
+              className="group flex flex-col rounded-2xl border border-line bg-paper p-6 transition-colors hover:border-gold/50"
             >
               <activity.icon className="h-6 w-6 text-gold" />
               <h3 className="mt-4 font-serif text-lg font-semibold text-navy">{activity.title}</h3>
               <p className="mt-2 text-sm text-ink-soft">{activity.detail}</p>
-            </div>
+              <span className="mt-auto inline-flex items-center gap-1 pt-4 text-sm text-gold">
+                {activity.action}
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </span>
+            </Link>
+          ))}
+        </div>
+      </Section>
+
+      {/* Your profile in the community */}
+      <Section tone="navy">
+        <SectionHead
+          kicker="Your profile"
+          title="The community runs on member profiles"
+          intro="What you record on your profile is what makes collaboration possible. Your expertise, needs and interests decide which projects, briefings and people the platform puts in front of you."
+          invert
+        />
+        <div className="mt-10 grid gap-4 md:grid-cols-4">
+          {[
+            { to: "/profile", title: "Set up your profile", body: "Identity, expertise, interests and what you are looking for." },
+            { to: "/dashboard", title: "Your dashboard", body: "Your projects, memberships and MR Match suggestions in one place." },
+            { to: "/projects", title: "Projects you can join", body: "Open collaborations looking for the capabilities you hold." },
+            { to: "/members", title: "Member directory", body: "Find people whose work meets your questions." },
+          ].map((card) => (
+            <Link
+              key={card.to}
+              to={card.to}
+              className="group rounded-2xl border border-white/15 bg-white/5 p-6 transition-colors hover:border-gold/50"
+            >
+              <p className="font-serif text-lg font-semibold text-white">{card.title}</p>
+              <p className="mt-2 text-sm text-gold-pale/70">{card.body}</p>
+              <span className="mt-4 inline-flex items-center gap-1 text-sm text-gold">
+                Open <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </span>
+            </Link>
           ))}
         </div>
       </Section>
@@ -323,13 +365,15 @@ function CommunityPage() {
         />
         <div className="mt-8 grid gap-3 sm:grid-cols-2 md:grid-cols-3">
           {WHO_CAN_JOIN.map((who) => (
-            <div
-              key={who}
-              className="flex items-center gap-2 rounded-xl border border-line bg-white px-4 py-3 text-sm text-ink-soft"
+            <Link
+              key={who.label}
+              to={who.to}
+              className="group flex items-center gap-2 rounded-xl border border-line bg-white px-4 py-3 text-sm text-ink-soft transition-colors hover:border-gold/50 hover:text-navy"
             >
               <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
-              {who}
-            </div>
+              {who.label}
+              <ArrowRight className="ml-auto h-4 w-4 shrink-0 text-gold opacity-0 transition-opacity group-hover:opacity-100" />
+            </Link>
           ))}
         </div>
       </Section>
@@ -345,15 +389,18 @@ function CommunityPage() {
         />
         <div className="mt-8 grid gap-3 md:grid-cols-2">
           {GAINS.map((gain) => (
-            <div
-              key={gain}
-              className="flex items-start gap-3 rounded-xl border border-line bg-paper p-4 text-sm text-ink-soft"
+            <Link
+              key={gain.label}
+              to={gain.to}
+              className="group flex items-start gap-3 rounded-xl border border-line bg-paper p-4 text-sm text-ink-soft transition-colors hover:border-gold/50 hover:text-navy"
             >
               <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
-              {gain}
-            </div>
+              {gain.label}
+              <ArrowRight className="ml-auto mt-0.5 h-4 w-4 shrink-0 text-gold opacity-0 transition-opacity group-hover:opacity-100" />
+            </Link>
           ))}
         </div>
+
         <p className="mt-6 text-xs text-ink-mute">
           Participation does not extend life, reverse biological age or prevent disease.
         </p>
