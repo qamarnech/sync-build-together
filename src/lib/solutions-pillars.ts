@@ -3,10 +3,11 @@ import type { Pillar } from "@/components/site/PillarPage";
 export type SolutionPillar = Pillar & {
   to:
     | "/solutions/diagnostics-biological-age"
-    | "/solutions/preventive-longevity-health"
+    | "/solutions/chronic-disease-prevention"
     | "/solutions/regenerative-medicine"
-    | "/solutions/personalised-health"
-    | "/solutions/aesthetics-wellness"
+    | "/solutions/longevity-health-management"
+    | "/solutions/personalised-medicine"
+    | "/solutions/medical-aesthetics"
     | "/solutions/products";
 };
 
@@ -29,85 +30,105 @@ export const SOLUTION_PILLARS: SolutionPillar[] = [
     ],
     participants: ["Individuals", "Clinicians", "Laboratories", "Diagnostic developers", "Research groups", "Longevity clinics"],
     outputs: ["Biological-age reports", "Senescence profiles", "Baseline and follow-up tracking", "Validated test panels", "Data for research collaboration"],
-    handoff: "Measurement results inform preventive and longevity health planning, where they become actionable programmes.",
+    handoff: "Measurement results inform disease prevention, where they become actionable programmes.",
   },
   {
-    slug: "preventive-longevity-health",
-    to: "/solutions/preventive-longevity-health",
-    name: "Preventive & Longevity Health",
-    kicker: "Preventive & Longevity Health",
+    slug: "chronic-disease-prevention",
+    to: "/solutions/chronic-disease-prevention",
+    name: "Chronic & Major Disease Prevention",
+    kicker: "Chronic & Major Disease Prevention",
     num: "II",
-    title: "Reducing risk before disease appears",
+    title: "Finding major disease risk early enough to act",
     intro:
-      "Prevention is where most healthspan is won. Risk assessment, biomarker monitoring and structured lifestyle planning keep people functioning well for longer.",
+      "Most healthspan is won before disease appears. Early detection, precise biomarker monitoring and immune and inflammation management shift care from treatment to prevention.",
     focus: [
-      { title: "Chronic and major disease risk assessment", body: "Structured evaluation of cardiometabolic, cognitive and other major risks." },
-      { title: "Biomarker monitoring", body: "Repeated measurement to track direction of travel, not a single snapshot." },
-      { title: "Longevity health management", body: "Ongoing management of healthspan priorities with qualified professionals." },
-      { title: "Nutrition, movement, sleep and recovery planning", body: "The foundations of healthspan, planned and reviewed as a whole." },
-      { title: "Personal healthspan programmes", body: "Programmes that combine measurement, action and review over time." },
+      { title: "Cardiovascular and neurodegenerative prevention", body: "Early detection and prevention of cardiovascular disease and neurodegenerative conditions such as Alzheimer's." },
+      { title: "Early tumour risk assessment", body: "Risk stratification and early signals that support timely clinical follow-up." },
+      { title: "Immune enhancement and inflammation management", body: "Managing chronic inflammation and supporting immune resilience with ageing." },
+      { title: "Glycan-chemistry-based disease prediction", body: "Glycomic signatures used as predictive markers of disease risk." },
+      { title: "Peripheral blood testing and biomarker monitoring", body: "Minimally invasive blood panels with precise, repeated biomarker tracking." },
     ],
-    participants: ["Individuals", "Clinicians", "Public health professionals", "Nutritionists", "Fitness professionals", "Employers"],
-    outputs: ["Risk assessments", "Monitoring plans", "Healthspan programmes", "Lifestyle interventions", "Progress reviews"],
-    handoff: "Prevention data highlights where regenerative and advanced interventions may be appropriate.",
+    participants: ["Individuals", "Clinicians", "Public health professionals", "Laboratories", "Diagnostic developers", "Employers"],
+    outputs: ["Risk assessments", "Early-detection pathways", "Monitoring plans", "Preventive programmes", "Progress reviews"],
+    handoff: "Prevention data highlights where regenerative and cell-based interventions may be appropriate.",
   },
   {
     slug: "regenerative-medicine",
     to: "/solutions/regenerative-medicine",
-    name: "Regenerative Medicine",
-    kicker: "Regenerative Medicine",
+    name: "Regenerative Medicine & Cell Therapy",
+    kicker: "Regenerative Medicine & Cell Therapy",
     num: "III",
-    title: "Maintaining and restoring function",
+    title: "Repairing tissue and restoring function",
     intro:
-      "Regenerative approaches aim to repair, replace and restore tissue function. This is an active research field, and claims are labelled by evidence status throughout.",
+      "Regenerative approaches aim to repair tissue, regenerate organ function and intervene in the biology of ageing itself. This is an active research field, and claims are labelled by evidence status throughout.",
     focus: [
-      { title: "Regenerative medicine research", body: "Mechanistic and translational research into repair and restoration of function." },
-      { title: "Cell-therapy development", body: "Development and evaluation of cell-based therapeutic approaches." },
+      { title: "Tissue repair and organ regeneration", body: "Restoring structure and function in ageing or damaged tissue." },
       { title: "iPSC technology", body: "Induced pluripotent stem-cell platforms for modelling, screening and therapy." },
-      { title: "Tissue repair", body: "Restoring structure and function in ageing or damaged tissue." },
+      { title: "Anti-ageing intervention", body: "Research aiming to slow or reverse biological age, reported with its evidence level." },
+      { title: "Gene and cell therapy for chronic disease", body: "Therapeutic development targeting conditions such as diabetes and cardiovascular disease." },
       { title: "Clinical and research collaboration", body: "Partnerships that move promising work toward rigorous clinical testing." },
     ],
     participants: ["Research institutes", "Universities", "Biotech companies", "Clinical research units", "Regulators", "Investors"],
     outputs: ["Research collaborations", "Therapeutic candidates", "Preclinical and clinical evidence", "Platform technologies", "Translation projects"],
-    handoff: "Validated regenerative work feeds personalised health programmes and clinical practice.",
+    handoff: "Validated regenerative work feeds longevity health management and clinical practice.",
   },
   {
-    slug: "personalised-health",
-    to: "/solutions/personalised-health",
-    name: "Personalised Health",
-    kicker: "Personalised Health",
+    slug: "longevity-health-management",
+    to: "/solutions/longevity-health-management",
+    name: "Longevity Health Management",
+    kicker: "Longevity Health Management",
     num: "IV",
-    title: "One person, one plan, measured over time",
+    title: "Managing healthspan across ten body systems",
     intro:
-      "Personalised health brings measurement and action together for an individual, coordinated with qualified professionals rather than delivered as a product.",
+      "Health management brings measurement and action together over time: biological-age assessment across body systems, early screening and intervention plans reviewed as markers change.",
     focus: [
-      { title: "Individual biological-age assessment", body: "A personal baseline built from validated measures." },
-      { title: "Personalised health planning", body: "Priorities chosen for one person's biology, context and goals." },
-      { title: "Biomarker-informed programmes", body: "Programmes adjusted as markers change, not fixed in advance." },
-      { title: "One-to-one health management", body: "Continuity of support across measurement, action and review." },
+      { title: "Precise biological-age assessment", body: "Assessment and intervention across ten body systems, including cardiovascular, neurological and immune." },
+      { title: "Early screening for chronic disease", body: "Structured screening with personalised intervention plans where risk is found." },
+      { title: "MetaAge biological age test", body: "The MetaAge readout, also listed under Products, used to set and track a personal baseline." },
+      { title: "Comprehensive intervention plans", body: "Nutrition, exercise and medication combined to extend healthy lifespan." },
+      { title: "Ongoing review", body: "Plans adjusted as biomarkers move, with qualified professionals leading clinical decisions." },
+    ],
+    participants: ["Individuals", "Clinicians", "Health coaches", "Nutritionists", "Longevity clinics", "Data specialists"],
+    outputs: ["Personal baselines", "System-level assessments", "Screening pathways", "Healthspan programmes", "Longitudinal tracking"],
+    handoff: "Health management extends into high-end personalised medicine for members who need concierge-level care.",
+  },
+  {
+    slug: "personalised-medicine",
+    to: "/solutions/personalised-medicine",
+    name: "High-End Personalized Medicine",
+    kicker: "High-End Personalized Medicine",
+    num: "V",
+    title: "Concierge-level precision care",
+    intro:
+      "Personalised medicine coordinates precision services around one person, delivered to international standards by a named expert team rather than sold as a product.",
+    focus: [
+      { title: "Customised health management", body: "Tailored programmes for high-net-worth individuals and their families." },
+      { title: "International-standard precision services", body: "Precision medical services meeting recognised international standards." },
+      { title: "Integrated rejuvenation", body: "Longevity medicine combined with aesthetic design as one coherent plan." },
+      { title: "One-to-one management", body: "Continuity of care backed by an international expert team." },
       { title: "Coordination with qualified professionals", body: "Clinical decisions stay with appropriately qualified healthcare professionals." },
     ],
-    participants: ["Individuals", "Clinicians", "Health coaches", "Longevity clinics", "Digital health platforms", "Data specialists"],
-    outputs: ["Personal baselines", "Individual health plans", "Progress tracking", "Coordinated care pathways", "Longitudinal personal data"],
-    handoff: "Personal programmes often extend into aesthetics and wellness, where function and appearance meet.",
+    participants: ["Individuals and families", "Clinicians", "Longevity clinics", "Concierge health providers", "Aesthetic specialists", "Data specialists"],
+    outputs: ["Individual health plans", "Coordinated care pathways", "Expert panel reviews", "Progress tracking", "Longitudinal personal data"],
+    handoff: "Personal programmes often extend into medical aesthetics, where function and appearance meet.",
   },
   {
-    slug: "aesthetics-wellness",
-    to: "/solutions/aesthetics-wellness",
-    name: "Aesthetics & Wellness",
-    kicker: "Aesthetics & Wellness",
-    num: "V",
-    title: "Visible ageing, skin health and wellbeing",
+    slug: "medical-aesthetics",
+    to: "/solutions/medical-aesthetics",
+    name: "Medical Aesthetics & Anti-Aging Aesthetics",
+    kicker: "Medical Aesthetics & Anti-Aging Aesthetics",
+    num: "VI",
+    title: "Visible ageing, skin health and tissue regeneration",
     intro:
-      "Skin and wellbeing are part of how ageing is experienced. This area covers non-clinical and regenerative aesthetic approaches, described honestly and without overclaiming.",
+      "Skin and appearance are part of how ageing is experienced. This area blends medical aesthetics with regenerative techniques, described honestly and without overclaiming.",
     focus: [
-      { title: "Skin-health programmes", body: "Structured care for skin function, barrier health and resilience." },
-      { title: "Regenerative aesthetics", body: "Aesthetic approaches informed by regenerative science." },
-      { title: "Personalised aesthetic programmes", body: "Plans matched to individual skin type, history and goals." },
-      { title: "Wellness and non-clinical interventions", body: "Recovery, stress and wellbeing practices that support healthspan." },
+      { title: "Skin repair and facial rejuvenation", body: "Structured care for skin function, barrier health and facial appearance." },
+      { title: "Private health and tissue regeneration", body: "Discreet regenerative approaches to tissue health and recovery." },
+      { title: "Aesthetics with regenerative medicine", body: "Medical aesthetic practice informed by regenerative science." },
+      { title: "Customised anti-ageing services", body: "Rejuvenation plans matched to individual skin type, history and goals." },
     ],
-    participants: ["Individuals", "Aesthetic practitioners", "Dermatology specialists", "Wellness providers", "Product developers", "Clinics"],
-    outputs: ["Skin-health plans", "Aesthetic programmes", "Wellness protocols", "Practitioner collaboration", "Consumer education"],
+    participants: ["Individuals", "Aesthetic practitioners", "Dermatology specialists", "Regenerative clinicians", "Product developers", "Clinics"],
+    outputs: ["Skin-health plans", "Aesthetic programmes", "Regenerative protocols", "Practitioner collaboration", "Consumer education"],
     handoff: "Programme needs shape the products and tests offered across the mission.",
   },
   {
@@ -115,7 +136,7 @@ export const SOLUTION_PILLARS: SolutionPillar[] = [
     to: "/solutions/products",
     name: "Products",
     kicker: "Products",
-    num: "VI",
+    num: "VII",
     title: "Tests and everyday products that support the plan",
     intro:
       "Products should follow the evidence, not lead it. Diagnostics and personal-care products are presented with their evidence status and intended use.",
@@ -128,3 +149,9 @@ export const SOLUTION_PILLARS: SolutionPillar[] = [
     handoff: "Product use generates real-world data that returns to research and prevention.",
   },
 ];
+
+export function solutionPillar(slug: string): SolutionPillar {
+  const found = SOLUTION_PILLARS.find((p) => p.slug === slug);
+  if (!found) throw new Error(`Unknown solution pillar: ${slug}`);
+  return found;
+}

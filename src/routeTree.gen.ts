@@ -45,10 +45,11 @@ import { Route as ParticipateNewsRouteImport } from './routes/participate.news'
 import { Route as PublicationsIndexRouteImport } from './routes/publications.index'
 import { Route as PublicationsSlugRouteImport } from './routes/publications.$slug'
 import { Route as SolutionsIndexRouteImport } from './routes/solutions.index'
-import { Route as SolutionsAestheticsWellnessRouteImport } from './routes/solutions.aesthetics-wellness'
+import { Route as SolutionsChronicDiseasePreventionRouteImport } from './routes/solutions.chronic-disease-prevention'
 import { Route as SolutionsDiagnosticsBiologicalAgeRouteImport } from './routes/solutions.diagnostics-biological-age'
-import { Route as SolutionsPersonalisedHealthRouteImport } from './routes/solutions.personalised-health'
-import { Route as SolutionsPreventiveLongevityHealthRouteImport } from './routes/solutions.preventive-longevity-health'
+import { Route as SolutionsLongevityHealthManagementRouteImport } from './routes/solutions.longevity-health-management'
+import { Route as SolutionsMedicalAestheticsRouteImport } from './routes/solutions.medical-aesthetics'
+import { Route as SolutionsPersonalisedMedicineRouteImport } from './routes/solutions.personalised-medicine'
 import { Route as SolutionsProductsRouteImport } from './routes/solutions.products'
 import { Route as SolutionsRegenerativeMedicineRouteImport } from './routes/solutions.regenerative-medicine'
 import { Route as AuthenticatedMembersIndexRouteImport } from './routes/_authenticated/members.index'
@@ -244,10 +245,10 @@ const SolutionsIndexRoute = SolutionsIndexRouteImport.update({
   path: '/',
   getParentRoute: () => SolutionsRoute,
 } as any)
-const SolutionsAestheticsWellnessRoute =
-  SolutionsAestheticsWellnessRouteImport.update({
-    id: '/aesthetics-wellness',
-    path: '/aesthetics-wellness',
+const SolutionsChronicDiseasePreventionRoute =
+  SolutionsChronicDiseasePreventionRouteImport.update({
+    id: '/chronic-disease-prevention',
+    path: '/chronic-disease-prevention',
     getParentRoute: () => SolutionsRoute,
   } as any)
 const SolutionsDiagnosticsBiologicalAgeRoute =
@@ -256,16 +257,22 @@ const SolutionsDiagnosticsBiologicalAgeRoute =
     path: '/diagnostics-biological-age',
     getParentRoute: () => SolutionsRoute,
   } as any)
-const SolutionsPersonalisedHealthRoute =
-  SolutionsPersonalisedHealthRouteImport.update({
-    id: '/personalised-health',
-    path: '/personalised-health',
+const SolutionsLongevityHealthManagementRoute =
+  SolutionsLongevityHealthManagementRouteImport.update({
+    id: '/longevity-health-management',
+    path: '/longevity-health-management',
     getParentRoute: () => SolutionsRoute,
   } as any)
-const SolutionsPreventiveLongevityHealthRoute =
-  SolutionsPreventiveLongevityHealthRouteImport.update({
-    id: '/preventive-longevity-health',
-    path: '/preventive-longevity-health',
+const SolutionsMedicalAestheticsRoute =
+  SolutionsMedicalAestheticsRouteImport.update({
+    id: '/medical-aesthetics',
+    path: '/medical-aesthetics',
+    getParentRoute: () => SolutionsRoute,
+  } as any)
+const SolutionsPersonalisedMedicineRoute =
+  SolutionsPersonalisedMedicineRouteImport.update({
+    id: '/personalised-medicine',
+    path: '/personalised-medicine',
     getParentRoute: () => SolutionsRoute,
   } as any)
 const SolutionsProductsRoute = SolutionsProductsRouteImport.update({
@@ -340,10 +347,11 @@ export interface FileRoutesByFullPath {
   '/participate/members': typeof ParticipateMembersRoute
   '/participate/news': typeof ParticipateNewsRoute
   '/publications/$slug': typeof PublicationsSlugRoute
-  '/solutions/aesthetics-wellness': typeof SolutionsAestheticsWellnessRoute
+  '/solutions/chronic-disease-prevention': typeof SolutionsChronicDiseasePreventionRoute
   '/solutions/diagnostics-biological-age': typeof SolutionsDiagnosticsBiologicalAgeRoute
-  '/solutions/personalised-health': typeof SolutionsPersonalisedHealthRoute
-  '/solutions/preventive-longevity-health': typeof SolutionsPreventiveLongevityHealthRoute
+  '/solutions/longevity-health-management': typeof SolutionsLongevityHealthManagementRoute
+  '/solutions/medical-aesthetics': typeof SolutionsMedicalAestheticsRoute
+  '/solutions/personalised-medicine': typeof SolutionsPersonalisedMedicineRoute
   '/solutions/products': typeof SolutionsProductsRoute
   '/solutions/regenerative-medicine': typeof SolutionsRegenerativeMedicineRoute
   '/collaborate/': typeof CollaborateIndexRoute
@@ -383,10 +391,11 @@ export interface FileRoutesByTo {
   '/participate/members': typeof ParticipateMembersRoute
   '/participate/news': typeof ParticipateNewsRoute
   '/publications/$slug': typeof PublicationsSlugRoute
-  '/solutions/aesthetics-wellness': typeof SolutionsAestheticsWellnessRoute
+  '/solutions/chronic-disease-prevention': typeof SolutionsChronicDiseasePreventionRoute
   '/solutions/diagnostics-biological-age': typeof SolutionsDiagnosticsBiologicalAgeRoute
-  '/solutions/personalised-health': typeof SolutionsPersonalisedHealthRoute
-  '/solutions/preventive-longevity-health': typeof SolutionsPreventiveLongevityHealthRoute
+  '/solutions/longevity-health-management': typeof SolutionsLongevityHealthManagementRoute
+  '/solutions/medical-aesthetics': typeof SolutionsMedicalAestheticsRoute
+  '/solutions/personalised-medicine': typeof SolutionsPersonalisedMedicineRoute
   '/solutions/products': typeof SolutionsProductsRoute
   '/solutions/regenerative-medicine': typeof SolutionsRegenerativeMedicineRoute
   '/collaborate': typeof CollaborateIndexRoute
@@ -433,10 +442,11 @@ export interface FileRoutesById {
   '/participate/members': typeof ParticipateMembersRoute
   '/participate/news': typeof ParticipateNewsRoute
   '/publications/$slug': typeof PublicationsSlugRoute
-  '/solutions/aesthetics-wellness': typeof SolutionsAestheticsWellnessRoute
+  '/solutions/chronic-disease-prevention': typeof SolutionsChronicDiseasePreventionRoute
   '/solutions/diagnostics-biological-age': typeof SolutionsDiagnosticsBiologicalAgeRoute
-  '/solutions/personalised-health': typeof SolutionsPersonalisedHealthRoute
-  '/solutions/preventive-longevity-health': typeof SolutionsPreventiveLongevityHealthRoute
+  '/solutions/longevity-health-management': typeof SolutionsLongevityHealthManagementRoute
+  '/solutions/medical-aesthetics': typeof SolutionsMedicalAestheticsRoute
+  '/solutions/personalised-medicine': typeof SolutionsPersonalisedMedicineRoute
   '/solutions/products': typeof SolutionsProductsRoute
   '/solutions/regenerative-medicine': typeof SolutionsRegenerativeMedicineRoute
   '/collaborate/': typeof CollaborateIndexRoute
@@ -483,10 +493,11 @@ export interface FileRouteTypes {
     | '/participate/members'
     | '/participate/news'
     | '/publications/$slug'
-    | '/solutions/aesthetics-wellness'
+    | '/solutions/chronic-disease-prevention'
     | '/solutions/diagnostics-biological-age'
-    | '/solutions/personalised-health'
-    | '/solutions/preventive-longevity-health'
+    | '/solutions/longevity-health-management'
+    | '/solutions/medical-aesthetics'
+    | '/solutions/personalised-medicine'
     | '/solutions/products'
     | '/solutions/regenerative-medicine'
     | '/collaborate/'
@@ -526,10 +537,11 @@ export interface FileRouteTypes {
     | '/participate/members'
     | '/participate/news'
     | '/publications/$slug'
-    | '/solutions/aesthetics-wellness'
+    | '/solutions/chronic-disease-prevention'
     | '/solutions/diagnostics-biological-age'
-    | '/solutions/personalised-health'
-    | '/solutions/preventive-longevity-health'
+    | '/solutions/longevity-health-management'
+    | '/solutions/medical-aesthetics'
+    | '/solutions/personalised-medicine'
     | '/solutions/products'
     | '/solutions/regenerative-medicine'
     | '/collaborate'
@@ -575,10 +587,11 @@ export interface FileRouteTypes {
     | '/participate/members'
     | '/participate/news'
     | '/publications/$slug'
-    | '/solutions/aesthetics-wellness'
+    | '/solutions/chronic-disease-prevention'
     | '/solutions/diagnostics-biological-age'
-    | '/solutions/personalised-health'
-    | '/solutions/preventive-longevity-health'
+    | '/solutions/longevity-health-management'
+    | '/solutions/medical-aesthetics'
+    | '/solutions/personalised-medicine'
     | '/solutions/products'
     | '/solutions/regenerative-medicine'
     | '/collaborate/'
@@ -864,11 +877,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SolutionsIndexRouteImport
       parentRoute: typeof SolutionsRoute
     }
-    '/solutions/aesthetics-wellness': {
-      id: '/solutions/aesthetics-wellness'
-      path: '/aesthetics-wellness'
-      fullPath: '/solutions/aesthetics-wellness'
-      preLoaderRoute: typeof SolutionsAestheticsWellnessRouteImport
+    '/solutions/chronic-disease-prevention': {
+      id: '/solutions/chronic-disease-prevention'
+      path: '/chronic-disease-prevention'
+      fullPath: '/solutions/chronic-disease-prevention'
+      preLoaderRoute: typeof SolutionsChronicDiseasePreventionRouteImport
       parentRoute: typeof SolutionsRoute
     }
     '/solutions/diagnostics-biological-age': {
@@ -878,18 +891,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SolutionsDiagnosticsBiologicalAgeRouteImport
       parentRoute: typeof SolutionsRoute
     }
-    '/solutions/personalised-health': {
-      id: '/solutions/personalised-health'
-      path: '/personalised-health'
-      fullPath: '/solutions/personalised-health'
-      preLoaderRoute: typeof SolutionsPersonalisedHealthRouteImport
+    '/solutions/longevity-health-management': {
+      id: '/solutions/longevity-health-management'
+      path: '/longevity-health-management'
+      fullPath: '/solutions/longevity-health-management'
+      preLoaderRoute: typeof SolutionsLongevityHealthManagementRouteImport
       parentRoute: typeof SolutionsRoute
     }
-    '/solutions/preventive-longevity-health': {
-      id: '/solutions/preventive-longevity-health'
-      path: '/preventive-longevity-health'
-      fullPath: '/solutions/preventive-longevity-health'
-      preLoaderRoute: typeof SolutionsPreventiveLongevityHealthRouteImport
+    '/solutions/medical-aesthetics': {
+      id: '/solutions/medical-aesthetics'
+      path: '/medical-aesthetics'
+      fullPath: '/solutions/medical-aesthetics'
+      preLoaderRoute: typeof SolutionsMedicalAestheticsRouteImport
+      parentRoute: typeof SolutionsRoute
+    }
+    '/solutions/personalised-medicine': {
+      id: '/solutions/personalised-medicine'
+      path: '/personalised-medicine'
+      fullPath: '/solutions/personalised-medicine'
+      preLoaderRoute: typeof SolutionsPersonalisedMedicineRouteImport
       parentRoute: typeof SolutionsRoute
     }
     '/solutions/products': {
@@ -1048,22 +1068,25 @@ const ParticipateRouteWithChildren = ParticipateRoute._addFileChildren(
 )
 
 interface SolutionsRouteChildren {
-  SolutionsAestheticsWellnessRoute: typeof SolutionsAestheticsWellnessRoute
+  SolutionsChronicDiseasePreventionRoute: typeof SolutionsChronicDiseasePreventionRoute
   SolutionsDiagnosticsBiologicalAgeRoute: typeof SolutionsDiagnosticsBiologicalAgeRoute
-  SolutionsPersonalisedHealthRoute: typeof SolutionsPersonalisedHealthRoute
-  SolutionsPreventiveLongevityHealthRoute: typeof SolutionsPreventiveLongevityHealthRoute
+  SolutionsLongevityHealthManagementRoute: typeof SolutionsLongevityHealthManagementRoute
+  SolutionsMedicalAestheticsRoute: typeof SolutionsMedicalAestheticsRoute
+  SolutionsPersonalisedMedicineRoute: typeof SolutionsPersonalisedMedicineRoute
   SolutionsProductsRoute: typeof SolutionsProductsRoute
   SolutionsRegenerativeMedicineRoute: typeof SolutionsRegenerativeMedicineRoute
   SolutionsIndexRoute: typeof SolutionsIndexRoute
 }
 
 const SolutionsRouteChildren: SolutionsRouteChildren = {
-  SolutionsAestheticsWellnessRoute: SolutionsAestheticsWellnessRoute,
+  SolutionsChronicDiseasePreventionRoute:
+    SolutionsChronicDiseasePreventionRoute,
   SolutionsDiagnosticsBiologicalAgeRoute:
     SolutionsDiagnosticsBiologicalAgeRoute,
-  SolutionsPersonalisedHealthRoute: SolutionsPersonalisedHealthRoute,
-  SolutionsPreventiveLongevityHealthRoute:
-    SolutionsPreventiveLongevityHealthRoute,
+  SolutionsLongevityHealthManagementRoute:
+    SolutionsLongevityHealthManagementRoute,
+  SolutionsMedicalAestheticsRoute: SolutionsMedicalAestheticsRoute,
+  SolutionsPersonalisedMedicineRoute: SolutionsPersonalisedMedicineRoute,
   SolutionsProductsRoute: SolutionsProductsRoute,
   SolutionsRegenerativeMedicineRoute: SolutionsRegenerativeMedicineRoute,
   SolutionsIndexRoute: SolutionsIndexRoute,
