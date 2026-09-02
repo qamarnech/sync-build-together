@@ -1,8 +1,28 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PillarPage } from "@/components/site/PillarPage";
+import { Section, SectionHead, Tag } from "@/components/site/ui-bits";
 import { SOLUTION_PILLARS, solutionPillar } from "@/lib/solutions-pillars";
+import logoAsset from "@/assets/mr-longevity-logo.png.asset.json";
 
 const pillar = solutionPillar("products");
+
+const PRODUCTS = [
+  {
+    name: "Product 1",
+    category: "Diagnostics and Tests",
+    body: "MetaAge biological age test, a combined readout used to set and track a personal baseline.",
+  },
+  {
+    name: "Product 2",
+    category: "Diagnostics and Tests",
+    body: "Senescence detection panel covering epigenetic, inflammatory, cellular and metabolic markers.",
+  },
+  {
+    name: "Product 3",
+    category: "Wellness and Personal Care",
+    body: "Everyday skin health and recovery products supporting daily longevity routines.",
+  },
+];
 
 export const Route = createFileRoute("/solutions/products")({
   head: () => ({
@@ -16,6 +36,34 @@ export const Route = createFileRoute("/solutions/products")({
     ],
   }),
   component: () => (
-    <PillarPage pillar={pillar} backTo="/solutions" sequence={SOLUTION_PILLARS.map((p) => p.name)} />
+    <PillarPage pillar={pillar} backTo="/solutions" sequence={SOLUTION_PILLARS.map((p) => p.name)}>
+      <Section tone="white">
+        <SectionHead
+          kicker="Product range"
+          title="Products carrying the MR Longevity mark"
+          intro="Each product is presented with its category, intended use and evidence status."
+          align="left"
+        />
+        <div className="mt-8 grid gap-4 md:grid-cols-3">
+          {PRODUCTS.map((product) => (
+            <div key={product.name} className="flex flex-col rounded-2xl border border-line bg-paper p-6">
+              <div className="flex h-28 items-center justify-center rounded-xl bg-white">
+                <img
+                  src={logoAsset.url}
+                  alt={`MR Longevity logo on ${product.name}`}
+                  loading="lazy"
+                  className="h-24 w-auto object-contain"
+                />
+              </div>
+              <h3 className="mt-5 font-serif text-lg text-navy">{product.name}</h3>
+              <p className="mt-2 text-sm text-ink-soft">{product.body}</p>
+              <div className="mt-4">
+                <Tag>{product.category}</Tag>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Section>
+    </PillarPage>
   ),
 });
