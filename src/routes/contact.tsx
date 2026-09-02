@@ -113,8 +113,10 @@ const SUBJECTS = [
   "Public health programme",
   "Membership question",
   "Media or speaking",
+  "Privacy request (data rights)",
   "Other",
 ];
+
 
 type FormState = {
   name: string;
