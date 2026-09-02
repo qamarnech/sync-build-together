@@ -114,6 +114,7 @@ function PrivacyPage() {
     <div>
       <Section tone="white">
         <SectionHead
+          as="h1"
           kicker="Legal"
           title="Privacy Notice"
           intro="How we collect, use and protect personal data under the UK GDPR and the Data Protection Act 2018."

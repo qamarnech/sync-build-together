@@ -57,6 +57,7 @@ function CookiesPage() {
     <div>
       <Section tone="white">
         <SectionHead
+          as="h1"
           kicker="Legal"
           title="Cookie Notice"
           intro="We use only strictly necessary cookies and storage. No advertising, no analytics profiling, no third-party tracking."

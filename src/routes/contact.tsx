@@ -170,6 +170,7 @@ function ContactPage() {
     <div>
       <Section tone="white">
         <SectionHead
+          as="h1"
           kicker="Longevity MR Alliance"
           title="Welcome to join LONGEVITY MR alliance, where pioneers in Longevity Medicine Research gather"
         />

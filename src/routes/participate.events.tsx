@@ -28,6 +28,7 @@ function EventsPage() {
   return (
     <Section tone="white">
       <SectionHead
+        as="h1"
         kicker="Events"
         title="Where the mission convenes"
         intro="The recurring meetings that move healthy longevity forward, plus our own invitation-based collaboration roundtables."

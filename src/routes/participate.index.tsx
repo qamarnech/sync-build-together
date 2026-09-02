@@ -50,6 +50,7 @@ function ParticipateIndex() {
         <div className="relative">
           <Section tone="navy" className="bg-transparent">
             <SectionHead
+              as="h1"
               kicker="Participate"
               title="Take part in the healthy longevity mission"
               intro="Follow what is happening, join the gatherings, and meet the people building healthy longevity."

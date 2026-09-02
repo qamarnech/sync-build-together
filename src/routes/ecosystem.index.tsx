@@ -44,6 +44,7 @@ function EcosystemPage() {
     <div>
       <Section tone="navy">
         <SectionHead
+          as="h1"
           kicker="Mission architecture"
           title="One mission, many capabilities"
           intro="The mission is designed as a connected system: participants, capability areas and a continuous opportunity cycle that keeps returning evidence to the beginning."

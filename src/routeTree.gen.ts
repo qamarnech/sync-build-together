@@ -21,6 +21,7 @@ import { Route as EcosystemRouteImport } from './routes/ecosystem'
 import { Route as FounderRouteImport } from './routes/founder'
 import { Route as ParticipateRouteImport } from './routes/participate'
 import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SolutionsRouteImport } from './routes/solutions'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
@@ -117,6 +118,11 @@ const ParticipateRoute = ParticipateRouteImport.update({
 const PrivacyRoute = PrivacyRouteImport.update({
   id: '/privacy',
   path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SolutionsRoute = SolutionsRouteImport.update({
@@ -340,6 +346,7 @@ export interface FileRoutesByFullPath {
   '/founder': typeof FounderRoute
   '/participate': typeof ParticipateRouteWithChildren
   '/privacy': typeof PrivacyRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solutions': typeof SolutionsRouteWithChildren
   '/terms': typeof TermsRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
@@ -387,6 +394,7 @@ export interface FileRoutesByTo {
   '/cookies': typeof CookiesRoute
   '/founder': typeof FounderRoute
   '/privacy': typeof PrivacyRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/profile': typeof AuthenticatedProfileRoute
@@ -439,6 +447,7 @@ export interface FileRoutesById {
   '/founder': typeof FounderRoute
   '/participate': typeof ParticipateRouteWithChildren
   '/privacy': typeof PrivacyRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solutions': typeof SolutionsRouteWithChildren
   '/terms': typeof TermsRoute
   '/_authenticated/dashboard': typeof AuthenticatedDashboardRoute
@@ -492,6 +501,7 @@ export interface FileRouteTypes {
     | '/founder'
     | '/participate'
     | '/privacy'
+    | '/sitemap.xml'
     | '/solutions'
     | '/terms'
     | '/dashboard'
@@ -539,6 +549,7 @@ export interface FileRouteTypes {
     | '/cookies'
     | '/founder'
     | '/privacy'
+    | '/sitemap.xml'
     | '/terms'
     | '/dashboard'
     | '/profile'
@@ -590,6 +601,7 @@ export interface FileRouteTypes {
     | '/founder'
     | '/participate'
     | '/privacy'
+    | '/sitemap.xml'
     | '/solutions'
     | '/terms'
     | '/_authenticated/dashboard'
@@ -643,6 +655,7 @@ export interface RootRouteChildren {
   FounderRoute: typeof FounderRoute
   ParticipateRoute: typeof ParticipateRouteWithChildren
   PrivacyRoute: typeof PrivacyRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SolutionsRoute: typeof SolutionsRouteWithChildren
   TermsRoute: typeof TermsRoute
   PublicationsSlugRoute: typeof PublicationsSlugRoute
@@ -733,6 +746,13 @@ declare module '@tanstack/react-router' {
       path: '/privacy'
       fullPath: '/privacy'
       preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/solutions': {
@@ -1146,6 +1166,7 @@ const rootRouteChildren: RootRouteChildren = {
   FounderRoute: FounderRoute,
   ParticipateRoute: ParticipateRouteWithChildren,
   PrivacyRoute: PrivacyRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   SolutionsRoute: SolutionsRouteWithChildren,
   TermsRoute: TermsRoute,
   PublicationsSlugRoute: PublicationsSlugRoute,

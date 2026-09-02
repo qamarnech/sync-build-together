@@ -46,6 +46,7 @@ function MembersPage() {
   return (
     <Section tone="white">
       <SectionHead
+        as="h1"
         kicker="Meet MR Longevity Members"
         title="The people behind the mission"
         intro="Members bring expertise, projects and needs into one shared space, so collaborations start from real capability rather than chance."

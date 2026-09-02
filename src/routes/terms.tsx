@@ -65,6 +65,7 @@ function TermsPage() {
     <div>
       <Section tone="white">
         <SectionHead
+          as="h1"
           kicker="Legal"
           title="Terms of Use"
           intro="The rules for using this site, publishing member content and taking part in the mission."
