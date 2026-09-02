@@ -161,160 +161,40 @@ function ContactPage() {
           <div>
             <SectionHead
               align="left"
-              kicker="Send a message"
-              title="Tell us what you are working on"
-              intro="Share your focus and what you are looking for. Your message reaches the part of the mission best placed to answer."
+              kicker="Get in touch"
+              title="Please send us an email"
+              intro="The simplest way to reach the MR Longevity and ILMRI team is by email. We normally reply within five working days."
             />
 
-            {sent ? (
-              <div className="mt-8 rounded-2xl border border-gold/40 bg-gold/5 p-8">
-                <CheckCircle2 className="h-8 w-8 text-gold" />
-                <h3 className="mt-4 font-serif text-2xl text-navy">Thank you, your message is with us</h3>
-                <p className="mt-2 text-sm text-ink-soft">
-                  We normally reply within five working days. In the meantime you can create a member
-                  profile so we can match you with relevant people and projects.
-                </p>
-                <div className="mt-6 flex flex-wrap gap-3">
-                  <Button asChild>
-                    <a href="/auth">Create a member profile</a>
-                  </Button>
-                  <Button variant="outline" onClick={() => setSent(false)}>
-                    Send another message
-                  </Button>
-                </div>
-              </div>
-            ) : (
-              <form
-                className="mt-8 space-y-5"
-                onSubmit={(event) => {
-                  event.preventDefault();
-                  if (!valid || mutation.isPending) return;
-                  mutation.mutate(form);
-                }}
-              >
-                <div className="grid gap-5 sm:grid-cols-2">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Name</Label>
-                    <Input
-                      id="name"
-                      required
-                      value={form.name}
-                      onChange={(e) => set("name")(e.target.value)}
-                      placeholder="Your full name"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email</Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      required
-                      value={form.email}
-                      onChange={(e) => set("email")(e.target.value)}
-                      placeholder="you@organisation.com"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="organisation">Organisation</Label>
-                    <Input
-                      id="organisation"
-                      value={form.organisation}
-                      onChange={(e) => set("organisation")(e.target.value)}
-                      placeholder="University, company or institute"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="role">I am a</Label>
-                    <Select value={form.role} onValueChange={set("role")}>
-                      <SelectTrigger id="role">
-                        <SelectValue placeholder="Select what describes you" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {ROLE_TYPES.map((role) => (
-                          <SelectItem key={role.value} value={role.label}>
-                            {role.label}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="subject">Subject</Label>
-                  <Select value={form.subject} onValueChange={set("subject")}>
-                    <SelectTrigger id="subject">
-                      <SelectValue placeholder="What is your message about?" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {SUBJECTS.map((subject) => (
-                        <SelectItem key={subject} value={subject}>
-                          {subject}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div className="space-y-2">
-                  <div className="flex items-center justify-between">
-                    <Label htmlFor="message">Message</Label>
-                    <span className="text-xs text-ink-mute">{form.message.trim().length}/4000</span>
-                  </div>
-                  <Textarea
-                    id="message"
-                    required
-                    rows={7}
-                    maxLength={4000}
-                    value={form.message}
-                    onChange={(e) => set("message")(e.target.value)}
-                    placeholder="Describe your work, your question and what you are looking for."
-                  />
-                </div>
-
-                <div className="rounded-xl border border-line bg-paper p-4">
-                  <label htmlFor="consent" className="flex items-start gap-3 text-xs text-ink-soft">
-                    <input
-                      id="consent"
-                      type="checkbox"
-                      required
-                      checked={consent}
-                      onChange={(e) => setConsent(e.target.checked)}
-                      className="mt-0.5 h-4 w-4 shrink-0 accent-[oklch(0.606_0.076_72.6)]"
-                    />
-                    <span>
-                      I agree that MR Longevity and ILMRI may store and use the details above to
-                      respond to my enquiry, as described in the{" "}
-                      <a className="text-gold underline" href="/privacy">
-                        privacy notice
-                      </a>
-                      . Enquiries are kept for up to 24 months and you can ask us to delete them at any
-                      time. Please do not include health information you would rather not share.
-                    </span>
-                  </label>
-                </div>
-
-                <div className="flex flex-wrap items-center gap-4">
-                  <Button type="submit" disabled={!valid || mutation.isPending}>
-                    {mutation.isPending ? (
-                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    ) : (
-                      <Send className="mr-2 h-4 w-4" />
-                    )}
-                    {mutation.isPending ? "Sending" : "Send message"}
-                  </Button>
-
-                  <p className="text-xs text-ink-mute">
-                    We use your details only to answer your enquiry.
+            <div className="mt-8 rounded-2xl border border-line bg-paper p-8">
+              <div className="flex items-start gap-4">
+                <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gold/10 text-gold">
+                  <Mail className="h-6 w-6" />
+                </span>
+                <div>
+                  <p className="font-serif text-xl text-navy">Email us</p>
+                  <p className="mt-1 text-sm text-ink-soft">
+                    Write to us with your question, collaboration idea or partnership proposal. Please
+                    do not include health information you would rather not share.
+                  </p>
+                  <a
+                    href="mailto:mr.longevity@longevitymr.com"
+                    className="mt-4 inline-flex items-center gap-2 font-serif text-lg text-gold underline-offset-4 hover:underline"
+                  >
+                    <Mail className="h-5 w-5" />
+                    mr.longevity@longevitymr.com
+                  </a>
+                  <p className="mt-3 text-xs text-ink-mute">
+                    Your message is handled under our{" "}
+                    <a className="text-gold underline" href="/privacy">privacy notice</a>. Enquiries are
+                    kept for up to 24 months and you can ask us to delete them at any time.
                   </p>
                 </div>
-              </form>
-            )}
+              </div>
+            </div>
           </div>
 
           <aside className="space-y-4">
-
-
             <div className="rounded-2xl border border-line bg-paper p-6">
               <Tag tone="navy">Before you write</Tag>
               <ul className="mt-4 space-y-3 text-sm text-ink-soft">
