@@ -71,7 +71,7 @@ export const Route = createFileRoute("/solutions/products")({
           intro="Each product is presented with its category, intended use and evidence status."
           align="left"
         />
-        <div className="mt-8 grid gap-4 md:grid-cols-3">
+        <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {PRODUCTS.map((product) => (
             <div key={product.name} className="flex flex-col rounded-2xl border border-line bg-paper p-6">
               <div className="flex h-28 items-center justify-center rounded-xl bg-white">
@@ -84,6 +84,11 @@ export const Route = createFileRoute("/solutions/products")({
               </div>
               <h3 className="mt-5 font-serif text-lg text-navy">{product.name}</h3>
               <p className="mt-2 text-sm text-ink-soft">{product.body}</p>
+              {product.markers && (
+                <p className="mt-3 text-xs font-medium uppercase tracking-wide text-gold">
+                  Markers: {product.markers}
+                </p>
+              )}
               <div className="mt-4">
                 <Tag>{product.category}</Tag>
               </div>
