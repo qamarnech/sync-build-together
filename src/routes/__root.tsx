@@ -182,7 +182,9 @@ function RootComponent() {
           </main>
           <SiteFooter />
         </div>
+        <CookieNotice />
         <Toaster position="top-right" />
+
     </QueryClientProvider>
   );
 }
