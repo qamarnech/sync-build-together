@@ -42,6 +42,7 @@ function CollaborateOverview() {
         <div className="relative">
           <Section tone="navy" className="bg-transparent">
             <SectionHead
+              as="h1"
               kicker="Collaborate"
               title="Turning knowledge and expertise into real-world impact"
               intro="A space for turning knowledge, expertise and ideas into research, innovation, partnerships and real-world impact."

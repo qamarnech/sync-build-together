@@ -30,6 +30,7 @@ function SolutionsPage() {
     <div>
       <Section tone="navy">
         <SectionHead
+          as="h1"
           kicker="Longevity Solutions"
           title="From measurement to everyday practice"
           intro="Six connected areas that turn healthy longevity science into practical capability: measure biological ageing, reduce risk, restore function, personalise care, support wellbeing, and deliver validated products."

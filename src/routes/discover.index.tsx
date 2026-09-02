@@ -54,6 +54,7 @@ function DiscoverPage() {
         <div className="relative">
           <Section tone="navy" className="bg-transparent">
             <SectionHead
+              as="h1"
               kicker="Discover"
               title="Explore the science and focus of healthy longevity"
               intro="Three lenses into the knowledge that powers the mission: what healthy longevity means, the biology of ageing, and the scientific missions we are organised around."

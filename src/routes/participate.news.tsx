@@ -28,6 +28,7 @@ function NewsPage() {
   return (
     <Section tone="white">
       <SectionHead
+        as="h1"
         kicker="News"
         title="Where the field is moving"
         intro="A curated set of primary sources we track, research, policy, standards and funding. Each links to the original record."

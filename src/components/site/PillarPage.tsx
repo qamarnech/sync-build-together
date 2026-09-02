@@ -33,7 +33,7 @@ export function PillarPage({
   return (
     <div>
       <Section tone="navy">
-        <SectionHead kicker={pillar.kicker} num={pillar.num} title={pillar.title} intro={pillar.intro} invert />
+        <SectionHead as="h1" kicker={pillar.kicker} num={pillar.num} title={pillar.title} intro={pillar.intro} invert />
         {sequence && activeIndex >= 0 && (
           <StageChain items={sequence} activeIndex={activeIndex} className="mt-8" />
         )}

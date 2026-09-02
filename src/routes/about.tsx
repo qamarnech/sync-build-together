@@ -28,6 +28,7 @@ function AboutPage() {
     <div>
       <Section tone="white">
         <SectionHead
+          as="h1"
           kicker="About"
           title="A better pathway between science and health"
           intro="MR Longevity exists to shorten the distance between what science discovers and what people can actually benefit from."
