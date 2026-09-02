@@ -253,7 +253,7 @@ function ContactPage() {
               <a href="/auth">Join the alliance</a>
             </Button>
             <Button asChild variant="outline" className="border-white/30 bg-white/5 text-gold-pale hover:bg-white/10">
-              <a href="#contact-form">Send a message</a>
+              <a href="mailto:mr.longevity@longevitymr.com">Send an email</a>
             </Button>
           </div>
         </div>
