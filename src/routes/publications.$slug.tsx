@@ -28,7 +28,7 @@ export const Route = createFileRoute("/publications/$slug")({
     const description = citation(publication);
     return {
       meta: [
-        { title: `${publication.title}, Qiang Fu` },
+        { title: `${publication.title}, Daniel Qiang Fu` },
         { name: "description", content: description },
         { property: "og:title", content: publication.title },
         { property: "og:description", content: description },
@@ -45,7 +45,7 @@ export const Route = createFileRoute("/publications/$slug")({
             "@type": "ScholarlyArticle",
             headline: publication.title,
             datePublished: publication.year,
-            author: { "@type": "Person", name: "Qiang Fu" },
+            author: { "@type": "Person", name: "Daniel Qiang Fu" },
             isPartOf: { "@type": "Periodical", name: publication.journal },
             url,
             sameAs: publication.href,
