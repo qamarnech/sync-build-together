@@ -126,8 +126,49 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
+const CHUNK_RELOAD_KEY = "chunk-reload-at";
+
+function useStaleChunkRecovery() {
+  useEffect(() => {
+    const isChunkError = (message?: string) =>
+      !!message &&
+      (message.includes("Failed to fetch dynamically imported module") ||
+        message.includes("error loading dynamically imported module") ||
+        message.includes("Importing a module script failed"));
+
+    const recover = () => {
+      const last = Number(sessionStorage.getItem(CHUNK_RELOAD_KEY) ?? 0);
+      // Only auto-reload once per minute to avoid reload loops.
+      if (Date.now() - last < 60_000) return;
+      sessionStorage.setItem(CHUNK_RELOAD_KEY, String(Date.now()));
+      window.location.reload();
+    };
+
+    const onError = (event: ErrorEvent) => {
+      if (isChunkError(event.message)) recover();
+    };
+    const onRejection = (event: PromiseRejectionEvent) => {
+      const reason = event.reason;
+      if (isChunkError(typeof reason === "string" ? reason : reason?.message)) recover();
+    };
+    const onPreloadError = () => recover();
+
+    window.addEventListener("error", onError);
+    window.addEventListener("unhandledrejection", onRejection);
+    window.addEventListener("vite:preloadError", onPreloadError);
+    return () => {
+      window.removeEventListener("error", onError);
+      window.removeEventListener("unhandledrejection", onRejection);
+      window.removeEventListener("vite:preloadError", onPreloadError);
+    };
+  }, []);
+}
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  useStaleChunkRecovery();
+
+
 
   return (
     <QueryClientProvider client={queryClient}>
