@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { Outlet, createFileRoute, useNavigate } from "@tanstack/react-router";
+import { useServerFn } from "@tanstack/react-start";
 import { useAuth } from "@/hooks/useAuth";
-import { supabase } from "@/integrations/supabase/client";
+import { claimMyProfile } from "@/lib/profile-claim.functions";
 
 export const Route = createFileRoute("/_authenticated")({
   component: AuthenticatedLayout,
