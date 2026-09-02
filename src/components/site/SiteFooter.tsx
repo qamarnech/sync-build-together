@@ -28,10 +28,18 @@ export function SiteFooter() {
         </div>
 
       </div>
-      <div className="mx-auto mt-10 max-w-6xl border-t border-white/10 pt-6 text-xs">
-        © {new Date().getFullYear()} MR.Longevity & ILMRI (International Longevity Medicine
-        Research Institute). All Rights Reserved.
+      <div className="mx-auto mt-10 flex max-w-6xl flex-col gap-3 border-t border-white/10 pt-6 text-xs sm:flex-row sm:items-center sm:justify-between">
+        <p>
+          © {new Date().getFullYear()} MR.Longevity & ILMRI (International Longevity Medicine
+          Research Institute). All Rights Reserved.
+        </p>
+        <nav className="flex flex-wrap gap-4">
+          <Link to="/privacy">Privacy Notice</Link>
+          <Link to="/cookies">Cookies</Link>
+          <Link to="/terms">Terms of Use</Link>
+        </nav>
       </div>
+
     </footer>
   );
 }
