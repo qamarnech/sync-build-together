@@ -27,11 +27,13 @@ export const Route = createFileRoute("/participate/")({
   component: ParticipateIndex,
 });
 
-const SUMMARY = [
-  { name: "News", count: LONGEVITY_NEWS.length, body: "Sources and signals shaping healthy longevity worldwide." },
-  { name: "Events", count: EVENTS.length, body: "Where the mission convenes across science, clinic and capital." },
-  { name: "Meet MR Longevity Members", count: 4, body: "The people taking part, and how to join them." },
-];
+const SUMMARY: Record<string, { count: string; body: string }> = {
+  community: { count: "Open to all", body: "Understand the science, act on it, share experience and progress together." },
+  news: { count: `${LONGEVITY_NEWS.length} entries`, body: "Sources and signals shaping healthy longevity worldwide." },
+  events: { count: `${EVENTS.length} entries`, body: "Where the mission convenes across science, clinic and capital." },
+  members: { count: "Member directory", body: "The people taking part, and how to join them." },
+};
+
 
 function ParticipateIndex() {
   return (
@@ -59,22 +61,23 @@ function ParticipateIndex() {
 
       <Section tone="white">
 
-        <div className="mt-10 grid gap-4 md:grid-cols-3">
-          {PARTICIPATE_ITEMS.map((item, i) => (
+        <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          {PARTICIPATE_ITEMS.map((item) => (
             <Link
               key={item.slug}
               to={item.to}
               className="group rounded-xl border border-line bg-paper p-6 transition-colors hover:border-gold/50"
             >
-              <Tag tone="gold">{SUMMARY[i]!.count} entries</Tag>
+              <Tag tone="gold">{SUMMARY[item.slug]!.count}</Tag>
               <h3 className="mt-4 font-serif text-xl text-navy">{item.name}</h3>
-              <p className="mt-2 text-sm text-ink-soft">{SUMMARY[i]!.body}</p>
+              <p className="mt-2 text-sm text-ink-soft">{SUMMARY[item.slug]!.body}</p>
               <span className="mt-4 inline-flex items-center gap-1 text-sm text-gold">
                 Explore <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </span>
             </Link>
           ))}
         </div>
+
       </Section>
     </div>
   );

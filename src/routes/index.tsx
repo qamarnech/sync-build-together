@@ -333,8 +333,8 @@ function Index() {
           </h2>
           <Flourish />
           <p className="text-gold-pale/80">
-            Create your member profile, publish the project you need help with, and let MR Match
-            connect your needs with the capabilities of the mission.
+            Create your member profile, join the Action Community, publish the project you need help
+            with, and let MR Match connect your needs with the capabilities of the mission.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Button asChild size="lg" className="bg-gold text-white hover:bg-gold-light">
@@ -348,9 +348,18 @@ function Index() {
               variant="outline"
               className="border-gold-pale/40 bg-transparent text-gold-pale hover:bg-white/10 hover:text-white"
             >
+              <Link to="/participate/community">Action Community</Link>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="border-gold-pale/40 bg-transparent text-gold-pale hover:bg-white/10 hover:text-white"
+            >
               <Link to="/projects">Browse projects</Link>
             </Button>
           </div>
+
         </div>
       </section>
     </div>

@@ -2,6 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, BookOpen, Compass, FlaskConical, MessagesSquare, ShieldCheck, Users } from "lucide-react";
 import { Section, SectionHead, Tag, Flourish, Kicker } from "@/components/site/ui-bits";
 import { Button } from "@/components/ui/button";
+import { useAuth } from "@/hooks/useAuth";
+
 
 const URL = "https://mrlongevity-ecosystem.lovable.app/participate/community";
 const DESCRIPTION =
@@ -13,82 +15,100 @@ const HOW_STEPS = [
     kicker: "Understand",
     title: "Evidence-based knowledge",
     body: "Members receive accessible updates and discussions covering the biology of ageing, biomarkers and biological age, nutrition and metabolic health, movement and physical capacity, sleep and recovery, mental and social wellbeing, preventive health, regenerative medicine, new health technologies, and data and AI in longevity. Research is presented with its evidence level, limitations and practical relevance.",
+    link: { to: "/discover/biology-of-aging", label: "Start with the biology of ageing" },
   },
   {
     num: "02",
     kicker: "Act",
     title: "Turn understanding into responsible action",
     body: "Members can choose appropriate actions related to nutrition, exercise and movement, sleep, recovery, stress management, social connection, preventive-health routines, health monitoring, and learning and reflection. Members may keep a private personal record or voluntarily share selected experiences with the community. The community does not prescribe medical treatments; clinical decisions remain between individuals and qualified healthcare professionals.",
+    link: { to: "/discover/healthy-longevity", label: "See what healthy longevity means in practice" },
   },
   {
     num: "03",
     kicker: "Share",
     title: "Learn through experience",
     body: "Members can share actions they have tried, what they observed, challenges they encountered, questions arising from their experience, research or technologies they are exploring, and lessons that may benefit other members. Personal experiences are clearly described as experiences, not scientific proof or medical recommendations.",
+    link: { to: "/profile", label: "Share it from your member profile" },
   },
   {
     num: "04",
     kicker: "Progress Together",
     title: "A collaborative learning environment",
     body: "The community functions as an open learning network where members can participate in topic discussions, attend expert sessions, join community challenges, explore research and projects, find relevant collaborators, contribute professional expertise, and learn from different disciplines and cultures.",
+    link: { to: "/projects", label: "Find collaborators on open projects" },
   },
-];
+] as const;
 
 const ACTIVITIES = [
   {
     icon: BookOpen,
     title: "Research Briefings",
     detail: "Accessible interpretations of important developments in longevity science.",
+    to: "/participate/news",
+    action: "Read the briefings",
   },
   {
     icon: MessagesSquare,
     title: "Expert Conversations",
     detail: "Sessions with researchers, clinicians, innovators and other specialists.",
+    to: "/participate/events",
+    action: "See upcoming sessions",
   },
   {
     icon: Compass,
     title: "Action Journals",
     detail: "Optional structured records covering personal healthspan actions and reflections.",
+    to: "/profile",
+    action: "Keep yours on your profile",
   },
   {
     icon: Users,
     title: "Community Challenges",
     detail: "Time-limited activities related to movement, sleep, nutrition, learning or another responsible health behaviour.",
+    to: "/dashboard",
+    action: "Track your participation",
   },
   {
     icon: FlaskConical,
     title: "Questions and Discussions",
     detail: "Evidence-aware conversations about research, interventions and technologies.",
+    to: "/participate/members",
+    action: "Meet the people answering them",
   },
   {
     icon: ArrowRight,
     title: "Projects and Collaboration",
     detail: "Opportunities to participate in or contribute to relevant MR Longevity projects.",
+    to: "/collaborate/projects",
+    action: "Browse collaboration routes",
   },
-];
+] as const;
 
 const WHO_CAN_JOIN = [
-  "Individuals interested in healthier ageing",
-  "Researchers and scientists",
-  "Clinicians and healthcare professionals",
-  "Nutrition, movement and wellbeing specialists",
-  "Longevity and biotechnology innovators",
-  "Data and AI professionals",
-  "Universities and research institutions",
-  "Investors and strategic partners",
-  "Public-health organisations",
-];
+  { label: "Individuals interested in healthier ageing", to: "/discover/healthy-longevity" },
+  { label: "Researchers and scientists", to: "/discover/scientific-missions" },
+  { label: "Clinicians and healthcare professionals", to: "/ecosystem/clinical-validation" },
+  { label: "Nutrition, movement and wellbeing specialists", to: "/discover/healthy-longevity" },
+  { label: "Longevity and biotechnology innovators", to: "/collaborate/translation-innovation" },
+  { label: "Data and AI professionals", to: "/collaborate/opportunities" },
+  { label: "Universities and research institutions", to: "/ecosystem/science-discovery" },
+  { label: "Investors and strategic partners", to: "/ecosystem/investment-commercial" },
+  { label: "Public-health organisations", to: "/collaborate/partners" },
+] as const;
 
 const GAINS = [
-  "Develop a structured understanding of healthy longevity",
-  "Follow relevant scientific developments",
-  "Discover evidence-based practices",
-  "Record personal actions and reflections",
-  "Learn from experts and other participants",
-  "Join discussions, activities and projects",
-  "Connect with people who share relevant interests",
-  "Contribute knowledge, experience or capabilities",
-];
+  { label: "Develop a structured understanding of healthy longevity", to: "/discover" },
+  { label: "Follow relevant scientific developments", to: "/participate/news" },
+  { label: "Discover evidence-based practices", to: "/discover/scientific-missions" },
+  { label: "Record personal actions and reflections", to: "/profile" },
+  { label: "Learn from experts and other participants", to: "/participate/events" },
+  { label: "Join discussions, activities and projects", to: "/projects" },
+  { label: "Connect with people who share relevant interests", to: "/members" },
+  { label: "Contribute knowledge, experience or capabilities", to: "/collaborate" },
+] as const;
+
+
 
 const PRINCIPLES = [
   {
@@ -138,7 +158,10 @@ export const Route = createFileRoute("/participate/community")({
 });
 
 function CommunityPage() {
+  const { user } = useAuth();
+  const signedIn = Boolean(user);
   return (
+
     <div>
       {/* Hero */}
       <section className="relative overflow-hidden bg-navy px-6 py-20 text-white md:py-28">
@@ -155,10 +178,15 @@ function CommunityPage() {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Button asChild className="bg-gold text-white hover:bg-gold-light">
-              <Link to="/auth" search={{ mode: "signup" }}>
-                Join the Community
-              </Link>
+              {signedIn ? (
+                <Link to="/dashboard">Go to your dashboard</Link>
+              ) : (
+                <Link to="/auth" search={{ mode: "signup" }}>
+                  Join the Community
+                </Link>
+              )}
             </Button>
+
             <Button
               asChild
               variant="outline"
@@ -259,7 +287,7 @@ function CommunityPage() {
         />
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           {HOW_STEPS.map((step) => (
-            <div key={step.num} className="rounded-2xl border border-line bg-white p-7">
+            <div key={step.num} className="flex flex-col rounded-2xl border border-line bg-white p-7">
               <div className="flex items-center gap-3">
                 <span className="font-serif text-3xl font-bold text-gold/40">{step.num}</span>
                 <div>
@@ -268,6 +296,13 @@ function CommunityPage() {
                 </div>
               </div>
               <p className="mt-4 text-sm leading-relaxed text-ink-soft">{step.body}</p>
+              <Link
+                to={step.link.to}
+                className="group mt-auto inline-flex items-center gap-1 pt-5 text-sm font-semibold text-navy transition-colors hover:text-gold"
+              >
+                {step.link.label}
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
             </div>
           ))}
         </div>
@@ -279,18 +314,53 @@ function CommunityPage() {
           kicker="Activities"
           num="04"
           title="Concrete activities, not an abstract idea"
-          intro="The community shows up as things members can actually do."
+          intro="The community shows up as things members can actually do. Every activity links to a live part of the platform."
         />
         <div className="mt-10 grid gap-4 md:grid-cols-3">
           {ACTIVITIES.map((activity) => (
-            <div
+            <Link
               key={activity.title}
-              className="rounded-2xl border border-line bg-paper p-6 transition-colors hover:border-gold/50"
+              to={activity.to}
+              className="group flex flex-col rounded-2xl border border-line bg-paper p-6 transition-colors hover:border-gold/50"
             >
               <activity.icon className="h-6 w-6 text-gold" />
               <h3 className="mt-4 font-serif text-lg font-semibold text-navy">{activity.title}</h3>
               <p className="mt-2 text-sm text-ink-soft">{activity.detail}</p>
-            </div>
+              <span className="mt-auto inline-flex items-center gap-1 pt-4 text-sm text-gold">
+                {activity.action}
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </span>
+            </Link>
+          ))}
+        </div>
+      </Section>
+
+      {/* Your profile in the community */}
+      <Section tone="navy">
+        <SectionHead
+          kicker="Your profile"
+          title="The community runs on member profiles"
+          intro="What you record on your profile is what makes collaboration possible. Your expertise, needs and interests decide which projects, briefings and people the platform puts in front of you."
+          invert
+        />
+        <div className="mt-10 grid gap-4 md:grid-cols-4">
+          {[
+            { to: "/profile", title: "Set up your profile", body: "Identity, expertise, interests and what you are looking for." },
+            { to: "/dashboard", title: "Your dashboard", body: "Your projects, memberships and MR Match suggestions in one place." },
+            { to: "/projects", title: "Projects you can join", body: "Open collaborations looking for the capabilities you hold." },
+            { to: "/members", title: "Member directory", body: "Find people whose work meets your questions." },
+          ].map((card) => (
+            <Link
+              key={card.to}
+              to={card.to}
+              className="group rounded-2xl border border-white/15 bg-white/5 p-6 transition-colors hover:border-gold/50"
+            >
+              <p className="font-serif text-lg font-semibold text-white">{card.title}</p>
+              <p className="mt-2 text-sm text-gold-pale/70">{card.body}</p>
+              <span className="mt-4 inline-flex items-center gap-1 text-sm text-gold">
+                Open <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </span>
+            </Link>
           ))}
         </div>
       </Section>
@@ -305,13 +375,15 @@ function CommunityPage() {
         />
         <div className="mt-8 grid gap-3 sm:grid-cols-2 md:grid-cols-3">
           {WHO_CAN_JOIN.map((who) => (
-            <div
-              key={who}
-              className="flex items-center gap-2 rounded-xl border border-line bg-white px-4 py-3 text-sm text-ink-soft"
+            <Link
+              key={who.label}
+              to={who.to}
+              className="group flex items-center gap-2 rounded-xl border border-line bg-white px-4 py-3 text-sm text-ink-soft transition-colors hover:border-gold/50 hover:text-navy"
             >
               <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
-              {who}
-            </div>
+              {who.label}
+              <ArrowRight className="ml-auto h-4 w-4 shrink-0 text-gold opacity-0 transition-opacity group-hover:opacity-100" />
+            </Link>
           ))}
         </div>
       </Section>
@@ -327,15 +399,18 @@ function CommunityPage() {
         />
         <div className="mt-8 grid gap-3 md:grid-cols-2">
           {GAINS.map((gain) => (
-            <div
-              key={gain}
-              className="flex items-start gap-3 rounded-xl border border-line bg-paper p-4 text-sm text-ink-soft"
+            <Link
+              key={gain.label}
+              to={gain.to}
+              className="group flex items-start gap-3 rounded-xl border border-line bg-paper p-4 text-sm text-ink-soft transition-colors hover:border-gold/50 hover:text-navy"
             >
               <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
-              {gain}
-            </div>
+              {gain.label}
+              <ArrowRight className="ml-auto mt-0.5 h-4 w-4 shrink-0 text-gold opacity-0 transition-opacity group-hover:opacity-100" />
+            </Link>
           ))}
         </div>
+
         <p className="mt-6 text-xs text-ink-mute">
           Participation does not extend life, reverse biological age or prevent disease.
         </p>
@@ -383,29 +458,53 @@ function CommunityPage() {
       {/* Join */}
       <Section tone="navy">
         <SectionHead
-          kicker="Join the community"
+          kicker={signedIn ? "You are in" : "Join the community"}
           title="Learn. Act. Share. Progress together."
-          intro="Create your MR Longevity profile, select the subjects that matter to you and become part of an international community working towards healthier, longer lives."
+          intro={
+            signedIn
+              ? "Your profile is your place in the community. Keep it current so the right people, projects and briefings reach you."
+              : "Create your MR Longevity profile, select the subjects that matter to you and become part of an international community working towards healthier, longer lives."
+          }
           invert
         />
         <div className="mt-8 flex flex-wrap justify-center gap-3">
-          <Button asChild className="bg-gold text-white hover:bg-gold-light">
-            <Link to="/auth" search={{ mode: "signup" }}>
-              Join the Community
-            </Link>
-          </Button>
-          <Button
-            asChild
-            variant="outline"
-            className="border-white/30 bg-transparent text-white hover:bg-white/10"
-          >
-            <Link to="/auth">Sign In</Link>
-          </Button>
+          {signedIn ? (
+            <>
+              <Button asChild className="bg-gold text-white hover:bg-gold-light">
+                <Link to="/dashboard">Go to your dashboard</Link>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                className="border-white/30 bg-transparent text-white hover:bg-white/10"
+              >
+                <Link to="/profile">Update your profile</Link>
+              </Button>
+            </>
+          ) : (
+            <>
+              <Button asChild className="bg-gold text-white hover:bg-gold-light">
+                <Link to="/auth" search={{ mode: "signup" }}>
+                  Join the Community
+                </Link>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                className="border-white/30 bg-transparent text-white hover:bg-white/10"
+              >
+                <Link to="/auth">Sign In</Link>
+              </Button>
+            </>
+          )}
         </div>
         <p className="mt-5 text-center text-sm text-gold-pale/70">
-          Already a member? Sign in to access community discussions, activities and projects.
+          {signedIn
+            ? "Community discussions, activities and projects are open to you."
+            : "Already a member? Sign in to access community discussions, activities and projects."}
         </p>
       </Section>
+
     </div>
   );
 }
