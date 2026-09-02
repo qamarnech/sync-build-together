@@ -178,10 +178,15 @@ function CommunityPage() {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Button asChild className="bg-gold text-white hover:bg-gold-light">
-              <Link to="/auth" search={{ mode: "signup" }}>
-                Join the Community
-              </Link>
+              {signedIn ? (
+                <Link to="/dashboard">Go to your dashboard</Link>
+              ) : (
+                <Link to="/auth" search={{ mode: "signup" }}>
+                  Join the Community
+                </Link>
+              )}
             </Button>
+
             <Button
               asChild
               variant="outline"
