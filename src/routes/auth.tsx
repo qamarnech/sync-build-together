@@ -169,10 +169,24 @@ function AuthPage() {
               required
             />
           </div>
+          {mode === "signup" && (
+            <p className="text-xs text-ink-mute">
+              By creating an account you agree to the{" "}
+              <a className="text-gold underline" href="/terms">
+                terms of use
+              </a>{" "}
+              and confirm you have read the{" "}
+              <a className="text-gold underline" href="/privacy">
+                privacy notice
+              </a>
+              . You control what your profile publishes and can delete your account at any time.
+            </p>
+          )}
           <Button type="submit" disabled={busy} className="w-full bg-navy text-white hover:bg-navy-2">
             {busy ? "Please wait…" : mode === "signup" ? "Create account" : "Sign in"}
           </Button>
         </form>
+
 
         <Button variant="outline" className="mt-3 w-full" onClick={googleSignIn}>
           Continue with Google
