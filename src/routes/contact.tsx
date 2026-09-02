@@ -199,7 +199,7 @@ function ContactPage() {
         </div>
       </Section>
 
-      <Section id="message" tone="white">
+      <Section id="contact-form" tone="white">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]">
           <div>
             <SectionHead
@@ -423,7 +423,7 @@ function ContactPage() {
               <a href="/auth">Join the alliance</a>
             </Button>
             <Button asChild variant="outline" className="border-white/30 bg-white/5 text-gold-pale hover:bg-white/10">
-              <a href="#message">Send a message</a>
+              <a href="#contact-form">Send a message</a>
             </Button>
           </div>
         </div>
