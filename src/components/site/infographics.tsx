@@ -79,6 +79,8 @@ export function TranslationFlywheel({ className }: { className?: string }) {
               onMouseEnter={() => setActive(i)}
               onFocus={() => setActive(i)}
               tabIndex={0}
+              role="button"
+              aria-label={`Show stage: ${stage.label}`}
               className="cursor-pointer outline-none"
             >
               <line
@@ -359,7 +361,16 @@ export function ParticipantOrbit({
         const y = c + Math.sin(a) * r;
         const on = i === active;
         return (
-          <g key={label} onClick={() => onSelect(i)} onMouseEnter={() => onSelect(i)} className="cursor-pointer">
+          <g
+            key={label}
+            onClick={() => onSelect(i)}
+            onMouseEnter={() => onSelect(i)}
+            onFocus={() => onSelect(i)}
+            tabIndex={0}
+            role="button"
+            aria-label={`Show: ${label}`}
+            className="cursor-pointer outline-none"
+          >
             <line
               x1={c + Math.cos(a) * 54}
               y1={c + Math.sin(a) * 54}
@@ -437,7 +448,16 @@ export function CycleWheel({
         const y = c + Math.sin(a) * r;
         const on = i === active;
         return (
-          <g key={label} onClick={() => onSelect(i)} onMouseEnter={() => onSelect(i)} className="cursor-pointer">
+          <g
+            key={label}
+            onClick={() => onSelect(i)}
+            onMouseEnter={() => onSelect(i)}
+            onFocus={() => onSelect(i)}
+            tabIndex={0}
+            role="button"
+            aria-label={`Show: ${label}`}
+            className="cursor-pointer outline-none"
+          >
             <circle cx={x} cy={y} r={on ? 24 : 21} className={on ? "fill-navy" : "fill-white"} />
             <circle cx={x} cy={y} r={on ? 24 : 21} fill="none" className="text-gold/60" stroke="currentColor" strokeWidth="1" />
             <text x={x} y={y + 3.5} textAnchor="middle" className={cn("text-[8.5px] font-semibold", on ? "fill-gold-light" : "fill-navy")}>
