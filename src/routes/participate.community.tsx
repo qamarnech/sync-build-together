@@ -448,29 +448,53 @@ function CommunityPage() {
       {/* Join */}
       <Section tone="navy">
         <SectionHead
-          kicker="Join the community"
+          kicker={signedIn ? "You are in" : "Join the community"}
           title="Learn. Act. Share. Progress together."
-          intro="Create your MR Longevity profile, select the subjects that matter to you and become part of an international community working towards healthier, longer lives."
+          intro={
+            signedIn
+              ? "Your profile is your place in the community. Keep it current so the right people, projects and briefings reach you."
+              : "Create your MR Longevity profile, select the subjects that matter to you and become part of an international community working towards healthier, longer lives."
+          }
           invert
         />
         <div className="mt-8 flex flex-wrap justify-center gap-3">
-          <Button asChild className="bg-gold text-white hover:bg-gold-light">
-            <Link to="/auth" search={{ mode: "signup" }}>
-              Join the Community
-            </Link>
-          </Button>
-          <Button
-            asChild
-            variant="outline"
-            className="border-white/30 bg-transparent text-white hover:bg-white/10"
-          >
-            <Link to="/auth">Sign In</Link>
-          </Button>
+          {signedIn ? (
+            <>
+              <Button asChild className="bg-gold text-white hover:bg-gold-light">
+                <Link to="/dashboard">Go to your dashboard</Link>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                className="border-white/30 bg-transparent text-white hover:bg-white/10"
+              >
+                <Link to="/profile">Update your profile</Link>
+              </Button>
+            </>
+          ) : (
+            <>
+              <Button asChild className="bg-gold text-white hover:bg-gold-light">
+                <Link to="/auth" search={{ mode: "signup" }}>
+                  Join the Community
+                </Link>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                className="border-white/30 bg-transparent text-white hover:bg-white/10"
+              >
+                <Link to="/auth">Sign In</Link>
+              </Button>
+            </>
+          )}
         </div>
         <p className="mt-5 text-center text-sm text-gold-pale/70">
-          Already a member? Sign in to access community discussions, activities and projects.
+          {signedIn
+            ? "Community discussions, activities and projects are open to you."
+            : "Already a member? Sign in to access community discussions, activities and projects."}
         </p>
       </Section>
+
     </div>
   );
 }
