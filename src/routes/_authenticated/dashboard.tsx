@@ -62,6 +62,10 @@ function DashboardPage() {
             <Button asChild variant="outline">
               <Link to="/projects/new">Propose a project</Link>
             </Button>
+            <Button asChild variant="outline">
+              <Link to="/participate/community">Action Community</Link>
+            </Button>
+
           </div>
         </div>
 
