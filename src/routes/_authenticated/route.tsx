@@ -11,6 +11,7 @@ export const Route = createFileRoute("/_authenticated")({
 function AuthenticatedLayout() {
   const { user, loading } = useAuth();
   const navigate = useNavigate();
+  const claimProfile = useServerFn(claimMyProfile);
 
   useEffect(() => {
     if (!loading && !user) void navigate({ to: "/auth" });
@@ -18,8 +19,8 @@ function AuthenticatedLayout() {
 
   useEffect(() => {
     if (!user) return;
-    void supabase.rpc("claim_my_profile");
-  }, [user]);
+    void claimProfile({ data: undefined }).catch(() => undefined);
+  }, [user, claimProfile]);
 
   if (loading || !user) {
     return (
