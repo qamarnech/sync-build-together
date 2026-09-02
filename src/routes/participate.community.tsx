@@ -106,7 +106,7 @@ const GAINS = [
   { label: "Contribute knowledge, experience or capabilities", to: "/collaborate" },
 ] as const;
 
-];
+
 
 const PRINCIPLES = [
   {
