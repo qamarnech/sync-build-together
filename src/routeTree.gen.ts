@@ -19,6 +19,7 @@ import { Route as DiscoverRouteImport } from './routes/discover'
 import { Route as EcosystemRouteImport } from './routes/ecosystem'
 import { Route as FounderRouteImport } from './routes/founder'
 import { Route as ParticipateRouteImport } from './routes/participate'
+import { Route as SolutionsRouteImport } from './routes/solutions'
 import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
 import { Route as AuthenticatedProfileRouteImport } from './routes/_authenticated/profile'
 import { Route as CollaborateIndexRouteImport } from './routes/collaborate.index'
@@ -43,6 +44,13 @@ import { Route as ParticipateMembersRouteImport } from './routes/participate.mem
 import { Route as ParticipateNewsRouteImport } from './routes/participate.news'
 import { Route as PublicationsIndexRouteImport } from './routes/publications.index'
 import { Route as PublicationsSlugRouteImport } from './routes/publications.$slug'
+import { Route as SolutionsIndexRouteImport } from './routes/solutions.index'
+import { Route as SolutionsAestheticsWellnessRouteImport } from './routes/solutions.aesthetics-wellness'
+import { Route as SolutionsDiagnosticsBiologicalAgeRouteImport } from './routes/solutions.diagnostics-biological-age'
+import { Route as SolutionsPersonalisedHealthRouteImport } from './routes/solutions.personalised-health'
+import { Route as SolutionsPreventiveLongevityHealthRouteImport } from './routes/solutions.preventive-longevity-health'
+import { Route as SolutionsProductsRouteImport } from './routes/solutions.products'
+import { Route as SolutionsRegenerativeMedicineRouteImport } from './routes/solutions.regenerative-medicine'
 import { Route as AuthenticatedMembersIndexRouteImport } from './routes/_authenticated/members.index'
 import { Route as AuthenticatedMembersProfileIdRouteImport } from './routes/_authenticated/members.$profileId'
 import { Route as AuthenticatedProjectsIndexRouteImport } from './routes/_authenticated/projects.index'
@@ -96,6 +104,11 @@ const FounderRoute = FounderRouteImport.update({
 const ParticipateRoute = ParticipateRouteImport.update({
   id: '/participate',
   path: '/participate',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SolutionsRoute = SolutionsRouteImport.update({
+  id: '/solutions',
+  path: '/solutions',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthenticatedDashboardRoute = AuthenticatedDashboardRouteImport.update({
@@ -226,6 +239,46 @@ const PublicationsSlugRoute = PublicationsSlugRouteImport.update({
   path: '/publications/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SolutionsIndexRoute = SolutionsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => SolutionsRoute,
+} as any)
+const SolutionsAestheticsWellnessRoute =
+  SolutionsAestheticsWellnessRouteImport.update({
+    id: '/aesthetics-wellness',
+    path: '/aesthetics-wellness',
+    getParentRoute: () => SolutionsRoute,
+  } as any)
+const SolutionsDiagnosticsBiologicalAgeRoute =
+  SolutionsDiagnosticsBiologicalAgeRouteImport.update({
+    id: '/diagnostics-biological-age',
+    path: '/diagnostics-biological-age',
+    getParentRoute: () => SolutionsRoute,
+  } as any)
+const SolutionsPersonalisedHealthRoute =
+  SolutionsPersonalisedHealthRouteImport.update({
+    id: '/personalised-health',
+    path: '/personalised-health',
+    getParentRoute: () => SolutionsRoute,
+  } as any)
+const SolutionsPreventiveLongevityHealthRoute =
+  SolutionsPreventiveLongevityHealthRouteImport.update({
+    id: '/preventive-longevity-health',
+    path: '/preventive-longevity-health',
+    getParentRoute: () => SolutionsRoute,
+  } as any)
+const SolutionsProductsRoute = SolutionsProductsRouteImport.update({
+  id: '/products',
+  path: '/products',
+  getParentRoute: () => SolutionsRoute,
+} as any)
+const SolutionsRegenerativeMedicineRoute =
+  SolutionsRegenerativeMedicineRouteImport.update({
+    id: '/regenerative-medicine',
+    path: '/regenerative-medicine',
+    getParentRoute: () => SolutionsRoute,
+  } as any)
 const AuthenticatedMembersIndexRoute =
   AuthenticatedMembersIndexRouteImport.update({
     id: '/members/',
@@ -267,6 +320,7 @@ export interface FileRoutesByFullPath {
   '/ecosystem': typeof EcosystemRouteWithChildren
   '/founder': typeof FounderRoute
   '/participate': typeof ParticipateRouteWithChildren
+  '/solutions': typeof SolutionsRouteWithChildren
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/profile': typeof AuthenticatedProfileRoute
   '/collaborate/opportunities': typeof CollaborateOpportunitiesRoute
@@ -286,11 +340,18 @@ export interface FileRoutesByFullPath {
   '/participate/members': typeof ParticipateMembersRoute
   '/participate/news': typeof ParticipateNewsRoute
   '/publications/$slug': typeof PublicationsSlugRoute
+  '/solutions/aesthetics-wellness': typeof SolutionsAestheticsWellnessRoute
+  '/solutions/diagnostics-biological-age': typeof SolutionsDiagnosticsBiologicalAgeRoute
+  '/solutions/personalised-health': typeof SolutionsPersonalisedHealthRoute
+  '/solutions/preventive-longevity-health': typeof SolutionsPreventiveLongevityHealthRoute
+  '/solutions/products': typeof SolutionsProductsRoute
+  '/solutions/regenerative-medicine': typeof SolutionsRegenerativeMedicineRoute
   '/collaborate/': typeof CollaborateIndexRoute
   '/discover/': typeof DiscoverIndexRoute
   '/ecosystem/': typeof EcosystemIndexRoute
   '/participate/': typeof ParticipateIndexRoute
   '/publications/': typeof PublicationsIndexRoute
+  '/solutions/': typeof SolutionsIndexRoute
   '/members/$profileId': typeof AuthenticatedMembersProfileIdRoute
   '/projects/$projectId': typeof AuthenticatedProjectsProjectIdRoute
   '/projects/new': typeof AuthenticatedProjectsNewRoute
@@ -322,11 +383,18 @@ export interface FileRoutesByTo {
   '/participate/members': typeof ParticipateMembersRoute
   '/participate/news': typeof ParticipateNewsRoute
   '/publications/$slug': typeof PublicationsSlugRoute
+  '/solutions/aesthetics-wellness': typeof SolutionsAestheticsWellnessRoute
+  '/solutions/diagnostics-biological-age': typeof SolutionsDiagnosticsBiologicalAgeRoute
+  '/solutions/personalised-health': typeof SolutionsPersonalisedHealthRoute
+  '/solutions/preventive-longevity-health': typeof SolutionsPreventiveLongevityHealthRoute
+  '/solutions/products': typeof SolutionsProductsRoute
+  '/solutions/regenerative-medicine': typeof SolutionsRegenerativeMedicineRoute
   '/collaborate': typeof CollaborateIndexRoute
   '/discover': typeof DiscoverIndexRoute
   '/ecosystem': typeof EcosystemIndexRoute
   '/participate': typeof ParticipateIndexRoute
   '/publications': typeof PublicationsIndexRoute
+  '/solutions': typeof SolutionsIndexRoute
   '/members/$profileId': typeof AuthenticatedMembersProfileIdRoute
   '/projects/$projectId': typeof AuthenticatedProjectsProjectIdRoute
   '/projects/new': typeof AuthenticatedProjectsNewRoute
@@ -345,6 +413,7 @@ export interface FileRoutesById {
   '/ecosystem': typeof EcosystemRouteWithChildren
   '/founder': typeof FounderRoute
   '/participate': typeof ParticipateRouteWithChildren
+  '/solutions': typeof SolutionsRouteWithChildren
   '/_authenticated/dashboard': typeof AuthenticatedDashboardRoute
   '/_authenticated/profile': typeof AuthenticatedProfileRoute
   '/collaborate/opportunities': typeof CollaborateOpportunitiesRoute
@@ -364,11 +433,18 @@ export interface FileRoutesById {
   '/participate/members': typeof ParticipateMembersRoute
   '/participate/news': typeof ParticipateNewsRoute
   '/publications/$slug': typeof PublicationsSlugRoute
+  '/solutions/aesthetics-wellness': typeof SolutionsAestheticsWellnessRoute
+  '/solutions/diagnostics-biological-age': typeof SolutionsDiagnosticsBiologicalAgeRoute
+  '/solutions/personalised-health': typeof SolutionsPersonalisedHealthRoute
+  '/solutions/preventive-longevity-health': typeof SolutionsPreventiveLongevityHealthRoute
+  '/solutions/products': typeof SolutionsProductsRoute
+  '/solutions/regenerative-medicine': typeof SolutionsRegenerativeMedicineRoute
   '/collaborate/': typeof CollaborateIndexRoute
   '/discover/': typeof DiscoverIndexRoute
   '/ecosystem/': typeof EcosystemIndexRoute
   '/participate/': typeof ParticipateIndexRoute
   '/publications/': typeof PublicationsIndexRoute
+  '/solutions/': typeof SolutionsIndexRoute
   '/_authenticated/members/$profileId': typeof AuthenticatedMembersProfileIdRoute
   '/_authenticated/projects/$projectId': typeof AuthenticatedProjectsProjectIdRoute
   '/_authenticated/projects/new': typeof AuthenticatedProjectsNewRoute
@@ -387,6 +463,7 @@ export interface FileRouteTypes {
     | '/ecosystem'
     | '/founder'
     | '/participate'
+    | '/solutions'
     | '/dashboard'
     | '/profile'
     | '/collaborate/opportunities'
@@ -406,11 +483,18 @@ export interface FileRouteTypes {
     | '/participate/members'
     | '/participate/news'
     | '/publications/$slug'
+    | '/solutions/aesthetics-wellness'
+    | '/solutions/diagnostics-biological-age'
+    | '/solutions/personalised-health'
+    | '/solutions/preventive-longevity-health'
+    | '/solutions/products'
+    | '/solutions/regenerative-medicine'
     | '/collaborate/'
     | '/discover/'
     | '/ecosystem/'
     | '/participate/'
     | '/publications/'
+    | '/solutions/'
     | '/members/$profileId'
     | '/projects/$projectId'
     | '/projects/new'
@@ -442,11 +526,18 @@ export interface FileRouteTypes {
     | '/participate/members'
     | '/participate/news'
     | '/publications/$slug'
+    | '/solutions/aesthetics-wellness'
+    | '/solutions/diagnostics-biological-age'
+    | '/solutions/personalised-health'
+    | '/solutions/preventive-longevity-health'
+    | '/solutions/products'
+    | '/solutions/regenerative-medicine'
     | '/collaborate'
     | '/discover'
     | '/ecosystem'
     | '/participate'
     | '/publications'
+    | '/solutions'
     | '/members/$profileId'
     | '/projects/$projectId'
     | '/projects/new'
@@ -464,6 +555,7 @@ export interface FileRouteTypes {
     | '/ecosystem'
     | '/founder'
     | '/participate'
+    | '/solutions'
     | '/_authenticated/dashboard'
     | '/_authenticated/profile'
     | '/collaborate/opportunities'
@@ -483,11 +575,18 @@ export interface FileRouteTypes {
     | '/participate/members'
     | '/participate/news'
     | '/publications/$slug'
+    | '/solutions/aesthetics-wellness'
+    | '/solutions/diagnostics-biological-age'
+    | '/solutions/personalised-health'
+    | '/solutions/preventive-longevity-health'
+    | '/solutions/products'
+    | '/solutions/regenerative-medicine'
     | '/collaborate/'
     | '/discover/'
     | '/ecosystem/'
     | '/participate/'
     | '/publications/'
+    | '/solutions/'
     | '/_authenticated/members/$profileId'
     | '/_authenticated/projects/$projectId'
     | '/_authenticated/projects/new'
@@ -506,6 +605,7 @@ export interface RootRouteChildren {
   EcosystemRoute: typeof EcosystemRouteWithChildren
   FounderRoute: typeof FounderRoute
   ParticipateRoute: typeof ParticipateRouteWithChildren
+  SolutionsRoute: typeof SolutionsRouteWithChildren
   PublicationsSlugRoute: typeof PublicationsSlugRoute
   PublicationsIndexRoute: typeof PublicationsIndexRoute
 }
@@ -580,6 +680,13 @@ declare module '@tanstack/react-router' {
       path: '/participate'
       fullPath: '/participate'
       preLoaderRoute: typeof ParticipateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/solutions': {
+      id: '/solutions'
+      path: '/solutions'
+      fullPath: '/solutions'
+      preLoaderRoute: typeof SolutionsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_authenticated/dashboard': {
@@ -750,6 +857,55 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PublicationsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/solutions/': {
+      id: '/solutions/'
+      path: '/'
+      fullPath: '/solutions/'
+      preLoaderRoute: typeof SolutionsIndexRouteImport
+      parentRoute: typeof SolutionsRoute
+    }
+    '/solutions/aesthetics-wellness': {
+      id: '/solutions/aesthetics-wellness'
+      path: '/aesthetics-wellness'
+      fullPath: '/solutions/aesthetics-wellness'
+      preLoaderRoute: typeof SolutionsAestheticsWellnessRouteImport
+      parentRoute: typeof SolutionsRoute
+    }
+    '/solutions/diagnostics-biological-age': {
+      id: '/solutions/diagnostics-biological-age'
+      path: '/diagnostics-biological-age'
+      fullPath: '/solutions/diagnostics-biological-age'
+      preLoaderRoute: typeof SolutionsDiagnosticsBiologicalAgeRouteImport
+      parentRoute: typeof SolutionsRoute
+    }
+    '/solutions/personalised-health': {
+      id: '/solutions/personalised-health'
+      path: '/personalised-health'
+      fullPath: '/solutions/personalised-health'
+      preLoaderRoute: typeof SolutionsPersonalisedHealthRouteImport
+      parentRoute: typeof SolutionsRoute
+    }
+    '/solutions/preventive-longevity-health': {
+      id: '/solutions/preventive-longevity-health'
+      path: '/preventive-longevity-health'
+      fullPath: '/solutions/preventive-longevity-health'
+      preLoaderRoute: typeof SolutionsPreventiveLongevityHealthRouteImport
+      parentRoute: typeof SolutionsRoute
+    }
+    '/solutions/products': {
+      id: '/solutions/products'
+      path: '/products'
+      fullPath: '/solutions/products'
+      preLoaderRoute: typeof SolutionsProductsRouteImport
+      parentRoute: typeof SolutionsRoute
+    }
+    '/solutions/regenerative-medicine': {
+      id: '/solutions/regenerative-medicine'
+      path: '/regenerative-medicine'
+      fullPath: '/solutions/regenerative-medicine'
+      preLoaderRoute: typeof SolutionsRegenerativeMedicineRouteImport
+      parentRoute: typeof SolutionsRoute
+    }
     '/_authenticated/members/': {
       id: '/_authenticated/members/'
       path: '/members'
@@ -891,6 +1047,32 @@ const ParticipateRouteWithChildren = ParticipateRoute._addFileChildren(
   ParticipateRouteChildren,
 )
 
+interface SolutionsRouteChildren {
+  SolutionsAestheticsWellnessRoute: typeof SolutionsAestheticsWellnessRoute
+  SolutionsDiagnosticsBiologicalAgeRoute: typeof SolutionsDiagnosticsBiologicalAgeRoute
+  SolutionsPersonalisedHealthRoute: typeof SolutionsPersonalisedHealthRoute
+  SolutionsPreventiveLongevityHealthRoute: typeof SolutionsPreventiveLongevityHealthRoute
+  SolutionsProductsRoute: typeof SolutionsProductsRoute
+  SolutionsRegenerativeMedicineRoute: typeof SolutionsRegenerativeMedicineRoute
+  SolutionsIndexRoute: typeof SolutionsIndexRoute
+}
+
+const SolutionsRouteChildren: SolutionsRouteChildren = {
+  SolutionsAestheticsWellnessRoute: SolutionsAestheticsWellnessRoute,
+  SolutionsDiagnosticsBiologicalAgeRoute:
+    SolutionsDiagnosticsBiologicalAgeRoute,
+  SolutionsPersonalisedHealthRoute: SolutionsPersonalisedHealthRoute,
+  SolutionsPreventiveLongevityHealthRoute:
+    SolutionsPreventiveLongevityHealthRoute,
+  SolutionsProductsRoute: SolutionsProductsRoute,
+  SolutionsRegenerativeMedicineRoute: SolutionsRegenerativeMedicineRoute,
+  SolutionsIndexRoute: SolutionsIndexRoute,
+}
+
+const SolutionsRouteWithChildren = SolutionsRoute._addFileChildren(
+  SolutionsRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
@@ -902,6 +1084,7 @@ const rootRouteChildren: RootRouteChildren = {
   EcosystemRoute: EcosystemRouteWithChildren,
   FounderRoute: FounderRoute,
   ParticipateRoute: ParticipateRouteWithChildren,
+  SolutionsRoute: SolutionsRouteWithChildren,
   PublicationsSlugRoute: PublicationsSlugRoute,
   PublicationsIndexRoute: PublicationsIndexRoute,
 }

@@ -8,6 +8,8 @@ import { DISCOVER_PILLARS } from "@/lib/discover-pillars";
 import { ECOSYSTEM_PILLARS } from "@/lib/ecosystem-pillars";
 import { PARTICIPATE_ITEMS } from "@/lib/participate-nav";
 import { COLLABORATE_ITEMS } from "@/lib/collaborate-pillars";
+import { SOLUTION_PILLARS } from "@/lib/solutions-pillars";
+
 
 const HOME_ITEMS = [
   { slug: "about", to: "/about", name: "About" },
@@ -23,6 +25,9 @@ const ECOSYSTEM_ITEMS = [
 
 const DISCOVER_ITEMS = [...DISCOVER_PILLARS];
 
+const SOLUTION_ITEMS = SOLUTION_PILLARS.map((p) => ({ slug: p.slug, to: p.to, name: p.name }));
+
+
 const memberLinks = [
   { to: "/dashboard", label: "Dashboard" },
   { to: "/projects", label: "Projects" },
@@ -30,20 +35,21 @@ const memberLinks = [
 ] as const;
 
 
+type NavItem = { slug: string; to: string; name: string };
+type NavGroup = { label: string; to: string; items: NavItem[] };
+
 function Dropdown({
   label,
   to,
   items,
   showOverview = true,
-  bottomItems,
-  bottomLabel,
+  bottomGroups,
 }: {
   label: string;
   to: string;
-  items: { slug: string; to: string; name: string }[];
+  items: NavItem[];
   showOverview?: boolean;
-  bottomItems?: { slug: string; to: string; name: string }[];
-  bottomLabel?: string;
+  bottomGroups?: NavGroup[];
 }) {
   return (
     <div className="group relative">
@@ -77,33 +83,35 @@ function Dropdown({
               {item.name}
             </Link>
           ))}
-          {bottomItems && bottomItems.length > 0 && (
+          {bottomGroups && bottomGroups.length > 0 && (
             <>
               <div className="my-2 border-t border-line" />
-              <div className="group/sub relative">
-                <Link
-                  to="/ecosystem"
-                  className="flex items-center justify-between gap-2 rounded-lg px-3 py-2 text-sm text-ink-soft transition-colors hover:bg-gold/10 hover:text-navy"
-                  activeProps={{ className: "text-navy font-semibold" }}
-                >
-                  {bottomLabel ?? "More"}
-                  <ChevronRight className="h-3.5 w-3.5" />
-                </Link>
-                <div className="invisible absolute left-full top-0 z-50 w-64 pl-2 opacity-0 transition-opacity group-hover/sub:visible group-hover/sub:opacity-100 group-focus-within/sub:visible group-focus-within/sub:opacity-100">
-                  <div className="rounded-xl border border-line bg-paper p-2 shadow-lg">
-                    {bottomItems.map((item) => (
-                      <Link
-                        key={item.slug}
-                        to={item.to}
-                        className="block rounded-lg px-3 py-2 text-sm text-ink-soft transition-colors hover:bg-gold/10 hover:text-navy"
-                        activeProps={{ className: "text-navy font-semibold" }}
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
+              {bottomGroups.map((group) => (
+                <div key={group.to} className="group/sub relative">
+                  <Link
+                    to={group.to}
+                    className="flex items-center justify-between gap-2 rounded-lg px-3 py-2 text-sm text-ink-soft transition-colors hover:bg-gold/10 hover:text-navy"
+                    activeProps={{ className: "text-navy font-semibold" }}
+                  >
+                    {group.label}
+                    <ChevronRight className="h-3.5 w-3.5" />
+                  </Link>
+                  <div className="invisible absolute left-full top-0 z-50 w-64 pl-2 opacity-0 transition-opacity group-hover/sub:visible group-hover/sub:opacity-100 group-focus-within/sub:visible group-focus-within/sub:opacity-100">
+                    <div className="rounded-xl border border-line bg-paper p-2 shadow-lg">
+                      {group.items.map((item) => (
+                        <Link
+                          key={item.slug}
+                          to={item.to}
+                          className="block rounded-lg px-3 py-2 text-sm text-ink-soft transition-colors hover:bg-gold/10 hover:text-navy"
+                          activeProps={{ className: "text-navy font-semibold" }}
+                        >
+                          {item.name}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
+              ))}
             </>
           )}
         </div>
@@ -111,6 +119,7 @@ function Dropdown({
     </div>
   );
 }
+
 
 export function SiteHeader() {
   const { user, loading } = useAuth();
@@ -135,9 +144,12 @@ export function SiteHeader() {
             label="Discover"
             to="/discover"
             items={DISCOVER_ITEMS}
-            bottomItems={ECOSYSTEM_ITEMS}
-            bottomLabel="Longevity Landscape"
+            bottomGroups={[
+              { label: "Longevity Solutions", to: "/solutions", items: SOLUTION_ITEMS },
+              { label: "Longevity Landscape", to: "/ecosystem", items: ECOSYSTEM_ITEMS },
+            ]}
           />
+
           <Dropdown label="Collaborate" to="/collaborate" items={COLLABORATE_ITEMS} />
           <Dropdown label="Participate" to="/participate" items={[...PARTICIPATE_ITEMS]} />
 
@@ -225,7 +237,20 @@ export function SiteHeader() {
                 </Link>
               ))}
               <div className="my-1 border-t border-line" />
+              <Link to="/solutions" onClick={() => setOpen(false)} className="text-xs font-semibold uppercase tracking-wider text-gold">Longevity Solutions</Link>
+              {SOLUTION_ITEMS.map((item) => (
+                <Link
+                  key={item.slug}
+                  to={item.to}
+                  onClick={() => setOpen(false)}
+                  className="text-sm text-ink-soft"
+                >
+                  {item.name}
+                </Link>
+              ))}
+              <div className="my-1 border-t border-line" />
               <Link to="/ecosystem" onClick={() => setOpen(false)} className="text-xs font-semibold uppercase tracking-wider text-gold">Longevity Landscape</Link>
+
               {ECOSYSTEM_ITEMS.map((item) => (
                 <Link
                   key={item.slug}
