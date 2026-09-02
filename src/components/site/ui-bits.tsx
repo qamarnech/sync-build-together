@@ -31,6 +31,7 @@ export function SectionHead({
   intro,
   align = "center",
   invert = false,
+  as = "h2",
 }: {
   kicker?: string | undefined;
   num?: string | number | undefined;
@@ -38,18 +39,20 @@ export function SectionHead({
   intro?: string | undefined;
   align?: "center" | "left";
   invert?: boolean;
+  as?: "h1" | "h2";
 }) {
+  const Heading = as;
   return (
     <div className={cn("mx-auto max-w-3xl", align === "center" ? "text-center" : "max-w-none text-left")}>
       {kicker && <Kicker num={num}>{kicker}</Kicker>}
-      <h2
+      <Heading
         className={cn(
           "text-balance text-3xl font-bold md:text-4xl",
           invert ? "text-white" : "text-navy",
         )}
       >
         {title}
-      </h2>
+      </Heading>
       <Flourish align={align} />
       {intro && (
         <p className={cn("text-base", invert ? "text-gold-pale/80" : "text-ink-soft")}>{intro}</p>
