@@ -2,6 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, BookOpen, Compass, FlaskConical, MessagesSquare, ShieldCheck, Users } from "lucide-react";
 import { Section, SectionHead, Tag, Flourish, Kicker } from "@/components/site/ui-bits";
 import { Button } from "@/components/ui/button";
+import { useAuth } from "@/hooks/useAuth";
+
 
 const URL = "https://mrlongevity-ecosystem.lovable.app/participate/community";
 const DESCRIPTION =
