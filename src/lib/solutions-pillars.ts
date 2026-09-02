@@ -120,7 +120,11 @@ export const SOLUTION_PILLARS: SolutionPillar[] = [
     intro:
       "Products should follow the evidence, not lead it. Diagnostics and personal-care products are presented with their evidence status and intended use.",
     focus: [
-      { title: "Diagnostics and Tests", body: "Senescence detection, biological-age testing and biomarker panels." },
+      { title: "Epigenetic Senescence Detection", body: "Biological-age test based on epigenetic markers and DNA methylation patterns." },
+      { title: "Inflammatory Senescence Detection", body: "Test measuring inflammation-related ageing markers and the senescence-associated secretory phenotype." },
+      { title: "Cellular Senescence Detection", body: "Test measuring cellular ageing and senescence markers, identifying senescent cell burden." },
+      { title: "Metabolic Senescence Detection", body: "Test measuring metabolic ageing markers that accompany cellular senescence." },
+      { title: "MetaAge Biological Age Test", body: "A combined biological-age readout that integrates the senescence panels into a personal baseline." },
       { title: "Wellness and Personal Care", body: "Everyday products supporting skin health, recovery and daily routines." },
     ],
     participants: ["Individuals", "Clinics", "Laboratories", "Manufacturers", "Distributors", "Regulatory specialists"],

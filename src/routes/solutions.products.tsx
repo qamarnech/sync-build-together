@@ -6,21 +6,48 @@ import logoAsset from "@/assets/mr-longevity-logo.png.asset.json";
 
 const pillar = solutionPillar("products");
 
-const PRODUCTS = [
+type Product = {
+  name: string;
+  category: "Diagnostics and Tests" | "Wellness and Personal Care";
+  body: string;
+  markers?: string;
+};
+
+const PRODUCTS: Product[] = [
   {
-    name: "Product 1",
+    name: "Epigenetic Senescence Detection",
     category: "Diagnostics and Tests",
-    body: "MetaAge biological age test, a combined readout used to set and track a personal baseline.",
+    body: "A biological-age test based on epigenetic markers, reading DNA methylation patterns associated with ageing and cellular senescence.",
+    markers: "Epigenetic methylation",
   },
   {
-    name: "Product 2",
+    name: "Inflammatory Senescence Detection",
     category: "Diagnostics and Tests",
-    body: "Senescence detection panel covering epigenetic, inflammatory, cellular and metabolic markers.",
+    body: "A test measuring inflammation-related ageing markers, quantifying chronic low-grade inflammation linked to the senescence-associated secretory phenotype.",
+    markers: "Inflammatory SASP markers",
   },
   {
-    name: "Product 3",
+    name: "Cellular Senescence Detection",
+    category: "Diagnostics and Tests",
+    body: "A test measuring cellular ageing and senescence markers, identifying senescent cell burden through validated molecular signatures.",
+    markers: "Cellular senescence",
+  },
+  {
+    name: "Metabolic Senescence Detection",
+    category: "Diagnostics and Tests",
+    body: "A test measuring metabolic ageing markers, assessing metabolic decline that accompanies cellular senescence and biological ageing.",
+    markers: "Metabolic ageing",
+  },
+  {
+    name: "MetaAge Biological Age Test",
+    category: "Diagnostics and Tests",
+    body: "A combined biological-age readout that integrates the senescence panels above into a single baseline used to set and track a personal healthspan plan.",
+    markers: "Integrated biological age",
+  },
+  {
+    name: "Wellness and Personal Care",
     category: "Wellness and Personal Care",
-    body: "Everyday skin health and recovery products supporting daily longevity routines.",
+    body: "Everyday skin-health and recovery products supporting daily longevity routines alongside the diagnostic programme.",
   },
 ];
 
@@ -41,10 +68,10 @@ export const Route = createFileRoute("/solutions/products")({
         <SectionHead
           kicker="Product range"
           title="Products carrying the MR Longevity mark"
-          intro="Each product is presented with its category, intended use and evidence status."
+          intro="Senescence detection panels covering epigenetic, inflammatory, cellular and metabolic markers, the MetaAge biological-age test, and everyday wellness products. Each is presented with its category, intended use and evidence status."
           align="left"
         />
-        <div className="mt-8 grid gap-4 md:grid-cols-3">
+        <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {PRODUCTS.map((product) => (
             <div key={product.name} className="flex flex-col rounded-2xl border border-line bg-paper p-6">
               <div className="flex h-28 items-center justify-center rounded-xl bg-white">
@@ -57,6 +84,11 @@ export const Route = createFileRoute("/solutions/products")({
               </div>
               <h3 className="mt-5 font-serif text-lg text-navy">{product.name}</h3>
               <p className="mt-2 text-sm text-ink-soft">{product.body}</p>
+              {product.markers && (
+                <p className="mt-3 text-xs font-medium uppercase tracking-wide text-gold">
+                  Markers: {product.markers}
+                </p>
+              )}
               <div className="mt-4">
                 <Tag>{product.category}</Tag>
               </div>
