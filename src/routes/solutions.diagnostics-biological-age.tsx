@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PillarPage } from "@/components/site/PillarPage";
-import { SOLUTION_PILLARS } from "@/lib/solutions-pillars";
+import { SOLUTION_PILLARS, solutionPillar } from "@/lib/solutions-pillars";
 
-const pillar = SOLUTION_PILLARS[0]!;
+const pillar = solutionPillar("diagnostics-biological-age");
 
 export const Route = createFileRoute("/solutions/diagnostics-biological-age")({
   head: () => ({
