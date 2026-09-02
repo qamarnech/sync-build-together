@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useMutation } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
 import { useState } from "react";
-import { Mail, Globe, Send, CheckCircle2, Loader2 } from "lucide-react";
+import { Send, CheckCircle2, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 
 import { Section, SectionHead, Tag, Flourish } from "@/components/site/ui-bits";
