@@ -2,7 +2,6 @@ import type { Pillar } from "@/components/site/PillarPage";
 
 export type SolutionPillar = Pillar & {
   to:
-    | "/solutions/diagnostics-biological-age"
     | "/solutions/chronic-disease-prevention"
     | "/solutions/regenerative-medicine"
     | "/solutions/longevity-health-management"
@@ -13,31 +12,11 @@ export type SolutionPillar = Pillar & {
 
 export const SOLUTION_PILLARS: SolutionPillar[] = [
   {
-    slug: "diagnostics-biological-age",
-    to: "/solutions/diagnostics-biological-age",
-    name: "Diagnostics & Biological Age",
-    kicker: "Diagnostics & Biological Age",
-    num: "I",
-    title: "Making biological ageing measurable",
-    intro:
-      "Measurement comes first. Senescence and biological-age testing turn ageing from an abstract idea into signals that can be tracked, compared and acted on responsibly.",
-    focus: [
-      { title: "Epigenetic Senescence Detection", body: "DNA methylation patterns associated with cellular ageing and senescent burden." },
-      { title: "Inflammatory Senescence Detection", body: "Inflammatory signalling linked with age-related decline and senescent activity." },
-      { title: "Cellular Senescence Detection", body: "Direct markers of senescent cells and their accumulation in tissue." },
-      { title: "Metabolic Senescence Detection", body: "Metabolic and mitochondrial signals of biological ageing." },
-      { title: "MetaAge Biological Age Test", body: "A combined biological-age readout used to guide and track personal programmes." },
-    ],
-    participants: ["Individuals", "Clinicians", "Laboratories", "Diagnostic developers", "Research groups", "Longevity clinics"],
-    outputs: ["Biological-age reports", "Senescence profiles", "Baseline and follow-up tracking", "Validated test panels", "Data for research collaboration"],
-    handoff: "Measurement results inform disease prevention, where they become actionable programmes.",
-  },
-  {
     slug: "chronic-disease-prevention",
     to: "/solutions/chronic-disease-prevention",
     name: "Chronic & Major Disease Prevention",
     kicker: "Chronic & Major Disease Prevention",
-    num: "II",
+    num: "I",
     title: "Finding major disease risk early enough to act",
     intro:
       "Most healthspan is won before disease appears. Early detection, precise biomarker monitoring and immune and inflammation management shift care from treatment to prevention.",
@@ -57,7 +36,7 @@ export const SOLUTION_PILLARS: SolutionPillar[] = [
     to: "/solutions/regenerative-medicine",
     name: "Regenerative Medicine & Cell Therapy",
     kicker: "Regenerative Medicine & Cell Therapy",
-    num: "III",
+    num: "II",
     title: "Repairing tissue and restoring function",
     intro:
       "Regenerative approaches aim to repair tissue, regenerate organ function and intervene in the biology of ageing itself. This is an active research field, and claims are labelled by evidence status throughout.",
@@ -77,7 +56,7 @@ export const SOLUTION_PILLARS: SolutionPillar[] = [
     to: "/solutions/longevity-health-management",
     name: "Longevity Health Management",
     kicker: "Longevity Health Management",
-    num: "IV",
+    num: "III",
     title: "Managing healthspan across ten body systems",
     intro:
       "Health management brings measurement and action together over time: biological-age assessment across body systems, early screening and intervention plans reviewed as markers change.",
@@ -97,7 +76,7 @@ export const SOLUTION_PILLARS: SolutionPillar[] = [
     to: "/solutions/personalised-medicine",
     name: "High-End Personalized Medicine",
     kicker: "High-End Personalized Medicine",
-    num: "V",
+    num: "IV",
     title: "Concierge-level precision care",
     intro:
       "Personalised medicine coordinates precision services around one person, delivered to international standards by a named expert team rather than sold as a product.",
@@ -117,7 +96,7 @@ export const SOLUTION_PILLARS: SolutionPillar[] = [
     to: "/solutions/medical-aesthetics",
     name: "Medical Aesthetics & Anti-Aging Aesthetics",
     kicker: "Medical Aesthetics & Anti-Aging Aesthetics",
-    num: "VI",
+    num: "V",
     title: "Visible ageing, skin health and tissue regeneration",
     intro:
       "Skin and appearance are part of how ageing is experienced. This area blends medical aesthetics with regenerative techniques, described honestly and without overclaiming.",
@@ -136,7 +115,7 @@ export const SOLUTION_PILLARS: SolutionPillar[] = [
     to: "/solutions/products",
     name: "Products",
     kicker: "Products",
-    num: "VII",
+    num: "VI",
     title: "Tests and everyday products that support the plan",
     intro:
       "Products should follow the evidence, not lead it. Diagnostics and personal-care products are presented with their evidence status and intended use.",
