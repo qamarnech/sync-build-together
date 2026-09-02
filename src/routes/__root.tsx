@@ -82,6 +82,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      {
+        name: "google-site-verification",
+        content: "9OsKvYEafqPBGrJXcQKtD4uB-N-tK_IhxTRKasS5uf0",
+      },
       { title: "MR. LONGEVITY, Global Healthy Longevity Mission" },
       {
         name: "description",
