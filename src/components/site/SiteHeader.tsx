@@ -8,6 +8,8 @@ import { DISCOVER_PILLARS } from "@/lib/discover-pillars";
 import { ECOSYSTEM_PILLARS } from "@/lib/ecosystem-pillars";
 import { PARTICIPATE_ITEMS } from "@/lib/participate-nav";
 import { COLLABORATE_ITEMS } from "@/lib/collaborate-pillars";
+import { SOLUTION_PILLARS } from "@/lib/solutions-pillars";
+
 
 const HOME_ITEMS = [
   { slug: "about", to: "/about", name: "About" },
@@ -22,6 +24,9 @@ const ECOSYSTEM_ITEMS = [
 ];
 
 const DISCOVER_ITEMS = [...DISCOVER_PILLARS];
+
+const SOLUTION_ITEMS = SOLUTION_PILLARS.map((p) => ({ slug: p.slug, to: p.to, name: p.name }));
+
 
 const memberLinks = [
   { to: "/dashboard", label: "Dashboard" },
@@ -139,9 +144,12 @@ export function SiteHeader() {
             label="Discover"
             to="/discover"
             items={DISCOVER_ITEMS}
-            bottomItems={ECOSYSTEM_ITEMS}
-            bottomLabel="Longevity Landscape"
+            bottomGroups={[
+              { label: "Longevity Solutions", to: "/solutions", items: SOLUTION_ITEMS },
+              { label: "Longevity Landscape", to: "/ecosystem", items: ECOSYSTEM_ITEMS },
+            ]}
           />
+
           <Dropdown label="Collaborate" to="/collaborate" items={COLLABORATE_ITEMS} />
           <Dropdown label="Participate" to="/participate" items={[...PARTICIPATE_ITEMS]} />
 
