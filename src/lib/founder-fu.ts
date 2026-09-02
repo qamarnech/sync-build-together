@@ -13,7 +13,7 @@ export type Publication = {
   href: string;
 };
 
-export const FOUNDER_NAME = "Professor Qiang Fu 付强";
+export const FOUNDER_NAME = "Professor Daniel Qiang Fu 付强";
 
 export const FOUNDER_HEADLINE =
   "Longevity Scientist · Biotech Entrepreneur · MR Longevity Founder";
