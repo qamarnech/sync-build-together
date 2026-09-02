@@ -171,3 +171,19 @@ export const VERBS = [
   { title: "Apply", body: "Diagnostics, prevention, personalised programmes, clinical services, monitoring." },
   { title: "Contribute", body: "Your research, expertise, technology, data, infrastructure or funding." },
 ];
+
+export const VALUES = [
+  { title: "Scientific Rigor", body: "Evidence before hype. Every claim grounded in transparent, rigorous science and honest about its limits." },
+  { title: "Innovation & Excellence", body: "Pursue breakthroughs with discipline, creativity and high standards across science and translation." },
+  { title: "Collaboration & Openness", body: "Connect disciplines, institutions and cultures behind a shared goal, openly and without silos." },
+  { title: "Human-Oriented", body: "People are the purpose. Science serves longer, healthier and more vibrant lives." },
+  { title: "Ethical Responsibility", body: "Explore responsibly. Safety, honesty, privacy and transparency come before ambition." },
+];
+
+export const GOALS = [
+  { title: "Uncover Core Mechanisms", body: "Understand the biology of ageing, its hallmarks and drivers.", href: "/discover/biology-of-aging" },
+  { title: "Optimize Detection & Evaluation", body: "Advance biomarkers and biological-age measurement to detect change earlier.", href: "/discover/healthy-longevity" },
+  { title: "Develop Intervention Methods", body: "Translate mechanisms into validated therapeutics, nutrition and technologies.", href: "/collaborate/translation-innovation" },
+  { title: "Promote Clinical Practice", body: "Move evidence into responsible, personalised clinical care and adoption.", href: "/collaborate/projects" },
+  { title: "Advocate Proactive Health", body: "Shift from treating disease to preventing it, for individuals and populations.", href: "/participate/community" },
+];
