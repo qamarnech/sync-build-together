@@ -15,6 +15,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as CollaborateRouteImport } from './routes/collaborate'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CookiesRouteImport } from './routes/cookies'
 import { Route as DiscoverRouteImport } from './routes/discover'
 import { Route as EcosystemRouteImport } from './routes/ecosystem'
 import { Route as FounderRouteImport } from './routes/founder'
@@ -85,6 +86,11 @@ const CollaborateRoute = CollaborateRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CookiesRoute = CookiesRouteImport.update({
+  id: '/cookies',
+  path: '/cookies',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DiscoverRoute = DiscoverRouteImport.update({
@@ -322,6 +328,7 @@ export interface FileRoutesByFullPath {
   '/auth': typeof AuthRoute
   '/collaborate': typeof CollaborateRouteWithChildren
   '/contact': typeof ContactRoute
+  '/cookies': typeof CookiesRoute
   '/discover': typeof DiscoverRouteWithChildren
   '/ecosystem': typeof EcosystemRouteWithChildren
   '/founder': typeof FounderRoute
@@ -370,6 +377,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/auth': typeof AuthRoute
   '/contact': typeof ContactRoute
+  '/cookies': typeof CookiesRoute
   '/founder': typeof FounderRoute
   '/privacy': typeof PrivacyRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
@@ -417,6 +425,7 @@ export interface FileRoutesById {
   '/auth': typeof AuthRoute
   '/collaborate': typeof CollaborateRouteWithChildren
   '/contact': typeof ContactRoute
+  '/cookies': typeof CookiesRoute
   '/discover': typeof DiscoverRouteWithChildren
   '/ecosystem': typeof EcosystemRouteWithChildren
   '/founder': typeof FounderRoute
@@ -468,6 +477,7 @@ export interface FileRouteTypes {
     | '/auth'
     | '/collaborate'
     | '/contact'
+    | '/cookies'
     | '/discover'
     | '/ecosystem'
     | '/founder'
@@ -516,6 +526,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/auth'
     | '/contact'
+    | '/cookies'
     | '/founder'
     | '/privacy'
     | '/dashboard'
@@ -562,6 +573,7 @@ export interface FileRouteTypes {
     | '/auth'
     | '/collaborate'
     | '/contact'
+    | '/cookies'
     | '/discover'
     | '/ecosystem'
     | '/founder'
@@ -613,6 +625,7 @@ export interface RootRouteChildren {
   AuthRoute: typeof AuthRoute
   CollaborateRoute: typeof CollaborateRouteWithChildren
   ContactRoute: typeof ContactRoute
+  CookiesRoute: typeof CookiesRoute
   DiscoverRoute: typeof DiscoverRouteWithChildren
   EcosystemRoute: typeof EcosystemRouteWithChildren
   FounderRoute: typeof FounderRoute
@@ -665,6 +678,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cookies': {
+      id: '/cookies'
+      path: '/cookies'
+      fullPath: '/cookies'
+      preLoaderRoute: typeof CookiesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/discover': {
@@ -1100,6 +1120,7 @@ const rootRouteChildren: RootRouteChildren = {
   AuthRoute: AuthRoute,
   CollaborateRoute: CollaborateRouteWithChildren,
   ContactRoute: ContactRoute,
+  CookiesRoute: CookiesRoute,
   DiscoverRoute: DiscoverRouteWithChildren,
   EcosystemRoute: EcosystemRouteWithChildren,
   FounderRoute: FounderRoute,
