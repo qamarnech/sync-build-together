@@ -175,6 +175,18 @@ function ContactPage() {
           kicker="Longevity MR Alliance"
           title="Welcome to join LONGEVITY MR alliance, where pioneers in Longevity Medicine Research gather"
         />
+        <figure className="mt-10 overflow-hidden rounded-2xl border border-line bg-paper shadow-[0_24px_60px_-40px_oklch(0.28_0.05_255_/_0.45)]">
+          <img
+            src={allianceMap.url}
+            alt="International Longevity Medicine Alliance world map showing partner hubs across North America, Europe and Asia"
+            className="w-full"
+            loading="lazy"
+          />
+          <figcaption className="border-t border-line px-6 py-4 text-center text-xs uppercase tracking-[0.18em] text-ink-mute">
+            International Longevity Medicine Alliance, partner hubs worldwide
+          </figcaption>
+        </figure>
+
         <div className="mt-10 grid gap-4 md:grid-cols-3">
           {POINTS.map((point) => (
             <div key={point} className="rounded-xl border border-line bg-paper p-6">
