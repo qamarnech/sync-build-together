@@ -13,81 +13,99 @@ const HOW_STEPS = [
     kicker: "Understand",
     title: "Evidence-based knowledge",
     body: "Members receive accessible updates and discussions covering the biology of ageing, biomarkers and biological age, nutrition and metabolic health, movement and physical capacity, sleep and recovery, mental and social wellbeing, preventive health, regenerative medicine, new health technologies, and data and AI in longevity. Research is presented with its evidence level, limitations and practical relevance.",
+    link: { to: "/discover/biology-of-aging", label: "Start with the biology of ageing" },
   },
   {
     num: "02",
     kicker: "Act",
     title: "Turn understanding into responsible action",
     body: "Members can choose appropriate actions related to nutrition, exercise and movement, sleep, recovery, stress management, social connection, preventive-health routines, health monitoring, and learning and reflection. Members may keep a private personal record or voluntarily share selected experiences with the community. The community does not prescribe medical treatments; clinical decisions remain between individuals and qualified healthcare professionals.",
+    link: { to: "/discover/healthy-longevity", label: "See what healthy longevity means in practice" },
   },
   {
     num: "03",
     kicker: "Share",
     title: "Learn through experience",
     body: "Members can share actions they have tried, what they observed, challenges they encountered, questions arising from their experience, research or technologies they are exploring, and lessons that may benefit other members. Personal experiences are clearly described as experiences, not scientific proof or medical recommendations.",
+    link: { to: "/profile", label: "Share it from your member profile" },
   },
   {
     num: "04",
     kicker: "Progress Together",
     title: "A collaborative learning environment",
     body: "The community functions as an open learning network where members can participate in topic discussions, attend expert sessions, join community challenges, explore research and projects, find relevant collaborators, contribute professional expertise, and learn from different disciplines and cultures.",
+    link: { to: "/projects", label: "Find collaborators on open projects" },
   },
-];
+] as const;
 
 const ACTIVITIES = [
   {
     icon: BookOpen,
     title: "Research Briefings",
     detail: "Accessible interpretations of important developments in longevity science.",
+    to: "/participate/news",
+    action: "Read the briefings",
   },
   {
     icon: MessagesSquare,
     title: "Expert Conversations",
     detail: "Sessions with researchers, clinicians, innovators and other specialists.",
+    to: "/participate/events",
+    action: "See upcoming sessions",
   },
   {
     icon: Compass,
     title: "Action Journals",
     detail: "Optional structured records covering personal healthspan actions and reflections.",
+    to: "/profile",
+    action: "Keep yours on your profile",
   },
   {
     icon: Users,
     title: "Community Challenges",
     detail: "Time-limited activities related to movement, sleep, nutrition, learning or another responsible health behaviour.",
+    to: "/dashboard",
+    action: "Track your participation",
   },
   {
     icon: FlaskConical,
     title: "Questions and Discussions",
     detail: "Evidence-aware conversations about research, interventions and technologies.",
+    to: "/participate/members",
+    action: "Meet the people answering them",
   },
   {
     icon: ArrowRight,
     title: "Projects and Collaboration",
     detail: "Opportunities to participate in or contribute to relevant MR Longevity projects.",
+    to: "/collaborate/projects",
+    action: "Browse collaboration routes",
   },
-];
+] as const;
 
 const WHO_CAN_JOIN = [
-  "Individuals interested in healthier ageing",
-  "Researchers and scientists",
-  "Clinicians and healthcare professionals",
-  "Nutrition, movement and wellbeing specialists",
-  "Longevity and biotechnology innovators",
-  "Data and AI professionals",
-  "Universities and research institutions",
-  "Investors and strategic partners",
-  "Public-health organisations",
-];
+  { label: "Individuals interested in healthier ageing", to: "/discover/healthy-longevity" },
+  { label: "Researchers and scientists", to: "/discover/scientific-missions" },
+  { label: "Clinicians and healthcare professionals", to: "/ecosystem/clinical-validation" },
+  { label: "Nutrition, movement and wellbeing specialists", to: "/discover/healthy-longevity" },
+  { label: "Longevity and biotechnology innovators", to: "/collaborate/translation-innovation" },
+  { label: "Data and AI professionals", to: "/collaborate/opportunities" },
+  { label: "Universities and research institutions", to: "/ecosystem/science-discovery" },
+  { label: "Investors and strategic partners", to: "/ecosystem/investment-commercial" },
+  { label: "Public-health organisations", to: "/collaborate/partners" },
+] as const;
 
 const GAINS = [
-  "Develop a structured understanding of healthy longevity",
-  "Follow relevant scientific developments",
-  "Discover evidence-based practices",
-  "Record personal actions and reflections",
-  "Learn from experts and other participants",
-  "Join discussions, activities and projects",
-  "Connect with people who share relevant interests",
-  "Contribute knowledge, experience or capabilities",
+  { label: "Develop a structured understanding of healthy longevity", to: "/discover" },
+  { label: "Follow relevant scientific developments", to: "/participate/news" },
+  { label: "Discover evidence-based practices", to: "/discover/scientific-missions" },
+  { label: "Record personal actions and reflections", to: "/profile" },
+  { label: "Learn from experts and other participants", to: "/participate/events" },
+  { label: "Join discussions, activities and projects", to: "/projects" },
+  { label: "Connect with people who share relevant interests", to: "/members" },
+  { label: "Contribute knowledge, experience or capabilities", to: "/collaborate" },
+] as const;
+
 ];
 
 const PRINCIPLES = [
