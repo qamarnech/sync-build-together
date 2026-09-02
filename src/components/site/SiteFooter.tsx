@@ -29,8 +29,8 @@ export function SiteFooter() {
 
       </div>
       <div className="mx-auto mt-10 max-w-6xl border-t border-white/10 pt-6 text-xs">
-        © {new Date().getFullYear()} MR Longevity. Evidence status is labelled throughout the
-        site.
+        © {new Date().getFullYear()} MR.Longevity & ILMRI (International Longevity Medicine
+        Research Institute). All Rights Reserved.
       </div>
     </footer>
   );
