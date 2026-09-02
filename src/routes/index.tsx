@@ -205,19 +205,65 @@ function Index() {
         </figure>
 
         <div className="mt-10 grid gap-6 md:grid-cols-2">
-          <div className="rounded-xl border border-line bg-paper p-6">
+          <div className="rounded-xl border border-gold/30 bg-gold/5 p-6">
             <h3 className="text-xl font-semibold text-navy">Our Vision</h3>
             <p className="mt-2 text-sm text-ink-soft">
-              A future where longer life means healthier life, ageing better understood, health
-              changes detected earlier, disease prevented or delayed.
+              Build a world in which all people can enjoy longer, healthier, and more vibrant lives.
             </p>
           </div>
-          <div className="rounded-xl border border-line bg-paper p-6">
+          <div className="rounded-xl border border-gold/30 bg-gold/5 p-6">
             <h3 className="text-xl font-semibold text-navy">Our Mission</h3>
             <p className="mt-2 text-sm text-ink-soft">
-              To make life healthier and longer, connecting science, discovery, validation,
-              translation, personalised health and real-world outcomes with Data + AI.
+              Advance scientific breakthroughs, clinical translation, and global collaboration in
+              longevity medicine, pioneer the healthy longevity revolution, and enhance the quality
+              of life.
             </p>
+          </div>
+        </div>
+
+        <div className="mt-12">
+          <div className="mb-5 flex items-center gap-4">
+            <span className="flourish-line" />
+            <span className="whitespace-nowrap font-serif text-xs italic tracking-[0.25em] text-gold uppercase">
+              Our Values
+            </span>
+            <span className="flourish-line" />
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            {VALUES.map((value) => (
+              <div key={value.title} className="rounded-xl border border-line bg-paper p-5">
+                <h3 className="font-serif text-lg font-semibold text-navy">{value.title}</h3>
+                <p className="mt-2 text-sm text-ink-soft">{value.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-12">
+          <div className="mb-5 flex items-center gap-4">
+            <span className="flourish-line" />
+            <span className="whitespace-nowrap font-serif text-xs italic tracking-[0.25em] text-gold uppercase">
+              Our Goals
+            </span>
+            <span className="flourish-line" />
+          </div>
+          <div className="grid gap-4 md:grid-cols-5">
+            {GOALS.map((goal, i) => (
+              <Link
+                key={goal.title}
+                to={goal.href}
+                className="group flex h-full flex-col rounded-xl border border-line bg-white p-5 transition-colors hover:border-gold/60 hover:bg-gold/5"
+              >
+                <span className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-gold/50 font-serif text-xs text-gold-light">
+                  {i + 1}
+                </span>
+                <h3 className="mt-3 font-serif text-lg font-semibold text-navy">{goal.title}</h3>
+                <p className="mt-2 text-sm text-ink-soft">{goal.body}</p>
+                <span className="mt-auto inline-flex items-center gap-1 pt-4 text-sm font-semibold text-gold opacity-0 transition-opacity group-hover:opacity-100">
+                  Explore <ArrowRight className="h-4 w-4" />
+                </span>
+              </Link>
+            ))}
           </div>
         </div>
       </Section>
