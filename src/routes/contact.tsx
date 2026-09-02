@@ -25,6 +25,7 @@ import {
 } from "@/components/ui/accordion";
 import { sendContactMessage } from "@/lib/contact.functions";
 import { ROLE_TYPES } from "@/lib/site-content";
+import allianceMap from "@/assets/ilma-world-alliance.png.asset.json";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
