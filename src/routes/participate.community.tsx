@@ -156,7 +156,10 @@ export const Route = createFileRoute("/participate/community")({
 });
 
 function CommunityPage() {
+  const { user } = useAuth();
+  const signedIn = Boolean(user);
   return (
+
     <div>
       {/* Hero */}
       <section className="relative overflow-hidden bg-navy px-6 py-20 text-white md:py-28">
