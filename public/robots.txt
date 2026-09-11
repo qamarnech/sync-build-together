@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://mrlongevity.life/sitemap.xml
+Sitemap: https://www.longevitymr.com/sitemap.xml

@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 import { FOUNDER_PUBLICATIONS, publicationSlug } from "@/lib/founder-fu";
 
-const BASE_URL = "https://mrlongevity.life";
+const BASE_URL = "https://www.longevitymr.com";
 
 interface SitemapEntry {
   path: string;
