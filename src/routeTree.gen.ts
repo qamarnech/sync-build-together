@@ -26,6 +26,7 @@ import { Route as SolutionsRouteImport } from './routes/solutions'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
 import { Route as AuthenticatedProfileRouteImport } from './routes/_authenticated/profile'
+import { Route as ArticlesSlugRouteImport } from './routes/articles.$slug'
 import { Route as CollaborateIndexRouteImport } from './routes/collaborate.index'
 import { Route as CollaborateOpportunitiesRouteImport } from './routes/collaborate.opportunities'
 import { Route as CollaboratePartnersRouteImport } from './routes/collaborate.partners'
@@ -144,6 +145,11 @@ const AuthenticatedProfileRoute = AuthenticatedProfileRouteImport.update({
   id: '/profile',
   path: '/profile',
   getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const ArticlesSlugRoute = ArticlesSlugRouteImport.update({
+  id: '/articles/$slug',
+  path: '/articles/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const CollaborateIndexRoute = CollaborateIndexRouteImport.update({
   id: '/',
@@ -351,6 +357,7 @@ export interface FileRoutesByFullPath {
   '/terms': typeof TermsRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/profile': typeof AuthenticatedProfileRoute
+  '/articles/$slug': typeof ArticlesSlugRoute
   '/collaborate/opportunities': typeof CollaborateOpportunitiesRoute
   '/collaborate/partners': typeof CollaboratePartnersRoute
   '/collaborate/projects': typeof CollaborateProjectsRoute
@@ -398,6 +405,7 @@ export interface FileRoutesByTo {
   '/terms': typeof TermsRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/profile': typeof AuthenticatedProfileRoute
+  '/articles/$slug': typeof ArticlesSlugRoute
   '/collaborate/opportunities': typeof CollaborateOpportunitiesRoute
   '/collaborate/partners': typeof CollaboratePartnersRoute
   '/collaborate/projects': typeof CollaborateProjectsRoute
@@ -452,6 +460,7 @@ export interface FileRoutesById {
   '/terms': typeof TermsRoute
   '/_authenticated/dashboard': typeof AuthenticatedDashboardRoute
   '/_authenticated/profile': typeof AuthenticatedProfileRoute
+  '/articles/$slug': typeof ArticlesSlugRoute
   '/collaborate/opportunities': typeof CollaborateOpportunitiesRoute
   '/collaborate/partners': typeof CollaboratePartnersRoute
   '/collaborate/projects': typeof CollaborateProjectsRoute
@@ -506,6 +515,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/dashboard'
     | '/profile'
+    | '/articles/$slug'
     | '/collaborate/opportunities'
     | '/collaborate/partners'
     | '/collaborate/projects'
@@ -553,6 +563,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/dashboard'
     | '/profile'
+    | '/articles/$slug'
     | '/collaborate/opportunities'
     | '/collaborate/partners'
     | '/collaborate/projects'
@@ -606,6 +617,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/_authenticated/dashboard'
     | '/_authenticated/profile'
+    | '/articles/$slug'
     | '/collaborate/opportunities'
     | '/collaborate/partners'
     | '/collaborate/projects'
@@ -658,6 +670,7 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SolutionsRoute: typeof SolutionsRouteWithChildren
   TermsRoute: typeof TermsRoute
+  ArticlesSlugRoute: typeof ArticlesSlugRoute
   PublicationsSlugRoute: typeof PublicationsSlugRoute
   PublicationsIndexRoute: typeof PublicationsIndexRoute
 }
@@ -782,6 +795,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/profile'
       preLoaderRoute: typeof AuthenticatedProfileRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/articles/$slug': {
+      id: '/articles/$slug'
+      path: '/articles/$slug'
+      fullPath: '/articles/$slug'
+      preLoaderRoute: typeof ArticlesSlugRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/collaborate/': {
       id: '/collaborate/'
@@ -1169,6 +1189,7 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SolutionsRoute: SolutionsRouteWithChildren,
   TermsRoute: TermsRoute,
+  ArticlesSlugRoute: ArticlesSlugRoute,
   PublicationsSlugRoute: PublicationsSlugRoute,
   PublicationsIndexRoute: PublicationsIndexRoute,
 }

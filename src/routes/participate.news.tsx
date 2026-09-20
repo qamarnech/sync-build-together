@@ -1,7 +1,8 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { ExternalLink } from "lucide-react";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import { Section, SectionHead, Tag } from "@/components/site/ui-bits";
 import { LONGEVITY_NEWS } from "@/lib/insights-content";
+import { ARTICLES } from "@/lib/articles";
 
 export const Route = createFileRoute("/participate/news")({
   head: () => ({
@@ -33,7 +34,31 @@ function NewsPage() {
         title="Where the field is moving"
         intro="A curated set of primary sources we track, research, policy, standards and funding. Each links to the original record."
       />
-      <div className="mt-10 grid gap-4 md:grid-cols-2">
+      <div className="mt-12">
+        <h2 className="font-serif text-2xl font-bold text-navy">From the mission, in-depth articles</h2>
+        <div className="mt-6 grid gap-4 md:grid-cols-3">
+          {ARTICLES.map((article) => (
+            <Link
+              key={article.slug}
+              to="/articles/$slug"
+              params={{ slug: article.slug }}
+              className="group flex flex-col rounded-xl border border-line bg-white p-6 transition-colors hover:border-gold/50"
+            >
+              <Tag tone="navy">{article.topic}</Tag>
+              <h3 className="mt-4 font-serif text-lg text-navy group-hover:text-gold">
+                {article.title}
+              </h3>
+              <p className="mt-2 flex-1 text-sm text-ink-soft">{article.description}</p>
+              <p className="mt-4 inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.16em] text-gold">
+                Read article <ArrowRight className="h-3.5 w-3.5" />
+              </p>
+            </Link>
+          ))}
+        </div>
+      </div>
+
+      <h2 className="mt-14 font-serif text-2xl font-bold text-navy">Sources we track</h2>
+      <div className="mt-6 grid gap-4 md:grid-cols-2">
         {LONGEVITY_NEWS.map((item) => (
           <a
             key={item.slug}

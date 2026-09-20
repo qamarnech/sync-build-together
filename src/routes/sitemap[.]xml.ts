@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 import { FOUNDER_PUBLICATIONS, publicationSlug } from "@/lib/founder-fu";
+import { ARTICLES } from "@/lib/articles";
 
 const BASE_URL = "https://www.longevitymr.com";
 
