@@ -1,10 +1,19 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
 import { ArrowRight, ExternalLink } from "lucide-react";
 import { Section, SectionHead, Tag } from "@/components/site/ui-bits";
 import { LONGEVITY_NEWS } from "@/lib/insights-content";
 import { ARTICLES } from "@/lib/articles";
+import { getLatestResearch } from "@/lib/research-feed.functions";
+
+const researchQuery = queryOptions({
+  queryKey: ["latest-research"],
+  queryFn: () => getLatestResearch(),
+  staleTime: 1000 * 60 * 60,
+});
 
 export const Route = createFileRoute("/participate/news")({
+  loader: ({ context }) => context.queryClient.ensureQueryData(researchQuery),
   head: () => ({
     meta: [
       { title: "News | MR Longevity Participate" },
