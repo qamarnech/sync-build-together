@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
 
 
-const URL = "https://mrlongevity-ecosystem.lovable.app/participate/community";
+const URL = "https://www.longevitymr.com/participate/community";
 const DESCRIPTION =
   "The MR Longevity Action Community: understand healthy longevity science, turn reliable knowledge into responsible action, and learn through shared experience.";
 
