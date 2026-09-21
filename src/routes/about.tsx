@@ -18,7 +18,11 @@ export const Route = createFileRoute("/about")({
         content:
           "Our approach: systems thinking, rigorous evidence, and a connected translation mission for healthy longevity.",
       },
+      { property: "og:url", content: "https://www.longevitymr.com/about" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://www.longevitymr.com/about" }],
   }),
   component: AboutPage,
 });

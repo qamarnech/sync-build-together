@@ -13,7 +13,9 @@ export const Route = createFileRoute("/collaborate/translation-innovation")({
       { property: "og:description", content: "How research, clinical validation, AI, manufacturing and commercialisation connect into real-world application." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:url", content: "https://www.longevitymr.com/collaborate/translation-innovation" },
     ],
+    links: [{ rel: "canonical", href: "https://www.longevitymr.com/collaborate/translation-innovation" }],
   }),
   component: () => (
     <PillarPage pillar={pillar} backTo="/collaborate" sequence={COLLABORATE_PILLARS.map((p) => p.name)} />

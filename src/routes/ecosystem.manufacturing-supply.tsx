@@ -13,7 +13,9 @@ export const Route = createFileRoute("/ecosystem/manufacturing-supply")({
       { property: "og:description", content: "Producing, distributing and pricing healthy longevity solutions so they reach people reliably." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:url", content: "https://www.longevitymr.com/ecosystem/manufacturing-supply" },
     ],
+    links: [{ rel: "canonical", href: "https://www.longevitymr.com/ecosystem/manufacturing-supply" }],
   }),
   component: () => <PillarPage pillar={pillar} backTo="/ecosystem" sequence={ECOSYSTEM_PILLARS.map((p) => p.name)} />,
 });

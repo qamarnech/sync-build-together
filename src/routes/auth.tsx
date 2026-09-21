@@ -30,7 +30,11 @@ export const Route = createFileRoute("/auth")({
         property: "og:description",
         content: "Create your member account to collaborate across the healthy longevity mission.",
       },
+      { property: "og:url", content: "https://www.longevitymr.com/auth" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://www.longevitymr.com/auth" }],
   }),
   component: AuthPage,
 });

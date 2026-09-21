@@ -15,7 +15,9 @@ export const Route = createFileRoute("/solutions/longevity-health-management")({
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:url", content: "https://www.longevitymr.com/solutions/longevity-health-management" },
     ],
+    links: [{ rel: "canonical", href: "https://www.longevitymr.com/solutions/longevity-health-management" }],
   }),
   component: () => (
     <PillarPage pillar={pillar} backTo="/solutions" sequence={SOLUTION_PILLARS.map((p) => p.name)} />

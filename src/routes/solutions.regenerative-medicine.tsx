@@ -13,7 +13,9 @@ export const Route = createFileRoute("/solutions/regenerative-medicine")({
       { property: "og:description", content: "Regenerative medicine research, cell-therapy development, iPSC technology, tissue repair and clinical research collaboration." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:url", content: "https://www.longevitymr.com/solutions/regenerative-medicine" },
     ],
+    links: [{ rel: "canonical", href: "https://www.longevitymr.com/solutions/regenerative-medicine" }],
   }),
   component: () => (
     <PillarPage pillar={pillar} backTo="/solutions" sequence={SOLUTION_PILLARS.map((p) => p.name)} />

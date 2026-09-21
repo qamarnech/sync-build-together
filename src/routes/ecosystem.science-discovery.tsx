@@ -13,7 +13,9 @@ export const Route = createFileRoute("/ecosystem/science-discovery")({
       { property: "og:description", content: "How discovery science generates the targets, biomarkers and knowledge the longevity mission depends on." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:url", content: "https://www.longevitymr.com/ecosystem/science-discovery" },
     ],
+    links: [{ rel: "canonical", href: "https://www.longevitymr.com/ecosystem/science-discovery" }],
   }),
   component: () => <PillarPage pillar={pillar} backTo="/ecosystem" sequence={ECOSYSTEM_PILLARS.map((p) => p.name)} />,
 });
