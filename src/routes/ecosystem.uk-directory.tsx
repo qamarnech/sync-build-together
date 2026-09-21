@@ -11,7 +11,7 @@ import {
   UK_DIRECTORY_INTRO,
 } from "@/lib/uk-directory";
 
-const PAGE_URL = "https://mrlongevity-ecosystem.lovable.app/ecosystem/uk-directory";
+const PAGE_URL = "https://www.longevitymr.com/ecosystem/uk-directory";
 const DESCRIPTION =
   "A curated directory of the UK healthy longevity mission: geroscience institutes, gerontology centres, NHS research units, longevity clinics, biotech companies, AgeTech, charities, funders and population cohorts, each with a source link.";
 

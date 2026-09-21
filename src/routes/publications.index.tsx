@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Section, SectionHead, Flourish, Kicker } from "@/components/site/ui-bits";
 import { FOUNDER_NAME, FOUNDER_PUBLICATIONS, publicationSlug, sourceName } from "@/lib/founder-fu";
 
-const URL = "https://mrlongevity-ecosystem.lovable.app/publications";
+const URL = "https://www.longevitymr.com/publications";
 const DESCRIPTION =
   "Peer-reviewed publications by Professor Daniel Qiang Fu, 2014–2025, full citations and links to each public source record.";
 

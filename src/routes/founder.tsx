@@ -18,7 +18,7 @@ import {
 } from "@/lib/founder-fu";
 import { Button } from "@/components/ui/button";
 
-const URL = "https://mrlongevity-ecosystem.lovable.app/founder";
+const URL = "https://www.longevitymr.com/founder";
 const DESCRIPTION =
   "Professor Daniel Qiang Fu 付强, longevity scientist and biotech entrepreneur. Research record: publications in Nature Metabolism and Aging Cell, patents in NK-cell and exosome technology, and NSFC grants.";
 

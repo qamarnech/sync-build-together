@@ -11,7 +11,7 @@ import {
   sourceName,
 } from "@/lib/founder-fu";
 
-const BASE = "https://mrlongevity-ecosystem.lovable.app/publications";
+const BASE = "https://www.longevitymr.com/publications";
 
 export const Route = createFileRoute("/publications/$slug")({
   loader: ({ params }) => {
