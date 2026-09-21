@@ -192,7 +192,8 @@ export function SiteHeader() {
 
         <button
           className="md:hidden"
-          aria-label="Menu"
+          aria-label={open ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={open}
           onClick={() => setOpen((value) => !value)}
         >
           {open ? <X className="h-5 w-5 text-navy" /> : <Menu className="h-5 w-5 text-navy" />}

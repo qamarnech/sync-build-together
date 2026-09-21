@@ -256,6 +256,7 @@ function Index() {
               <Link
                 key={goal.title}
                 to={goal.href}
+                aria-label={`Explore ${goal.title}`}
                 className="group flex h-full flex-col rounded-xl border border-line bg-white p-5 transition-colors hover:border-gold/60 hover:bg-gold/5"
               >
                 <span className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-gold/50 font-serif text-xs text-gold-light">
@@ -340,12 +341,15 @@ function Index() {
           intro="Healthy longevity cannot be created by medicine alone. Individuals, scientists, clinicians, innovators, businesses and institutions all have a role in building the systems that could help future generations live healthier for longer."
         />
         <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {PERSONAS.map((persona) => (
+          {PERSONAS.map((persona) => {
+            const personaImage = PERSONA_IMAGES[persona.kicker];
+
+            return (
             <div key={persona.kicker} className="group flex flex-col overflow-hidden rounded-xl border border-line bg-paper transition-colors hover:border-gold/40 hover:bg-white">
-              {PERSONA_IMAGES[persona.kicker] ? (
+              {personaImage ? (
                 <img
-                  src={PERSONA_IMAGES[persona.kicker]!.src}
-                  alt={PERSONA_IMAGES[persona.kicker]!.alt}
+                  src={personaImage.src}
+                  alt={personaImage.alt}
                   loading="lazy"
                   width={768}
                   height={512}
@@ -366,13 +370,15 @@ function Index() {
               </ul>
               <Link
                 to={persona.cta.href}
+                aria-label={`${persona.cta.label}: ${persona.title}`}
                 className="mt-auto inline-flex items-center gap-1 pt-5 text-sm font-semibold text-navy transition-colors group-hover:text-gold"
               >
                 {persona.cta.label} <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
       </Section>
 

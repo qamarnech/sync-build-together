@@ -122,6 +122,7 @@ function NewsPage() {
               key={article.slug}
               to="/articles/$slug"
               params={{ slug: article.slug }}
+              aria-label={`Read article: ${article.title}`}
               className="group flex flex-col rounded-xl border border-line bg-white p-6 transition-colors hover:border-gold/50"
             >
               <Tag tone="navy">{article.topic}</Tag>

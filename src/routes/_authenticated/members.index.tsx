@@ -49,12 +49,14 @@ function MembersPage() {
 
         <div className="mt-8 grid gap-3 rounded-2xl border border-line bg-white p-4 md:grid-cols-3">
           <Input
+            aria-label="Search members by name, organisation or expertise"
             placeholder="Search name, organisation or expertise"
             value={search}
             onChange={(event) => setSearch(event.target.value)}
             maxLength={100}
           />
           <select
+            aria-label="Filter members by role"
             value={role}
             onChange={(event) => setRole(event.target.value)}
             className="h-10 rounded-md border border-input bg-white px-3 text-sm"
@@ -67,6 +69,7 @@ function MembersPage() {
             ))}
           </select>
           <select
+            aria-label="Filter members by country"
             value={country}
             onChange={(event) => setCountry(event.target.value)}
             className="h-10 rounded-md border border-input bg-white px-3 text-sm"
@@ -90,6 +93,7 @@ function MembersPage() {
               key={profile.id}
               to="/members/$profileId"
               params={{ profileId: profile.id }}
+              aria-label={`View member profile: ${profile.full_name || "New member"}`}
               className="rounded-2xl border border-line bg-white p-6 transition-colors hover:border-gold"
             >
               <p className="font-serif text-lg text-navy">{profile.full_name || "New member"}</p>

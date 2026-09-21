@@ -321,6 +321,7 @@ function CommunityPage() {
             <Link
               key={activity.title}
               to={activity.to}
+              aria-label={`${activity.action}: ${activity.title}`}
               className="group flex flex-col rounded-2xl border border-line bg-paper p-6 transition-colors hover:border-gold/50"
             >
               <activity.icon className="h-6 w-6 text-gold" />
@@ -353,6 +354,7 @@ function CommunityPage() {
             <Link
               key={card.to}
               to={card.to}
+              aria-label={`Open ${card.title}`}
               className="group rounded-2xl border border-white/15 bg-white/5 p-6 transition-colors hover:border-gold/50"
             >
               <p className="font-serif text-lg font-semibold text-white">{card.title}</p>

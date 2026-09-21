@@ -76,6 +76,7 @@ function MembersPage() {
             <div className="mt-4 flex flex-wrap gap-3">
               <Link
                 to="/members"
+                aria-label="Browse the MR Longevity member directory"
                 className="inline-flex items-center gap-1 rounded-lg bg-navy px-4 py-2 text-sm text-paper transition-colors hover:bg-navy/90"
               >
                 Browse members <ArrowRight className="h-4 w-4" />

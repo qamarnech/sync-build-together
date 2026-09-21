@@ -13,6 +13,9 @@ type Product = {
   markers?: string;
 };
 
+const productLogoAlt =
+  "MR Longevity logo, a gold longevity symbol beside the MR Longevity name";
+
 const PRODUCTS: Product[] = [
   {
     name: "Epigenetic Senescence Detection",
@@ -79,7 +82,7 @@ export const Route = createFileRoute("/solutions/products")({
               <div className="flex h-28 items-center justify-center rounded-xl bg-white">
                 <img
                   src={logoAsset.url}
-                  alt={`MR Longevity logo on ${product.name}`}
+                  alt={productLogoAlt}
                   loading="lazy"
                   className="h-24 w-auto object-contain"
                 />

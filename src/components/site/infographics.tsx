@@ -501,6 +501,7 @@ export function PathwayTrack({
               <button
                 type="button"
                 onClick={() => onSelect?.(i)}
+                aria-label={`Show pathway stage ${i + 1}: ${label}`}
                 aria-current={i === active ? "step" : undefined}
                 className={cn(
                   "flex h-6 w-6 items-center justify-center rounded-full border text-[10px] font-bold transition-colors",

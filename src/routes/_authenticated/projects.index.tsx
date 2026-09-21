@@ -54,12 +54,14 @@ function ProjectsPage() {
 
         <div className="mt-8 grid gap-3 rounded-2xl border border-line bg-white p-4 md:grid-cols-3">
           <Input
+            aria-label="Search projects or capabilities"
             placeholder="Search projects or capabilities"
             value={search}
             onChange={(event) => setSearch(event.target.value)}
             maxLength={100}
           />
           <select
+            aria-label="Filter projects by mission area"
             value={mission}
             onChange={(event) => setMission(event.target.value)}
             className="h-10 rounded-md border border-input bg-white px-3 text-sm"
@@ -72,6 +74,7 @@ function ProjectsPage() {
             ))}
           </select>
           <select
+            aria-label="Filter projects by stage"
             value={status}
             onChange={(event) => setStatus(event.target.value)}
             className="h-10 rounded-md border border-input bg-white px-3 text-sm"
@@ -97,6 +100,7 @@ function ProjectsPage() {
                 key={project.id}
                 to="/projects/$projectId"
                 params={{ projectId: project.id }}
+                aria-label={`View project: ${project.title}`}
                 className="rounded-2xl border border-line bg-white p-6 transition-colors hover:border-gold"
               >
                 <div className="flex flex-wrap items-center gap-2">
