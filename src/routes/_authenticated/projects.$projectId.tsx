@@ -165,6 +165,7 @@ function ProjectDetailPage() {
                       <div className="flex gap-2">
                         <Button size="sm" onClick={() => setStatus(membership.id, "accepted")}>
                           Accept
+                          <span className="sr-only"> {profile?.full_name ?? "this member"} for {project.title}</span>
                         </Button>
                         <Button
                           size="sm"
@@ -172,6 +173,7 @@ function ProjectDetailPage() {
                           onClick={() => setStatus(membership.id, "declined")}
                         >
                           Decline
+                          <span className="sr-only"> {profile?.full_name ?? "this member"} for {project.title}</span>
                         </Button>
                       </div>
                     )}
@@ -192,11 +194,13 @@ function ProjectDetailPage() {
                 <p className="text-sm text-ink-soft">Your status: {myMembership.status}</p>
                 <Button variant="outline" onClick={leave} className="w-full">
                   Withdraw
+                  <span className="sr-only"> from {project.title}</span>
                 </Button>
               </div>
             ) : (
               <div className="mt-3 space-y-3">
                 <Textarea
+                  aria-label={`Message about what you can contribute to ${project.title}`}
                   placeholder="What can you contribute?"
                   value={message}
                   onChange={(event) => setMessage(event.target.value)}

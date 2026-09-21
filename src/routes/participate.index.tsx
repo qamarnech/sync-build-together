@@ -69,6 +69,7 @@ function ParticipateIndex() {
             <Link
               key={item.slug}
               to={item.to}
+              aria-label={`Explore ${item.name}`}
               className="group rounded-xl border border-line bg-paper p-6 transition-colors hover:border-gold/50"
             >
               <Tag tone="gold">{SUMMARY[item.slug]!.count}</Tag>

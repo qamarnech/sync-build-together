@@ -77,6 +77,7 @@ function MemberProfilePage() {
           {isFounder && (
             <Link
               to="/founder"
+              aria-label={`View the public founder page for ${profile.full_name}`}
               className="mt-6 inline-flex items-center rounded-full border border-gold px-4 py-2 text-sm text-gold transition-colors hover:bg-gold hover:text-white"
             >
               View public founder page
