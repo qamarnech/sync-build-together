@@ -18,7 +18,9 @@ export const Route = createFileRoute("/participate/members")({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:url", content: "https://www.longevitymr.com/participate/members" },
     ],
+    links: [{ rel: "canonical", href: "https://www.longevitymr.com/participate/members" }],
   }),
   component: MembersPage,
 });

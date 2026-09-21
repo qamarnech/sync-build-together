@@ -40,7 +40,11 @@ export const Route = createFileRoute("/")({
         content:
           "Connect with researchers, clinicians, innovators and partners turning ageing research into longer, healthier lives.",
       },
+      { property: "og:url", content: "https://www.longevitymr.com/" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://www.longevitymr.com/" }],
   }),
   component: Index,
 });

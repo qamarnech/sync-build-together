@@ -13,7 +13,9 @@ export const Route = createFileRoute("/ecosystem/investment-commercial")({
       { property: "og:description", content: "How funding, partnerships and market access carry validated longevity solutions to scale." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:url", content: "https://www.longevitymr.com/ecosystem/investment-commercial" },
     ],
+    links: [{ rel: "canonical", href: "https://www.longevitymr.com/ecosystem/investment-commercial" }],
   }),
   component: () => <PillarPage pillar={pillar} backTo="/ecosystem" sequence={ECOSYSTEM_PILLARS.map((p) => p.name)} />,
 });

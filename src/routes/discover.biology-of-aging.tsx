@@ -13,7 +13,9 @@ export const Route = createFileRoute("/discover/biology-of-aging")({
       { property: "og:description", content: "Understand the biology of ageing and the research priorities turning mechanistic insight into interventions." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:url", content: "https://www.longevitymr.com/discover/biology-of-aging" },
     ],
+    links: [{ rel: "canonical", href: "https://www.longevitymr.com/discover/biology-of-aging" }],
   }),
   component: () => <PillarPage pillar={pillar} backTo="/discover" sequence={DISCOVER_PILLARS.map((p) => p.name)} />,
 });

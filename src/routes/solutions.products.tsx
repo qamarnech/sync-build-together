@@ -60,7 +60,9 @@ export const Route = createFileRoute("/solutions/products")({
       { property: "og:description", content: "Diagnostics and tests alongside wellness and personal-care products, presented with evidence status and intended use." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:url", content: "https://www.longevitymr.com/solutions/products" },
     ],
+    links: [{ rel: "canonical", href: "https://www.longevitymr.com/solutions/products" }],
   }),
   component: () => (
     <PillarPage pillar={pillar} backTo="/solutions" sequence={SOLUTION_PILLARS.map((p) => p.name)}>
