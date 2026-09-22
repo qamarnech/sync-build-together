@@ -13,6 +13,8 @@ export const Route = createFileRoute("/ecosystem/investment-commercial")({
       { property: "og:description", content: "How funding, partnerships and market access carry validated longevity solutions to scale." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:image", content: "https://www.longevitymr.com/social/mr-longevity-share.jpg" },
+      { name: "twitter:image", content: "https://www.longevitymr.com/social/mr-longevity-share.jpg" },
       { property: "og:url", content: "https://www.longevitymr.com/ecosystem/investment-commercial" },
     ],
     links: [{ rel: "canonical", href: "https://www.longevitymr.com/ecosystem/investment-commercial" }],
