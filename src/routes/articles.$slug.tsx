@@ -23,6 +23,8 @@ export const Route = createFileRoute("/articles/$slug")({
         { property: "og:type", content: "article" },
         { property: "og:url", content: url },
         { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:image", content: "https://www.longevitymr.com/social/mr-longevity-share.jpg" },
+      { name: "twitter:image", content: "https://www.longevitymr.com/social/mr-longevity-share.jpg" },
       ],
       links: [{ rel: "canonical", href: url }],
     };

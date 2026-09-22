@@ -13,6 +13,8 @@ export const Route = createFileRoute("/collaborate/partners")({
       { property: "og:description", content: "Universities, healthcare organisations, companies, manufacturers, investors and public bodies in the mission." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:image", content: "https://www.longevitymr.com/social/mr-longevity-share.jpg" },
+      { name: "twitter:image", content: "https://www.longevitymr.com/social/mr-longevity-share.jpg" },
       { property: "og:url", content: "https://www.longevitymr.com/collaborate/partners" },
     ],
     links: [{ rel: "canonical", href: "https://www.longevitymr.com/collaborate/partners" }],

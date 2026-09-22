@@ -33,6 +33,8 @@ export const Route = createFileRoute("/auth")({
       { property: "og:url", content: "https://www.longevitymr.com/auth" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:image", content: "https://www.longevitymr.com/social/mr-longevity-share.jpg" },
+      { name: "twitter:image", content: "https://www.longevitymr.com/social/mr-longevity-share.jpg" },
     ],
     links: [{ rel: "canonical", href: "https://www.longevitymr.com/auth" }],
   }),

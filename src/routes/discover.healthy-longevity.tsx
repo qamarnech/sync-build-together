@@ -13,6 +13,8 @@ export const Route = createFileRoute("/discover/healthy-longevity")({
       { property: "og:description", content: "Explore the foundations of healthspan and how precision longevity personalises prevention." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:image", content: "https://www.longevitymr.com/social/mr-longevity-share.jpg" },
+      { name: "twitter:image", content: "https://www.longevitymr.com/social/mr-longevity-share.jpg" },
       { property: "og:url", content: "https://www.longevitymr.com/discover/healthy-longevity" },
     ],
     links: [{ rel: "canonical", href: "https://www.longevitymr.com/discover/healthy-longevity" }],

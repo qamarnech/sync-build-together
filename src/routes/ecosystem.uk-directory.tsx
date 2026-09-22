@@ -25,6 +25,8 @@ export const Route = createFileRoute("/ecosystem/uk-directory")({
       { property: "og:type", content: "website" },
       { property: "og:url", content: PAGE_URL },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:image", content: "https://www.longevitymr.com/social/mr-longevity-share.jpg" },
+      { name: "twitter:image", content: "https://www.longevitymr.com/social/mr-longevity-share.jpg" },
     ],
     links: [{ rel: "canonical", href: PAGE_URL }],
   }),

@@ -13,6 +13,8 @@ export const Route = createFileRoute("/ecosystem/clinical-validation")({
       { property: "og:description", content: "How promising longevity science earns clinical trust through rigorous evidence and responsible practice." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:image", content: "https://www.longevitymr.com/social/mr-longevity-share.jpg" },
+      { name: "twitter:image", content: "https://www.longevitymr.com/social/mr-longevity-share.jpg" },
       { property: "og:url", content: "https://www.longevitymr.com/ecosystem/clinical-validation" },
     ],
     links: [{ rel: "canonical", href: "https://www.longevitymr.com/ecosystem/clinical-validation" }],

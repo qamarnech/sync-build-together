@@ -13,6 +13,8 @@ export const Route = createFileRoute("/ecosystem/manufacturing-supply")({
       { property: "og:description", content: "Producing, distributing and pricing healthy longevity solutions so they reach people reliably." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:image", content: "https://www.longevitymr.com/social/mr-longevity-share.jpg" },
+      { name: "twitter:image", content: "https://www.longevitymr.com/social/mr-longevity-share.jpg" },
       { property: "og:url", content: "https://www.longevitymr.com/ecosystem/manufacturing-supply" },
     ],
     links: [{ rel: "canonical", href: "https://www.longevitymr.com/ecosystem/manufacturing-supply" }],
