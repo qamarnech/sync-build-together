@@ -239,7 +239,7 @@ function AboutPage() {
             ["Data + AI", "the intelligence layer connecting and improving the mission"],
           ].map(([title, desc]) => (
             <div key={title} className="rounded-xl border border-line bg-white p-5">
-              <h4 className="font-serif text-lg font-semibold text-navy">{title}</h4>
+              <h3 className="font-serif text-lg font-semibold text-navy">{title}</h3>
               <p className="mt-1 text-sm text-ink-soft">{desc}</p>
             </div>
           ))}
