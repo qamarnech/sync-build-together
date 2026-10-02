@@ -28,6 +28,13 @@ export const FOUNDER_ABOUT = [
 
 export const FOUNDER_AFFILIATIONS: LinkedItem[] = [
   {
+    title: "Professor",
+    meta: "Cancer Research UK Cambridge Centre · University of Cambridge",
+    detail:
+      "Member of the Cancer Immunology research programme, affiliated with the Department of Haematology, Cambridge Stem Cell Institute, Wellcome Sanger Institute and CRUK Therapeutic Discovery Laboratories.",
+    href: "https://crukcambridgecentre.org.uk/users/qf23015584",
+  },
+  {
     title: "Professor & Postgraduate Supervisor",
     meta: "Institute of Aging Medicine · School of Pharmacy, Binzhou Medical University (Yantai)",
     detail: "Listed in the university's Aging Medicine Innovation Team.",
