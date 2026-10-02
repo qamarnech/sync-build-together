@@ -28,12 +28,6 @@ export const FOUNDER_ABOUT = [
 
 export const FOUNDER_AFFILIATIONS: LinkedItem[] = [
   {
-    title: "Professor & Postgraduate Supervisor",
-    meta: "Institute of Aging Medicine · School of Pharmacy, Binzhou Medical University (Yantai)",
-    detail: "Listed in the university's Aging Medicine Innovation Team.",
-    href: "https://kyc.sdmpu.edu.cn/2024/0626/c5166a122862/page.htm",
-  },
-  {
     title: "Shandong Cellogene",
     meta: "Company affiliation listed on peer-reviewed publications",
     detail: "Academic–industry bridge for NK-cell and stem-cell technologies.",
