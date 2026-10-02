@@ -4,7 +4,6 @@ import {
   FOUNDER_AFFILIATIONS,
   FOUNDER_DOMAINS,
   FOUNDER_FIGURES,
-  FOUNDER_FIGURES_SOURCE,
   FOUNDER_GRANTS,
   FOUNDER_PATENTS,
   FOUNDER_PUBLICATIONS,
@@ -50,18 +49,6 @@ export function FounderFigures() {
           </div>
         ))}
       </div>
-      <p className="mt-3 text-center text-xs text-ink-mute">
-        As reported by{" "}
-        <a
-          href={FOUNDER_FIGURES_SOURCE}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline hover:text-gold"
-        >
-          Binzhou Medical University
-        </a>
-        , June 2024.
-      </p>
     </div>
   );
 }

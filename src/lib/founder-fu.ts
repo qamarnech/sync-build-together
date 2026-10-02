@@ -76,7 +76,6 @@ export const FOUNDER_FIGURES: { value: string; label: string }[] = [
   { value: "8", label: "Granted patents" },
 ];
 
-export const FOUNDER_FIGURES_SOURCE = "https://kyc.sdmpu.edu.cn/2024/0626/c5166a122862/page.htm";
 
 export const FOUNDER_PUBLICATIONS: Publication[] = [
   {
