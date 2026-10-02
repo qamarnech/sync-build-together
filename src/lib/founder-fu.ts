@@ -40,6 +40,10 @@ export const FOUNDER_AFFILIATIONS: LinkedItem[] = [
     detail: "Listed in the university's Aging Medicine Innovation Team.",
   },
   {
+    title: "Professor",
+    meta: "Innovation Center for Anti-Aging · Shanghai Jiao Tong University",
+  },
+  {
     title: "Shandong Cellogene",
     meta: "Company affiliation listed on peer-reviewed publications",
     detail: "Academic–industry bridge for NK-cell and stem-cell technologies.",
