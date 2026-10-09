@@ -8,6 +8,7 @@ import {
   OPPORTUNITY_CYCLE,
   PARTICIPANT_GROUPS,
 } from "@/lib/ecosystem-content";
+import { ECOSYSTEM_PILLARS } from "@/lib/ecosystem-pillars";
 import { CycleWheel, ParticipantOrbit, SystemsRings } from "@/components/site/infographics";
 import { cn } from "@/lib/utils";
 
@@ -54,6 +55,42 @@ function EcosystemPage() {
           intro="The mission is designed as a connected system: participants, capability areas and a continuous opportunity cycle that keeps returning evidence to the beginning."
           invert
         />
+      </Section>
+
+      {/* Stages of translation */}
+      <Section tone="sand">
+        <SectionHead
+          kicker="Explore the landscape"
+          title="Four stages, one connected mission"
+          intro="Follow science from discovery to adoption, then explore the organisations shaping healthy longevity in the UK."
+        />
+        <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {ECOSYSTEM_PILLARS.map((pillar) => (
+            <Link
+              key={pillar.slug}
+              to={pillar.to}
+              aria-label={`Explore ${pillar.name}`}
+              className="group rounded-2xl border border-line bg-white p-6 transition-colors hover:border-gold/60"
+            >
+              <p className="font-serif text-sm italic text-gold">Stage {pillar.num}</p>
+              <h2 className="mt-1 font-serif text-xl text-navy">{pillar.name}</h2>
+              <p className="mt-2 text-sm text-ink-soft">{pillar.intro}</p>
+              <p className="mt-4 text-sm font-semibold text-navy group-hover:underline">Explore {pillar.name} →</p>
+            </Link>
+          ))}
+          <Link
+            to="/ecosystem/uk-directory"
+            aria-label="Explore the UK Longevity Directory"
+            className="group rounded-2xl border border-gold/40 bg-gold/5 p-6 transition-colors hover:border-gold"
+          >
+            <p className="font-serif text-sm italic text-gold">Directory</p>
+            <h2 className="mt-1 font-serif text-xl text-navy">UK Longevity Directory</h2>
+            <p className="mt-2 text-sm text-ink-soft">
+              Laboratories, institutes, NHS units, clinics, companies, charities, policy bodies and cohorts across the UK, organised by function.
+            </p>
+            <p className="mt-4 text-sm font-semibold text-navy group-hover:underline">Open the directory →</p>
+          </Link>
+        </div>
       </Section>
 
       {/* Participants */}
