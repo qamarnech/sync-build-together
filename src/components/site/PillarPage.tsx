@@ -29,7 +29,7 @@ export function PillarPage({
   pillar: Pillar;
   backTo: string;
   backLabel?: string;
-  next?: { to: string; name: string };
+  next?: { to: string; name: string } | undefined;
   sequence?: string[];
   children?: ReactNode;
 }) {
