@@ -30,7 +30,7 @@ export const LONGEVITY_NEWS: NewsItem[] = [
     slug: "uk-ageing-society",
     title: "UKRI, Healthy Ageing Challenge",
     source: "UK Research and Innovation",
-    url: "https://www.ukri.org/what-we-do/our-main-funds-and-areas-of-support/browse-our-areas-of-investment-and-support/healthy-ageing-challenge/",
+    url: "https://www.ukri.org/what-we-do/browse-our-areas-of-investment-and-support/healthy-ageing/",
     topic: "UK Mission",
     summary:
       "UK national investment connecting research, industry and services to extend healthy, independent living.",

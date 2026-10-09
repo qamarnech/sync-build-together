@@ -104,7 +104,7 @@ export const UK_DIRECTORY: DirectoryGroup[] = [
       {
         name: "Aston Research Centre for Healthy Ageing",
         description: "healthy ageing and age-related disease research.",
-        href: "https://www.aston.ac.uk/research/centres/archa"
+        href: "https://www.aston.ac.uk/research"
       },
       {
         name: "Brunel Institute for Ageing Studies",
@@ -119,22 +119,22 @@ export const UK_DIRECTORY: DirectoryGroup[] = [
       {
         name: "Centre for Integrated Research into Musculoskeletal Ageing",
         description: "musculoskeletal ageing and disease.",
-        href: "https://www.liverpool.ac.uk/cima/"
+        href: "https://www.liverpool.ac.uk/research/"
       },
       {
         name: "University of Liverpool Institute of Ageing and Chronic Disease",
         description: "ageing, chronic disease and translational research.",
-        href: "https://www.liverpool.ac.uk/ageing-and-chronic-disease/"
+        href: "https://www.liverpool.ac.uk/research/"
       },
       {
         name: "Wolfson Centre for Age-Related Diseases",
         description: "age-related neurological and sensory disorders.",
-        href: "https://www.kcl.ac.uk/research/wolfson-centre-for-age-related-diseases"
+        href: "https://www.kcl.ac.uk/research"
       },
       {
         name: "Medawar Centre for Healthy Ageing Research",
         description: "biological and clinical healthy-ageing research.",
-        href: "https://www.kcl.ac.uk/research/centres/medawar-centre-for-healthy-ageing-research"
+        href: "https://www.kcl.ac.uk/research"
       },
       {
         name: "Francis Crick Institute",
@@ -149,7 +149,7 @@ export const UK_DIRECTORY: DirectoryGroup[] = [
       {
         name: "UbbLE: UK Longevity Explorer",
         description: "population and genetic research relating to longevity.",
-        href: "https://www.bristol.ac.uk/population-health-sciences/projects/ubble/"
+        href: "https://www.bristol.ac.uk/population-health-sciences/"
       },
       {
         name: "Cambridge Centre for Ageing and Neuroscience",
@@ -159,7 +159,7 @@ export const UK_DIRECTORY: DirectoryGroup[] = [
       {
         name: "Centre for Cognitive Ageing and Cognitive Epidemiology, Edinburgh",
         description: "cognitive ageing and epidemiology.",
-        href: "https://www.ed.ac.uk/healthy-ageing"
+        href: "https://www.ed.ac.uk/"
       },
       {
         name: "Centre for Healthier Lives, Newcastle University",
@@ -190,17 +190,17 @@ export const UK_DIRECTORY: DirectoryGroup[] = [
       {
         name: "Ageing Research at King’s",
         description: "cross-faculty healthy-longevity consortium.",
-        href: "https://www.kcl.ac.uk/research/ageing-research-at-kings"
+        href: "https://www.kcl.ac.uk/research"
       },
       {
         name: "Manchester Institute for Collaborative Research on Ageing",
         description: "interdisciplinary ageing research.",
-        href: "https://micra.manchester.ac.uk/"
+        href: "https://www.manchester.ac.uk/"
       },
       {
         name: "Manchester Urban Ageing Research Group",
         description: "urban ageing and age-friendly cities.",
-        href: "https://micra.manchester.ac.uk/muarg/"
+        href: "https://www.manchester.ac.uk/"
       },
       {
         name: "Centre for Ageing Research, Lancaster University",
@@ -210,7 +210,7 @@ export const UK_DIRECTORY: DirectoryGroup[] = [
       {
         name: "Centre for Research on Ageing, University of Southampton",
         description: "ageing, health and later-life research.",
-        href: "https://www.southampton.ac.uk/research/institutes/centre-for-research-on-ageing"
+        href: "https://www.southampton.ac.uk/research"
       },
       {
         name: "Centre for Research on Ageing and Generations, University of Surrey",
@@ -220,7 +220,7 @@ export const UK_DIRECTORY: DirectoryGroup[] = [
       {
         name: "Centre for Social Gerontology, Keele University",
         description: "social gerontology and later life.",
-        href: "https://www.keele.ac.uk/healthandrehabilitation/centres/socialgerontology/"
+        href: "https://www.keele.ac.uk/research/"
       },
       {
         name: "Centre for Ageing and Biographical Studies, Open University",
@@ -245,7 +245,7 @@ export const UK_DIRECTORY: DirectoryGroup[] = [
       {
         name: "Centre for Ageing Research, University of Greenwich",
         description: "chronic illness and ageing.",
-        href: "https://www.gre.ac.uk/research/centres/centre-for-chronic-illness-and-ageing"
+        href: "https://www.gre.ac.uk/research"
       },
       {
         name: "The Geller Institute of Ageing and Memory",
@@ -286,7 +286,7 @@ export const UK_DIRECTORY: DirectoryGroup[] = [
       {
         name: "Centre for Environment, Dementia and Ageing Research, University of Stirling",
         description: "environments, dementia and later life.",
-        href: "https://www.stir.ac.uk/about/faculties/social-sciences/research/cedar/"
+        href: "https://www.stir.ac.uk/research/"
       },
       {
         name: "Association for Dementia Studies, University of Worcester",
@@ -311,7 +311,7 @@ export const UK_DIRECTORY: DirectoryGroup[] = [
       {
         name: "Dementia Studies, University of Bradford",
         description: "dementia care and research.",
-        href: "https://www.bradford.ac.uk/health/dementia-studies/"
+        href: "https://www.bradford.ac.uk/dementia/"
       },
       {
         name: "TwinsUK",
@@ -484,7 +484,7 @@ export const UK_DIRECTORY: DirectoryGroup[] = [
       {
         name: "HCA UK executive health",
         description: "private preventive-health assessments.",
-        href: "https://www.hcahealthcare.co.uk/locations/executive-health"
+        href: "https://www.hcahealthcare.co.uk/"
       },
       {
         name: "The Physicians’ Clinic",
@@ -631,12 +631,12 @@ export const UK_DIRECTORY: DirectoryGroup[] = [
       {
         name: "The Catalyst, Newcastle Helix",
         description: "headquarters and innovation environment for NICA.",
-        href: "https://uknica.co.uk/who-we-are/the-catalyst/"
+        href: "https://uknica.co.uk/"
       },
       {
         name: "VOICE",
         description: "public and citizen engagement in ageing innovation.",
-        href: "https://uknica.co.uk/voice/"
+        href: "https://uknica.co.uk/"
       },
       {
         name: "AgeTech & Longevity Hub, Innovation Warehouse",
@@ -894,7 +894,7 @@ export const UK_DIRECTORY: DirectoryGroup[] = [
       {
         name: "Newcastle 85+ Study",
         description: "ageing and health in people aged 85 and over.",
-        href: "https://www.ncl.ac.uk/ageing/research/85-study/"
+        href: "https://www.ncl.ac.uk/ageing/"
       },
       {
         name: "MRC Unit for Lifelong Health and Ageing",
