@@ -22,10 +22,14 @@ export function PillarPage({
   pillar,
   backTo,
   sequence,
+  backLabel = "Back to discover",
+  next,
   children,
 }: {
   pillar: Pillar;
   backTo: string;
+  backLabel?: string;
+  next?: { to: string; name: string } | undefined;
   sequence?: string[];
   children?: ReactNode;
 }) {
@@ -73,6 +77,13 @@ export function PillarPage({
           </div>
         </div>
         <p className="mx-auto mt-10 max-w-2xl text-center text-sm italic text-ink-soft">{pillar.handoff}</p>
+        {next && (
+          <div className="mt-6 text-center">
+            <Link to={next.to} className="text-sm font-semibold text-navy underline-offset-4 hover:underline">
+              Next stage: {next.name} →
+            </Link>
+          </div>
+        )}
       </Section>
 
       {children}
@@ -92,7 +103,7 @@ export function PillarPage({
               </Link>
             </Button>
             <Button asChild variant="outline" className="border-white/40 bg-transparent text-white hover:bg-white/10">
-              <Link to={backTo}>Back to discover</Link>
+              <Link to={backTo}>{backLabel}</Link>
             </Button>
           </div>
         </div>

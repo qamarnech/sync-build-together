@@ -19,5 +19,5 @@ export const Route = createFileRoute("/ecosystem/clinical-validation")({
     ],
     links: [{ rel: "canonical", href: "https://www.longevitymr.com/ecosystem/clinical-validation" }],
   }),
-  component: () => <PillarPage pillar={pillar} backTo="/ecosystem" sequence={ECOSYSTEM_PILLARS.map((p) => p.name)} />,
+  component: () => <PillarPage pillar={pillar} backTo="/ecosystem" sequence={ECOSYSTEM_PILLARS.map((p) => p.name)} backLabel="Back to the Longevity Landscape" next={ECOSYSTEM_PILLARS[2]} />,
 });
