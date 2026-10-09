@@ -62,7 +62,7 @@ export const ARTICLES: Article[] = [
         label: "Hallmarks of Aging: An Expanding Universe, Cell (2023)",
         url: "https://www.cell.com/cell/fulltext/S0092-8674(22)01377-0",
       },
-      { label: "TAME Trial, American Federation for Aging Research", url: "https://www.afar.org/tame-trial" },
+      { label: "TAME Trial, American Federation for Aging Research", url: "https://www.afar.org/" },
     ],
   },
   {
@@ -153,7 +153,7 @@ export const ARTICLES: Article[] = [
     ],
     sources: [
       { label: "National Institute on Aging", url: "https://www.nia.nih.gov/" },
-      { label: "TAME Trial, American Federation for Aging Research", url: "https://www.afar.org/tame-trial" },
+      { label: "TAME Trial, American Federation for Aging Research", url: "https://www.afar.org/" },
       { label: "Hevolution Foundation", url: "https://hevolution.com/" },
       { label: "XPRIZE Healthspan", url: "https://www.xprize.org/prizes/healthspan" },
     ],

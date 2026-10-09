@@ -171,7 +171,7 @@ export const FOUNDER_PUBLICATIONS: Publication[] = [
       "CD83+CCR7+ NK cells induced by interleukin 18 in experimental autoimmune uveitis",
     journal: "Journal of Cellular and Molecular Medicine",
     role: "Corresponding author",
-    href: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6378215/",
+    href: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6378215/",
   },
   {
     year: "2017",
